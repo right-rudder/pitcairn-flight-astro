@@ -1,0 +1,228 @@
+---
+import ImageComp from "./ImageComp.astro";
+
+interface ctaProp {
+  url: string;
+  text: string;
+  variant?: string;
+}
+
+interface Props {
+  data: {
+    images: {
+      src: string;
+      alt: string;
+      imageCentering?: string; // Adicionado aqui
+    }[];
+    title: string;
+    subTitle?: string;
+    cta?: ctaProp[];
+  };
+}
+
+const { data } = Astro.props;
+---
+
+<section
+  class="pt-40 pb-20 hero-section relative overflow-hidden flex justify-center items-center lg:items-end lg:pb-30 text-white min-h-[100vh]"
+  aria-label="Hero section"
+>
+  <div class="absolute inset-0 -z-20 w-full h-full">
+    {
+      data.images.map((img, index) => (
+        <div
+          class={`hero-slide absolute inset-0 w-full h-full transition-opacity duration-[2000ms] ease-in-out ${index === 0 ? "opacity-100" : "opacity-0"}`}
+          data-index={index}
+        >
+          <ImageComp
+            src={img.src}
+            alt={img.alt}
+            class={`w-full h-full object-cover animate-super-slow-zoom ${img.imageCentering || "object-left lg:object-center"}`}
+            loading={index === 0 ? "eager" : "lazy"}
+            quality={100}
+          />
+        </div>
+      ))
+    }
+  </div>
+
+  <div class="absolute inset-0 bg-sky-950/40 lg:bg-sky-950/20 -z-10"></div>
+
+  <div class="max-w-7xl w-full px-5 md:px-8 lg:px-12 mx-auto relative z-10">
+    <div
+      class="flex flex-col justify-center items-center lg:items-start max-w-4xl"
+    >
+      <div
+        class="flex flex-col items-center lg:items-start gap-y-6 text-center lg:text-left"
+      >
+        <h1
+          class="hero-title !font-main-header text-white text-5xl uppercase font-bold"
+          set:html={data.title}
+        />
+
+        {
+          data.subTitle && (
+            <p
+              class="hero-subtitle text-lg font-medium text-white max-w-xl"
+              set:html={data.subTitle}
+            />
+          )
+        }
+      </div>
+
+      {
+        data.cta && data.cta.length > 0 && (
+          <div class="hero-cta mt-12 flex flex-col gap-4 items-center sm:flex-row lg:items-start w-full sm:w-auto">
+            {data.cta.map((item, index) => (
+              <a
+                class={`cta-button ${index === 0 ? "btn-primary" : "btn-transparent"} hover:cursor-pointer text-base sm:text-lg md:text-xl px-10 py-5 min-w-[220px] text-center font-bold transition-all duration-500 hover:scale-110 relative overflow-hidden group`}
+                aria-label={item.text}
+              >
+                <span class="relative z-10">{item.text}</span>
+                <span class="cta-shine" />
+              </a>
+            ))}
+          </div>
+        )
+      }
+    </div>
+  </div>
+</section>
+
+<script>
+  function initSlideshow() {
+    const slides = document.querySelectorAll(".hero-slide");
+    if (slides.length <= 1) return;
+
+    let currentIndex = 0;
+    // --- CHANGE THIS VALUE TO CHANGE FREQUENCY SPEED  ---
+    const intervalTime = 2000;
+
+    setInterval(() => {
+      slides[currentIndex].classList.remove("opacity-100");
+      slides[currentIndex].classList.add("opacity-0");
+
+      currentIndex = (currentIndex + 1) % slides.length;
+
+      slides[currentIndex].classList.remove("opacity-0");
+      slides[currentIndex].classList.add("opacity-100");
+    }, intervalTime);
+  }
+
+  initSlideshow();
+  document.addEventListener("astro:page-load", initSlideshow);
+</script>
+
+<style>
+  .hero-section {
+    position: relative;
+  }
+
+  .hero-title {
+    animation: titleReveal 1.2s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    text-shadow:
+      0 5px 15px rgba(0, 0, 0, 0.5),
+      0 10px 30px rgba(0, 0, 0, 0.5);
+    letter-spacing: 0.02em;
+  }
+
+  @keyframes titleReveal {
+    0% {
+      opacity: 0;
+      transform: translateY(30px);
+      filter: blur(10px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+      filter: blur(0);
+    }
+  }
+
+  .hero-subtitle {
+    animation: subtitleReveal 1.2s cubic-bezier(0.22, 1, 0.36, 1) 0.3s backwards;
+    text-shadow:
+      0 5px 15px rgba(0, 0, 0, 0.6),
+      0 10px 30px rgba(0, 0, 0, 0.6);
+  }
+
+  @keyframes subtitleReveal {
+    0% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .hero-cta {
+    animation: ctaReveal 1.2s cubic-bezier(0.22, 1, 0.36, 1) 0.6s backwards;
+  }
+
+  @keyframes ctaReveal {
+    0% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .cta-button {
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+    transition: all 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .cta-button:hover {
+    box-shadow:
+      0 15px 50px rgba(0, 0, 0, 0.5),
+      0 5px 20px rgba(0, 0, 0, 0.5);
+    transform: translateY(-5px) scale(1.05);
+  }
+
+  .cta-shine {
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.3),
+      transparent
+    );
+    transition: left 0.7s;
+  }
+
+  .cta-button:hover .cta-shine {
+    left: 100%;
+  }
+
+  @keyframes slow-zoom {
+    0% {
+      transform: scale(1);
+    }
+    100% {
+      transform: scale(1.15);
+    }
+  }
+
+  .animate-slow-zoom {
+    animation: slow-zoom 27s ease-in-out infinite alternate;
+  }
+
+  @media (max-width: 640px) {
+    .hero-section {
+      min-height: 100vh;
+    }
+
+    .hero-title {
+      font-size: 2rem;
+    }
+  }
+</style>

@@ -1,0 +1,93 @@
+---
+import ImageWithGradientAndText from "./ImageWithGradientAndText.astro";
+
+interface Props {
+  title: string;
+  subtitle: string;
+  imageCentering?: string;
+  description: string[];
+  image?: {
+    src: string;
+    alt: string;
+  };
+  cta?: {
+    text: string;
+    href: string;
+  };
+}
+
+const { title, subtitle, description, imageCentering, image, cta } =
+  Astro.props;
+---
+
+<section class="py-16 md:py-24 bg-sky-950 overflow-hidden">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 lg:px-12">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <div
+        class="order-2 reveal-content opacity-0 translate-y-8 transition-all duration-1000 ease-out"
+      >
+        <span class="font-sans font-medium text-sky-600 uppercase">
+          {subtitle}
+        </span>
+
+        <h2
+          class="title !text-[2.5rem] uppercase !font-main-header tracking-wide !text-slate-50"
+          set:html={title}
+        />
+
+        {
+          description.map((descriptionItem) => (
+            <p
+              class="text-lg !text-slate-50 mb-8 leading-relaxed"
+              set:html={descriptionItem}
+            />
+          ))
+        }
+
+        {
+          cta && (
+            <div class="flex justify-center gap-4 w-full">
+              <a class="w-full btn-primary text-center shadow uppercase !px-6 max-w-sm hover:cursor-pointer">
+                {cta.text}
+              </a>
+            </div>
+          )
+        }
+      </div>
+
+      {
+        image && (
+          <div class="order-1 h-64 md:h-[500px] lg:h-full relative rounded-sm overflow-hidden shadow-2xl reveal-image opacity-0 scale-95 transition-all duration-1000 ease-out">
+            <ImageWithGradientAndText
+              title=""
+              subtitle=""
+              src={image.src}
+              alt={image.alt}
+              class={`w-full h-full object-cover ${imageCentering ? imageCentering : "object-center"}`}
+            />
+          </div>
+        )
+      }
+    </div>
+  </div>
+</section>
+
+<script>
+  const observerOptions = {
+    threshold: 0.15,
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.remove("opacity-0", "translate-y-8", "scale-95");
+        entry.target.classList.add("opacity-100", "translate-y-0", "scale-100");
+        observer.unobserve(entry.target);
+      }
+    });
+  }, observerOptions);
+
+  document
+    .querySelectorAll(".reveal-content, .reveal-image")
+    .forEach((el) => observer.observe(el));
+</script>

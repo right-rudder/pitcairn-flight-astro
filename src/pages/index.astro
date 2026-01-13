@@ -1,0 +1,314 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import ValueProposition from "../components/ValueProposition.astro";
+import Testimonials from "../components/Testimonials.astro";
+import { PHONE_NUMBER, AIRPORT, AIRPORT_CODE } from "../data/consts";
+import HeroLandingPage from "../components/HeroLandingPage.astro";
+import BlogFeed from "../components/Blog/BlogFeed.astro";
+import IntroductionSection from "../components/IntroductionSection.astro";
+import LocationSection from "../components/LocationSection.astro";
+import FinalCTASection from "../components/FinalCTASection.astro";
+import TeamAndCultureSection from "../components/TeamAndCultureSection.astro";
+import TrainingPhilosophySection from "../components/TrainingPhilosophySection.astro";
+import RoadmapSection from "../components/RoadmapSection.astro";
+import SocialProofSection from "../components/SocialProofSection.astro";
+import ImageSliderWithCopySection from "../components/ImageSliderWithCopySection.astro";
+import ProgramsOverviewSection from "../components/ProgramsOverview/ProgramsOverviewSection.astro";
+import SocialProofLeftSection from "../components/SocialProofLeftSection.astro";
+
+const heroData = {
+  images: [
+    {
+      src: "/src/assets/placeholder-dark-clouds-pitcairn-flight-academy-instrument-rating.webp",
+      alt: "Pitcairn Flight Academy training aircraft at Heritage Field",
+      imageCentering: "",
+    },
+  ],
+  title:
+    'Family-Owned <span class="">Excellence</span><br/>Providing Professional<br/>Aviation Training',
+  subTitle: `A student-focused flight academy based at ${AIRPORT} (${AIRPORT_CODE}), offering safe, structured, and flexible pilot training in Pennsylvania.`,
+  cta: [
+    {
+      url: "/programs",
+      text: "Explore Programs",
+      variant: "primary",
+    },
+    {
+      url: "/contact",
+      text: "Book a Discovery Flight",
+      variant: "secondary",
+    },
+  ],
+};
+
+const valuePropositionData = {
+  title: "More Than Flight Training —<br/>Aviation Done Right",
+  subtitle: "Built by Pilots. Focused on Students.",
+  description: [
+    'Founded by lifelong aviators, <strong class="text-sky-600">Pitcairn Flight Academy</strong> was created to raise the standard of flight instruction. Our mission is simple: deliver <strong class="text-sky-600">safe, honest, and student-focused training</strong> from day one.',
+
+    'Unlike schools that commute in, we are proudly <strong class="text-sky-600">based at Heritage Field (KPTW)</strong>, a student-friendly airport known for uncongested airspace and consistent training conditions—ideal for beginners and advanced pilots alike.',
+
+    'From your <strong class="text-sky-600">first discovery flight</strong> to advanced ratings, our experienced instructors provide structured guidance, real-world decision-making skills, and a supportive aviation community you can grow with.',
+  ],
+  imageCentering: "object-[60%_50%]",
+  image: {
+    src: "/src/assets/placeholder-dark-clouds-pitcairn-flight-academy-instrument-rating.webp",
+    alt: "Student pilot training at Pitcairn Flight Academy",
+  },
+  cta: {
+    text: "Learn Entry Requirements",
+    href: "/programs",
+  },
+};
+
+const socialProofData = {
+  eyebrow: "Trusted by Our Students",
+  headline: "Training Built on Experience & Integrity",
+  bodyCopy:
+    'Pitcairn Flight Academy was founded by pilots who experienced both great and poor instruction firsthand. That experience drives our commitment to <strong class="text-sky-600">clear communication, strong fundamentals, and safety-first decision making</strong>. Our growing student base and word-of-mouth referrals reflect the trust we build every day.',
+  image: {
+    src: "/src/assets/placeholder-dark-clouds-pitcairn-flight-academy-instrument-rating.webp",
+    alt: "Pitcairn Flight Academy instructors and students",
+  },
+};
+
+const repairStationData = {
+  eyebrow: "A Focused Training Environment",
+  headline: "Flight Training Without Distractions",
+  bodyCopy: `Pitcairn Flight Academy is purpose-built around <strong class=\"text-sky-600\">high-quality flight instruction</strong>. By focusing exclusively on training, we ensure our instructors, aircraft scheduling, and student support systems are aligned toward one goal: producing confident, capable, and safety-minded pilots.<br/><br/>
+  
+  Our students benefit from structured syllabi, personalized instruction, and real-world flying scenarios—without the congestion or operational complexity found at larger commercial airports.`,
+  image: {
+    src: "/src/assets/placeholder-dark-clouds-pitcairn-flight-academy-instrument-rating.webp",
+    alt: "Aircraft on the ramp at Heritage Field",
+  },
+};
+
+const imageSliderData = {
+  eyebrow: "Professional Pilot Training",
+  title: "A Clear Path From First Flight to Certification",
+  paragraphs: [
+    'At Pitcairn Flight Academy, training goes beyond logging hours. Students learn in a <strong class="text-sky-600">structured, safety-driven environment</strong> designed to build strong fundamentals and confident decision-making skills.',
+    'Operating from <strong class="text-sky-600">Heritage Field (KPTW)</strong>, our location provides excellent access to practice areas, manageable traffic, and real-world conditions that prepare pilots for future flying—whether recreational or career-focused.',
+  ],
+  cta: {
+    text: "Explore Our Programs",
+    href: "/programs",
+  },
+  images: [
+    {
+      src: "/src/assets/placeholder-dark-clouds-pitcairn-flight-academy-instrument-rating.webp",
+      alt: "Flight training at KPTW",
+    },
+    {
+      src: "/src/assets/placeholder-dark-clouds-pitcairn-flight-academy-instrument-rating.webp",
+      alt: "Student pilot in training",
+    },
+    {
+      src: "/src/assets/placeholder-dark-clouds-pitcairn-flight-academy-instrument-rating.webp",
+      alt: "General aviation aircraft at Heritage Field",
+    },
+  ],
+};
+
+const valueAdvantageData = {
+  eyebrow: "Pitcairn Flight Academy",
+  title: "A Smarter Way to Learn to Fly",
+  headline: "Why Students<br/>Choose Pitcairn",
+  subtitle: "Safety. Structure. Support.",
+  description: [
+    'Founded by pilots with decades of real-world experience, Pitcairn Flight Academy was built to offer <strong class="text-sky-600">better instruction, not shortcuts</strong>. Every student receives personalized guidance rooted in proven training standards.',
+
+    'Train at <strong class="text-sky-600">Heritage Field (KPTW)</strong>, a highly regarded general aviation airport offering uncongested airspace, efficient operations, and an ideal environment for student pilots.',
+
+    'With <strong class="text-sky-600">experienced CFIs, flexible scheduling</strong>, and a strong emphasis on aeronautical decision-making, we prepare pilots not just to pass checkrides—but to fly safely for life.',
+  ],
+  bodyCopy: [
+    {
+      title: "Student-Friendly Airspace",
+      text: "Train in uncongested airspace that allows more hands-on flying time and less waiting on the ground.",
+    },
+    {
+      title: "Experienced Instructors",
+      text: "Learn from highly credentialed CFIs who tailor training to your pace, goals, and learning style.",
+    },
+    {
+      title: "Structured Yet Flexible",
+      text: "Benefit from structured training syllabi with the flexibility needed for part-time or accelerated students.",
+    },
+  ],
+  stats: [
+    { value: "KPTW", label: "Home airport built for training" },
+    { value: "CFI / CFII", label: "Highly experienced instructor team" },
+    { value: "Safety-First", label: "Decision-making focused instruction" },
+    { value: "Flexible", label: "Part-time & career-track friendly" },
+  ],
+  cta: {
+    text: "Start Training",
+    href: "/enroll",
+  },
+  image: {
+    src: "/src/assets/placeholder-dark-clouds-pitcairn-flight-academy-instrument-rating.webp",
+    alt: "Pitcairn Flight Academy aircraft",
+  },
+  imageCentering: "object-[60%_50%]",
+};
+
+const roadmapData = {
+  eyebrow: "Your Training Journey",
+  headline: "Cleared for Takeoff<br/> in 4 Simple Steps",
+  cards: [
+    {
+      title: "Book a Discovery Flight",
+      text: "Take the controls for the first time and experience flying from Heritage Field.",
+      icon: "flight",
+    },
+    {
+      title: "Meet Your Instructor",
+      text: "Work with an experienced CFI to build a training plan around your goals.",
+      icon: "instructor",
+    },
+    {
+      title: "Train & Progress",
+      text: "Advance through structured lessons focused on safety, skill, and confidence.",
+      icon: "train",
+    },
+    {
+      title: "Earn Your Certificate",
+      text: "Complete your checkride prepared, confident, and ready to fly.",
+      icon: "wings",
+    },
+  ],
+};
+
+const locationData = {
+  eyebrow: "Ideal Training Location",
+  headline: "Train Where<br/> Students Thrive",
+  bodyCopy:
+    "Based at Heritage Field Airport (KPTW) in Pottstown, Pennsylvania, Pitcairn Flight Academy offers access to uncongested airspace, efficient operations, and real-world flying conditions—perfect for student pilots at every stage.",
+};
+
+const finalCtaData = {
+  eyebrow: "Ready to Fly?",
+  headline: "Your Aviation Journey<br>Begins Here",
+  bodyCopy:
+    "Whether you are looking for your first flight, aircraft maintenance,<br> or fueling services, {COMPANY_NAME} is ready to serve you.",
+  cta: {
+    text: "Schedule a Visit",
+    subtext: `Call us directly at ${PHONE_NUMBER}`,
+  },
+  image: {
+    src: "/src/assets/placeholder-dark-clouds-pitcairn-flight-academy-instrument-rating.webp",
+    alt: "imagePlaceholder",
+  },
+};
+
+const teamCultureData = {
+  eyebrow: "Meet the Team",
+  headline: "Professional Mentorship<br> in a Family Environment",
+  bodyCopy:
+    "At {COMPANY_NAME}, you aren't just a number. From our President Jeff Haney to our Shop Lead Palomo Olmedo, our entire team is dedicated to your safety and progress. We offer private briefing rooms, a comfortable break area, and a supportive culture that feels like family.",
+  cta: {
+    text: "Meet Our Staff",
+    href: "/about",
+  },
+  image: {
+    src: "/src/assets/placeholder-dark-clouds-pitcairn-flight-academy-instrument-rating.webp",
+    alt: "imagePlaceholder",
+  },
+};
+
+const testimonials = [
+  {
+    quote:
+      "{COMPANY_NAME}'s transparent pricing and professional instruction exceeded my expectations. No hidden costs, no surprises—just quality training with airline captains.",
+    author: "Peter Gibbons",
+    role: "Commercial Pilot & CFI",
+    rating: 5,
+  },
+  {
+    quote:
+      "The multi-engine training at  was exceptional. Real IMC flying, immediate checkride scheduling, and instructors who genuinely care about your success.",
+    author: "Sarah Johnson",
+    role: "Regional Airline First Officer",
+    rating: 5,
+  },
+  {
+    quote:
+      "From zero experience to regional airline first officer in 24 months. 's Zero to Airlines program delivered everything they promised.",
+    author: "Mike Reynolds",
+    role: "SkyWest Airlines First Officer",
+    rating: 5,
+  },
+  {
+    quote:
+      "The professionalism here is military-grade. The transition from GA to a structured Part 141 environment was seamless thanks to the senior cadre's mentorship. If you are serious about the majors, this is the only place to train.",
+    author: "David Chen",
+    role: "Corporate Pilot",
+    rating: 5,
+  },
+  {
+    quote:
+      "Best maintenance team I have ever seen. The planes are high-quality and reliable.",
+    author: "James Miller",
+    role: "Private Pilot",
+    rating: 5,
+  },
+  // {
+  //   quote: "Finally a school that treats you like a future colleague rather than just a number.",
+  //   author: "Emily Watson",
+  //   role: "CFI Student",
+  //   rating: 5,
+  // },
+  // {
+  //   quote: "Joining  was joining a family of wingmen. The network they offer is as valuable as the ratings themselves. I had multiple interview invites before even finishing my hours because of their industry reputation.",
+  //   author: "Robert Vance",
+  //   role: "Commercial Multi-Engine Pilot",
+  //   rating: 5,
+  // },
+];
+
+const mentorshipData = {
+  eyebrow: "The {COMPANY_NAME} Legacy",
+  title: "Where Family Values<br>Meet Professional Precision and Care",
+  quote:
+    "We don’t just train students; we mentor future colleagues. At {COMPANY_NAME}, you’re part of a family-owned legacy that has served Fox Field for over two decades.",
+  quoteAuthor: "President Jeff Haney",
+  description:
+    'Founded by Mike Haney in 1988 and led today by Jeff and Jessica, {COMPANY_NAME} is a <strong class="text-sky-600">one-stop aviation hub</strong>. By training at an active FAA Part 145 Repair Station and FBO, you gain a professional edge that \'pilot mills\' can\'t match. You’ll learn in a <strong class="text-sky-600">modern, glass-panel fleet</strong> and benefit from our exclusive <strong class="text-sky-600">multi-engine training</strong>—all while supported by a team that treats your success as a personal mission.',
+  image: {
+    src: "/src/assets/placeholder-dark-clouds-pitcairn-flight-academy-instrument-rating.webp",
+    alt: "imagePlaceholder",
+  },
+  cta: {
+    text: "Contact Us",
+    href: "/contact",
+  },
+};
+
+const metaProps = {
+  siteTitle: "{COMPANY_NAME} | Professional Pilot Training in North Carolina",
+  siteDescription:
+    "Visit {COMPANY_NAME} at Wayne Executive Jetport. Contact our team to schedule a tour, discuss financing, or start your professional flight training journey.",
+  siteKeywords:
+    "contact  Aviation, flight school tour, pilot training info, Wayne Executive Jetport address,  phone number, aviation academy North Carolina",
+};
+---
+
+<BaseLayout {...metaProps}>
+  <HeroLandingPage data={heroData} />
+  <IntroductionSection {...valuePropositionData} />
+  <ValueProposition data={valueAdvantageData} />
+  <RoadmapSection data={roadmapData} />
+  <SocialProofSection data={socialProofData} />
+  <SocialProofLeftSection data={repairStationData} />
+  <ImageSliderWithCopySection data={imageSliderData} />
+  <Testimonials testimonials={testimonials} />
+  <ProgramsOverviewSection />
+  <TrainingPhilosophySection data={mentorshipData} />
+  <TeamAndCultureSection data={teamCultureData} />
+  <BlogFeed />
+  <LocationSection data={locationData} />
+  <FinalCTASection data={finalCtaData} />
+</BaseLayout>

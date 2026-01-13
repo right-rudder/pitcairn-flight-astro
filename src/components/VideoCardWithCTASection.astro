@@ -1,0 +1,90 @@
+---
+interface Props {
+  title: string;
+  subtitle: string;
+  description: string;
+  videoSrc: string;
+  poster?: string;
+  textSide?: string;
+  cta?: {
+    text: string;
+    href: string;
+  };
+}
+
+const {
+  title,
+  subtitle,
+  description,
+  videoSrc,
+  poster,
+  textSide = "left",
+  cta,
+} = Astro.props;
+
+const isTextLeft = textSide === "left";
+---
+
+<section class="py-16 md:p-20 bg-linear-to-br muted-50">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 lg:px-12">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <div
+        class={`
+          flex flex-col gap-6 order-2 
+          ${isTextLeft ? "lg:order-1 items-start text-left" : "lg:order-2 lg:items-end lg:text-right"}
+        `}
+      >
+        <div class="flex flex-col gap-2 w-full">
+          <span
+            class={`subtitle !text-monza-600 flex flex-col gap-2 w-full ${isTextLeft ? "items-start" : "lg:items-end"}`}
+          >
+            {subtitle}
+          </span>
+
+          <h2 class="title !text-lucky-950">
+            {title}
+          </h2>
+
+          <p
+            class="text-lg text-gray-600 leading-relaxed"
+            set:html={description}
+          />
+        </div>
+
+        {
+          cta && (
+            <div
+              class={`w-full flex ${isTextLeft ? "justify-start" : "justify-start lg:justify-end"}`}
+            >
+              <a
+                href={cta.href}
+                class="w-full lg:w-auto px-8 btn-primary text-center shadow"
+              >
+                {cta.text}
+              </a>
+            </div>
+          )
+        }
+      </div>
+
+      <div
+        class={`
+          order-1 h-full flex relative
+          ${isTextLeft ? "lg:order-2 justify-start lg:justify-end" : "lg:order-1 justify-start"}
+        `}
+      >
+        <div class="rounded-2xl overflow-hidden shadow-2xl bg-sky-950 h-fit">
+          <video
+            src={videoSrc}
+            poster={poster}
+            autoplay
+            loop
+            muted
+            controls
+            playsinline
+            class="h-[750px] w-auto object-contain"></video>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

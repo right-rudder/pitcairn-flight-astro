@@ -1,0 +1,220 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { getCollection } from "astro:content";
+import type { GetStaticPaths } from "astro";
+import ImageWithZoomEffect from "../../components/ProgramSlug/ImageWithZoomEffect.astro";
+import BlogPostCard from "../../components/Blog/BlogPostCard.astro";
+import ImageComp from "../../components/ImageComp.astro";
+import Hero75 from "../../components/Hero75.astro";
+import CTASection from "../../components/CTASection.astro";
+
+export const getStaticPaths = (async () => {
+  const blogPosts = await getCollection("blog");
+  return blogPosts.map((post) => ({
+    params: { slug: post.slug },
+    props: { post },
+  }));
+}) satisfies GetStaticPaths;
+
+const { post } = Astro.props;
+const { Content } = await post.render();
+
+const formatDate = (date: Date) => {
+  return new Intl.DateTimeFormat("en-US", {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  }).format(date);
+};
+
+const allPosts = await getCollection("blog");
+const relatedPosts = post.data.tags
+  ? allPosts
+      .filter(
+        (p) =>
+          p.slug !== post.slug &&
+          p.data.tags?.some((tag) => post.data.tags?.includes(tag))
+      )
+      .slice(0, 3)
+  : [];
+const eagleAirLogo = "/src/assets/-logo-vertical.png";
+
+const heroData = {
+  image: {
+    src: post.data.image || "/src/assets/-Multiengine-training.jpg",
+    alt: post.data.title || "Background",
+  },
+  upperHeader: "Latest Insights",
+  title:
+    post.data.title || "Stay Informed <br> About Aviation and Flight Training",
+  subTitle:
+    post.data.description ||
+    "Explore articles, tips, and updates from {COMPANY_NAME}. Learn from our instructors, discover industry news, and enhance your pilot knowledge.",
+  cta: [
+    { url: "/new-to-flying", text: "New to Flying?" },
+    { url: "/about", text: "Meet Our Team" },
+  ],
+};
+
+const ctaData = {
+  title: "Define Your Mission. Let’s Reach the Majors Together.",
+  description:
+    "Your first step at  is defining that goal, as it will shape your standards, timeline, and path to the cockpit. Whether you are aiming for the airlines or mastering a new rating, we are here to provide the roadmap and the mentorship to get you there. Define your mission today, and let’s start your training plan.",
+  image: {
+    src: "/src/assets/sebastian-zzWYD-tc_jI-unsplash.jpg",
+    alt: "Training aircraft in flight",
+  },
+  primaryCTA: {
+    text: "Schedule a Tour",
+    href: "/contact",
+  },
+  secondaryCTA: {
+    text: "Enroll Now",
+    href: "/enroll",
+  },
+};
+
+const metaProps = {
+  siteTitle: `${post.data.title} | {COMPANY_NAME}`,
+  siteDescription:
+    post.data.description ||
+    "Stay updated with the latest flight training insights, pilot career advice, and academy news from the experts at {COMPANY_NAME}.",
+  siteKeywords: `${post.data.title},  Aviation blog, flight training tips, aviation news North Carolina, professional pilot insights`,
+};
+---
+
+<BaseLayout
+  siteTitle={`${post.data.title} | {COMPANY_NAME} Blog`}
+  siteDescription={post.data.description}
+  siteImage={post.data.image}
+>
+  <Hero75 data={heroData} />
+  <article class="py-16 px-4 bg-muted-50 lg:bg-muted-100">
+    <div class="w-full lg:max-w-6xl 2xl:max-w-7xl mx-auto">
+      <div class="bg-muted-50 lg:shadow-lg p-8 lg:p-12 mb-8 lg:rounded-lg">
+        {
+          post.data.image && (
+            <div class="mb-12 overflow-hidden">
+              <ImageWithZoomEffect
+                src={post.data.image}
+                alt={post.data.title}
+                class="w-full h-96 object-cover rounded-lg"
+              />
+            </div>
+          )
+        }
+        <h1 class="title !text-lucky-950 !mb-6">{post.data.title}</h1>
+        <div
+          class="flex items-center gap-3 text-sm text-black my-6 border-b border-gray-300 pb-4"
+        >
+          <div
+            class="p-3 rounded-full flex items-center justify-center border-2 border-gray-300"
+          >
+            <ImageComp
+              class="w-5"
+              src={eagleAirLogo}
+              alt="{COMPANY_NAME} logo"
+            />
+          </div>
+          <span>{post.data.author}</span>
+          <span>|</span>
+          <time datetime={post.data.pubDate.toISOString()}>
+            {formatDate(post.data.pubDate)}
+          </time>
+        </div>
+
+        {
+          post.data.tags && post.data.tags.length > 0 && (
+            <div class="flex flex-wrap gap-2 mb-8">
+              {post.data.tags.map((tag) => (
+                <span class="bg-gray-900 text-white border-[1.5px] border-gray-300 text-sm px-4 py-2 rounded-full font-sans">
+                  {tag}
+                </span>
+              ))}
+            </div>
+          )
+        }
+
+        <div class="prose prose-lg max-w-none text-black font-sans">
+          <Content />
+        </div>
+      </div>
+
+      <div class="bg-gray-900 lg:shadow-lg p-8 mb-8 border-b-6 border-gray-500">
+        <h3 class="title !text-3xl !mx-0 !text-muted-50 !mb-4">
+          Share this article
+        </h3>
+        <div class="flex gap-4">
+          <a
+            href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(post.data.title)}&url=${encodeURIComponent(Astro.url.toString())}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn-primary"
+          >
+            Twitter
+          </a>
+          <a
+            href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(Astro.url.toString())}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn-primary"
+          >
+            Facebook
+          </a>
+          <a
+            href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(Astro.url.toString())}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn-primary"
+          >
+            LinkedIn
+          </a>
+        </div>
+      </div>
+    </div>
+  </article>
+  <section class="bg-gray-900 p-8">
+    <div class="max-w-7xl mx-auto flex flex-col space-y-4">
+      {
+        relatedPosts.length > 0 && (
+          <div class="flex flex-col">
+            <p class="mx-auto subtitle !text-monza-600">Read More</p>
+            <h2 class="title !text-muted-50 !mb-8 text-center">
+              Related Articles
+            </h2>
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+              {relatedPosts.map((relatedPost) => (
+                <BlogPostCard post={relatedPost} />
+              ))}
+            </div>
+          </div>
+        )
+      }
+
+      <div class="mt-12 text-center flex w-full justify-center lg:justify-end">
+        <a
+          href="/blog"
+          class="group btn-primary !px-6 !py-4 !text-lg max-w-64 inline-block"
+        >
+          <span>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="text-muted-50 group-hover:text-monza-600 w-5"
+              viewBox="0 0 24 24"
+              ><g fill="none"
+                ><path
+                  d="M24 0v24H0V0zM12.593 23.258l-.011.002l-.071.035l-.02.004l-.014-.004l-.071-.035q-.016-.005-.024.005l-.004.01l-.017.428l.005.02l.01.013l.104.074l.015.004l.012-.004l.104-.074l.012-.016l.004-.017l-.017-.427q-.004-.016-.017-.018m.265-.113l-.013.002l-.185.093l-.01.01l-.003.011l.018.43l.005.012l.008.007l.201.093q.019.005.029-.008l.004-.014l-.034-.614q-.005-.019-.02-.022m-.715.002a.02.02 0 0 0-.027.006l-.006.014l-.034.614q.001.018.017.024l.015-.002l.201-.093l.01-.008l.004-.011l.017-.43l-.003-.012l-.01-.01z"
+                ></path><path
+                  fill="currentColor"
+                  d="M7.16 10.972A7 7 0 0 1 19.5 15.5a1.5 1.5 0 1 0 3 0c0-5.523-4.477-10-10-10a9.97 9.97 0 0 0-7.418 3.295L4.735 6.83a1.5 1.5 0 1 0-2.954.52l1.042 5.91c.069.391.29.74.617.968c.403.282.934.345 1.385.202l5.644-.996a1.5 1.5 0 1 0-.52-2.954l-2.788.491Z"
+                ></path></g
+              ></svg
+            >
+          </span>
+          Back to Blog
+        </a>
+      </div>
+    </div>
+  </section>
+  <CTASection {...ctaData} />
+</BaseLayout>

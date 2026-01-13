@@ -1,0 +1,109 @@
+---
+import { formatDate } from "./utils";
+import type { CollectionEntry } from "astro:content";
+import ImageComp from "../ImageComp.astro";
+import { FaArrowRight, FaCalendarAlt } from "react-icons/fa";
+
+interface Props {
+  blogEntry: CollectionEntry<"blog">;
+  smallCard?: boolean;
+  index?: number;
+}
+
+const { blogEntry, smallCard = false, index = 0 } = Astro.props;
+
+// Dynamic classes based on card type
+const containerClasses = smallCard
+  ? "flex flex-col sm:flex-row h-full" // Removed gap-4, handling spacing via padding in content
+  : "flex flex-col h-full";
+
+const imageContainerClasses = smallCard
+  ? "w-full sm:w-2/5 h-48 sm:h-auto relative overflow-hidden shrink-0" // Increased width slightly to 2/5 for better balance
+  : "w-full h-64 md:h-80 relative overflow-hidden shrink-0";
+
+const contentClasses = smallCard
+  ? "flex-1 p-6 flex flex-col justify-center" // Added p-6 to give text breathing room on all sides
+  : "p-8 flex flex-col flex-1";
+---
+
+<a
+  class={`hover:cursor-pointer group block bg-slate-900 overflow-hidden border-t-4 border-muted-700 hover:border-sky-600 transition-all duration-500 ease-out hover:-translate-y-1 shadow-lg hover:shadow-2xl hover:shadow-black/50 opacity-0 translate-y-8 blog-card`}
+  style={`transition-delay: ${index * 150}ms;`}
+  data-astro-prefetch
+>
+  <article class={containerClasses}>
+    {/* Image Section */}
+    <div class={imageContainerClasses}>
+      <ImageComp
+        class="absolute inset-0 size-full object-cover transition-transform duration-700 group-hover:scale-110 opacity-90 group-hover:opacity-100"
+        src={blogEntry.data.image}
+        alt={blogEntry.data.title}
+      />
+      <div
+        class="absolute inset-0 bg-gradient-to-t from-slate-950/60 to-transparent opacity-60 group-hover:opacity-40 transition-opacity duration-500"
+      >
+      </div>
+    </div>
+
+    {/* Content Section */}
+    <div class={contentClasses}>
+      {/* Meta Data */}
+      <div
+        class="flex items-center gap-3 text-xs font-bold uppercase tracking-wider text-sky-500 mb-3"
+      >
+        <span class="flex items-center gap-1.5">
+          <FaCalendarAlt />
+          {formatDate(blogEntry.data.pubDate)}
+        </span>
+        {
+          /* Optional: Add Author if needed, but keeping it clean for small cards often helps */
+        }
+        <span class="w-1 h-1 bg-slate-700 rounded-full"></span>
+        <span class="text-slate-400 truncate max-w-[100px]">
+          {blogEntry.data.author}
+        </span>
+      </div>
+
+      <h3
+        class={`font-title font-bold text-white transition-colors duration-300 group-hover:text-sky-500 mb-3 ${
+          smallCard ? "text-lg md:text-xl line-clamp-2" : "text-2xl md:text-3xl"
+        }`}
+      >
+        {blogEntry.data.title}
+      </h3>
+
+      <p
+        class={`text-slate-300 text-sm leading-relaxed mb-4 ${smallCard ? "line-clamp-2" : "line-clamp-3"}`}
+      >
+        {blogEntry.data.description}
+      </p>
+
+      <div
+        class={`mt-auto flex items-center gap-2 text-sm font-bold uppercase tracking-widest text-white group-hover:text-sky-500 transition-colors`}
+      >
+        Read Article
+        <FaArrowRight
+          class="text-sky-600 group-hover:translate-x-1 transition-transform duration-300"
+        />
+      </div>
+    </div>
+  </article>
+</a>
+
+<script>
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.remove("opacity-0", "translate-y-8");
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.1 }
+  );
+
+  document.querySelectorAll(".blog-card").forEach((card) => {
+    observer.observe(card);
+  });
+</script>

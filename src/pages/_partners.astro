@@ -1,0 +1,296 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Hero75 from "../components/Hero75.astro";
+import ImageComp from "../components/ImageComp.astro";
+import CTASectionWithGradientCover from "../components/CTASectionWithGradientCover.astro";
+
+const heroData = {
+  image: {
+    src: "/src/assets/20221201_062725.jpg",
+    alt: "Our Partners",
+  },
+  title: "Our Partners",
+  subTitle:
+    "This page includes third party organizations that may be relevant to pilots pursuing professional training and career development. {COMPANY_NAME} does not make guarantees about outcomes or services provided by third parties.",
+};
+
+const partners = [
+  {
+    name: "Checked and Set",
+    description:
+      "Aviation career consulting and guidance for pilots navigating professional development.",
+    website: "https://checkedandset.net/",
+    logo: "/src/assets/checked-and-set.png",
+    category: "Career Services",
+  },
+  {
+    name: "Emerald Coast Interview Consulting",
+    description:
+      "Interview preparation and consulting services for pilots pursuing professional opportunities.",
+    website: "https://emeraldcoastinterviewconsulting.com/",
+    logo: "/src/assets/ECIC-LOGO2.webp",
+    category: "Career Services",
+  },
+  {
+    name: "Ameriflight",
+    description:
+      "Cargo and charter operations that may be relevant to pilots researching professional aviation pathways.",
+    website: "https://w3.ameriflight.com/",
+    logo: "/src/assets/ameriflight.png",
+    category: "Operators",
+  },
+  {
+    name: "The Pilot Network",
+    description:
+      "A pilot network offering resources and connections within the aviation community.",
+    website: "https://thepilotnetwork.com/",
+    logo: "/src/assets/TPN-Logo-Words-Logo-Black-Transparent_540x.png",
+    category: "Networking",
+  },
+  {
+    name: "Meritize",
+    description:
+      "A financing provider that may offer education loan options applicable to flight training.",
+    website: "https://www.meritize.com/",
+    logo: "/src/assets/Meritize-logo-e1680099362903.png",
+    category: "Financing",
+  },
+  {
+    name: "Bluewater Advisors",
+    description:
+      "Financial planning and advisory services that may be helpful for long-term personal financial planning.",
+    website: "https://www.bluewater-advisors.com/",
+    logo: "/src/assets/BlueWater.png",
+    category: "Financial Services",
+  },
+];
+
+const ctaData = {
+  title: "Define Your Mission. Let’s Reach the Majors Together.",
+  description:
+    "Your first step at  is defining that goal, as it will shape your standards, timeline, and path to the cockpit. Whether you are aiming for the airlines or mastering a new rating, we are here to provide the roadmap and the mentorship to get you there. Define your mission today, and let’s start your training plan.",
+  image: {
+    src: "/src/assets/sebastian-zzWYD-tc_jI-unsplash.jpg",
+    alt: "Training aircraft in flight",
+  },
+  primaryCTA: {
+    text: "Schedule a Tour",
+    href: "/contact",
+  },
+  secondaryCTA: {
+    text: "Enroll Now",
+    href: "/enroll",
+  },
+};
+
+const categories = [...new Set(partners.map((partner) => partner.category))];
+---
+
+<BaseLayout
+  siteTitle="Partners | {COMPANY_NAME}"
+  siteDescription="A list of third party organizations that may be relevant to pilots pursuing professional training and career development."
+>
+  <Hero75 data={heroData} />
+
+  <section class="py-8 md:py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-5 md:px-8 lg:px-12">
+      <div class="max-w-4xl mx-auto text-center mb-6">
+        <h2 class="title !text-lucky-950">Additional Resources</h2>
+        <p class="text-xl text-gray-600 leading-relaxed">
+          Professional pilot training involves more than flight and ground
+          instruction. Some students choose to use third party services for
+          financing, interview preparation, networking, or personal financial
+          planning. The organizations listed below are provided as resources to
+          explore.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-8 md:py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-5 md:px-8 lg:px-12">
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {
+          partners.map((partner) => (
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden border-2 transition-all hover:scale-105 hover:shadow-xl hover:-translate-y-1 border-gray-200">
+              <div class="p-6">
+                <div class="flex items-center justify-between mb-4">
+                  <span class="bg-monza-100 text-monza-700 text-xs font-bold px-3 py-1 rounded-full">
+                    {partner.category}
+                  </span>
+                </div>
+
+                <div class="bg-white rounded-lg flex items-center justify-center h-32 mb-4 p-4">
+                  <ImageComp
+                    src={partner.logo}
+                    alt={`${partner.name} Logo`}
+                    class="w-full h-full object-contain"
+                  />
+                </div>
+
+                <h3 class="text-xl hidden sr-only font-bold text-gray-900 mb-3">
+                  {partner.name}
+                </h3>
+
+                <p class="text-gray-700 leading-relaxed mb-6 min-h-[100px]">
+                  {partner.description}
+                </p>
+
+                <a
+                  href={partner.website}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="block w-full text-center bg-monza-600 hover:bg-monza-700 text-white px-6 py-3 rounded-lg font-semibold transition-colors"
+                >
+                  Visit Website
+                  <svg
+                    class="w-4 h-4 inline-block ml-2"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                    />
+                  </svg>
+                </a>
+              </div>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 md:py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-5 md:px-8 lg:px-12">
+      <div class="text-center mb-12">
+        <h2 class="title !text-lucky-950">How These Resources Can Help</h2>
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+          Students often use third party resources to support planning,
+          preparation, and long-term decision making.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div class="text-center">
+          <div
+            class="w-16 h-16 bg-monza-100 rounded-full flex items-center justify-center mx-auto mb-4"
+          >
+            <svg
+              class="w-8 h-8 text-monza-600"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+              ></path>
+            </svg>
+          </div>
+          <h3 class="font-bold text-gray-900 mb-2">Career Preparation</h3>
+          <p class="text-gray-600">
+            Support for interview readiness and professional planning
+          </p>
+        </div>
+
+        <div class="text-center">
+          <div
+            class="w-16 h-16 bg-monza-100 rounded-full flex items-center justify-center mx-auto mb-4"
+          >
+            <svg
+              class="w-8 h-8 text-monza-600"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+              ></path>
+            </svg>
+          </div>
+          <h3 class="font-bold text-gray-900 mb-2">Financing Research</h3>
+          <p class="text-gray-600">
+            Exploring funding options that may apply to flight training
+          </p>
+        </div>
+
+        <div class="text-center">
+          <div
+            class="w-16 h-16 bg-monza-100 rounded-full flex items-center justify-center mx-auto mb-4"
+          >
+            <svg
+              class="w-8 h-8 text-monza-600"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
+              ></path>
+            </svg>
+          </div>
+          <h3 class="font-bold text-gray-900 mb-2">Networking</h3>
+          <p class="text-gray-600">
+            Connecting with other pilots and aviation professionals
+          </p>
+        </div>
+
+        <div class="text-center">
+          <div
+            class="w-16 h-16 bg-monza-100 rounded-full flex items-center justify-center mx-auto mb-4"
+          >
+            <svg
+              class="w-8 h-8 text-monza-600"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
+              ></path>
+            </svg>
+          </div>
+          <h3 class="font-bold text-gray-900 mb-2">Planning Support</h3>
+          <p class="text-gray-600">
+            Resources that may help with long-term personal planning
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 md:py-24 bg-gray-900 text-white">
+    <div class="max-w-7xl mx-auto px-5 md:px-8 lg:px-12 text-center">
+      <h2 class="text-3xl md:text-4xl font-bold mb-6">
+        Interested in Becoming a Partner?
+      </h2>
+      <p class="text-xl text-muted-50 mb-10 max-w-3xl mx-auto">
+        If your organization supports professional pilot training, we welcome
+        the opportunity to connect.
+      </p>
+      <a
+        href="/contact"
+        class="inline-flex items-center justify-center bg-monza-600 text-white px-8 py-4 rounded-lg font-bold text-lg shadow-lg transition-all duration-300 ease-in-out hover:bg-white hover:text-monza-600 over:shadow-xl"
+      >
+        Contact Us About Partnerships
+      </a>
+    </div>
+  </section>
+  <CTASectionWithGradientCover {...ctaData} />
+</BaseLayout>

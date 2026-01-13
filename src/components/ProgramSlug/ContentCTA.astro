@@ -1,0 +1,56 @@
+---
+import ImageWithZoomEffect from './ImageWithZoomEffect.astro';
+interface Props {
+  data: {
+    mainImage?: string;
+    mainImageAlt?: string;
+    title?: string;
+    upperheader?: string;
+    descriptionParagraphs?: string[];
+  };
+}
+
+const { data } = Astro.props;
+---
+
+<section class="py-16 px-4 bg-lucky-950 relative">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 lg:px-12">
+    <div class="flex flex-col lg:flex-row gap-12 items-stretch">
+      
+      <div class="w-full lg:w-1/2 order-1 flex">
+        {data.mainImage && (
+          <div class="relative w-full min-h-[400px] h-[700px]">
+            <ImageWithZoomEffect 
+              src={data.mainImage} 
+              alt={data.mainImageAlt || data.title || "Program details"} 
+              class="absolute inset-0 h-full w-full object-cover shadow-2xl"
+            />
+          </div>
+        )}
+      </div>
+
+      <div class="w-full lg:w-1/2 order-2 space-y-4 flex flex-col justify-center">
+        {data.upperheader && (
+          <div class="block">
+             <span class="subtitle">
+              {data.upperheader}
+            </span>
+          </div>
+        )}
+        
+        {data.title && <h2 class="title !text-5xl !text-muted-50 md:text-4xl">{data.title}</h2>}
+        
+        <div class="paragraph-text">
+          {data.descriptionParagraphs?.map((p) => <p>{p}</p>)}
+        </div>
+
+        <div class="pt-4">
+            <a href="/contact" class="inline-block bg-muted-50 font-sans font-bold text-madison-950 px-4 py-3 transition-all duration-300 hover:scale-105 hover:shadow-2xl">
+                Discuss Your Options
+            </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>

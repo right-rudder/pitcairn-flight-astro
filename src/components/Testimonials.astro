@@ -1,0 +1,123 @@
+---
+import { COMPANY_NAME } from "../data/consts";
+
+interface Testimonial {
+  quote: string;
+  author: string;
+  role?: string;
+  rating?: number;
+}
+
+interface Props {
+  testimonials: Testimonial[];
+}
+
+const { testimonials } = Astro.props;
+---
+
+<section
+  class="py-16 md:py-24 bg-sky-950 text-slate-50 overflow-hidden relative"
+>
+  <div
+    class="absolute top-0 left-0 w-96 h-96 bg-sky-600 rounded-full blur-[120px] opacity-30 -translate-x-1/2 -translate-y-1/2"
+  >
+  </div>
+  <div
+    class="absolute bottom-0 right-0 w-96 h-96 bg-sky-600 rounded-full blur-[120px] opacity-30 translate-x-1/2 translate-y-1/2"
+  >
+  </div>
+
+  <div class="max-w-7xl mx-auto px-5 md:px-8 lg:px-12 relative z-10">
+    <div class="text-center mb-12 md:mb-16">
+      <h2 class="!font-sans !font-medium uppercase text-sky-600 mb-2">
+        WHAT PILOTS SAY ABOUT US
+      </h2>
+      <h3
+        class="title !text-[2.5rem] uppercase !font-main-header tracking-wide !text-slate-50e mb-4"
+      >
+        Don't Take Our Word For It
+      </h3>
+      <p class="font-sans !text-slate-50 max-w-xl mx-auto">
+        We don't just train students; we build wingmen. See what the industry's
+        most respected pilots have to say about the {COMPANY_NAME} standard.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {
+        testimonials.map((testimonial, index) => {
+          const bentoIndex = index % 7;
+          const colSpan =
+            bentoIndex === 3 || bentoIndex === 6
+              ? "lg:col-span-2"
+              : "lg:col-span-1";
+
+          return (
+            <div
+              class={`testimonial-card opacity-0 translate-y-10 bg-neutral-300 border-[1.5px] border-gray-300 rounded-sm p-8 flex flex-col justify-between transition-all duration-700 ease-in-out hover:bg-slate-50 hover:-translate-y-2 hover:shadow-2xl hover:shadow-black/50 ${colSpan}`}
+              style={`transition-delay: ${index * 150}ms;`}
+            >
+              <div>
+                {testimonial.rating && (
+                  <div class="flex gap-1 mb-4">
+                    {Array.from({ length: testimonial.rating }).map(() => (
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        class="w-5 h-5 text-sky-600"
+                        viewBox="0 0 24 24"
+                      >
+                        <g fill="none">
+                          <path d="m12.593 23.258l-.011.002l-.071.035l-.02.004l-.014-.004l-.071-.035q-.016-.005-.024.005l-.004.01l-.017.428l.005.02l.01.013l.104.074l.015.004l.012-.004l.104-.074l.012-.016l.004-.017l-.017-.427q-.004-.016-.017-.018m.265-.113l-.013.002l-.185.093l-.01.01l-.003.011l.018.43l.005.012l.008.007l.201.093q.019.005.029-.008l.004-.014l-.034-.614q-.005-.018-.02-.022m-.715.002a.02.02 0 0 0-.027.006l-.006.014l-.034.614q.001.018.017.024l.015-.002l.201-.093l.01-.008l.004-.011l.017-.43l-.003-.012l-.01-.01z" />
+                          <path
+                            fill="currentColor"
+                            d="M10.92 2.868a1.25 1.25 0 0 1 2.16 0l2.795 4.798l5.428 1.176a1.25 1.25 0 0 1 .667 2.054l-3.7 4.141l.56 5.525a1.25 1.25 0 0 1-1.748 1.27L12 19.592l-5.082 2.24a1.25 1.25 0 0 1-1.748-1.27l.56-5.525l-3.7-4.14a1.25 1.25 0 0 1 .667-2.055l5.428-1.176z"
+                          />
+                        </g>
+                      </svg>
+                    ))}
+                  </div>
+                )}
+
+                <blockquote class="text-slate-950 text-sans  text-lg mb-6 leading-relaxed">
+                  "{testimonial.quote}"
+                </blockquote>
+              </div>
+
+              <div class="border-t border-slate-600 pt-4">
+                <div class="text-sans font-semibold text-slate-950">
+                  {testimonial.author}
+                </div>
+                {testimonial.role && (
+                  <div class="text-sm text-sans  font-semibold text-sky-400">
+                    {testimonial.role}
+                  </div>
+                )}
+              </div>
+            </div>
+          );
+        })
+      }
+    </div>
+  </div>
+</section>
+
+<script>
+  const observerOptions = {
+    root: null,
+    threshold: 0.1,
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.remove("opacity-0", "translate-y-10");
+        entry.target.classList.add("opacity-100", "translate-y-0");
+        observer.unobserve(entry.target);
+      }
+    });
+  }, observerOptions);
+
+  document.querySelectorAll(".testimonial-card").forEach((card) => {
+    observer.observe(card);
+  });
+</script>

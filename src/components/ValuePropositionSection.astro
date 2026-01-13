@@ -1,0 +1,67 @@
+---
+import ImageWithGradientAndText from "./ImageWithGradientAndText.astro";
+import { FaCheckCircle } from "react-icons/fa";
+
+interface Props {
+  data: {
+    eyebrow: string;
+    headline: string;
+    bodyCopy: {
+      title: string;
+      text: string;
+    }[];
+    cta: {
+      text: string;
+      href: string;
+    };
+    image: {
+      src: string;
+      alt: string;
+    };
+  };
+}
+
+const { data } = Astro.props;
+---
+
+<section class="py-16 md:py-24 bg-slate-50 relative overflow-hidden">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 lg:px-12 relative z-10">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+      <div class="order-2 lg:order-1">
+        <p
+          class="text-sky-600 font-bold uppercase tracking-widest text-sm mb-4"
+        >
+          {data.eyebrow}
+        </p>
+        <h2 class="title text-slate-950 mb-8">
+          {data.headline}
+        </h2>
+        <div class="flex flex-col gap-8 mb-10">
+          {
+            data.bodyCopy.map((item) => (
+              <div class="flex gap-4 items-start">
+                <FaCheckCircle className="text-sky-600 text-2xl mt-1 flex-shrink-0" />
+                <div>
+                  <h3 class="text-xl font-bold text-slate-950 mb-2">
+                    {item.title}
+                  </h3>
+                  <p class="text-slate-600 leading-relaxed">{item.text}</p>
+                </div>
+              </div>
+            ))
+          }
+        </div>
+        <a href={data.cta.href} class="btn-primary w-fit">
+          {data.cta.text}
+        </a>
+      </div>
+      <div class="order-1 lg:order-2 h-[500px] lg:h-[700px]">
+        <ImageWithGradientAndText
+          src={data.image.src}
+          alt={data.image.alt}
+          class="w-full h-full object-cover object-[60%_50%] rounded-sm shadow-2xl"
+        />
+      </div>
+    </div>
+  </div>
+</section>

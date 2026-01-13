@@ -1,0 +1,886 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import ImageComp from "../components/ImageComp.astro";
+import { PHONE_NUMBER } from "../data/consts";
+
+const metaProps = {
+  siteTitle: "Pilot Training Financing | {COMPANY_NAME}",
+  siteDescription:
+    "Explore flight school financing options at  Aviation. Secure your future with specialized pilot training loans through our partner, Stratus Financial.",
+  siteKeywords:
+    "flight school financing, pilot training loans, Stratus Financial, pay for flight school, airline pilot training cost,  aviation tuition, aviation student loans",
+};
+---
+
+<BaseLayout {...metaProps}>
+  <!-- Hero Section -->
+  <section
+    class="relative bg-linear-to-b from-gray-900 to-gray-800 text-white py-20 md:py-32"
+  >
+    <div class="absolute inset-0 opacity-20 overflow-hidden">
+      <ImageComp
+        src="/src/assets/mael-balland-QRQHIYyIlp8-unsplash.jpg"
+        alt="Flight training financing"
+        class="w-full h-full object-cover animate-slow-zoom"
+      />
+    </div>
+    <div class="relative max-w-7xl mx-auto px-5 md:px-8 lg:px-12">
+      <div class="max-w-4xl">
+        <div class="inline-block mb-4">
+          <span
+            class="text-sm font-semibold text-muted-100 tracking-wider uppercase bg-muted-950/60 px-4 py-2 rounded-full"
+            >Financing Options</span
+          >
+        </div>
+        <h1
+          class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight"
+        >
+          Make Your Aviation Career Affordable
+        </h1>
+        <p class="text-xl md:text-2xl text-gray-300 leading-relaxed mb-10">
+          The cockpit is within reach. We partner with Stratus Financial to
+          provide lending solutions designed by pilots, for pilots. Secure the
+          funding required for our 8-to-10 month fast-track with a partner that
+          understands the true value of your flight deck seat.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4">
+          <a
+            href="/contact"
+            class="inline-block bg-monza-600 text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-monza-700 transition-colors shadow-lg hover:shadow-xl text-center"
+          >
+            Apply for Financing
+          </a>
+          <a
+            href="/contact"
+            class="inline-block bg-white/10 backdrop-blur-sm text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-white/20 transition-colors border-2 border-white/20 text-center"
+          >
+            Contact Us
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Finance Your Training -->
+  <section class="py-16 md:py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-5 md:px-8 lg:px-12">
+      <div class="max-w-4xl mx-auto text-center mb-12">
+        <h2 class="title !text-lucky-950">
+          Why Finance Your<br />Flight Training?
+        </h2>
+        <p class="text-xl text-gray-700 leading-relaxed">
+          Professional pilot training is an investment in your future career.
+          Financing allows you to start training now while spreading payments
+          over time, getting you to the airlines faster.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8 mb-12">
+        <div class="bg-gray-50 p-8 rounded-xl border border-gray-200">
+          <div
+            class="w-12 h-12 bg-monza-100 rounded-lg flex items-center justify-center mb-4"
+          >
+            <svg
+              class="w-6 h-6 text-monza-600"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+              ></path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 mb-2">
+            Start Training Sooner
+          </h3>
+          <p class="text-gray-700 leading-relaxed">
+            Don't wait years to save the full amount. Begin your training
+            immediately and start earning as a pilot faster, often recouping
+            your investment within the first few years.
+          </p>
+        </div>
+
+        <div class="bg-gray-50 p-8 rounded-xl border border-gray-200">
+          <div
+            class="w-12 h-12 bg-monza-100 rounded-lg flex items-center justify-center mb-4"
+          >
+            <svg
+              class="w-6 h-6 text-monza-600"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"
+              ></path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 mb-2">
+            Flexible Payment Plans
+          </h3>
+          <p class="text-gray-700 leading-relaxed">
+            Choose loan terms that fit your budget—from 5 to 15 years. Lower
+            monthly payments mean you can train full-time without financial
+            stress.
+          </p>
+        </div>
+
+        <div class="bg-gray-50 p-8 rounded-xl border border-gray-200">
+          <div
+            class="w-12 h-12 bg-monza-100 rounded-lg flex items-center justify-center mb-4"
+          >
+            <svg
+              class="w-6 h-6 text-monza-600"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 mb-2">
+            Build Credit History
+          </h3>
+          <p class="text-gray-700 leading-relaxed">
+            Responsible loan repayment builds your credit score, preparing you
+            for future financial needs like car loans, mortgages, and other
+            major purchases.
+          </p>
+        </div>
+      </div>
+
+      <div class="bg-gray-900 border-l-4 border-lucky-600 p-8 rounded-r-xl">
+        <p class="text-lg text-muted-50">
+          <strong
+            >Average first-year regional airline pilot salary: $75,000-$90,000.</strong
+          > Many pilots recoup their training investment within 2-3 years of starting
+          at the airlines, with career earnings potential exceeding $300,000+ as a
+          senior captain at major airlines.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Financing Partners -->
+  <section class="py-16 md:py-24 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-5 md:px-8 lg:px-12">
+      <div class="text-center mb-12">
+        <h2 class="title !text-lucky-950">Our Financing Partner</h2>
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+          has partnered with Stratus Financial to offer competitive rates and
+          flexible terms for your flight training.
+        </p>
+      </div>
+
+      <div class="flex flex-wrap justify-center gap-8 mb-12">
+        <!-- Stratus Financial Partner -->
+        <div
+          class="bg-white rounded-xl shadow-lg p-8 border border-gray-200 max-w-2xl w-full"
+        >
+          <div class="flex items-center justify-between mb-6">
+            <h3 class="text-2xl font-bold text-gray-900">Stratus Financial</h3>
+            <span
+              class="bg-monza-100 text-monza-700 text-xs font-bold px-3 py-1 rounded-full"
+              >THE PILOT'S CHOICE</span
+            >
+          </div>
+          <div class="space-y-4 mb-6">
+            <div class="flex items-start">
+              <svg
+                class="w-5 h-5 text-green-600 mr-3 shrink-0 mt-0.5"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+              </svg>
+              <span class="text-gray-700"
+                >Lending designed <strong
+                  >by flight and ground instructors</strong
+                > who understand the industry.</span
+              >
+            </div>
+            <div class="flex items-start">
+              <svg
+                class="w-5 h-5 text-green-600 mr-3 shrink-0 mt-0.5"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+              </svg>
+              <span class="text-gray-700"
+                >Flexible structures that <strong
+                  >support full-time, high-intensity</strong
+                > training.</span
+              >
+            </div>
+            <div class="flex items-start">
+              <svg
+                class="w-5 h-5 text-green-600 mr-3 shrink-0 mt-0.5"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+              </svg>
+              <span class="text-gray-700"
+                >Funding available for <strong
+                  >the entire $85,000 Professional Track</strong
+                >, including housing.</span
+              >
+            </div>
+            <div class="flex items-start">
+              <svg
+                class="w-5 h-5 text-green-600 mr-3 shrink-0 mt-0.5"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+              </svg>
+              <span class="text-gray-700"
+                >Options for deferment and interest-only payments during your
+                8-10 month training.</span
+              >
+            </div>
+          </div>
+          <a
+            href="https://www.meritize.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="block w-full text-center bg-monza-600 hover:bg-monza-700 text-white px-6 py-3 rounded-lg font-semibold transition-colors"
+          >
+            Apply with Stratus Financial
+          </a>
+        </div>
+      </div>
+
+      <!-- <div class="bg-white rounded-xl shadow-lg p-8 border border-gray-200">
+        <div class="flex items-start">
+          <div
+            class="w-12 h-12 bg-yellow-100 rounded-lg flex items-center justify-center shrink-0 mr-4"
+          >
+            <svg
+              class="w-6 h-6 text-yellow-600"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+              ></path>
+            </svg>
+          </div>
+          <div>
+            <h3 class="text-xl font-bold text-gray-900 mb-2">
+              Other Financing Options Available
+            </h3>
+            <p class="text-gray-700 leading-relaxed">
+               also works with additional lenders including Sallie Mae Career
+              Training Loans, Wells Fargo, and local credit unions. Our
+              admissions team will help you find the best financing option for
+              your situation—including co-signer options and alternative credit
+              considerations.
+            </p>
+          </div>
+        </div>
+      </div> -->
+    </div>
+  </section>
+
+  <!-- Payment Examples -->
+  <section class="py-16 md:py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-5 md:px-8 lg:px-12">
+      <div class="max-w-4xl mx-auto">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            Example Monthly Payments
+          </h2>
+          <p class="text-xl text-gray-600">
+            Estimated monthly payments for training programs at various interest
+            rates and terms.
+          </p>
+        </div>
+
+        <!-- Zero to Airlines Program -->
+        <div
+          class="bg-linear-to-br from-monza-50 to-blue-50 border-2 border-monza-200 rounded-xl p-8 mb-8"
+        >
+          <h3 class="text-2xl font-bold text-gray-900 mb-6">
+            Zero-to-Airlines Career Program ($85,000)
+          </h3>
+          <div class="grid md:grid-cols-3 gap-6">
+            <div class="bg-white rounded-lg p-6 shadow-md">
+              <div class="text-sm text-gray-600 mb-2">
+                5-Year Term @ 7.5% APR
+              </div>
+              <div class="text-3xl font-bold text-lucky-950 mb-1">$1,785</div>
+              <div class="text-sm text-gray-500">/month</div>
+            </div>
+            <div class="bg-white rounded-lg p-6 shadow-md">
+              <div class="text-sm text-gray-600 mb-2">
+                10-Year Term @ 8.0% APR
+              </div>
+              <div class="text-3xl font-bold text-lucky-950 mb-1">$1,087</div>
+              <div class="text-sm text-gray-500">/month</div>
+            </div>
+            <div class="bg-white rounded-lg p-6 shadow-md">
+              <div class="text-sm text-gray-600 mb-2">
+                15-Year Term @ 8.5% APR
+              </div>
+              <div class="text-3xl font-bold text-lucky-950 mb-1">$882</div>
+              <div class="text-sm text-gray-500">/month</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Private Pilot -->
+        <!-- <div class="bg-gray-50 border border-gray-200 rounded-xl p-8 mb-8">
+          <h3 class="text-2xl font-bold text-gray-900 mb-6">
+            Private Pilot License ($15,500)
+          </h3>
+          <div class="grid md:grid-cols-3 gap-6">
+            <div class="bg-white rounded-lg p-6 shadow-md">
+              <div class="text-sm text-gray-600 mb-2">
+                3-Year Term @ 7.5% APR
+              </div>
+              <div class="text-3xl font-bold text-gray-900 mb-1">$479</div>
+              <div class="text-sm text-gray-500">/month</div>
+            </div>
+            <div class="bg-white rounded-lg p-6 shadow-md">
+              <div class="text-sm text-gray-600 mb-2">
+                5-Year Term @ 8.0% APR
+              </div>
+              <div class="text-3xl font-bold text-gray-900 mb-1">$314</div>
+              <div class="text-sm text-gray-500">/month</div>
+            </div>
+            <div class="bg-white rounded-lg p-6 shadow-md">
+              <div class="text-sm text-gray-600 mb-2">
+                7-Year Term @ 8.5% APR
+              </div>
+              <div class="text-3xl font-bold text-gray-900 mb-1">$245</div>
+              <div class="text-sm text-gray-500">/month</div>
+            </div>
+          </div>
+        </div> -->
+
+        <div class="bg-yellow-50 border-l-4 border-yellow-400 p-6 rounded-r-lg">
+          <p class="text-sm text-gray-700">
+            <strong>*Payment examples are estimates only.</strong> Actual rates, terms,
+            and monthly payments will vary based on creditworthiness, loan amount,
+            chosen lender, and current market conditions. Contact our admissions team
+            for personalized financing quotes.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How to Apply -->
+  <section id="apply" class="py-16 md:py-24 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-5 md:px-8 lg:px-12">
+      <div class="max-w-4xl mx-auto">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            How to Apply for Financing
+          </h2>
+          <p class="text-xl text-gray-600">
+            Getting approved for flight training financing is simple and
+            straightforward.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-6 mb-12">
+          <div
+            class="text-center bg-white rounded-xl shadow-lg p-10 border border-gray-200 hover:shadow-xl hover:scale-105 transition-all duration-200"
+          >
+            <div
+              class="w-10 h-10 bg-monza-600 text-white rounded-full flex items-center justify-center mx-auto mb-4 text-2xl font-bold"
+            >
+              1
+            </div>
+            <h3 class="font-bold text-gray-900 mb-2">Contact</h3>
+            <p class="text-sm text-gray-600">
+              Schedule a call with our cadre to align your career goals with the
+              right training track.
+            </p>
+          </div>
+          <div
+            class="text-center bg-white rounded-xl shadow-lg p-10 border border-gray-200 hover:shadow-xl hover:scale-105 transition-all duration-200"
+          >
+            <div
+              class="w-10 h-10 bg-monza-600 text-white rounded-full flex items-center justify-center mx-auto mb-4 text-2xl font-bold"
+            >
+              2
+            </div>
+            <h3 class="font-bold text-gray-900 mb-2">Submit Application</h3>
+            <p class="text-sm text-gray-600">
+              Complete the online application (typically 10-15 minutes)
+            </p>
+          </div>
+          <div
+            class="text-center bg-white rounded-xl shadow-lg p-10 border border-gray-200 hover:shadow-xl hover:scale-105 transition-all duration-200"
+          >
+            <div
+              class="w-10 h-10 bg-monza-600 text-white rounded-full flex items-center justify-center mx-auto mb-4 text-2xl font-bold"
+            >
+              3
+            </div>
+            <h3 class="font-bold text-gray-900 mb-2">Start Training</h3>
+            <p class="text-sm text-gray-600">
+              Get approved and begin your aviation career!
+            </p>
+          </div>
+        </div>
+
+        <div class="bg-white rounded-xl shadow-lg p-8 border border-gray-200">
+          <h3 class="text-2xl text-center font-bold text-gray-900 mb-6">
+            What You'll Need
+          </h3>
+          <div class="grid md:grid-cols-2 gap-6">
+            <div>
+              <h4 class="font-bold text-gray-900 mb-3">
+                Required Information:
+              </h4>
+              <ul class="space-y-2">
+                <li class="flex items-start">
+                  <svg
+                    class="w-5 h-5 text-monza-600 mr-2 shrink-0 mt-0.5"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                  </svg>
+                  <span class="text-gray-700">Valid government-issued ID</span>
+                </li>
+                <li class="flex items-start">
+                  <svg
+                    class="w-5 h-5 text-monza-600 mr-2 shrink-0 mt-0.5"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                  </svg>
+                  <span class="text-gray-700">Social Security Number</span>
+                </li>
+                <li class="flex items-start">
+                  <svg
+                    class="w-5 h-5 text-monza-600 mr-2 shrink-0 mt-0.5"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                  </svg>
+                  <span class="text-gray-700"
+                    >Proof of income (pay stubs, tax returns)</span
+                  >
+                </li>
+                <li class="flex items-start">
+                  <svg
+                    class="w-5 h-5 text-monza-600 mr-2 shrink-0 mt-0.5"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                  </svg>
+                  <span class="text-gray-700">Employment verification</span>
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h4 class="font-bold text-gray-900 mb-3">
+                Helpful (But Not Required):
+              </h4>
+              <ul class="space-y-2">
+                <li class="flex items-start">
+                  <svg
+                    class="w-5 h-5 text-blue-600 mr-2 shrink-0 mt-0.5"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                    ></path>
+                  </svg>
+                  <span class="text-gray-700"
+                    >Co-signer (can improve rates)</span
+                  >
+                </li>
+                <li class="flex items-start">
+                  <svg
+                    class="w-5 h-5 text-blue-600 mr-2 shrink-0 mt-0.5"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                    ></path>
+                  </svg>
+                  <span class="text-gray-700"
+                    >Good credit history (650+ FICO)</span
+                  >
+                </li>
+                <li class="flex items-start">
+                  <svg
+                    class="w-5 h-5 text-blue-600 mr-2 shrink-0 mt-0.5"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                    ></path>
+                  </svg>
+                  <span class="text-gray-700">Stable employment history</span>
+                </li>
+                <li class="flex items-start">
+                  <svg
+                    class="w-5 h-5 text-blue-600 mr-2 shrink-0 mt-0.5"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                    ></path>
+                  </svg>
+                  <span class="text-gray-700"
+                    >U.S. citizenship or permanent residency</span
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQs -->
+  <section class="py-16 md:py-24 bg-white">
+    <div class="max-w-4xl mx-auto px-5 md:px-8 lg:px-12">
+      <div class="text-center mb-12">
+        <h2 class="title !text-lucky-950">Financing FAQs</h2>
+      </div>
+
+      <div class="space-y-4">
+        <details
+          class="group bg-gray-50 border border-gray-200 rounded-xl overflow-hidden"
+        >
+          <summary
+            class="flex items-start justify-between cursor-pointer p-6 hover:bg-gray-100 transition-colors"
+          >
+            <span class="font-bold text-gray-900 flex-1"
+              >What credit score do I need?</span
+            >
+            <svg
+              class="w-5 h-5 text-gray-500 shrink-0 transition-transform group-open:rotate-180"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </summary>
+          <div class="px-6 pb-6">
+            <p class="text-gray-700 leading-relaxed">
+              Most lenders prefer a credit score of 650 or higher for the best
+              rates. However, we work with lenders who consider applicants with
+              lower scores, especially with a co-signer. Your income, employment
+              history, and debt-to-income ratio also factor into approval
+              decisions.Stratus Financial considers your future career earnings
+              and academic commitment, providing more flexibility than
+              traditional banks.
+            </p>
+          </div>
+        </details>
+
+        <details
+          class="group bg-gray-50 border border-gray-200 rounded-xl overflow-hidden"
+        >
+          <summary
+            class="flex items-start justify-between cursor-pointer p-6 hover:bg-gray-100 transition-colors"
+          >
+            <span class="font-bold text-gray-900 flex-1"
+              >Do I need a co-signer?</span
+            >
+            <svg
+              class="w-5 h-5 text-gray-500 shrink-0 transition-transform group-open:rotate-180"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </summary>
+          <div class="px-6 pb-6">
+            <p class="text-gray-700 leading-relaxed">
+              Not always. Many students qualify independently based on their
+              credit and income. However, a co-signer with strong credit can
+              help you secure better interest rates, higher loan amounts, or
+              approval if your credit history is limited. Parents, family
+              members, or trusted friends can serve as co-signers.
+            </p>
+          </div>
+        </details>
+
+        <details
+          class="group bg-gray-50 border border-gray-200 rounded-xl overflow-hidden"
+        >
+          <summary
+            class="flex items-start justify-between cursor-pointer p-6 hover:bg-gray-100 transition-colors"
+          >
+            <span class="font-bold text-gray-900 flex-1"
+              >When do I start making payments?</span
+            >
+            <svg
+              class="w-5 h-5 text-gray-500 shrink-0 transition-transform group-open:rotate-180"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </summary>
+          <div class="px-6 pb-6">
+            <p class="text-gray-700 leading-relaxed">
+              Most flight training loans require payments to begin 30-45 days
+              after the first disbursement. Some lenders offer interest-only
+              payments during training or deferred payment options—ask our
+              admissions team about current deferment programs.
+            </p>
+          </div>
+        </details>
+
+        <details
+          class="group bg-gray-50 border border-gray-200 rounded-xl overflow-hidden"
+        >
+          <summary
+            class="flex items-start justify-between cursor-pointer p-6 hover:bg-gray-100 transition-colors"
+          >
+            <span class="font-bold text-gray-900 flex-1"
+              >Can I pay off my loan early?</span
+            >
+            <svg
+              class="w-5 h-5 text-gray-500 shrink-0 transition-transform group-open:rotate-180"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </summary>
+          <div class="px-6 pb-6">
+            <p class="text-gray-700 leading-relaxed">
+              Yes! All of our preferred financing partners offer loans with no
+              prepayment penalties. If you get hired at an airline and want to
+              pay off your training loan early with your signing bonus or higher
+              salary, you can do so without extra fees.
+            </p>
+          </div>
+        </details>
+
+        <details
+          class="group bg-gray-50 border border-gray-200 rounded-xl overflow-hidden"
+        >
+          <summary
+            class="flex items-start justify-between cursor-pointer p-6 hover:bg-gray-100 transition-colors"
+          >
+            <span class="font-bold text-gray-900 flex-1"
+              >What if I don't have established credit?</span
+            >
+            <svg
+              class="w-5 h-5 text-gray-500 shrink-0 transition-transform group-open:rotate-180"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </summary>
+          <div class="px-6 pb-6">
+            <p class="text-gray-700 leading-relaxed">
+              We work with several lenders who specialize in career training
+              loans for applicants with limited credit history. Options include
+              adding a co-signer with established credit, providing proof of
+              income and employment, or exploring alternative lenders who use
+              different approval criteria beyond traditional credit scores.
+            </p>
+          </div>
+        </details>
+
+        <details
+          class="group bg-gray-50 border border-gray-200 rounded-xl overflow-hidden"
+        >
+          <summary
+            class="flex items-start justify-between cursor-pointer p-6 hover:bg-gray-100 transition-colors"
+          >
+            <span class="font-bold text-gray-900 flex-1"
+              >Is financing available for international students?</span
+            >
+            <svg
+              class="w-5 h-5 text-gray-500 shrink-0 transition-transform group-open:rotate-180"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </summary>
+          <div class="px-6 pb-6">
+            <p class="text-gray-700 leading-relaxed">
+              Some of our financing partners require U.S. citizenship or
+              permanent residency. However, international students with a U.S.
+              co-signer may qualify for certain loan programs. Contact our
+              admissions team to discuss financing options specific to your
+              situation.
+            </p>
+          </div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-16 md:py-24 bg-gray-900 text-white">
+    <div class="max-w-7xl mx-auto px-5 md:px-8 lg:px-12 text-center">
+      <h2 class="text-3xl md:text-4xl font-bold mb-6">
+        Ready to Finance<br /> Your Aviation Career?
+      </h2>
+      <p class="text-xl text-muted-50 mb-10 max-w-3xl mx-auto leading-relaxed">
+        Our admissions team is here to help you explore financing options,
+        compare lenders, and find the best solution for your budget and goals.
+        Get started today.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a
+          href={`tel:${PHONE_NUMBER}`}
+          class="inline-flex items-center justify-center bg-white text-monza-600 px-8 py-4 rounded-lg font-bold text-lg hover:bg-gray-100 transition-colors shadow-lg hover:shadow-xl"
+        >
+          <svg
+            class="w-6 h-6 mr-2"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
+            ></path>
+          </svg>
+          Call {PHONE_NUMBER}
+        </a>
+        <a
+          href="/programs"
+          class="inline-flex items-center justify-center bg-monza-700 text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-monza-800 transition-colors border-2 border-white/20"
+        >
+          <svg
+            class="w-6 h-6 mr-2"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"
+            ></path>
+          </svg>
+          View Training Programs
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

@@ -1,0 +1,560 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { EMAIL_ADDRESS, PHONE_NUMBER } from "../data/consts";
+import Hero75 from "../components/Hero75.astro";
+
+const heroData = {
+  image: {
+    src: "/src/assets/mael-balland-QRQHIYyIlp8-unsplash.jpg",
+    alt: "Terms of Service",
+  },
+  title: "Terms of Service",
+  subTitle:
+    "Please read these terms carefully before using our services or enrolling in our flight training programs.",
+};
+
+const lastUpdated = "December 15, 2025";
+---
+
+<BaseLayout
+  siteTitle="Terms of Service | {COMPANY_NAME}"
+  siteDescription="{COMPANY_NAME}'s terms of service. Review the terms and conditions for using our services and enrolling in our flight training programs."
+>
+  <Hero75 data={heroData} />
+
+  <section class="py-16 md:py-24 bg-white">
+    <div class="max-w-4xl mx-auto px-5 md:px-8 lg:px-12">
+      <div class="mb-8">
+        <p class="text-sm text-gray-600">
+          <strong>Last Updated:</strong>
+          {lastUpdated}
+        </p>
+      </div>
+
+      <div class="prose prose-lg max-w-none">
+        <!-- Introduction -->
+        <div class="mb-12">
+          <p class="text-lg text-gray-700 leading-relaxed">
+            Welcome to {COMPANY_NAME}. These Terms of Service ("Terms") govern
+            your use of our website, services, and flight training programs. By
+            accessing our website or enrolling in our programs, you agree to be
+            bound by these Terms.
+          </p>
+          <p class="text-lg text-gray-700 leading-relaxed mt-4">
+            Please read these Terms carefully. If you do not agree to these
+            Terms, you may not use our services or enroll in our programs.
+          </p>
+        </div>
+
+        <!-- Acceptance of Terms -->
+        <div class="mb-12">
+          <h2 class="text-2xl font-bold text-gray-900 mb-4">
+            Acceptance of Terms
+          </h2>
+          <p class="text-gray-700 leading-relaxed mb-4">
+            By accessing or using our website and services, you acknowledge that
+            you have read, understood, and agree to be bound by these Terms and
+            our Privacy Policy. If you are enrolling on behalf of an
+            organization, you represent that you have the authority to bind that
+            organization to these Terms.
+          </p>
+          <p class="text-gray-700 leading-relaxed">
+            These Terms constitute a legally binding agreement between you and
+            {COMPANY_NAME}. We reserve the right to modify these Terms at any
+            time, and your continued use of our services constitutes acceptance
+            of any changes.
+          </p>
+        </div>
+
+        <!-- Eligibility -->
+        <div class="mb-12">
+          <h2 class="text-2xl font-bold text-gray-900 mb-4">
+            Eligibility Requirements
+          </h2>
+          <p class="text-gray-700 leading-relaxed mb-4">
+            To enroll in our flight training programs, you must:
+          </p>
+          <ul class="list-disc pl-6 space-y-2 text-gray-700">
+            <li>Be at least 16 years old to solo (17 for Private Pilot)</li>
+            <li>
+              Be able to read, speak, write, and understand the English language
+            </li>
+            <li>
+              Hold a valid FAA medical certificate (or be able to obtain one)
+            </li>
+            <li>
+              Provide all required documentation, including government-issued ID
+            </li>
+            <li>
+              Meet TSA requirements for flight training (for non-U.S. citizens)
+            </li>
+            <li>Comply with all FAA regulations and requirements</li>
+          </ul>
+        </div>
+
+        <!-- Enrollment and Registration -->
+        <div class="mb-12">
+          <h2 class="text-2xl font-bold text-gray-900 mb-4">
+            Enrollment and Registration
+          </h2>
+
+          <h3 class="text-xl font-semibold text-gray-900 mb-3 mt-6">
+            Application Process
+          </h3>
+          <p class="text-gray-700 leading-relaxed mb-4">
+            Enrollment in our programs requires:
+          </p>
+          <ul class="list-disc pl-6 space-y-2 text-gray-700">
+            <li>Completion of an enrollment application</li>
+            <li>Payment of applicable enrollment fees or deposits</li>
+            <li>Submission of required documentation</li>
+            <li>Acceptance by {COMPANY_NAME}</li>
+          </ul>
+
+          <h3 class="text-xl font-semibold text-gray-900 mb-3 mt-6">
+            Accurate Information
+          </h3>
+          <p class="text-gray-700 leading-relaxed">
+            You agree to provide accurate, current, and complete information
+            during the enrollment process. You are responsible for maintaining
+            and updating your information as needed. Providing false or
+            misleading information may result in termination of services without
+            refund.
+          </p>
+        </div>
+
+        <!-- Payment Terms -->
+        <div class="mb-12">
+          <h2 class="text-2xl font-bold text-gray-900 mb-4">Payment Terms</h2>
+
+          <h3 class="text-xl font-semibold text-gray-900 mb-3 mt-6">
+            Tuition and Fees
+          </h3>
+          <p class="text-gray-700 leading-relaxed mb-4">
+            Students are responsible for payment of all tuition, fees, and
+            associated costs according to the payment schedule agreed upon at
+            enrollment. Payment methods accepted include:
+          </p>
+          <ul class="list-disc pl-6 space-y-2 text-gray-700">
+            <li>Credit/debit cards</li>
+            <li>Bank transfers</li>
+            <li>Financing through approved lenders</li>
+            <li>VA benefits (for eligible veterans)</li>
+            <li>Cash or check (in person)</li>
+          </ul>
+
+          <h3 class="text-xl font-semibold text-gray-900 mb-3 mt-6">
+            Late Payments
+          </h3>
+          <p class="text-gray-700 leading-relaxed">
+            Accounts with outstanding balances may be subject to late fees and
+            suspension of training privileges. Students with past-due accounts
+            will not be permitted to schedule or continue flight training until
+            the account is brought current.
+          </p>
+
+          <h3 class="text-xl font-semibold text-gray-900 mb-3 mt-6">
+            Price Changes
+          </h3>
+          <p class="text-gray-700 leading-relaxed">
+            {COMPANY_NAME} reserves the right to adjust pricing for services with
+            reasonable notice. Enrolled students will be notified of any price changes
+            at least 30 days in advance when possible.
+          </p>
+        </div>
+
+        <!-- Cancellation and Refund Policy -->
+        <div class="mb-12">
+          <h2 class="text-2xl font-bold text-gray-900 mb-4">
+            Cancellation and Refund Policy
+          </h2>
+
+          <h3 class="text-xl font-semibold text-gray-900 mb-3 mt-6">
+            Flight Lesson Cancellations
+          </h3>
+          <p class="text-gray-700 leading-relaxed mb-4">
+            Students must provide at least 24 hours' notice to cancel or
+            reschedule a flight lesson. Cancellations made with less than 24
+            hours' notice may be charged the full lesson fee. Weather-related
+            cancellations initiated by the flight school will not incur charges.
+          </p>
+
+          <h3 class="text-xl font-semibold text-gray-900 mb-3 mt-6">
+            Program Withdrawal
+          </h3>
+          <p class="text-gray-700 leading-relaxed mb-4">
+            Students who withdraw from training programs may be eligible for
+            partial refunds based on the following:
+          </p>
+          <ul class="list-disc pl-6 space-y-2 text-gray-700">
+            <li>
+              Enrollment fees and deposits are non-refundable after 7 days from
+              enrollment
+            </li>
+            <li>
+              Unused prepaid flight hours may be refunded less a 10%
+              administrative fee
+            </li>
+            <li>
+              Ground school materials and supplies are non-refundable once
+              accessed or opened
+            </li>
+            <li>
+              Refund requests must be submitted in writing within 30 days of
+              withdrawal
+            </li>
+          </ul>
+
+          <h3 class="text-xl font-semibold text-gray-900 mb-3 mt-6">
+            Program Cancellation by
+          </h3>
+          <p class="text-gray-700 leading-relaxed">
+            {COMPANY_NAME} reserves the right to cancel programs or discontinue services.
+            In such cases, students will receive a full refund of unused prepaid services
+            or the option to transfer to another program.
+          </p>
+        </div>
+
+        <!-- Student Responsibilities -->
+        <div class="mb-12">
+          <h2 class="text-2xl font-bold text-gray-900 mb-4">
+            Student Responsibilities
+          </h2>
+          <p class="text-gray-700 leading-relaxed mb-4">
+            As a student, you agree to:
+          </p>
+          <ul class="list-disc pl-6 space-y-2 text-gray-700">
+            <li>
+              Maintain a valid medical certificate throughout your training
+            </li>
+            <li>Arrive prepared and on time for scheduled lessons</li>
+            <li>Complete required ground school and home study assignments</li>
+            <li>Follow all FAA regulations and safety procedures</li>
+            <li>Respect aircraft, facilities, and equipment</li>
+            <li>
+              Conduct yourself professionally and respectfully toward
+              instructors, staff, and other students
+            </li>
+            <li>
+              Report any incidents, safety concerns, or equipment issues
+              immediately
+            </li>
+            <li>Maintain adequate insurance coverage as required</li>
+            <li>
+              Keep your contact information and student records up to date
+            </li>
+          </ul>
+        </div>
+
+        <!-- Code of Conduct -->
+        <div class="mb-12">
+          <h2 class="text-2xl font-bold text-gray-900 mb-4">Code of Conduct</h2>
+          <p class="text-gray-700 leading-relaxed mb-4">
+            Students must adhere to our code of conduct, which prohibits:
+          </p>
+          <ul class="list-disc pl-6 space-y-2 text-gray-700">
+            <li>
+              Substance abuse or being under the influence of drugs or alcohol
+              during training
+            </li>
+            <li>Harassment, discrimination, or threatening behavior</li>
+            <li>Unsafe operation of aircraft or equipment</li>
+            <li>Violation of FAA regulations or local laws</li>
+            <li>Dishonesty or falsification of records</li>
+            <li>Unauthorized use of aircraft or facilities</li>
+          </ul>
+          <p class="text-gray-700 leading-relaxed mt-4">
+            Violations of the code of conduct may result in immediate suspension
+            or termination from training programs without refund.
+          </p>
+        </div>
+
+        <!-- Safety and Risk Acknowledgment -->
+        <div class="mb-12">
+          <h2 class="text-2xl font-bold text-gray-900 mb-4">
+            Safety and Risk Acknowledgment
+          </h2>
+          <p class="text-gray-700 leading-relaxed mb-4">
+            Flight training involves inherent risks. By enrolling in our
+            programs, you acknowledge and accept these risks. You agree to:
+          </p>
+          <ul class="list-disc pl-6 space-y-2 text-gray-700">
+            <li>
+              Follow all safety instructions and procedures provided by
+              instructors
+            </li>
+            <li>
+              Report any physical or medical conditions that may affect your
+              ability to fly safely
+            </li>
+            <li>
+              Participate in required safety briefings and emergency procedure
+              training
+            </li>
+            <li>
+              Maintain situational awareness and exercise sound judgment during
+              all flight operations
+            </li>
+          </ul>
+        </div>
+
+        <!-- Intellectual Property -->
+        <div class="mb-12">
+          <h2 class="text-2xl font-bold text-gray-900 mb-4">
+            Intellectual Property
+          </h2>
+          <p class="text-gray-700 leading-relaxed mb-4">
+            All content on our website and in our training materials, including
+            text, graphics, logos, images, videos, and software, is the property
+            of {COMPANY_NAME} or its licensors and is protected by copyright and other
+            intellectual property laws.
+          </p>
+          <p class="text-gray-700 leading-relaxed">
+            Students may use training materials solely for personal educational
+            purposes. You may not reproduce, distribute, modify, or create
+            derivative works from our materials without express written
+            permission.
+          </p>
+        </div>
+
+        <!-- Limitation of Liability -->
+        <div class="mb-12">
+          <h2 class="text-2xl font-bold text-gray-900 mb-4">
+            Limitation of Liability
+          </h2>
+          <p class="text-gray-700 leading-relaxed mb-4">
+            To the maximum extent permitted by law, {COMPANY_NAME}, its
+            officers, directors, employees, and instructors shall not be liable
+            for any indirect, incidental, special, consequential, or punitive
+            damages arising out of or relating to your use of our services or
+            participation in our programs.
+          </p>
+          <p class="text-gray-700 leading-relaxed">
+            Our total liability for any claims arising from these Terms or your
+            use of our services shall not exceed the amount you paid for the
+            specific service giving rise to the claim.
+          </p>
+        </div>
+
+        <!-- Indemnification -->
+        <div class="mb-12">
+          <h2 class="text-2xl font-bold text-gray-900 mb-4">Indemnification</h2>
+          <p class="text-gray-700 leading-relaxed">
+            You agree to indemnify, defend, and hold harmless Aviation Academy,
+            its officers, directors, employees, instructors, and agents from any
+            claims, damages, losses, liabilities, and expenses (including
+            reasonable attorneys' fees) arising from your violation of these
+            Terms, your use of our services, or your violation of any rights of
+            another party.
+          </p>
+        </div>
+
+        <!-- Insurance Requirements -->
+        <div class="mb-12">
+          <h2 class="text-2xl font-bold text-gray-900 mb-4">
+            Insurance Requirements
+          </h2>
+          <p class="text-gray-700 leading-relaxed mb-4">
+            {COMPANY_NAME} maintains appropriate aircraft and liability insurance.
+            Students may be required to obtain renters insurance or additional coverage
+            depending on the training program and aircraft used.
+          </p>
+          <p class="text-gray-700 leading-relaxed">
+            Students are responsible for their own health, disability, and life
+            insurance. We recommend maintaining adequate personal insurance
+            coverage during your training.
+          </p>
+        </div>
+
+        <!-- Records and Transcripts -->
+        <div class="mb-12">
+          <h2 class="text-2xl font-bold text-gray-900 mb-4">
+            Records and Transcripts
+          </h2>
+          <p class="text-gray-700 leading-relaxed">
+            {COMPANY_NAME} maintains student training records in accordance with FAA
+            regulations. Students may request copies of their records or transcripts
+            with reasonable notice. Records for students with outstanding financial
+            obligations may be withheld until accounts are settled.
+          </p>
+        </div>
+
+        <!-- Termination -->
+        <div class="mb-12">
+          <h2 class="text-2xl font-bold text-gray-900 mb-4">Termination</h2>
+          <p class="text-gray-700 leading-relaxed mb-4">
+            {COMPANY_NAME} reserves the right to suspend or terminate your enrollment
+            and access to services at any time, with or without notice, for any reason,
+            including but not limited to:
+          </p>
+          <ul class="list-disc pl-6 space-y-2 text-gray-700">
+            <li>Violation of these Terms or our code of conduct</li>
+            <li>Non-payment of fees or charges</li>
+            <li>Unsafe behavior or actions</li>
+            <li>Failure to maintain required certifications</li>
+            <li>Engaging in fraudulent or illegal activities</li>
+          </ul>
+          <p class="text-gray-700 leading-relaxed mt-4">
+            Upon termination, all rights granted to you under these Terms will
+            immediately cease.
+          </p>
+        </div>
+
+        <!-- Force Majeure -->
+        <div class="mb-12">
+          <h2 class="text-2xl font-bold text-gray-900 mb-4">Force Majeure</h2>
+          <p class="text-gray-700 leading-relaxed">
+            {COMPANY_NAME} shall not be liable for any failure or delay in performance
+            due to circumstances beyond our reasonable control, including but not
+            limited to acts of God, natural disasters, war, terrorism, pandemics,
+            government actions, labor disputes, or equipment failures. In such events,
+            we will make reasonable efforts to resume services as soon as possible.
+          </p>
+        </div>
+
+        <!-- Governing Law and Jurisdiction -->
+        <div class="mb-12">
+          <h2 class="text-2xl font-bold text-gray-900 mb-4">
+            Governing Law and Jurisdiction
+          </h2>
+          <p class="text-gray-700 leading-relaxed mb-4">
+            These Terms shall be governed by and construed in accordance with
+            the laws of the State of Texas, without regard to its conflict of
+            law provisions. Any disputes arising from these Terms or your use of
+            our services shall be resolved exclusively in the state or federal
+            courts located in Tarrant County, Texas.
+          </p>
+          <p class="text-gray-700 leading-relaxed">
+            You agree to submit to the personal jurisdiction of these courts and
+            waive any objection to venue in these courts.
+          </p>
+        </div>
+
+        <!-- Dispute Resolution -->
+        <div class="mb-12">
+          <h2 class="text-2xl font-bold text-gray-900 mb-4">
+            Dispute Resolution
+          </h2>
+          <p class="text-gray-700 leading-relaxed">
+            In the event of any dispute, claim, or controversy arising from
+            these Terms, the parties agree to first attempt to resolve the
+            matter through good faith negotiation. If negotiation is
+            unsuccessful, the parties may pursue mediation before resorting to
+            litigation.
+          </p>
+        </div>
+
+        <!-- Severability -->
+        <div class="mb-12">
+          <h2 class="text-2xl font-bold text-gray-900 mb-4">Severability</h2>
+          <p class="text-gray-700 leading-relaxed">
+            If any provision of these Terms is found to be invalid, illegal, or
+            unenforceable, the remaining provisions shall continue in full force
+            and effect. The invalid provision shall be modified to the minimum
+            extent necessary to make it valid and enforceable.
+          </p>
+        </div>
+
+        <!-- Entire Agreement -->
+        <div class="mb-12">
+          <h2 class="text-2xl font-bold text-gray-900 mb-4">
+            Entire Agreement
+          </h2>
+          <p class="text-gray-700 leading-relaxed">
+            These Terms, together with our Privacy Policy and any enrollment
+            agreement, constitute the entire agreement between you and Aviation
+            Academy regarding your use of our services and supersede all prior
+            agreements and understandings, whether written or oral.
+          </p>
+        </div>
+
+        <!-- Changes to Terms -->
+        <div class="mb-12">
+          <h2 class="text-2xl font-bold text-gray-900 mb-4">
+            Changes to These Terms
+          </h2>
+          <p class="text-gray-700 leading-relaxed">
+            We reserve the right to modify these Terms at any time. We will
+            notify you of material changes by posting the updated Terms on our
+            website and updating the "Last Updated" date. Your continued use of
+            our services after changes are posted constitutes acceptance of the
+            modified Terms. We encourage you to review these Terms periodically.
+          </p>
+        </div>
+
+        <!-- Contact Us -->
+        <div class="mb-12">
+          <h2 class="text-2xl font-bold text-gray-900 mb-4">Contact Us</h2>
+          <p class="text-gray-700 leading-relaxed mb-4">
+            If you have questions about these Terms of Service, please contact
+            us:
+          </p>
+
+          <div class="bg-gray-50 rounded-xl p-6 border border-gray-200">
+            <p class="text-gray-900 font-semibold mb-3">{COMPANY_NAME}</p>
+            <div class="space-y-2 text-gray-700">
+              <p>
+                <strong>Address:</strong><br />
+                Arlington Municipal Airport<br />
+                3401 E Collins St<br />
+                Arlington, TX 76011
+              </p>
+              <p>
+                <strong>Phone:</strong>
+                <a
+                  href={`tel:${PHONE_NUMBER}`}
+                  class="text-monza-600 hover:text-monza-700"
+                >
+                  {PHONE_NUMBER}
+                </a>
+              </p>
+              <p>
+                <strong>Email:</strong>
+                <a
+                  href={`mailto:${EMAIL_ADDRESS}`}
+                  class="text-monza-600 hover:text-monza-700"
+                >
+                  {EMAIL_ADDRESS}
+                </a>
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Acknowledgment -->
+        <div
+          class="bg-monza-50 border-l-4 border-monza-600 p-6 rounded-r-xl mt-12"
+        >
+          <p class="text-gray-900 font-semibold mb-2">Acknowledgment</p>
+          <p class="text-gray-700">
+            By using our services or enrolling in our programs, you acknowledge
+            that you have read, understood, and agree to be bound by these Terms
+            of Service. If you do not agree to these Terms, please do not use
+            our services.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .prose h2 {
+    border-bottom: 2px solid #e5e7eb;
+    padding-bottom: 0.5rem;
+  }
+
+  .prose h3 {
+    color: #1f2937;
+  }
+
+  .prose ul {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .prose li {
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+  }
+</style>

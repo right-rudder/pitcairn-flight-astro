@@ -1,0 +1,263 @@
+---
+import ImageComp from "./ImageComp.astro";
+import { footerMenu } from "./Navbar.astro";
+import {
+  COMPANY_NAME,
+  FACEBOOK_URL,
+  INSTAGRAM_URL,
+  LINKEDIN_URL,
+  X_URL,
+  LOCATIONS,
+  PHONE_NUMBER,
+  LOGO_ASSETS,
+  SITE_DESCRIPTION,
+} from "../data/consts";
+import { getCollection } from "astro:content";
+import type { CollectionEntry } from "astro:content";
+
+type Program = CollectionEntry<"programs">;
+
+const programs = await getCollection("programs");
+const sortedPrograms = programs.sort(
+  (a: Program, b: Program) => (a.data.order || 999) - (b.data.order || 999)
+);
+
+const today = new Date();
+---
+
+<footer class="w-full pt-12 text-slate-50 bg-sky-950">
+  <div class="relative z-10 mx-auto sm:max-w-xl md:max-w-full lg:max-w-7xl">
+    <div class="flex flex-wrap justify-center items-center">
+      <div
+        class="flex flex-col w-[200] md:w-1/2 lg:w-1/4 mb-12 md:mb-0 items-center lg:items-start text-center lg:text-left px-4"
+      >
+        <a
+          href="/"
+          class="flex items-center justify-center mb-8 w-full h-auto md:1/2"
+        >
+          <ImageComp
+            src={LOGO_ASSETS}
+            class="w-full h-auto object-contain md:w-2/3"
+            alt="MIL2ATP Logo"
+          />
+        </a>
+
+        <p class="text-sm text-justify mb-4 font-medium">
+          {SITE_DESCRIPTION}
+        </p>
+
+        <div class="flex w-full justify-center gap-4">
+          {
+            FACEBOOK_URL && (
+              <a
+                href={FACEBOOK_URL}
+                target="_blank"
+                class="transition-colors duration-200 ease-in-out hover:text-sky-600"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="32"
+                  height="32"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    fill="currentColor"
+                    d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c5.05-.5 9-4.76 9-9.95"
+                  />
+                </svg>
+              </a>
+            )
+          }
+          {
+            X_URL && (
+              <a
+                href={X_URL}
+                target="_blank"
+                class="transition-colors duration-200 ease-in-out hover:text-sky-600"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="32"
+                  height="32"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    fill="currentColor"
+                    d="M18.205 2.25h3.308l-7.227 8.26l8.502 11.24H16.13l-5.214-6.817L4.95 21.75H1.64l7.73-8.835L1.215 2.25H8.04l4.713 6.231zm-1.161 17.52h1.833L7.045 4.126H5.078z"
+                  />
+                </svg>
+              </a>
+            )
+          }
+          {
+            INSTAGRAM_URL && (
+              <a
+                href={INSTAGRAM_URL}
+                target="_blank"
+                class="transition-colors duration-200 ease-in-out hover:text-sky-600"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="32"
+                  height="32"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    fill="currentColor"
+                    d="M12.001 9a3 3 0 1 0 0 6a3 3 0 0 0 0-6m0-2a5 5 0 1 1 0 10a5 5 0 0 1 0-10m6.5-.25a1.25 1.25 0 0 1-2.5 0a1.25 1.25 0 0 1 2.5 0M12.001 4c-2.474 0-2.878.007-4.029.058c-.784.037-1.31.142-1.798.332a2.9 2.9 0 0 0-1.08.703a2.9 2.9 0 0 0-.704 1.08c-.19.49-.295 1.015-.331 1.798C4.007 9.075 4 9.461 4 12c0 2.475.007 2.878.058 4.029c.037.783.142 1.31.331 1.797c.17.435.37.748.702 1.08c.337.336.65.537 1.08.703c.494.191 1.02.297 1.8.333C9.075 19.994 9.461 20 12 20c2.475 0 2.878-.007 4.029-.058c.782-.037 1.308-.142 1.797-.331a2.9 2.9 0 0 0 1.08-.703c.337-.336.538-.649.704-1.08c.19-.492.296-1.018.332-1.8c.052-1.103.058-1.49.058-4.028c0-2.474-.007-2.878-.058-4.029c-.037-.782-.143-1.31-.332-1.798a2.9 2.9 0 0 0-.703-1.08a2.9 2.9 0 0 0-1.08-.704c-.49-.19-1.016-.295-1.798-.331C14.926 4.006 14.54 4 12 4m0-2c2.717 0 3.056.01 4.123.06c1.064.05 1.79.217 2.427.465c.66.254 1.216.598 1.772 1.153a4.9 4.9 0 0 1 1.153 1.772c.247.637.415 1.363.465 2.428c.047 1.066.06 1.405.06 4.122s-.01 3.056-.06 4.122s-.218 1.79-.465 2.428a4.9 4.9 0 0 1-1.153 1.772a4.9 4.9 0 0 1-1.772 1.153c-.637.247-1.363.415-2.427.465c-1.067.047-1.406.06-4.123.06s-3.056-.01-4.123-.06c-1.064-.05-1.789-.218-2.427-.465a4.9 4.9 0 0 1-1.772-1.153a4.9 4.9 0 0 1-1.153-1.772c-.248-.637-.415-1.363-.465-2.428C2.012 15.056 2 14.717 2 12s.01-3.056.06-4.122s.217-1.79.465-2.428a4.9 4.9 0 0 1 1.153-1.772A4.9 4.9 0 0 1 5.45 2.525c.637-.248 1.362-.415 2.427-.465C8.945 2.013 9.284 2 12.001 2"
+                  />
+                </svg>
+              </a>
+            )
+          }
+          {
+            LINKEDIN_URL && (
+              <a
+                href={LINKEDIN_URL}
+                target="_blank"
+                class="transition-colors duration-200 ease-in-out hover:text-sky-600"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="32"
+                  height="32"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    fill="currentColor"
+                    d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2zm-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93zM6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37z"
+                  />
+                </svg>
+              </a>
+            )
+          }
+        </div>
+      </div>
+
+      <div class="flex flex-wrap justify-center w-full md:w-1/2 px-4">
+        {
+          sortedPrograms && (
+            <div class="w-1/2 px-8">
+              <a class="font-main-header uppercase tracking-wide hover:cursor-pointer font-black  text-2xl capitalize transition-colors duration-200 ease-in-out hover:text-sky-600">
+                {sortedPrograms[0].collection}
+              </a>
+              {sortedPrograms.length > 0 && (
+                <ul class="mt-2 font-ubuntu">
+                  {sortedPrograms.map((program) => (
+                    <li class="text-sm my-1">
+                      <a class="hover:cursor-pointer transition-colors duration-200 ease-in-out text-accent-800 hover:text-sky-600">
+                        {program.data.title}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              )}
+            </div>
+          )
+        }
+        {
+          footerMenu.map((item) => (
+            <div class="w-1/2 px-8">
+              <a class="font-main-header uppercase tracking-wide hover:cursor-pointer font-black text-2xl transition-colors duration-200 ease-in-out hover:text-sky-600">
+                {item.label}
+              </a>
+              <ul class="mt-2 font-ubuntu">
+                {item.children &&
+                  item.children.map((item) => (
+                    <li class="text-sm my-1">
+                      <a class="transition-colors hover:cursor-pointer duration-200 ease-in-out text-accent-800 hover:text-sky-600">
+                        {item.label}
+                      </a>
+                    </li>
+                  ))}
+              </ul>
+            </div>
+          ))
+        }
+      </div>
+
+      <div
+        class="mb-4 w-full md:w-1/2 lg:w-1/4 bg-slate-100 text-slate-950 pt-6 pb-10 px-12 flex justify-left items-center flex-col gap-2 min-w-40 lg:items-start rounded-xl"
+      >
+        <p
+          class="font-main-header tracking-wide uppercase font-black text-2xl text-center"
+        >
+          Location
+        </p>
+        <a
+          href={LOCATIONS[0].gMaps || "#"}
+          target={LOCATIONS[0].gMaps.includes("http") ? "_blank" : ""}
+          class="mt-1 hover:cursor-pointer flex items-center text-base gap-2 font-semibold justify-center transition-colors duration-200 ease-in-out md:justify-normal hover:text-sky-600"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            class="text-sky-600"
+            ><path
+              fill="currentColor"
+              d="M12 11.5A2.5 2.5 0 0 1 9.5 9A2.5 2.5 0 0 1 12 6.5A2.5 2.5 0 0 1 14.5 9a2.5 2.5 0 0 1-2.5 2.5M12 2a7 7 0 0 0-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 0 0-7-7"
+            ></path></svg
+          >
+          <span
+            class="whitespace-pre-line font-ubuntu text-center md:text-left"
+          >
+            {LOCATIONS[0].fullAddressLineBreak}
+          </span>
+        </a>
+
+        <a
+          href=`tel:${PHONE_NUMBER}`
+          class="mt-1 font-sans flex items-center text-base gap-2 font-semibold justify-center transition-colors duration-200 ease-in-out md:justify-normal hover:text-sky-600"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            class="text-sky-600"
+            ><path
+              fill="currentColor"
+              d="M6.62 10.79c1.44 2.83 3.76 5.15 6.59 6.59l2.2-2.2c.28-.28.67-.36 1.02-.25c1.12.37 2.32.57 3.57.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57c.11.35.03.74-.25 1.02z"
+            ></path></svg
+          >
+          <span>
+            {PHONE_NUMBER}
+          </span>
+        </a>
+      </div>
+    </div>
+
+    <div class="w-full mb-6"></div>
+  </div>
+
+  <div
+    class="relative z-10 flex flex-col justify-center items-center gap-6 py-6 text-sm text-center sm:flex-row sm:gap-2"
+  >
+    <span class="inline-block text-center sm:w-1/3">
+      Powered by
+      <a
+        href="https://rightruddermarketing.com/"
+        target="_blank"
+        class="font-medium transition-colors duration-200 ease-in-out hover:text-sky-600"
+      >
+        More Right Rudder
+      </a>
+    </span>
+    <p class="inline-block text-center sm:w-1/3">
+      &copy; Copyright {today.getFullYear()} • {COMPANY_NAME} • All rights reserved.
+    </p>
+    <p class="inline-block text-center sm:w-1/3">
+      <a
+        class="hover:cursor-pointer transition-colors duration-200 hover:text-sky-600"
+        >Privacy Policy</a
+      >
+      •
+      <a
+        class="hover:cursor-pointer transition-colors duration-200 hover:text-sky-600"
+        >Terms of Service</a
+      >
+    </p>
+  </div>
+</footer>

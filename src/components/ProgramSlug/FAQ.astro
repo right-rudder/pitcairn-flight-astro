@@ -1,0 +1,50 @@
+---
+interface Props {
+  data: {
+    title?: string;
+    upperheader?: string;
+    qnas?: {
+      question: string;
+      answer: string;
+    }[];
+  };
+}
+
+const { data } = Astro.props;
+---
+
+<section class="py-20 px-4 bg-white">
+  <div class="max-w-3xl mx-auto px-5 md:px-8 lg:px-12">
+    <div class="text-center mb-12 flex flex-col items-center">
+      {data.upperheader && (
+        <span class="text-black font-subtitle tracking-widest !font-semibold text-lg block mb-2">
+          {data.upperheader}
+        </span>
+      )}
+      {data.title && <h2 class="title max-w-xl">{data.title}</h2>}
+    </div>
+
+    <div class="space-y-4">
+      {data.qnas?.map((qna) => (
+       <details class="group bg-gray-900 open:bg-muted-50 overflow-hidden border border-muted-200 transition-colors duration-300 [&_summary::-webkit-details-marker]:hidden">
+  <summary class="flex cursor-pointer items-center justify-between gap-1.5 p-6 text-white bg-gray-900 open:text-gray-900 group-open:bg-muted-50 transition-colors hover:bg-muted-100 hover:text-gray-900">
+    <h3 class="font-title text-lg font-bold group-open:text-gray-900">
+      {qna.question}
+    </h3>
+    <div class="white-circle bg-madison-500 rounded-full p-1 group-open:bg-madison-600">
+      <svg class="h-5 w-5 shrink-0 transition duration-300 group-open:-rotate-180 text-muted-50 group-open:text-gray-900" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+      </svg>
+    </div>
+  </summary>
+
+  <div class="px-6 pb-6 pt-0">
+    <p class="leading-relaxed text-muted-950 font-sans border-t border-muted-300 pt-4 mt-2">
+      {qna.answer}
+    </p>
+  </div>
+</details>
+      ))}
+    </div>
+  </div>
+</section>

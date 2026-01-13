@@ -1,0 +1,1004 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import ImageComp from "../components/ImageComp.astro";
+import { PHONE_NUMBER } from "../data/consts";
+import Hero75 from "../components/Hero75.astro";
+import CTASection from "../components/CTASection.astro";
+
+const heroData = {
+  image: {
+    src: "/src/assets/N47404-piper-seneca-ii.jpg",
+    alt: "Flight Training Programs",
+  },
+  title: "New to Flying?<br>Start Here",
+  subTitle:
+    "If you've never flown before, this is where you find out what it takes, what it costs, and whether a professional pilot path is right for you, without any pressure to enroll today.",
+};
+
+const ctaData = {
+  title: "Define Your Mission. Let’s Reach the Majors Together.",
+  description:
+    "Your first step at  is defining that goal, as it will shape your standards, timeline, and path to the cockpit. Whether you are aiming for the airlines or mastering a new rating, we are here to provide the roadmap and the mentorship to get you there. Define your mission today, and let’s start your training plan.",
+  image: {
+    src: "/src/assets/sebastian-zzWYD-tc_jI-unsplash.jpg",
+    alt: "Training aircraft in flight",
+  },
+  primaryCTA: {
+    text: "Schedule a Tour",
+    href: "/contact",
+  },
+  secondaryCTA: {
+    text: "Enroll Now",
+    href: "/enroll",
+  },
+};
+
+const metaProps = {
+  siteTitle: "New to Flying? Start here | {COMPANY_NAME}",
+  siteDescription:
+    "Learn how to become a pilot at {COMPANY_NAME}. We guide beginners through medical certificates, discovery flights, and the path to a professional aviation career.",
+  siteKeywords:
+    "how to become a pilot, start flight training, student pilot guide, FAA medical certificate, flight school for beginners, pilot career path,  Aviation",
+};
+---
+
+<BaseLayout {...metaProps}>
+  <!-- Hero Section -->
+  <Hero75 data={heroData} />
+
+  <!-- Is Flying Right for You? -->
+  <!-- Is Flying Right for You? -->
+  <!-- <section class="py-16 md:py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-5 md:px-8 lg:px-12">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="title !text-lucky-950 text-center">Is Flying Right for You?</h2>
+        <p class="text-xl text-gray-700 leading-relaxed mb-8 text-center">
+          Learning to fly attracts very different people: recent graduates,
+          mid-career professionals, and lifelong aviation geeks who finally have
+          the time or money to start. We welcome everyone from recent graduates to lifelong aviation enthusiasts who are finally ready to master the craft.
+        </p>
+
+        <div
+          class="bg-gray-50 border-l-6 border-lucky-950 p-8  mb-8 hover:-translate-y-1 shadow-md transition-transform duration-300 ease-in-out hover:shadow-lg"
+        >
+          <h3 class="text-xl font-bold text-gray-900 mb-4">
+            You might be wondering:
+          </h3>
+          <ul class="space-y-3 text-gray-700">
+            <li class="flex items-start">
+              <svg
+                class="w-6 h-6 text-monza-600 mr-3 shrink-0 mt-0.5"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+              </svg>
+              <span>You've never flown a small airplane before.</span>
+            </li>
+            <li class="flex items-start">
+              <svg
+                class="w-6 h-6 text-monza-600 mr-3 shrink-0 mt-0.5"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+              </svg>
+              <span>You're wondering if you'll get motion sick or scared.</span>
+            </li>
+            <li class="flex items-start">
+              <svg
+                class="w-6 h-6 text-monza-600 mr-3 shrink-0 mt-0.5"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+              </svg>
+              <span>You're not sure if this should be a hobby or a career.</span
+              >
+            </li>
+            <li class="flex items-start">
+              <svg
+                class="w-6 h-6 text-monza-600 mr-3 shrink-0 mt-0.5"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+              </svg>
+              <span
+                >You've seen $120K+ flight school price tags and want honest
+                numbers.</span
+              >
+            </li>
+          </ul>
+        </div>
+
+        <p class="text-lg text-white bg-gradient-to-br from-gray-700 to-gray-900 p-6 rounded-xl border border-gray-600 shadow-2xl flex items-start gap-3 text-left">
+          <span class="flex-shrink-0 mt-1 text-white">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-6" viewBox="0 0 24 24">
+              <g fill="none" fill-rule="evenodd">
+                <path d="m12.593 23.258l-.011.002l-.071.035l-.02.004l-.014-.004l-.071-.035q-.016-.005-.024.005l-.004.01l-.017.428l.005.02l.01.013l.104.074l.015.004l.012-.004l.104-.074l.012-.016l.004-.017l-.017-.427q-.004-.016-.017-.018m.265-.113l-.013.002l-.185.093l-.01.01l-.003.011l.018.43l.005.012l.008.007l.201.093q.019.005.029-.008l.004-.014l-.034-.614q-.005-.018-.02-.022m-.715.002a.02.02 0 0 0-.027.006l-.006.014l-.034.614q.001.018.017.024l.015-.002l.201-.093l.01-.008l.004-.011l.017-.43l-.003-.012l-.01-.01z" />
+                <path fill="currentColor" d="M11.298 2.195a2 2 0 0 1 1.232-.055l.172.055l7 2.625a2 2 0 0 1 1.291 1.708l.007.165v5.363a9 9 0 0 1-4.709 7.911l-.266.139l-3.354 1.677a1.5 1.5 0 0 1-1.198.062l-.144-.062l-3.354-1.677a9 9 0 0 1-4.97-7.75l-.005-.3V6.693a2 2 0 0 1 1.145-1.808l.153-.065zm4.135 6.434l-4.598 4.598l-1.768-1.768a1 1 0 0 0-1.414 1.415l2.404 2.404a1.1 1.1 0 0 0 1.556 0l5.234-5.235a1 1 0 1 0-1.414-1.414" />
+              </g>
+            </svg>
+          </span>
+          <strong class="font-medium">
+            At , there's no pressure to sign up for a full program; the first step is simply understanding your options.
+          </strong>
+        </p>
+      </div>
+    </div>
+  </section> -->
+  <section class="py-16 md:py-24 bg-white overflow-hidden observe-section">
+    <div class="max-w-7xl mx-auto px-5 md:px-8 lg:px-12">
+      <div class="grid lg:grid-cols-2 gap-12 items-stretch">
+        <div class="order-last lg:order-first reveal h-full">
+          <div
+            class="rounded-2xl overflow-hidden shadow-2xl bg-sky-950 h-full flex justify-center items-center relative group"
+          >
+            <video
+              src="/videos/-short-field-pt-1.mp4"
+              autoplay
+              loop
+              muted
+              playsinline
+              class="w-full h-full object-cover bg-sky-950 lg:min-h-full scale-110 transition-transform duration-700"
+            >
+            </video>
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-lucky-950/20 to-transparent pointer-events-none"
+            >
+            </div>
+          </div>
+        </div>
+
+        <div class="flex flex-col justify-center">
+          <h2 class="title !text-lucky-950 !text-left !mx-0">
+            Is Flying Right for You?
+          </h2>
+          <p class="text-xl text-gray-700 leading-relaxed mb-8">
+            Aviation isn't just a career choice; it’s a lifestyle for those who
+            refuse to be desk-bound. Whether you’re a <strong
+              >recent graduate</strong
+            > looking for a high-speed start, a <strong>professional</strong> suffocating
+            in a 9-to-5, or a <strong>lifelong enthusiast</strong> finally ready to
+            stop watching from the ground—the question isn't just if you can fly,
+            but if you have the drive to master the craft.
+          </p>
+          <p class="text-xl text-gray-700 leading-relaxed mb-8">
+            We don't do "hobby flights" or "maybe someday." We take you from
+            zero to <strong
+              >professional airline standards in 8 to 10 months</strong
+            >. If you are looking for a shortcut, this isn't it. But if you’re
+            looking for a full-time immersion where senior airline captains
+            mentor you into the cockpit of a major carrier, you’re in the right
+            place. <strong>The sky is waiting—are you ready to own it?</strong>
+          </p>
+
+          <div
+            class="bg-gray-50 border-l-6 border-lucky-950 p-8 mb-8 hover:-translate-y-1 shadow-md transition-all duration-300 ease-in-out hover:shadow-lg rounded-r-xl reveal"
+          >
+            <h3 class="text-xl font-bold text-gray-900 mb-4">
+              You might be wondering:
+            </h3>
+            <ul class="space-y-4 text-gray-700">
+              <li class="flex items-start">
+                <svg
+                  class="w-6 h-6 text-monza-600 mr-3 shrink-0 mt-0.5"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                </svg>
+                <span>You've never flown a small airplane before.</span>
+              </li>
+              <li class="flex items-start">
+                <svg
+                  class="w-6 h-6 text-monza-600 mr-3 shrink-0 mt-0.5"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                </svg>
+                <span
+                  >You're wondering if you'll get motion sick or scared.</span
+                >
+              </li>
+              <li class="flex items-start">
+                <svg
+                  class="w-6 h-6 text-monza-600 mr-3 shrink-0 mt-0.5"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                </svg>
+                <span
+                  >You're not sure if this should be a hobby or a career.</span
+                >
+              </li>
+              <li class="flex items-start">
+                <svg
+                  class="w-6 h-6 text-monza-600 mr-3 shrink-0 mt-0.5"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                </svg>
+                <span>You want honest numbers on the actual costs.</span>
+              </li>
+            </ul>
+          </div>
+
+          <p
+            class="text-lg text-white bg-gradient-to-br from-gray-700 to-gray-900 p-6 rounded-xl border border-gray-600 shadow-2xl flex items-start gap-4 text-left reveal"
+          >
+            <span class="flex-shrink-0 mt-1 text-white">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="w-6"
+                viewBox="0 0 24 24"
+              >
+                <g fill="none" fill-rule="evenodd">
+                  <path
+                    d="m12.593 23.258l-.011.002l-.071.035l-.02.004l-.014-.004l-.071-.035q-.016-.005-.024.005l-.004.01l-.017.428l.005.02l.01.013l.104.074l.015.004l.012-.004l.104-.074l.012-.016l.004-.017l-.017-.427q-.004-.016-.017-.018m.265-.113l-.013.002l-.185.093l-.01.01l-.003.011l.018.43l.005.012l.008.007l.201.093q.019.005.029-.008l.004-.014l-.034-.614q-.005-.018-.02-.022m-.715.002a.02.02 0 0 0-.027.006l-.006.014l-.034.614q.001.018.017.024l.015-.002l.201-.093l.01-.008l.004-.011l.017-.43l-.003-.012l-.01-.01z"
+                  ></path>
+                  <path
+                    fill="currentColor"
+                    d="M11.298 2.195a2 2 0 0 1 1.232-.055l.172.055l7 2.625a2 2 0 0 1 1.291 1.708l.007.165v5.363a9 9 0 0 1-4.709 7.911l-.266.139l-3.354 1.677a1.5 1.5 0 0 1-1.198.062l-.144-.062l-3.354-1.677a9 9 0 0 1-4.97-7.75l-.005-.3V6.693a2 2 0 0 1 1.145-1.808l.153-.065zm4.135 6.434l-4.598 4.598l-1.768-1.768a1 1 0 0 0-1.414 1.415l2.404 2.404a1.1 1.1 0 0 0 1.556 0l5.234-5.235a1 1 0 1 0-1.414-1.414"
+                  ></path>
+                </g>
+              </svg>
+            </span>
+            <strong class="font-medium">
+              At , there's no pressure to sign up for a full program; the first
+              step is simply understanding your options.
+            </strong>
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- What to Expect as an Absolute Beginner -->
+  <section class="pb-16 md:pb-24 bg-white observe-section">
+    <div class="max-w-7xl mx-auto px-5 md:px-8 lg:px-12">
+      <div class="max-w-4xl mx-auto mb-12">
+        <h2 class="title !text-lucky-950 text-center">
+          What to Expect as<br />an Absolute Beginner
+        </h2>
+        <p class="text-xl/7 text-center">
+          Many new students are intimidated by jargon and safety concerns.
+          Here's what flight training actually looks like in simple terms.
+        </p>
+      </div>
+
+      <div class="grid lg:grid-cols-2 gap-12 mb-12 items-stretch">
+        <div class="flex flex-col gap-6">
+          <div class="bg-gray-50 p-8 rounded-xl border border-gray-200 reveal">
+            <div class="flex items-start">
+              <div
+                class="w-12 h-12 bg-monza-100 rounded-lg flex items-center justify-center shrink-0 mr-4"
+              >
+                <svg
+                  class="w-6 h-6 text-monza-600"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
+                  ></path>
+                </svg>
+              </div>
+              <div>
+                <h3 class="text-xl font-bold text-gray-900 mb-2">
+                  Safety First
+                </h3>
+                <p class="text-gray-700 leading-relaxed">
+                  All training follows FAA standards, with certified instructors
+                  and well-maintained aircraft. has a 12-year zero-cancellation
+                  record.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-gray-50 p-8 rounded-xl border border-gray-200 reveal">
+            <div class="flex items-start">
+              <div
+                class="w-12 h-12 bg-monza-100 rounded-lg flex items-center justify-center shrink-0 mr-4"
+              >
+                <svg
+                  class="w-6 h-6 text-monza-600"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"
+                  ></path>
+                </svg>
+              </div>
+              <div>
+                <h3 class="text-xl font-bold text-gray-900 mb-2">
+                  Step-by-Step Learning
+                </h3>
+                <p class="text-gray-700 leading-relaxed">
+                  You start with basic flying, then gradually add maneuvers and
+                  radio work. Training is structured ensuring you master each
+                  skill sequentially.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-gray-50 p-8 rounded-xl border border-gray-200 reveal">
+            <div class="flex items-start">
+              <div
+                class="w-12 h-12 bg-monza-100 rounded-lg flex items-center justify-center shrink-0 mr-4"
+              >
+                <svg
+                  class="w-6 h-6 text-monza-600"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                  ></path>
+                </svg>
+              </div>
+              <div>
+                <h3 class="text-xl font-bold text-gray-900 mb-2">
+                  Classroom + Hands-On
+                </h3>
+                <p class="text-gray-700 leading-relaxed">
+                  Ground lessons, simulator time, and flights combine so you
+                  understand the theory before applying it in the air.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-gray-50 p-8 rounded-xl border border-gray-200 reveal">
+            <div class="flex items-start">
+              <div
+                class="w-12 h-12 bg-monza-100 rounded-lg flex items-center justify-center shrink-0 mr-4"
+              >
+                <svg
+                  class="w-6 h-6 text-monza-600"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                </svg>
+              </div>
+              <div>
+                <h3 class="text-xl font-bold text-gray-900 mb-2">
+                  Full-Time Pace
+                </h3>
+                <p class="text-gray-700 leading-relaxed">
+                  Professional Immersion. Our intensive 8-hour daily schedule is
+                  designed to fast-track your journey without compromising
+                  safety.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-gray-50 p-8 rounded-xl border border-gray-200 reveal">
+            <div class="flex items-start">
+              <div
+                class="w-12 h-12 bg-monza-100 rounded-lg flex items-center justify-center shrink-0 mr-4"
+              >
+                <svg
+                  class="w-6 h-6 text-monza-600"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
+                  ></path>
+                </svg>
+              </div>
+              <div>
+                <h3 class="text-xl font-bold text-gray-900 mb-2">
+                  Dedicated Mentorship
+                </h3>
+                <p class="text-gray-700 leading-relaxed">
+                  You're not just a number. You'll have a dedicated primary
+                  instructor who tailors lessons to your learning style and
+                  ensures you're confident.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="order-first lg:order-last reveal">
+          <div class="rounded-2xl overflow-hidden shadow-2xl bg-sky-950 h-full">
+            <video
+              src="/videos/-alex-power-off-180.mp4"
+              autoplay
+              loop
+              muted
+              playsinline
+              class="w-full h-full object-cover min-h-[400px] lg:min-h-full"
+            >
+            </video>
+          </div>
+        </div>
+      </div>
+      <div
+        class="bg-gray-900 p-8 rounded-xl border-2 border-gray-300 shadow-2xl"
+      >
+        <h4 class="text-xl !font-sans !not-italic text-monza-600 text-center">
+          What to Expect
+        </h4>
+        <h3 class="text-2xl font-bold text-white mb-6 text-center">
+          Your First Lesson Timeline
+        </h3>
+
+        <div class="grid grid-cols-2 md:grid-cols-5 gap-4">
+          <div class="text-center">
+            <div
+              class="w-16 h-16 bg-monza-600 rounded-full flex items-center justify-center mx-auto mb-3 text-white font-bold text-xl"
+            >
+              1
+            </div>
+            <h4 class="font-bold text-white mb-1">Arrival</h4>
+            <p class="text-sm text-gray-300">Meet your instructor</p>
+          </div>
+
+          <div class="text-center">
+            <div
+              class="w-16 h-16 bg-monza-600 rounded-full flex items-center justify-center mx-auto mb-3 text-white font-bold text-xl"
+            >
+              2
+            </div>
+            <h4 class="font-bold text-white mb-1">Briefing</h4>
+            <p class="text-sm text-gray-300">Discuss flight plan</p>
+          </div>
+
+          <div class="text-center">
+            <div
+              class="w-16 h-16 bg-monza-600 rounded-full flex items-center justify-center mx-auto mb-3 text-white font-bold text-xl"
+            >
+              3
+            </div>
+            <h4 class="font-bold text-white mb-1">Preflight</h4>
+            <p class="text-sm text-gray-300">Walk around aircraft</p>
+          </div>
+
+          <div class="text-center">
+            <div
+              class="w-16 h-16 bg-monza-600 rounded-full flex items-center justify-center mx-auto mb-3 text-white font-bold text-xl"
+            >
+              4
+            </div>
+            <h4 class="font-bold text-white mb-1">Flight</h4>
+            <p class="text-sm text-gray-300">30–60 mins airborne</p>
+          </div>
+
+          <div class="text-center">
+            <div
+              class="w-16 h-16 bg-monza-600 rounded-full flex items-center justify-center mx-auto mb-3 text-white font-bold text-xl"
+            >
+              5
+            </div>
+            <h4 class="font-bold text-white mb-1">Debrief</h4>
+            <p class="text-sm text-gray-300">Q&A and next steps</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Honest Talk About Cost & Time -->
+  <section class="py-16 md:py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-5 md:px-8 lg:px-12">
+      <div class="max-w-4xl mx-auto">
+        <div class="text-center">
+          <p class="subtitle !text-xl !text-monza-600 mb-3">
+            What does this really cost?
+          </p>
+          <h2 class="title !text-lucky-950">
+            Honest Talk About<br /> Cost & Time
+          </h2>
+        </div>
+
+        <div
+          class="bg-white p-8 rounded-xl shadow-lg border border-gray-200 mb-8"
+        >
+          <div class="space-y-6">
+            <div class="border-t border-gray-200 pt-6">
+              <h3 class="text-xl font-bold text-gray-900 mb-3">
+                Professional Pathways (Career Flying)
+              </h3>
+              <p class="text-gray-700 leading-relaxed mb-4">
+                Professional pathways (zero-to-airlines) bundle all required
+                ratings and often run <strong>12–18 months</strong> at serious schools
+                focused on airline careers. By treating training like a full-time
+                job, our students typically complete the track in <strong
+                  >8-10 months</strong
+                >.
+              </p>
+              <div
+                class="bg-monza-50 border-l-4 border-monza-600 p-6 rounded-r-lg"
+              >
+                <p class="text-gray-900 font-semibold mb-2">The Difference:</p>
+                <p class="text-gray-700 leading-relaxed">
+                  At , the professional track is designed to stay around <strong
+                    class="text-monza-700">$89,500 all-in through CFII</strong
+                  >—significantly less than the $120K–$140K ranges you'll see at
+                  many large academies—while still following the same FAA
+                  standards.
+                </p>
+              </div>
+            </div>
+
+            <!-- <div class="border-t border-gray-200 pt-6">
+              <h3 class="text-xl font-bold text-gray-900 mb-3">
+                Individual Programs
+              </h3>
+              <div class="grid md:grid-cols-2 gap-4">
+                <div class="bg-gray-50 p-4 rounded-lg">
+                  <p class="font-semibold text-gray-900">Private Pilot</p>
+                  <p class="text-monza-600 font-bold text-lg">$15,500 All-In</p>
+                </div>
+                <div class="bg-gray-50 p-4 rounded-lg">
+                  <p class="font-semibold text-gray-900">Instrument Rating</p>
+                  <p class="text-monza-600 font-bold text-lg">$18,500 All-In</p>
+                </div>
+                <div class="bg-gray-50 p-4 rounded-lg">
+                  <p class="font-semibold text-gray-900">Commercial Pilot</p>
+                  <p class="text-monza-600 font-bold text-lg">$22,500 All-In</p>
+                </div>
+                <div class="bg-gray-50 p-4 rounded-lg">
+                  <p class="font-semibold text-gray-900">Multi-Engine Rating</p>
+                  <p class="text-monza-600 font-bold text-lg">$8,500 All-In</p>
+                </div>
+              </div>
+            </div> -->
+          </div>
+        </div>
+
+        <div class="text-center flex flex-col items-center">
+          <a
+            href="/enroll"
+            class="btn-primary max-w-xl !px-8 !py-4 text-lg font-bold"
+          >
+            Enroll Now to Start Your Journey
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Common Fears & Questions (Mini FAQ) -->
+  <section class="py-16 md:py-24 bg-gray-900">
+    <div class="max-w-7xl mx-auto px-5 md:px-8 lg:px-12">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="title !text-muted-50">Common Fears & Questions</h2>
+
+        <div class="space-y-6 mt-12">
+          <!-- FAQ 1 -->
+          <div
+            class="bg-gray-50 rounded-xl p-6 border border-gray-200 hover:-translate-y-1 transition-transform duration-300 ease-in-out hover:shadow-lg hover:border-gray-300"
+          >
+            <h3 class="text-xl font-bold text-gray-900 mb-3 flex items-start">
+              <svg
+                class="w-6 h-6 text-lucky-600 mr-3 shrink-0 mt-1"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                ></path>
+              </svg>
+              Is it safe?
+            </h3>
+            <p class="text-gray-700 leading-relaxed">
+              Safety is built into our DNA. While we follow strict FAA
+              oversight, goes further by employing a maintenance team that is
+              second to none and a senior instructor cadre with centuries of
+              experience. Our 12-year zero-cancellation record for checkrides
+              isn't just a stat—it’s proof that our aircraft and our pilots are
+              always mission-ready.
+            </p>
+          </div>
+
+          <!-- FAQ 2 -->
+          <div
+            class="bg-gray-50 rounded-xl p-6 border border-gray-200 hover:-translate-y-1 transition-transform duration-300 ease-in-out hover:shadow-lg hover:border-gray-300"
+          >
+            <h3 class="text-xl font-bold text-gray-900 mb-3 flex items-start">
+              <svg
+                class="w-6 h-6 text-lucky-600 mr-3 shrink-0 mt-1"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                ></path>
+              </svg>
+              What if I'm scared of heights or turbulence?
+            </h3>
+            <p class="text-gray-700 leading-relaxed">
+              Many new pilots start nervous and become comfortable as they
+              understand how the airplane works and how pilots manage bumps and
+              weather. Fear of heights in a secure cockpit is different from
+              standing on a ladder—you're strapped in with an experienced
+              instructor. Turbulence feels dramatic at first, but you'll learn
+              it's just air movement, like driving over a bumpy road.
+            </p>
+          </div>
+
+          <!-- FAQ 3 -->
+          <div
+            class="bg-gray-50 rounded-xl p-6 border border-gray-200 hover:-translate-y-1 transition-transform duration-300 ease-in-out hover:shadow-lg hover:border-gray-400"
+          >
+            <h3 class="text-xl font-bold text-gray-900 mb-3 flex items-start">
+              <svg
+                class="w-6 h-6 text-lucky-600 mr-3 shrink-0 mt-1"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                ></path>
+              </svg>
+              How fit do I need to be?
+            </h3>
+            <p class="text-gray-700 leading-relaxed">
+              For the Professional Track, you will need an FAA First Class
+              Medical Certificate. This is the airline standard, checking
+              vision, hearing, and heart health. Most people pass without issue.
+              If you are pursuing a hobby license, the requirements are more
+              flexible. We’ll guide you through the process of finding an
+              Aviation Medical Examiner (AME).
+            </p>
+          </div>
+
+          <!-- FAQ 4 -->
+          <div
+            class="bg-gray-50 rounded-xl p-6 border border-gray-200 hover:-translate-y-1 transition-transform duration-300 ease-in-out hover:shadow-lg hover:border-gray-400"
+          >
+            <h3 class="text-xl font-bold text-gray-900 mb-3 flex items-start">
+              <svg
+                class="w-6 h-6 text-lucky-600 mr-3 shrink-0 mt-1"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                ></path>
+              </svg>
+              How soon will I actually touch the controls?
+            </h3>
+            <p class="text-gray-700 leading-relaxed">
+              Immediately. We believe in mastering the craft through action. On
+              your first 'sortie,' you’ll handle basic maneuvers under close
+              supervision. Your instructor manages the critical phases like
+              takeoff and landing, but you are actively flying for the majority
+              of the lesson.
+            </p>
+          </div>
+
+          <!-- FAQ 5 -->
+          <div
+            class="bg-gray-50 rounded-xl p-6 border border-gray-200 hover:-translate-y-1 transition-transform duration-300 ease-in-out hover:shadow-lg hover:border-gray-400"
+          >
+            <h3 class="text-xl font-bold text-gray-900 mb-3 flex items-start">
+              <svg
+                class="w-6 h-6 text-lucky-600 mr-3 shrink-0 mt-1"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                ></path>
+              </svg>
+              Do I have to decide right now if I want to be an airline pilot?
+            </h3>
+            <p class="text-gray-700 leading-relaxed">
+              No. Every elite pilot started with a single flight. You can begin
+              with a Private Pilot License and transition into the Professional
+              Track later. The only difference is the level of immersion and the
+              timeline to reach the majors.
+            </p>
+          </div>
+
+          <!-- FAQ 6 -->
+          <div
+            class="bg-gray-50 rounded-xl p-6 border border-gray-200 hover:-translate-y-1 transition-transform duration-300 ease-in-out hover:shadow-lg hover:border-gray-400"
+          >
+            <h3 class="text-xl font-bold text-gray-900 mb-3 flex items-start">
+              <svg
+                class="w-6 h-6 text-lucky-600 mr-3 shrink-0 mt-1"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                ></path>
+              </svg>
+              What about motion sickness?
+            </h3>
+            <p class="text-gray-700 leading-relaxed">
+              Some people experience mild motion sickness on their first few
+              flights, but it usually subsides as you gain experience. Flying
+              the airplane yourself (rather than being a passenger) actually
+              helps because you're anticipating the movements. Your instructor
+              can adjust maneuvers if needed, and most students adapt quickly.
+              If you get car sick easily, mention it—we'll take it slow.
+            </p>
+          </div>
+        </div>
+
+        <div
+          class="mt-10 text-center p-8 rounded-xl border border-gray-300 bg-linear-to-r from-gray-100 via-gray-200 to-gray-100 bg-[length:200%_auto] transition-all duration-700 ease-in-out hover:bg-right hover:from-gray-50 hover:to-gray-100 hover:border-gray-300"
+        >
+          <p class="text-lg text-gray-900 transition-colors duration-500">
+            Your first decision isn't <strong
+              >"Do I sign a big contract?"</strong
+            ><br />— it's <strong
+              >"Do I enjoy being in the cockpit enough to take the next step?"</strong
+            >
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Next Step – Simple, Low-Risk Action -->
+  <section class="py-16 md:py-24 bg-gray-900 text-white">
+    <div class="max-w-7xl mx-auto px-5 md:px-8 lg:px-12">
+      <div class="max-w-4xl mx-auto text-center flex flex-col items-center">
+        <h2 class="!font-sans !text-monza-600 !text-xl !not-italic">
+          Start Today
+        </h2>
+        <h3 class="text-3xl md:text-4xl font-bold mb-6">
+          Ready to Take the First Step?
+        </h3>
+        <p class="text-xl text-muted-50 max-w-2xl mb-10 leading-relaxed">
+          No pressure, no contracts. Just a clear conversation about your future
+          in the cockpit and what it takes to get there.
+        </p>
+
+        <div class="grid md:grid-cols-2 gap-6 mb-10">
+          <!-- Primary CTA -->
+          <div class="bg-white text-gray-900 rounded-xl p-8 shadow-xl">
+            <div
+              class="w-16 h-16 bg-monza-600 rounded-full flex items-center justify-center mx-auto mb-4"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="text-white w-8"
+                viewBox="0 0 24 24"
+                ><path
+                  fill="currentColor"
+                  d="M7 6a1 1 0 0 1-1-1V3a1 1 0 0 1 2 0v2a1 1 0 0 1-.999 1zm10 0a1 1 0 0 1-1-1V3a1 1 0 0 1 2 0v2a1 1 0 0 1-.999 1z"
+                  opacity="0.5"></path><path
+                  fill="currentColor"
+                  d="M19 4h-1v1a1 1 0 0 1-2 0V4H8v1a1 1 0 0 1-2 0V4H5a3 3 0 0 0-3 3v2h20V7a3 3 0 0 0-3-3"
+                ></path><circle cx="7" cy="13" r="1" fill="currentColor"
+                ></circle><circle cx="7" cy="17" r="1" fill="currentColor"
+                ></circle><circle cx="12" cy="13" r="1" fill="currentColor"
+                ></circle><circle cx="12" cy="17" r="1" fill="currentColor"
+                ></circle><circle cx="17" cy="13" r="1" fill="currentColor"
+                ></circle><circle cx="17" cy="17" r="1" fill="currentColor"
+                ></circle><path
+                  fill="currentColor"
+                  d="M2 9v10a3 3 0 0 0 3 3h14a3 3 0 0 0 3-3V9zm5 9a1 1 0 1 1 0-2a1 1 0 0 1 0 2m0-4a1 1 0 1 1 0-2a1 1 0 0 1 0 2m5 4a1 1 0 1 1 0-2a1 1 0 0 1 0 2m0-4a1 1 0 1 1 0-2a1 1 0 0 1 0 2m5 4a1 1 0 1 1 0-2a1 1 0 0 1 0 2m0-4a1 1 0 1 1 0-2a1 1 0 0 1 0 2"
+                  opacity="0.5"></path></svg
+              >
+            </div>
+            <h3 class="text-2xl font-bold mb-3">Schedule a Consultation</h3>
+            <p class="text-gray-600 mb-6">
+              Meet with our senior team to align your goals with a professional
+              roadmap. We’ll look at your background and find the most efficient
+              path to the majors.
+            </p>
+            <a
+              href="/contact"
+              class="block w-full bg-monza-600 hover:bg-muted-50 hover:text-monza-600 hover:ring-2 hover:border-ring-600 text-white px-6 py-4 rounded-lg font-bold text-lg transition-colors"
+            >
+              Book Consultation
+            </a>
+          </div>
+
+          <!-- Secondary CTA -->
+          <div
+            class="bg-white/10 backdrop-blur-sm text-white rounded-xl p-8 shadow-xl border-2 border-white/20"
+          >
+            <div
+              class="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4"
+            >
+              <svg
+                class="w-8 h-8 text-white"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"
+                ></path>
+              </svg>
+            </div>
+            <h3 class="text-2xl font-bold mb-3">Get Direct Answers</h3>
+            <p class="text-muted-50 mb-6">
+              Talk to a guide who knows the industry. Ask about costs,
+              timelines, or whether this path is the right fit for you. No
+              scripts, just honest mentorship.
+            </p>
+            <a
+              href={`tel:${PHONE_NUMBER}`}
+              class="block w-full bg-monza-600 hover:bg-muted-50 hover:text-monza-600 hover:ring-2 hover:ring-monza-600 text-white px-6 py-4 rounded-lg font-bold text-lg transition-colors"
+            >
+              Call {PHONE_NUMBER}
+            </a>
+          </div>
+        </div>
+
+        <!-- <div
+          id="starter-guide"
+          class="bg-monza-700/50 backdrop-blur-sm border border-monza-500 rounded-xl p-8 flex flex-col items-center"
+        >
+          <h3 class="text-2xl font-bold mb-4">
+           Download the New Pilot Mission Brief
+          </h3>
+          <p class="text-muted-50 mb-6 max-w-xl">
+            Get our comprehensive guide on costs, FAA medical requirements, and the 8-to-10 month path from student to professional pilot.
+          </p>
+          <a
+            href="/starter-guide.pdf"
+            class="inline-flex items-center justify-center bg-white hover:bg-gray-100 text-monza-600 px-8 py-4 rounded-lg font-bold text-lg transition-colors"
+          >
+            <svg
+              class="w-6 h-6 mr-2"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+              ></path>
+            </svg>
+            Download Free Guide (PDF)
+          </a>
+        </div> -->
+      </div>
+    </div>
+  </section>
+  <CTASection {...ctaData} />
+</BaseLayout>
+<script>
+  const observerOptions = {
+    root: null,
+    threshold: 0.1,
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        // Seleciona todos os elementos que têm a classe 'reveal' dentro do container
+        const reveals = entry.target.querySelectorAll(".reveal");
+        reveals.forEach((el, index) => {
+          // Adiciona um atraso dinâmico baseado no índice (0.2s, 0.4s, 0.6s...)
+          setTimeout(() => {
+            el.classList.add("active");
+          }, index * 200);
+        });
+        // Para de observar após animar uma vez
+        observer.unobserve(entry.target);
+      }
+    });
+  }, observerOptions);
+
+  // Observa a seção dos cards e a timeline
+  const sections = document.querySelectorAll(".observe-section");
+  sections.forEach((section) => observer.observe(section));
+</script>
+
+<style>
+  /* Estado Inicial: Invisível e levemente para baixo */
+  .reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.4s ease-out;
+  }
+
+  /* Estado Ativo: Visível e na posição original */
+  .reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+  }
+</style>

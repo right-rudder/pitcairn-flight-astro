@@ -1,0 +1,27 @@
+---
+import ImageComp from '../ImageComp.astro';
+
+interface Props {
+  src: string;
+  alt: string;
+  class?: string;
+}
+
+const { src, alt, class: className = "" } = Astro.props;
+---
+
+<div class={`group relative overflow-hidden ${className}`}>
+  <ImageComp
+    src={src}
+    alt={alt}
+    class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+  />
+  <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+  <div class="absolute inset-0 shadow-inner-hover opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+</div>
+
+<style>
+  .shadow-inner-hover {
+    box-shadow: inset 0 0 60px rgba(0, 0, 0, 0.5);
+  }
+</style>

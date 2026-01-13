@@ -1,0 +1,1167 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import CTASection from "../components/CTASection.astro";
+import { SITE_TITLE } from "../data/consts";
+import Hero75 from "../components/Hero75.astro";
+
+const pageTitle = "Career Pathways: Two Routes to Professional Aviation";
+const pageDescription =
+  "Discover the two clearest pathways to an airline career: military pilot transition (MIL2ATP) or zero-to-airlines beginner training. Compare timelines, costs, and requirements.";
+
+const heroData = {
+  image: {
+    src: "/src/assets/angry-_-kat-5R4fBlHEegc-unsplash.jpg",
+    alt: "Flight Training Programs",
+  },
+  title: "Two Clear Paths to an Airline Career",
+  subTitle:
+    "Whether you're a military pilot transitioning to civilian aviation or a high school graduate with no flight time, we have a structured pathway to your airline pilot certificate and your first paid flying job. No guesswork. No hidden requirements. Just clarity.",
+  cta: [
+    {
+      url: "#military-pathway",
+      text: "I'm a Military Pilot",
+      variant: "primary",
+    },
+    {
+      url: "#beginner-pathway",
+      text: "I'm Starting From Zero",
+      variant: "secondary",
+    },
+  ],
+};
+---
+
+<BaseLayout title={pageTitle} description={pageDescription}>
+  <!-- Hero Section -->
+  <Hero75 data={heroData} />
+
+  <!-- Introduction Section -->
+  <section class="py-16 bg-gray-50">
+    <div class="container mx-auto px-4 max-w-4xl">
+      <h2 class="title">Why These Two Pathways?</h2>
+      <div class="prose prose-lg max-w-none">
+        <p class="text-lg leading-relaxed mb-4">
+          The aviation career pipeline is heavily shaped by whether you bring
+          existing military flight hours or you're starting as a complete
+          beginner. The <strong
+            >training requirements, timeline, and cost are dramatically
+            different.</strong
+          > Understanding your starting point is critical to setting realistic expectations
+          and choosing the right program.
+        </p>
+        <p class="text-lg leading-relaxed">
+          This page breaks down both routes—step-by-step, hour-by-hour, and
+          dollar-by-dollar—so you can compare and decide which one applies to
+          you.
+        </p>
+      </div>
+      <div class="mt-12 grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+        <a
+          href="#military-pathway"
+          class="bg-lucky-600 hover:bg-lucky-700 transition-colors rounded-lg p-8 text-center shadow-xl"
+        >
+          <h3 class="text-2xl font-title text-muted-100 font-bold mb-3">
+            I'm a Military Pilot
+          </h3>
+          <p class="text-white mb-6">
+            Transition to civilian aviation in 6-12 weeks
+          </p>
+          <span
+            class="inline-block bg-white text-lucky-600 px-6 py-2 rounded-full font-semibold"
+            >Learn More →</span
+          >
+        </a>
+
+        <a
+          href="#beginner-pathway"
+          class="bg-monza-600 hover:bg-monza-700 transition-colors rounded-lg p-8 text-center shadow-xl"
+        >
+          <h3 class="text-2xl font-title text-muted-100 font-bold mb-3">
+            I'm Starting From Zero
+          </h3>
+          <p class="text-white mb-6">
+            Complete airline-ready training in 12-14 months
+          </p>
+          <span
+            class="inline-block bg-white text-monza-600 px-6 py-2 rounded-full font-semibold"
+            >Learn More →</span
+          >
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- PATHWAY 1: Military Pilot Transition -->
+  <section id="military-pathway" class="py-20 bg-white scroll-mt-20">
+    <div class="container mx-auto px-4 max-w-6xl">
+      <div class="bg-monza-50 border-l-4 border-monza-600 p-6 mb-12">
+        <p>PATHWAY 1:</p>
+        <h2 class="title">Military Pilot Transition to Civilian Aviation</h2>
+      </div>
+
+      <!-- Who This Is For -->
+      <div class="mb-12">
+        <h3 class="text-2xl font-bold mb-6">Who This Is For</h3>
+        <ul class="space-y-3 text-lg">
+          <li class="flex items-start">
+            <span class="text-monza-600 mr-3">✓</span>
+            <span
+              >Active-duty, reserve, or recently separated USAF, Navy, Army, or
+              Guard pilots</span
+            >
+          </li>
+          <li class="flex items-start">
+            <span class="text-monza-600 mr-3">✓</span>
+            <span>Pilots with 250+ hours of military flight time</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-monza-600 mr-3">✓</span>
+            <span
+              >Pilots looking to leverage existing hours and reduce total
+              training time</span
+            >
+          </li>
+          <li class="flex items-start">
+            <span class="text-monza-600 mr-3">✓</span>
+            <span
+              >Pilots ready to enter regional or commercial aviation at
+              750–1,000 hours total time</span
+            >
+          </li>
+          <li class="flex items-start">
+            <span class="text-monza-600 mr-3">✓</span>
+            <span
+              >Timeline-focused: Want to reach ATP in the shortest timeframe
+              possible</span
+            >
+          </li>
+        </ul>
+      </div>
+
+      <!-- The Reality -->
+      <div
+        class="mb-12 bg-linear-to-r from-monza-50 to-monza-100 p-8 rounded-lg"
+      >
+        <h3 class="text-2xl font-bold mb-6">
+          The Reality: Your Military Training Already Counts
+        </h3>
+
+        <div class="mb-6">
+          <h4 class="text-xl font-bold mb-3 text-monza-800">
+            The Big Advantage:
+          </h4>
+          <p class="text-lg leading-relaxed">
+            The FAA recognizes military pilot training through a <strong
+              >Restricted ATP (R-ATP) pathway</strong
+            > that <strong
+              >cuts total flight hours by 50%—from 1,500 to 750 hours.</strong
+            > Your military flight hours (in multiengine turbine aircraft, if applicable)
+            count directly toward your civilian minimums.
+          </p>
+        </div>
+
+        <div>
+          <h4 class="text-xl font-bold mb-3 text-monza-800">
+            Key Regulations:
+          </h4>
+          <ul class="space-y-2 text-lg">
+            <li>
+              <strong>Regular ATP:</strong> 1,500 hours total time required
+            </li>
+            <li>
+              <strong>Restricted ATP (R-ATP) for Military Pilots:</strong> 750 hours
+              total time required
+            </li>
+            <li>
+              <strong>With a Bachelor's degree:</strong> Further reduced options available
+              with regular ATP
+            </li>
+          </ul>
+          <p class="text-lg mt-4 font-semibold text-monza-600">
+            This means your military training isn't "starting from zero"—it's a
+            significant head start.
+          </p>
+        </div>
+      </div>
+
+      <!-- What Happens Next -->
+      <div class="mb-12">
+        <h3 class="text-2xl font-bold mb-6">
+          Military to Civilian Pathway: What Happens Next
+        </h3>
+        <p class="text-lg mb-6">
+          Military pilots transitioning to civilian aviation face a <strong
+            >unique set of requirements</strong
+          > that differ significantly from civilian pathways:
+        </p>
+
+        <ol class="space-y-4 mb-6">
+          <li class="flex items-start">
+            <span
+              class="bg-monza-600 text-white rounded-full w-8 h-8 flex items-center justify-center mr-4 shrink-0 mt-1 font-bold"
+              >1</span
+            >
+            <div>
+              <strong>Military Competency Verification</strong> – Convert your military
+              certifications to FAA civilian credentials (Commercial Pilot + Instrument
+              Rating via military competency route)
+            </div>
+          </li>
+          <li class="flex items-start">
+            <span
+              class="bg-monza-600 text-white rounded-full w-8 h-8 flex items-center justify-center mr-4 shrink-0 mt-1 font-bold"
+              >2</span
+            >
+            <div>
+              <strong>Multi-Engine Rating</strong> – If your military background wasn't
+              in multiengine aircraft, add civilian multi-engine experience
+            </div>
+          </li>
+          <li class="flex items-start">
+            <span
+              class="bg-monza-600 text-white rounded-full w-8 h-8 flex items-center justify-center mr-4 shrink-0 mt-1 font-bold"
+              >3</span
+            >
+            <div>
+              <strong>ATP Certification Training Program (ATP CTP)</strong> – Required
+              30 hours of classroom + 10 hours simulator training specific to Part
+              121/135 air carrier operations
+            </div>
+          </li>
+          <li class="flex items-start">
+            <span
+              class="bg-monza-600 text-white rounded-full w-8 h-8 flex items-center justify-center mr-4 shrink-0 mt-1 font-bold"
+              >4</span
+            >
+            <div>
+              <strong>ATP Checkride</strong> – Final certification exam to serve as
+              Pilot-in-Command
+            </div>
+          </li>
+        </ol>
+
+        <div class="grid md:grid-cols-2 gap-6 mt-6">
+          <div class="bg-monza-50 p-6 rounded-lg">
+            <h5 class="font-bold text-lg mb-2">Typical Timeline:</h5>
+            <p class="text-2xl font-bold text-monza-600">6–12 weeks</p>
+            <p class="text-sm text-gray-600">
+              (compressed vs. civilian pathways due to your existing hours)
+            </p>
+          </div>
+          <div class="bg-monza-50 p-6 rounded-lg">
+            <h5 class="font-bold text-lg mb-2">Typical Cost:</h5>
+            <p class="text-2xl font-bold text-monza-600">$10,000–$20,000</p>
+            <p class="text-sm text-gray-600">for training/checkrides</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Why Choose MIL2ATP -->
+      <div class="mb-12 bg-monza-900 text-white p-8 rounded-lg">
+        <h3 class="text-2xl font-bold mb-6">Why Choose MIL2ATP?</h3>
+        <p class="text-lg mb-4">
+          <strong>MIL2ATP is specifically built for military pilots.</strong> It understands:
+        </p>
+        <ul class="space-y-3 text-lg">
+          <li class="flex items-start">
+            <span class="mr-3">•</span>
+            <span>Military-to-civilian credential conversion</span>
+          </li>
+          <li class="flex items-start">
+            <span class="mr-3">•</span>
+            <span
+              >R-ATP hour verification and military flight hour documentation</span
+            >
+          </li>
+          <li class="flex items-start">
+            <span class="mr-3">•</span>
+            <span
+              >Multiengine transition for single-engine military backgrounds</span
+            >
+          </li>
+          <li class="flex items-start">
+            <span class="mr-3">•</span>
+            <span>Fast-track ATP CTP and checkride scheduling</span>
+          </li>
+          <li class="flex items-start">
+            <span class="mr-3">•</span>
+            <span>Part 135 and regional airline hiring pathways</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Military CTA -->
+      <div
+        class="text-center py-12 bg-linear-to-r from-monza-50 to-monza-100 rounded-lg"
+      >
+        <h3 class="text-2xl font-bold mb-4">Primary CTA: Military Pathway</h3>
+        <a
+          href="https://mil2atp.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-block bg-monza-600 hover:bg-monza-700 text-white font-bold py-4 px-8 rounded-lg text-xl transition-colors shadow-lg mb-6"
+        >
+          I'm a Military Pilot – Explore MIL2ATP →
+        </a>
+        <p class="text-lg max-w-3xl mx-auto mb-6">
+          MIL2ATP specializes in transitioning military pilots to civilian
+          aviation careers. Review your R-ATP eligibility, get a personalized
+          transition timeline, and connect with military-to-civilian training
+          experts.
+        </p>
+        <div class="flex flex-wrap justify-center gap-4">
+          <a
+            href="#"
+            class="text-monza-600 hover:text-monza-800 font-semibold underline"
+            >Download: Military Pilot Transition Checklist</a
+          >
+          <span class="text-gray-400">|</span>
+          <a
+            href="#"
+            class="text-monza-600 hover:text-monza-800 font-semibold underline"
+            >Schedule a Free Consultation</a
+          >
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PATHWAY 2: Beginner to Airline Pilot -->
+  <section id="beginner-pathway" class="py-20 bg-gray-50 scroll-mt-20">
+    <div class="container mx-auto px-4 max-w-6xl">
+      <div class="bg-monza-50 border-l-4 border-monza-600 p-6 mb-12">
+        <p>PATHWAY 2:</p>
+        <h2 class="title">Beginner to Airline Pilot (Zero-to-Airlines)</h2>
+      </div>
+
+      <!-- Who This Is For -->
+      <div class="mb-12">
+        <h3 class="text-2xl font-bold mb-6">Who This Is For</h3>
+        <ul class="space-y-3 text-lg">
+          <li class="flex items-start">
+            <span class="text-monza-600 mr-3">✓</span>
+            <span>High school graduates (typical age 18–25)</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-monza-600 mr-3">✓</span>
+            <span
+              >Career-changers looking to leave their current job and pursue
+              full-time pilot training</span
+            >
+          </li>
+          <li class="flex items-start">
+            <span class="text-monza-600 mr-3">✓</span>
+            <span
+              >Professionals with college degrees (engineering, STEM
+              backgrounds)</span
+            >
+          </li>
+          <li class="flex items-start">
+            <span class="text-monza-600 mr-3">✓</span>
+            <span>Anyone with zero flight hours (or fewer than 50 hours)</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-monza-600 mr-3">✓</span>
+            <span
+              >Timeline-focused: Want to become airline-ready in the shortest
+              timeframe possible (12–14 months)</span
+            >
+          </li>
+          <li class="flex items-start">
+            <span class="text-monza-600 mr-3">✓</span>
+            <span
+              >Cost-conscious: Want to minimize debt and maximize affordability</span
+            >
+          </li>
+        </ul>
+      </div>
+
+      <!-- The Reality -->
+      <div
+        class="mb-12 bg-linear-to-r from-monza-50 to-monza-100 p-8 rounded-lg"
+      >
+        <h3 class="text-2xl font-bold mb-6">
+          The Reality: Start Here, Finish as an Airline-Ready Pilot
+        </h3>
+
+        <div class="mb-6">
+          <h4 class="text-xl font-bold mb-3 text-monza-800">
+            The Big Advantage:
+          </h4>
+          <p class="text-lg leading-relaxed">
+            's <strong
+              >Zero-to-Airlines program is specifically designed to compress
+              what normally takes 18–24 months into 12–14 months</strong
+            > through intensive daily training (8–10 hours/day), military-grade structure,
+            and <strong
+              >in-house DPE staff that eliminate checkride wait times.</strong
+            >
+          </p>
+        </div>
+
+        <div class="mb-6">
+          <h4 class="text-xl font-bold mb-3 text-monza-800">
+            Typical Industry Timeline (for comparison):
+          </h4>
+          <ul class="space-y-2 text-lg mb-4">
+            <li>Private Pilot: 3–6 months (40–70 hours)</li>
+            <li>Instrument Rating: 2–4 months (40–60 hours)</li>
+            <li>Commercial Pilot: 2–4 months (50–100 hours)</li>
+            <li>Certified Flight Instructor (CFI): 2–3 months (20–30 hours)</li>
+            <li>
+              Certified Flight Instructor Instrument (CFII): 1–2 months (10–15
+              hours)
+            </li>
+          </ul>
+          <p class="font-bold text-lg">
+            Total: 18–24 months, 200–300+ hours, $120,000–$150,000
+          </p>
+        </div>
+
+        <div class="bg-monza-700 text-white p-6 rounded-lg">
+          <h4 class="text-xl font-bold mb-3"> Zero-to-Airlines Timeline:</h4>
+          <ul class="space-y-2 text-lg mb-4">
+            <li>
+              <strong>All certifications (PPL → CFII) in 12–14 months</strong>
+            </li>
+            <li><strong>All flight hours included in training</strong></li>
+            <li><strong>All in one structured, intensified program</strong></li>
+            <li>
+              <strong>Cost: $80,000 all-in</strong> (vs. $120,000–$150,000 industry
+              average)
+            </li>
+            <li><strong>Savings: $40,000–$70,000</strong></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- What's Included -->
+      <div class="mb-12">
+        <h3 class="text-2xl font-bold mb-6">
+          Zero-to-Airlines Program: What's Included
+        </h3>
+        <p class="text-lg mb-6">
+          The <strong>Zero-to-Airlines program at </strong> combines intensive
+          ground school, simulator training, and real flight time to take you from
+          zero hours to <strong
+            >airline-ready with your CFII certificate in hand.</strong
+          >
+        </p>
+
+        <h4 class="text-xl font-bold mb-4">Phase Breakdown:</h4>
+        <ol class="space-y-4 mb-8">
+          <li class="flex items-start">
+            <span
+              class="bg-monza-600 text-white rounded-full w-8 h-8 flex items-center justify-center mr-4 shrink-0 mt-1 font-bold"
+              >1</span
+            >
+            <div>
+              <strong>Private Pilot License (4–6 weeks)</strong> – Your first solo
+              certification
+            </div>
+          </li>
+          <li class="flex items-start">
+            <span
+              class="bg-monza-600 text-white rounded-full w-8 h-8 flex items-center justify-center mr-4 shrink-0 mt-1 font-bold"
+              >2</span
+            >
+            <div>
+              <strong>Instrument Rating (3–4 weeks)</strong> – Critical for airline
+              operations
+            </div>
+          </li>
+          <li class="flex items-start">
+            <span
+              class="bg-monza-600 text-white rounded-full w-8 h-8 flex items-center justify-center mr-4 shrink-0 mt-1 font-bold"
+              >3</span
+            >
+            <div>
+              <strong>Commercial Pilot License (3–4 weeks)</strong> – Permission to
+              fly for money
+            </div>
+          </li>
+          <li class="flex items-start">
+            <span
+              class="bg-monza-600 text-white rounded-full w-8 h-8 flex items-center justify-center mr-4 shrink-0 mt-1 font-bold"
+              >4</span
+            >
+            <div>
+              <strong>Certified Flight Instructor (2–3 weeks)</strong> – Permission
+              to teach (time-building platform)
+            </div>
+          </li>
+          <li class="flex items-start">
+            <span
+              class="bg-monza-600 text-white rounded-full w-8 h-8 flex items-center justify-center mr-4 shrink-0 mt-1 font-bold"
+              >5</span
+            >
+            <div>
+              <strong
+                >Certified Flight Instructor – Instrument (2–3 weeks)</strong
+              > – Advanced instructor credentials
+            </div>
+          </li>
+        </ol>
+
+        <div class="grid md:grid-cols-2 gap-6">
+          <div class="bg-green-50 p-6 rounded-lg">
+            <h5 class="font-bold text-lg mb-3 text-green-800">
+              What's Included in the $80K:
+            </h5>
+            <ul class="space-y-2">
+              <li>✓ All flight hours through CFII</li>
+              <li>✓ Lodging for entire training period</li>
+              <li>✓ iPad + training materials</li>
+              <li>✓ All checkrides (no hidden DPE fees)</li>
+              <li>✓ Simulator time</li>
+              <li>✓ Ground school (Sporty's syllabus +  customization)</li>
+              <li>✓ Instructor expertise (performance-based accountability)</li>
+            </ul>
+          </div>
+          <div class="bg-red-50 p-6 rounded-lg">
+            <h5 class="font-bold text-lg mb-3 text-red-800">
+              What's NOT Included:
+            </h5>
+            <ul class="space-y-2">
+              <li>
+                ✗ Multi-Engine Instructor (MEI) training (reserved for
+                merit-selected top performers)
+              </li>
+              <li>✗ Post-CFII advanced ratings</li>
+              <li>✗ Lodging extensions beyond training period</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Merit-Based Selection -->
+      <div class="mb-12 bg-yellow-50 border-l-4 border-yellow-500 p-8">
+        <h3 class="text-2xl font-bold mb-6">
+          Merit-Based Selection & Subsidies
+        </h3>
+        <p class="text-lg mb-4">
+           uses an <strong>HR-style interview process</strong> to select candidates,
+          not just "can you pay?"
+        </p>
+
+        <h4 class="text-xl font-bold mb-3">Evaluation Criteria:</h4>
+        <ul class="grid md:grid-cols-2 gap-3 mb-6">
+          <li>• Integrity (background check, honesty)</li>
+          <li>• Punctuality and work ethic</li>
+          <li>• English fluency (for communication and FAA exams)</li>
+          <li>• Math competency (navigation, fuel calculations)</li>
+          <li>• Standardized test scores (SAT/ACT as learning indicators)</li>
+          <li>• Motivation (real career goal vs. casual interest)</li>
+        </ul>
+
+        <div class="bg-yellow-100 p-6 rounded-lg">
+          <h4 class="text-xl font-bold mb-3">Subsidy Opportunity:</h4>
+          <ul class="space-y-2 text-lg">
+            <li>
+              <strong
+                >Top performers may train free or heavily subsidized</strong
+              > (funded by 's mechanic school partnerships and airline contracts)
+            </li>
+            <li>
+              Cost can drop to <strong
+                >$20,000–$50,000 for qualified candidates</strong
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Instructor Performance Incentives -->
+      <div class="mb-12 bg-monza-900 text-white p-8 rounded-lg">
+        <h3 class="text-2xl font-bold mb-6">
+          's Instructor Performance Incentives (Your Success = Their Success)
+        </h3>
+
+        <div class="mb-6">
+          <h4 class="text-xl font-bold mb-3 text-monza-100">
+            Traditional flight school problem:
+          </h4>
+          <p class="text-lg">
+            Instructors teach as a stepping stone to airline careers, sometimes
+            with apathy about student outcomes.
+          </p>
+        </div>
+
+        <div class="mb-6">
+          <h4 class="text-xl font-bold mb-3 text-monza-100"> solution:</h4>
+          <p class="text-lg mb-4">
+            Instructors are financially rewarded for your success:
+          </p>
+          <ul class="space-y-3 text-lg">
+            <li>
+              <strong>80% first-time checkride pass rate</strong> → Instructor receives
+              <strong>Free ATP CTP course</strong> (worth $4–8K)
+            </li>
+            <li>
+              <strong>85% pass rate</strong> → Instructor receives <strong
+                >Free ATP CTP + Free ATP Practical Exam</strong
+              > (worth $8–10K)
+            </li>
+            <li>
+              <strong>95% pass rate</strong> → Instructor earns <strong
+                >Right-seat position in 's Part 135 jet operation</strong
+              > (career-launching + ongoing pay)
+            </li>
+          </ul>
+        </div>
+
+        <div class="bg-monza-800 p-6 rounded-lg">
+          <p class="text-xl font-bold">
+            Your benefit: Instructors are <strong
+              >financially motivated to ensure you pass.</strong
+            > Apathy is replaced by accountability and genuine investment in your
+            success.
+          </p>
+        </div>
+      </div>
+
+      <!-- Part 135 Pathway -->
+      <div class="mb-12">
+        <h3 class="text-2xl font-bold mb-6">
+          Part 135 Pathway: Turning Your Performance into a Job
+        </h3>
+        <p class="text-lg mb-6">
+          Once you graduate with your CFII (at ~260–400 total hours), you need
+          to reach <strong>1,500 hours for ATP eligibility.</strong>  offers a
+          direct path:
+        </p>
+
+        <div class="grid md:grid-cols-2 gap-6 mb-6">
+          <div class="bg-green-50 p-6 rounded-lg border-2 border-green-500">
+            <h4 class="text-xl font-bold mb-3 text-green-800">
+              If You Perform at the Top Level (95% pass rate):
+            </h4>
+            <ul class="space-y-2">
+              <li>
+                • Earn a <strong
+                  >right-seat position in 's Part 135 jet operation</strong
+                >
+              </li>
+              <li>
+                • Build your remaining 1,100+ hours while <strong
+                  >earning a paycheck</strong
+                > (not paying for time-building)
+              </li>
+              <li>
+                • Gain real Part 135 experience (airlines prefer candidates with
+                charter/regional backgrounds)
+              </li>
+              <li>
+                • Transition directly to regional or major airline careers with
+                ~1,500 hours + Part 135 experience
+              </li>
+            </ul>
+          </div>
+          <div class="bg-monza-50 p-6 rounded-lg border-2 border-monza-500">
+            <h4 class="text-xl font-bold mb-3 text-monza-800">
+              If You Perform at Strong Levels (80–85% pass rate):
+            </h4>
+            <ul class="space-y-2">
+              <li>• Still graduate with CFII + professional training</li>
+              <li>
+                • Pursue traditional time-building routes (flight instruction,
+                charter operations, airlines' regional programs)
+              </li>
+              <li>• Typical timeline: 12–24 months to 1,500 hours</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Timeline & Cost Table -->
+      <div class="mb-12 overflow-x-auto">
+        <h3 class="text-2xl font-bold mb-6">
+          Zero-to-Airlines Timeline & Total Cost
+        </h3>
+        <table
+          class="w-full border-collapse bg-white shadow-lg rounded-lg overflow-hidden"
+        >
+          <thead class="bg-monza-600 text-white">
+            <tr>
+              <th class="p-4 text-left">Phase</th>
+              <th class="p-4 text-left">Duration</th>
+              <th class="p-4 text-left">Total Hours (Cumulative)</th>
+              <th class="p-4 text-left">Included in $80K</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="border-b">
+              <td class="p-4 font-semibold">Private Pilot</td>
+              <td class="p-4">4–6 wks</td>
+              <td class="p-4">50–60</td>
+              <td class="p-4">✓ Flight + ground + checkride</td>
+            </tr>
+            <tr class="border-b bg-gray-50">
+              <td class="p-4 font-semibold">Instrument Rating</td>
+              <td class="p-4">3–4 wks</td>
+              <td class="p-4">90–120</td>
+              <td class="p-4">✓ Flight + sim + ground + checkride</td>
+            </tr>
+            <tr class="border-b">
+              <td class="p-4 font-semibold">Commercial Pilot</td>
+              <td class="p-4">3–4 wks</td>
+              <td class="p-4">150–220</td>
+              <td class="p-4">✓ Flight + ground + checkride</td>
+            </tr>
+            <tr class="border-b bg-gray-50">
+              <td class="p-4 font-semibold"
+                >Certified Flight Instructor (CFI)</td
+              >
+              <td class="p-4">2–3 wks</td>
+              <td class="p-4">170–245</td>
+              <td class="p-4">✓ Flight + ground + checkride</td>
+            </tr>
+            <tr class="border-b">
+              <td class="p-4 font-semibold">CFII</td>
+              <td class="p-4">2–3 wks</td>
+              <td class="p-4">180–260</td>
+              <td class="p-4">✓ Flight + ground + checkride</td>
+            </tr>
+            <tr class="bg-monza-100 font-bold">
+              <td class="p-4">TOTAL PROGRAM</td>
+              <td class="p-4">12–14 mo</td>
+              <td class="p-4">180–260 hrs</td>
+              <td class="p-4">$80,000 all-in</td>
+            </tr>
+            <tr class="border-t-2">
+              <td class="p-4">+ Time-Building to 1,500 hrs</td>
+              <td class="p-4">6–12 mo (varies)</td>
+              <td class="p-4">1,240–1,320 hrs</td>
+              <td class="p-4">Part 135 job = paid; other options vary</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="mt-6 bg-green-50 p-6 rounded-lg">
+          <h4 class="text-xl font-bold mb-3">Your Bottom-Line Investment:</h4>
+          <ul class="space-y-2 text-lg">
+            <li><strong>Program cost: $80,000</strong> (all-inclusive)</li>
+            <li>
+              <strong>Industry comparison: $120,000–$150,000</strong> for identical
+              training
+            </li>
+            <li class="text-green-700 font-bold text-xl">
+              <strong>Your savings: $40,000–$70,000</strong>
+            </li>
+            <li>
+              <strong>Time-building:</strong> Can be paid employment (Part 135 right-seat
+              job) vs. out-of-pocket elsewhere
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Beginner CTA -->
+      <div
+        class="text-center py-12 bg-linear-to-r from-monza-50 to-monza-100 rounded-lg"
+      >
+        <h3 class="text-2xl font-bold mb-4">Primary CTA: Beginner Pathway</h3>
+        <a
+          href="/programs/zero-to-airlines"
+          class="inline-block bg-monza-600 hover:bg-monza-700 text-white font-bold py-4 px-8 rounded-lg text-xl transition-colors shadow-lg mb-6"
+        >
+          Start Your Zero-to-Airlines Journey →
+        </a>
+        <p class="text-lg max-w-3xl mx-auto mb-6">
+          Check your merit-based subsidy eligibility. Complete a brief online
+          application, schedule your admissions interview, and see if you
+          qualify for reduced or free training. New cohorts start monthly.
+        </p>
+        <div class="flex flex-wrap justify-center gap-4 text-sm md:text-base">
+          <a
+            href="#"
+            class="text-monza-600 hover:text-monza-800 font-semibold underline"
+            >Download: Zero-to-Airlines Program Guide</a
+          >
+          <span class="text-gray-400">|</span>
+          <a
+            href="#"
+            class="text-monza-600 hover:text-monza-800 font-semibold underline"
+            >Watch: A Day in Zero-to-Airlines Training</a
+          >
+          <span class="text-gray-400">|</span>
+          <a
+            href="#"
+            class="text-monza-600 hover:text-monza-800 font-semibold underline"
+            >Join Our Pilot Community</a
+          >
+          <span class="text-gray-400">|</span>
+          <a
+            href="#"
+            class="text-monza-600 hover:text-monza-800 font-semibold underline"
+            >Schedule a Free Discovery Call</a
+          >
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Comparison Table Section -->
+  <section class="py-20 bg-white">
+    <div class="container mx-auto px-4 max-w-6xl">
+      <h2 class="text-3xl md:text-4xl font-bold mb-12 text-center">
+        Side-by-Side Comparison: MIL2ATP vs. Zero-to-Airlines
+      </h2>
+
+      <div class="overflow-x-auto">
+        <table
+          class="w-full border-collapse bg-white shadow-xl rounded-lg overflow-hidden"
+        >
+          <thead class="bg-linear-to-r from-monza-600 to-monza-600 text-white">
+            <tr>
+              <th class="p-4 text-left">Factor</th>
+              <th class="p-4 text-left">MIL2ATP (Military Transition)</th>
+              <th class="p-4 text-left">Zero-to-Airlines (Beginner)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="border-b">
+              <td class="p-4 font-semibold">Starting Point</td>
+              <td class="p-4">750+ military hours</td>
+              <td class="p-4">0 hours</td>
+            </tr>
+            <tr class="border-b bg-gray-50">
+              <td class="p-4 font-semibold">Total Time to ATP</td>
+              <td class="p-4">750–1,000 hours</td>
+              <td class="p-4">1,500 hours</td>
+            </tr>
+            <tr class="border-b">
+              <td class="p-4 font-semibold">Training Duration</td>
+              <td class="p-4">6–12 weeks</td>
+              <td class="p-4">12–14 months + 6–12 mo time-building</td>
+            </tr>
+            <tr class="border-b bg-gray-50">
+              <td class="p-4 font-semibold">All-In Cost</td>
+              <td class="p-4">$10–20K</td>
+              <td class="p-4">$80K (includes lodging, materials)</td>
+            </tr>
+            <tr class="border-b">
+              <td class="p-4 font-semibold">Key Advantage</td>
+              <td class="p-4"
+                >Speed; leverage existing military hours; fast R-ATP pathway</td
+              >
+              <td class="p-4"
+                >Structured accountability; instructor incentives; Part 135 job
+                opportunity for top performers</td
+              >
+            </tr>
+            <tr class="border-b bg-gray-50">
+              <td class="p-4 font-semibold">Primary Challenge</td>
+              <td class="p-4">Military-to-civilian credential conversion</td>
+              <td class="p-4"
+                >Long timeline; requires 1,500 hours; tuition upfront</td
+              >
+            </tr>
+            <tr class="border-b">
+              <td class="p-4 font-semibold">Best For</td>
+              <td class="p-4"
+                >Separating/retired military pilots; time-focused; leverage
+                hours</td
+              >
+              <td class="p-4"
+                >Career-changers; fresh HS grads; want guaranteed instruction
+                quality + job potential</td
+              >
+            </tr>
+            <tr class="border-b bg-gray-50">
+              <td class="p-4 font-semibold">Post-Training</td>
+              <td class="p-4">Ready for Part 121/135 PIC immediately</td>
+              <td class="p-4"
+                >Needs Part 135 time-building (~12 mo); then ready for Part 121
+                (or sooner if top performer)</td
+              >
+            </tr>
+            <tr class="border-b">
+              <td class="p-4 font-semibold">Program Focus</td>
+              <td class="p-4">Streamlined credential conversion</td>
+              <td class="p-4"
+                >Comprehensive training from zero; instructor-accountable;
+                career pathway</td
+              >
+            </tr>
+            <tr class="bg-gray-50">
+              <td class="p-4 font-semibold">Primary URL</td>
+              <td class="p-4"
+                ><a
+                  href="https://mil2atp.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="text-monza-600 hover:underline">mil2atp.com</a
+                ></td
+              >
+              <td class="p-4"
+                ><a
+                  href="/programs/zero-to-airlines"
+                  class="text-monza-600 hover:underline"
+                  > Zero-to-Airlines Program</a
+                ></td
+              >
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="py-20 bg-gray-50">
+    <div class="container mx-auto px-4 max-w-6xl">
+      <h2 class="text-3xl md:text-4xl font-bold mb-12 text-center">
+        FAQ: Both Pathways
+      </h2>
+
+      <!-- Military Pathway FAQs -->
+      <div class="mb-12">
+        <h3 class="text-2xl font-bold mb-6 text-monza-800">
+          Military Pathway (MIL2ATP) FAQs
+        </h3>
+        <div class="space-y-6">
+          <div class="bg-white p-6 rounded-lg shadow">
+            <h4 class="font-bold text-lg mb-2">
+              Q: I have military time in a single-engine trainer (T-6, etc.).
+              Can I still use the R-ATP pathway?
+            </h4>
+            <p>
+              A: Yes. You can apply for CPL/IR using your military time.
+              However, for ATP requirements, the FAA prefers multiengine turbine
+              experience in Part 135 operations. MIL2ATP can advise on your
+              specific situation and coordinate training if needed.
+            </p>
+          </div>
+
+          <div class="bg-white p-6 rounded-lg shadow">
+            <h4 class="font-bold text-lg mb-2">
+              Q: What if my military hours are in a non-turbine aircraft (e.g.,
+              C-130)?
+            </h4>
+            <p>
+              A: Some military hours count toward the 750 R-ATP minimum; others
+              may not. MIL2ATP will do a free assessment of your logbook and
+              confirm FAA eligibility.
+            </p>
+          </div>
+
+          <div class="bg-white p-6 rounded-lg shadow">
+            <h4 class="font-bold text-lg mb-2">
+              Q: How long between separating from the military and starting ATP
+              training?
+            </h4>
+            <p>
+              A: You can start immediately after separation. MIL2ATP recommends
+              starting within 6 months to keep skills sharp.
+            </p>
+          </div>
+
+          <div class="bg-white p-6 rounded-lg shadow">
+            <h4 class="font-bold text-lg mb-2">
+              Q: Can I get the military R-ATP while still on active duty?
+            </h4>
+            <p>
+              A: Yes, but you'll need to coordinate with your command. Some
+              bases allow separation training; others don't. MIL2ATP can advise
+              on timing and coordination.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Beginner Pathway FAQs -->
+      <div>
+        <h3 class="text-2xl font-bold mb-6 text-monza-800">
+          Beginner Pathway (Zero-to-Airlines) FAQs
+        </h3>
+        <div class="space-y-6">
+          <div class="bg-white p-6 rounded-lg shadow">
+            <h4 class="font-bold text-lg mb-2">
+              Q: What if I have 20 hours of private pilot time already?
+            </h4>
+            <p>
+              A:  can evaluate your logbook and determine if you can enter
+              mid-stream (skip PPL, start IR). This could save 2–4 weeks and
+              ~$5–8K.
+            </p>
+          </div>
+
+          <div class="bg-white p-6 rounded-lg shadow">
+            <h4 class="font-bold text-lg mb-2">
+              Q: Is the $80K all-in price fixed, or are there hidden costs?
+            </h4>
+            <p>
+              A: Yes, it's fixed and all-in.  provides an <strong
+                >itemized breakdown before enrollment.</strong
+              > No hidden fees. Additional services (lodging extensions, post-CFII
+              ratings) are charged separately.
+            </p>
+          </div>
+
+          <div class="bg-white p-6 rounded-lg shadow">
+            <h4 class="font-bold text-lg mb-2">
+              Q: What if I fail a checkride?
+            </h4>
+            <p>
+              A: 's pass rate is <strong>80%+</strong>—significantly above
+              the 65–70% industry average. If you don't pass on first attempt,
+               subsidizes your retest. Your success is the goal.
+            </p>
+          </div>
+
+          <div class="bg-white p-6 rounded-lg shadow">
+            <h4 class="font-bold text-lg mb-2">
+              Q: Can I train part-time (weekends) instead of full-time?
+            </h4>
+            <p>
+              A: 's program is intensive—8–10 hour days, Monday–Friday,
+              non-negotiable until solo. After solo, schedule loosens slightly.
+              If you need part-time training, discuss with admissions.
+            </p>
+          </div>
+
+          <div class="bg-white p-6 rounded-lg shadow">
+            <h4 class="font-bold text-lg mb-2">
+              Q: Do I automatically get a Part 135 job after graduating?
+            </h4>
+            <p>
+              A: Not automatically. <strong
+                >95% pass rate = right-seat Part 135 offer.</strong
+              > Most graduates hit 80–85% and pursue other time-building paths (flight
+              instruction, charter, etc.).
+            </p>
+          </div>
+
+          <div class="bg-white p-6 rounded-lg shadow">
+            <h4 class="font-bold text-lg mb-2">
+              Q: How do I build hours to 1,500 if I'm not hired at 's Part
+              135 operation?
+            </h4>
+            <p>A: Common options:</p>
+            <ul class="list-disc ml-6 mt-2 space-y-1">
+              <li>
+                Flight instruction at your training school or elsewhere (most
+                common)
+              </li>
+              <li>Part 135 charter operations (hire pilots as right-seat)</li>
+              <li>Airlines' regional programs (hire at low hours)</li>
+              <li>Typical timeline: 12–24 months to 1,500 hours</li>
+            </ul>
+          </div>
+
+          <div class="bg-white p-6 rounded-lg shadow">
+            <h4 class="font-bold text-lg mb-2">
+              Q: Can I use GI Bill or military tuition assistance?
+            </h4>
+            <p>
+              A:  is investigating GI Bill approval. Contact admissions for
+              current status. Military tuition assistance (TA) eligibility
+              varies by branch—check with your HR.
+            </p>
+          </div>
+
+          <div class="bg-white p-6 rounded-lg shadow">
+            <h4 class="font-bold text-lg mb-2">
+              Q: How much will I earn after graduation?
+            </h4>
+            <p>
+              A: Post-CFII instructors earn $25–40K/year depending on location
+              and flight school. Part 135 right-seat positions vary but
+              typically range $35–60K depending on operation. Regional airline
+              FOs earn $50–70K+.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Closing Section -->
+  <section
+    class="py-20 bg-linear-to-br from-slate-800 via-slate-700 to-slate-900 text-white"
+  >
+    <div class="container mx-auto px-4 max-w-6xl">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold mb-6">Ready to Decide?</h2>
+        <p class="text-xl leading-relaxed max-w-4xl mx-auto mb-4">
+          You now understand both pathways—the timelines, the costs, the
+          requirements, and the outcomes. <strong
+            >The choice comes down to your starting point and your timeline.</strong
+          >
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto mb-12">
+        <div class="bg-slate-700 p-8 rounded-lg">
+          <h3 class="text-xl font-bold mb-3">Military background?</h3>
+          <p class="mb-4">
+            Visit <strong>MIL2ATP.com</strong> to leverage your hours, compress your
+            timeline to 6–12 weeks, and transition affordably to civilian aviation.
+          </p>
+        </div>
+        <div class="bg-slate-700 p-8 rounded-lg">
+          <h3 class="text-xl font-bold mb-3">Starting from zero?</h3>
+          <p class="mb-4">
+            Commit to 12–14 months of intensive training at <strong
+              >'s Zero-to-Airlines program.</strong
+            > Graduate with CFII in hand, earn instructor performance bonuses, and
+            step into a Part 135 job (if you're a top performer) or continue toward
+            1,500 hours through other pathways.
+          </p>
+        </div>
+      </div>
+
+      <p class="text-2xl font-bold text-center mb-12">
+        Either way, you have a clear, transparent, accountable pathway to an
+        airline career.
+      </p>
+
+      <!-- Dual Primary CTAs -->
+      <div class="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto mb-8">
+        <a
+          href="https://mil2atp.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="bg-monza-600 hover:bg-monza-700 text-white font-bold py-6 px-8 rounded-lg text-xl text-center transition-colors shadow-xl"
+        >
+          Military Pilot → Visit MIL2ATP
+        </a>
+
+        <a
+          href="/programs/zero-to-airlines"
+          class="bg-monza-600 hover:bg-monza-700 text-white font-bold py-6 px-8 rounded-lg text-xl text-center transition-colors shadow-xl"
+        >
+          Beginner → Apply for Zero-to-Airlines
+        </a>
+      </div>
+
+      <!-- Secondary CTAs -->
+      <div class="flex flex-wrap justify-center gap-4 text-sm md:text-base">
+        <a
+          href="#"
+          class="text-monza-300 hover:text-monza-100 font-semibold underline"
+          >Download: Military vs. Beginner Comparison Guide</a
+        >
+        <span class="text-gray-400">|</span>
+        <a
+          href="#"
+          class="text-monza-300 hover:text-monza-100 font-semibold underline"
+          >Watch: Transition Stories</a
+        >
+        <span class="text-gray-400">|</span>
+        <a
+          href="#"
+          class="text-monza-300 hover:text-monza-100 font-semibold underline"
+          >Join Our Pilot Community</a
+        >
+        <span class="text-gray-400">|</span>
+        <a
+          href="#"
+          class="text-monza-300 hover:text-monza-100 font-semibold underline"
+          >Schedule a Free Consultation</a
+        >
+      </div>
+    </div>
+  </section>
+</BaseLayout>

@@ -1,0 +1,111 @@
+---
+import { getCollection } from "astro:content";
+import type { CollectionEntry } from "astro:content";
+
+interface Props {
+  category?: string;
+  limit?: number;
+  showCategory?: boolean;
+}
+
+type FAQ = CollectionEntry<"faqs">;
+
+const { category, limit, showCategory = false } = Astro.props;
+
+let faqs = await getCollection("faqs");
+
+// Filter by category if specified
+if (category) {
+  faqs = faqs.filter((faq: FAQ) => faq.data.category === category);
+}
+
+// Sort by order
+const sortedFaqs = faqs.sort(
+  (a: FAQ, b: FAQ) => (a.data.order || 999) - (b.data.order || 999)
+);
+
+// Limit results if specified
+const displayFaqs = limit ? sortedFaqs.slice(0, limit) : sortedFaqs;
+---
+
+<div class="space-y-4">
+   <div class="flex items-center justify-center">
+      <h2 class="title !text-center !text-lucky-950">Frequently Asked<br>Questions</h2>
+   </div>
+  {
+    displayFaqs.map(async (faq: FAQ) => {
+      const { Content } = await faq.render();
+      return (
+        <details class="group bg-white border border-gray-200 rounded-xl overflow-hidden hover:border-monza-300 transition-colors">
+          <summary class="flex items-start justify-between cursor-pointer p-6 hover:bg-gray-50 transition-colors">
+            <div class="flex items-start flex-1 pr-4">
+            
+              <svg
+                class="w-6 h-6 text-monza-600 mr-3 shrink-0 mt-0.5"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                />
+              </svg>
+              <div>
+                <h3 class="text-lg font-ubuntu capitalize font-bold text-gray-900 mb-1">
+                  {faq.data.question}
+                </h3>
+                {showCategory && faq.data.category && (
+                  <span class="inline-block font-ubuntu text-xs font-semibold text-monza-600 bg-monza-50 px-2 py-1 rounded-full">
+                    {faq.data.category}
+                  </span>
+                )}
+              </div>
+            </div>
+            <svg
+              class="w-5 h-5 text-gray-500 shrink-0 transition-transform group-open:rotate-180"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M19 9l-7 7-7-7"
+              />
+            </svg>
+          </summary>
+          <div class="px-6 pb-6 pt-2">
+            <div class="prose prose-gray max-w-none text-gray-700 leading-relaxed">
+              <Content />
+            </div>
+          </div>
+        </details>
+      );
+    })
+  }
+</div>
+
+{
+  displayFaqs.length === 0 && (
+    <div class="text-center py-12 bg-gray-50 rounded-xl border border-gray-200">
+      <svg
+        class="w-12 h-12 text-gray-400 mx-auto mb-4"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+        />
+      </svg>
+      <p class="text-gray-600 font-medium">No FAQs found</p>
+    </div>
+  )
+}

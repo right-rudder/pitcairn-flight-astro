@@ -1,0 +1,78 @@
+---
+import { COMPANY_NAME } from "../../data/consts";
+import ImageWithZoomEffect from "./ImageWithZoomEffect.astro";
+
+const ctaMeetOurFleetPlaceholder = {
+  upperHeading: "PREMIUM TRAINING AIRCRAFT",
+  title: `THE ${COMPANY_NAME} FLEET`,
+  description: `Train in technologically advanced aircraft (TAA) maintained by the best maintenance team in the industry. From foundational single-engine trainers to multi-engine glass cockpits, our fleet is selected to ensure you master the craft with reliable, high-quality equipment.`,
+  image: {
+    src: "/src/assets/placeholder-dark-clouds-pitcairn-flight-academy-instrument-rating.webp",
+    alt: "imagePlaceholder",
+  },
+};
+
+const imagePlaceholder = {
+  src: "/src/assets/placeholder-dark-clouds-pitcairn-flight-academy-instrument-rating.webp",
+  alt: "imagePlaceholder",
+};
+
+const {
+  ctaData = ctaMeetOurFleetPlaceholder,
+  showButton = true,
+  upperHeadingTextSize = "!text-xl",
+  titleTextSize = "!text-3xl",
+  imageSide = "left",
+  background = "blue",
+  image = imagePlaceholder,
+} = Astro.props;
+
+const isImageOnLeft = imageSide === "left";
+const isBackgroundBlue = background === "blue";
+---
+
+<section
+  id="our-mission"
+  class=`${isBackgroundBlue ? "bg-madison-950" : "bg-gray-900" }`
+>
+  <div class="max-w-7xl mx-auto p-8 lg:px-8">
+    <div class="grid grid-cols-1 xl:grid-cols-2 gap-8">
+      <div
+        class=`${isImageOnLeft ? "order-2" : "order-1" } flex flex-col justify-start`
+      >
+        <p
+          class=`${upperHeadingTextSize} !text-center lg:!text-left  !mx-0 subtitle !text-white mb-4`
+        >
+          {ctaData.upperHeading}
+        </p>
+        <h2
+          class=`${titleTextSize} uppercase  !text-center lg:!text-left mx-auto lg:!mx-0 max-w-[80%] lg:max-w-[50%] xl:max-w-[70%] font-bold title  !text-white`
+        >
+          {ctaData.title}
+        </h2>
+        <p class="text-white sans !mx-0 !text-center lg:!text-left text-xl">
+          Our fleet is meticulously maintained to the highest standards,
+          combining reliability, safety, and modern avionics to deliver a
+          premium training experience. <br /><br />Each aircraft is selected to
+          support pilots at every phase of their journey, from foundational
+          skills to advanced flight operations.
+        </p>
+        {
+          showButton && (
+            <a
+              href="/aircraft"
+              class="btn-primary max-w-[180px] mt-8 self-center lg:self-start"
+            >
+              Meet Our Fleet
+            </a>
+          )
+        }
+      </div>
+      <div
+        class=`${isImageOnLeft ? "order-1" : "order-2" } h-full  mx-auto lg:mx-0`
+      >
+        <ImageWithZoomEffect src={image.src} alt={image.alt} class="rounded" />
+      </div>
+    </div>
+  </div>
+</section>

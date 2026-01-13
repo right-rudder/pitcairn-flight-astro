@@ -1,0 +1,116 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+@theme {
+  --font-title: "Orbitron Variable", "serif";
+  --font-ubuntu: "Ubuntu Sans Variable", "sans-serif";
+  /* --font-sans: 'Poppins', 'sans-serif'; */
+  /* --font-main-title: "Changa One", sans-serif; */
+  --font-sans: "Inter Variable", "sans-serif";
+  --font-main-header: "Protest Strike", sans-serif;
+  --color-muted-50: #f5f6f6;
+  --color-muted-100: #e4e7e9;
+  --color-muted-200: #ccd2d5;
+  --color-muted-300: #a9b3b7;
+  --color-muted-400: #7e8b92;
+  --color-muted-500: #637077;
+  --color-muted-600: #555f65;
+  --color-muted-700: #495155;
+  --color-muted-800: #3d4246;
+  --color-muted-900: #393d40;
+  --color-muted-950: #232629;
+
+  --color-monza-50: #fff1f2;
+  --color-monza-100: #ffe1e2;
+  --color-monza-200: #ffc7c9;
+  --color-monza-300: #ffa0a4;
+  --color-monza-400: #ff6a70;
+  --color-monza-500: #f83b43;
+  --color-monza-600: #e61c24;
+  --color-monza-700: #bb131a;
+  --color-monza-800: #a0141a;
+  --color-monza-900: #84181c;
+  --color-monza-950: #48070a;
+
+  --color-lucky-50: #f0f3fe;
+  --color-lucky-100: #dee3fb;
+  --color-lucky-200: #c4cff9;
+  --color-lucky-300: #9cb0f4;
+  --color-lucky-400: #6d87ed;
+  --color-lucky-500: #4b60e6;
+  --color-lucky-600: #3641da;
+  --color-lucky-700: #2d30c8;
+  --color-lucky-800: #2b2aa3;
+  --color-lucky-900: #272881;
+  --color-lucky-950: #242362;
+
+  --animate-super-slow-zoom: slow-zoom 37s ease forwards;
+  --animate-slow-zoom: slow-zoom 27s ease forwards;
+  --animate-fast-zoom: fast-zoom 9s ease alternate infinite;
+  --animate-medium-zoom: medium-zoom 15s ease-in-out forwards;
+
+  @keyframes medium-zoom {
+    0% {
+      transform: scale(1);
+    }
+    100% {
+      transform: scale(1.2);
+    }
+  }
+
+  @keyframes slow-zoom {
+    0% {
+      transform: scale(1);
+    }
+    100% {
+      transform: scale(1.15);
+    }
+  }
+
+  @keyframes fast-zoom {
+    0% {
+      transform: scale(1);
+    }
+    100% {
+      transform: scale(1.25);
+    }
+  }
+}
+
+.btn-primary {
+  @apply bg-sky-600 border border-sky-600 text-white font-semibold px-5 py-2 flex items-center rounded-sm justify-center gap-2 cursor-pointer hover:bg-white hover:border-sky-700 hover:text-sky-700 transition duration-200 hover:scale-105;
+}
+
+.btn-transparent {
+  @apply bg-transparent rounded-sm border border-white px-5 py-2 text-white font-semibold cursor-pointer hover:bg-white hover:text-sky-600 transition duration-200 hover:scale-105;
+}
+
+.title {
+  @apply font-sans text-3xl md:text-4xl lg:text-5xl mb-4;
+}
+
+.subtitle {
+  @apply text-lg md:text-xl font-bold text-sky-600 max-w-3xl mx-auto;
+}
+
+.key-detail-title {
+  @apply font-title text-lucky-950 font-extrabold italic;
+}
+.paragraph-text {
+  @apply text-lg text-gray-600 mb-8 leading-relaxed;
+}
+.item-text {
+  @apply text-base text-gray-600 leading-relaxed;
+}
+.item-text-red {
+  @apply text-lg text-monza-600 font-bold leading-relaxed;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  @apply font-sans font-black;
+}

@@ -1,0 +1,184 @@
+---
+import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
+import ImageWithGradientAndText from "./ImageWithGradientAndText.astro";
+
+interface Props {
+  data: {
+    eyebrow: string;
+    title: string;
+    paragraphs: string[];
+    cta: {
+      text: string;
+      href: string;
+    };
+    images: {
+      src: string;
+      alt: string;
+    }[];
+  };
+}
+
+const { data } = Astro.props;
+---
+
+<section
+  class="py-16 md:py-24 bg-white overflow-hidden scroll-reveal opacity-0 translate-y-8 transition-all duration-1000 ease-out"
+>
+  <div class="max-w-7xl mx-auto px-5 md:px-8 lg:px-12">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+      <div class="order-2 lg:order-1">
+        <p
+          class="text-sky-600 font-bold uppercase tracking-widest text-sm mb-2"
+        >
+          {data.eyebrow}
+        </p>
+        <h2
+          class="title !text-[2.5rem] uppercase !font-main-header tracking-wide !text-slate-950 mb-8 max-w-lg"
+        >
+          {data.title}
+        </h2>
+
+        <div class="space-y-6 mb-10 text-slate-600 text-lg leading-relaxed">
+          {data.paragraphs.map((paragraph) => <p set:html={paragraph} />)}
+        </div>
+
+        <a class="btn-primary w-fit shadow-lg shadow-sky-100">
+          {data.cta.text}
+        </a>
+      </div>
+
+      <div
+        class="order-1 lg:order-2 relative h-[500px] w-full flex items-center justify-center"
+      >
+        <div class="relative w-full h-full" id="carousel-container">
+          {
+            data.images.map((img, index) => (
+              <div
+                class={`absolute inset-0 transition-all duration-700 ease-in-out transform rounded-sm shadow-2xl overflow-hidden carousel-item`}
+                data-index={index}
+                style={`z-index: ${data.images.length - index};`}
+              >
+                <ImageWithGradientAndText
+                  src={img.src}
+                  alt={img.alt}
+                  class="w-full h-full object-cover object-center"
+                />
+                <div class="absolute inset-0 bg-slate-900/10" />
+              </div>
+            ))
+          }
+        </div>
+
+        <div class="absolute -bottom-6 flex gap-4 z-30">
+          <button
+            id="prev-btn"
+            class="w-24 h-12 rounded-l-full border border-slate-200 bg-sky-600 text-slate-50 flex items-center justify-center hover:bg-sky-500 hover:text-slate-100 hover:border-sky-600 transition-all duration-300 shadow-md cursor-pointer"
+            aria-label="Previous Image"
+          >
+            <FaChevronLeft />
+          </button>
+          <button
+            id="next-btn"
+            class="w-24 h-12 rounded-r-full border border-slate-200 bg-sky-600 text-slate-50 flex items-center justify-center hover:bg-sky-500 hover:text-slate-100 hover:border-sky-600 transition-all duration-300 shadow-md cursor-pointer"
+            aria-label="Next Image"
+          >
+            <FaChevronRight />
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .carousel-item {
+    width: 90%;
+    height: 90%;
+    top: 5%;
+    left: 5%;
+    opacity: 0;
+    transform: scale(0.9) translateX(0) translateY(0) rotate(0deg);
+    pointer-events: none;
+  }
+
+  .carousel-item.active {
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    opacity: 1;
+    transform: scale(1) translateX(0) translateY(0) rotate(0deg);
+    z-index: 20 !important;
+    pointer-events: auto;
+  }
+
+  .carousel-item.prev {
+    opacity: 0.7;
+    transform: scale(0.96) translateX(-35px) translateY(15px) rotate(-5deg);
+    z-index: 10 !important;
+  }
+
+  .carousel-item.next {
+    opacity: 0.7;
+    transform: scale(0.96) translateX(35px) translateY(15px) rotate(5deg);
+    z-index: 9 !important;
+  }
+
+  .visible {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+  }
+</style>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const revealObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+            revealObserver.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    document
+      .querySelectorAll(".scroll-reveal")
+      .forEach((el) => revealObserver.observe(el));
+
+    const items = document.querySelectorAll(".carousel-item");
+    const prevBtn = document.getElementById("prev-btn");
+    const nextBtn = document.getElementById("next-btn");
+    let currentIndex = 0;
+    const totalItems = items.length;
+
+    function updateCarousel() {
+      items.forEach((item, index) => {
+        item.classList.remove("active", "prev", "next");
+        (item as HTMLElement).style.zIndex = "";
+
+        if (index === currentIndex) {
+          item.classList.add("active");
+        } else if (index === (currentIndex - 1 + totalItems) % totalItems) {
+          item.classList.add("prev");
+        } else if (index === (currentIndex + 1) % totalItems) {
+          item.classList.add("next");
+        }
+      });
+    }
+
+    updateCarousel();
+
+    nextBtn?.addEventListener("click", () => {
+      currentIndex = (currentIndex + 1) % totalItems;
+      updateCarousel();
+    });
+
+    prevBtn?.addEventListener("click", () => {
+      currentIndex = (currentIndex - 1 + totalItems) % totalItems;
+      updateCarousel();
+    });
+  });
+</script>

@@ -1,0 +1,58 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { COMPANY_NAME } from "../data/consts";
+---
+
+<BaseLayout
+  siteTitle={`Enrollment Confirmation | ${COMPANY_NAME}`}
+  siteDescription="Your enrollment application has been received. Our admissions team at {COMPANY_NAME} will contact you shortly to discuss your training journey."
+  keywords={`${COMPANY_NAME}, enrollment confirmation, flight training NC, pilot training application`}
+  class="bg-white text-black"
+>
+  <div
+    class="min-h-[80vh] pt-32 lg:p-44 flex items-center justify-center px-4 sm:px-6 lg:px-8"
+  >
+    <div class="max-w-lg mx-auto text-center">
+      <div class="text-lucky-950 mb-8">
+        <svg class="w-24 h-24 mx-auto" viewBox="0 0 24 24"
+          ><path
+            fill="currentColor"
+            fill-rule="evenodd"
+            d="M12 21a9 9 0 1 0 0-18a9 9 0 0 0 0 18m-.232-5.36l5-6l-1.536-1.28l-4.3 5.159l-2.225-2.226l-1.414 1.414l3 3l.774.774z"
+            clip-rule="evenodd"></path></svg
+        >
+      </div>
+
+      <h1
+        class="text-4xl font-title font-bold leading-tight text-madison-950 mb-4"
+      >
+        Application Received
+      </h1>
+
+      <p class="text-lg text-gray-600 mb-8">
+        Thank you for submitting your application to <strong
+          >{COMPANY_NAME}</strong
+        >!<br />
+        Your information has been received. An admissions advisor will contact you
+        within
+        <strong>24 hours</strong> to schedule your consultation call.
+      </p>
+
+      <div class="mt-8 p-4 bg-gray-50 rounded-lg flex flex-col gap-4 w-full">
+        <a href="/" class="btn-primary py-3"> Return Home </a>
+        <a
+          href="/aircraft"
+          class="text-sm ring-2 ring-lucky-950 px-3 py-2 rounded-xs font-semibold text-lucky-950 hover:bg-gray-700 hover:text-white transition-colors"
+        >
+          Explore Our Fleet
+        </a>
+        <a
+          href="/about"
+          class="text-sm ring-2 ring-lucky-950 px-3 py-2 rounded-xs font-semibold text-lucky-950 hover:bg-gray-700 hover:text-white transition-colors"
+        >
+          About Academy
+        </a>
+      </div>
+    </div>
+  </div>
+</BaseLayout>

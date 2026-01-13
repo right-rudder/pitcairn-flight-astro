@@ -1,0 +1,71 @@
+---
+interface Props {
+  data: {
+    mainImage?: string;
+    title?: string;
+    upperheader?: string;
+    descriptionParagraphs?: string[];
+    bulletPointLists?: {
+      title: string;
+      items: string[];
+    }[];
+  };
+}
+
+const { data } = Astro.props;
+---
+
+<section class="py-24 bg-white">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 lg:px-12">
+    
+    <div class="text-center max-w-3xl mx-auto mb-8 flex flex-col items-center">
+      {data.upperheader && (
+        <span class="subtitle mb-2">
+          {data.upperheader}
+        </span>
+      )}
+      {data.title && <h2 class="title !text-5xl max-w-xl mb-4">{data.title}</h2>}
+      {data.descriptionParagraphs?.map((p) => (
+        <p class="paragraph-text" set:html={p}></p>
+      ))}
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8">
+      {data.bulletPointLists?.map((list, index) => (
+        <article class="group relative overflow-hidden bg-muted-50 p-8 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
+        <div class="absolute top-0 left-0 right-0 h-2 bg-gradient-to-r from-monza-200 via-monza-500 to-monza-400 transition-opacity duration-500 group-hover:opacity-0"></div>
+<div class="absolute top-0 left-0 right-0 h-2 bg-gradient-to-r from-lucky-700 via-lucky-900 to-lucky-800 opacity-0 transition-opacity duration-500 group-hover:opacity-100"></div>
+          <div class="mb-6 mt-2">
+            <div class="w-12 h-12 bg-monza-700 rounded-lg flex items-center justify-center shadow-sm mb-4 group-hover:bg-lucky-950 transition-colors">
+              <span class="font-title text-2xl font-bold text-muted-50">
+                0{index + 1}
+              </span>
+            </div>
+            
+            <h3 class="font-title text-2xl font-bold text-muted-950 group-hover:text-lucky-950 transition-colors">
+              {list.title}
+            </h3>
+          </div>
+          
+          <ul class="space-y-4">
+            {list.items.map((item) => (
+              <li class="flex items-start gap-2">
+                <svg 
+                  xmlns="http://www.w3.org/2000/svg" 
+                  class="w-5 h-5 shrink-0 text-green-700 group-hover:text-lucky-950 transition-colors duration-300 mt-0.5"  
+                  viewBox="0 0 32 32"
+                >
+                  <path fill="currentColor" d="M16 2a14 14 0 1 0 14 14A14 14 0 0 0 16 2m-2 19.59l-5-5L10.59 15L14 18.41L21.41 11l1.596 1.586Z"/>
+                  <path fill="none" d="m14 21.591l-5-5L10.591 15L14 18.409L21.41 11l1.595 1.585z"/>
+                </svg>
+                <span class="item-text  group-hover:text-muted-800 transition-colors duration-300">
+                  {item}
+                </span>
+              </li>
+            ))}
+          </ul>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>

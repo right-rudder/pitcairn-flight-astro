@@ -1,0 +1,90 @@
+---
+interface Step {
+  number: number;
+  title: string;
+  description: string;
+  cta?: {
+    text: string;
+    href: string;
+  };
+}
+
+interface Props {
+  title: string;
+  subtitle?: string;
+  steps: Step[];
+}
+
+const { title, subtitle, steps } = Astro.props;
+---
+
+<section class="py-16 md:py-24 bg-gray-50 overflow-hidden">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 lg:px-12">
+    <div class="text-center mb-12 md:mb-16">
+      <h2 class="title !text-lucky-950">
+        {title}
+      </h2>
+      {subtitle && <p class="subtitle">{subtitle}</p>}
+    </div>
+
+    <div class="relative">
+      <div
+        class="hidden lg:block absolute top-16 left-0 right-0 h-1 bg-primary-200"
+        aria-hidden="true"
+      >
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        {
+          steps.map((step, index) => (
+            <div 
+              class="step-card opacity-0 translate-y-10 bg-white group flex flex-col justify-between items-center rounded-lg px-5 py-8 shadow-md transition-all ease-in-out duration-700 h-full hover:scale-105 hover:shadow-2xl hover:-translate-y-2"
+              style={`transition-delay: ${index * 150}ms;`}
+            >
+              <div class="z-10 inline-flex items-center group-hover:bg-monza-600 justify-center bg-gray-800 text-white text-4xl font-bold rounded-full mb-6 shadow-lg h-12 w-12 group-hover:scale-110 transition-all duration-500">
+                {step.number}
+              </div>
+
+              <h3 class="text-2xl/7 min-h-14 text-center font-title font-bold text-gray-800 mb-5 group-hover:text-muted-700 transition-colors duration-500">
+                {step.title}
+              </h3>
+
+              <p class="text-muted-600 mb-6 text-center leading-relaxed">
+                {step.description}
+              </p>
+
+              <a
+                href={step.cta?.href}
+                target={step.cta?.href.includes("http") ? "_blank" : ""}
+                class="btn-primary text-center group-hover:scale-105 transition-transform duration-500"
+              >
+                {step.cta?.text}
+              </a>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  const observerOptions = {
+    root: null,
+    threshold: 0.1,
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.remove('opacity-0', 'translate-y-10');
+        entry.target.classList.add('opacity-100', 'translate-y-0');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, observerOptions);
+
+  document.querySelectorAll('.step-card').forEach((card) => {
+    observer.observe(card);
+  });
+</script>

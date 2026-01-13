@@ -1,0 +1,187 @@
+---
+import "../styles/global.css";
+import { SITE_TITLE, KEYWORDS, OG_IMAGE, FAVICON } from "../data/consts";
+
+interface Props {
+  title: string;
+  description: string;
+  image?: string;
+  keywords?: string;
+}
+
+const canonicalURL = Astro.url.href;
+
+const {
+  title,
+  description,
+  image = OG_IMAGE,
+  keywords = KEYWORDS,
+} = Astro.props;
+---
+
+<!-- Global Metadata -->
+<meta charset="utf-8" />
+<!-- Site Created By:    
+       _____  _       _     _     _____           _     _           
+      |  __ \(_)     | |   | |   |  __ \         | |   | |          
+      | |__) |_  __ _| |__ | |_  | |__) |   _  __| | __| | ___ _ __ 
+      |  _  /| |/ _` | '_ \| __| |  _  / | | |/ _` |/ _` |/ _ \ '__|
+      | | \ \| | (_| | | | | |_  | | \ \ |_| | (_| | (_| |  __/ |   
+      |_|  \_\_|\__, |_| |_|\__| |_|  \_\__,_|\__,_|\__,_|\___|_|   
+      |  \/  |   __/ |  | |      | | (_)                            
+      | \  / | _|___/ __| | _____| |_ _ _ __   __ _                 
+      | |\/| |/ _` | '__| |/ / _ \ __| | '_ \ / _` |                
+      | |  | | (_| | |  |   <  __/ |_| | | | | (_| |                
+      |_|  |_|\__,_|_|  |_|\_\___|\__|_|_| |_|\__, |                
+                                               __/ |                
+                                              |___/                 
+
+    Nice to see you here.  Find new student pilots with Right Rudder Marketing.  https://rightruddermarketing.com/contact-us -->
+
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<link rel="icon" type="image/png" href={FAVICON} />
+
+<!-- Canonical URL -->
+<link rel="canonical" href={canonicalURL} />
+
+<!-- SiteMap -->
+<link rel="sitemap" href="/sitemap-index.xml" />
+<link
+  rel="alternate"
+  type="application/rss+xml"
+  title={SITE_TITLE}
+  href={"/rss.xml"}
+/>
+
+<meta name="generator" content={Astro.generator} />
+
+<!-- TODO : Google tag (gtag.js) -->
+<!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-HCNNK7Z4RF"></script>
+  <script type="text/javascript">
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-HCNNK7Z4RF');
+</script> -->
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FlightSchool",
+    "name": "{COMPANY_NAME}",
+    "alternateName": "",
+    "url": "",
+    "logo": "/favicon.png",
+    "image": "/{COMPANY_NAME}.png",
+    "description": "{COMPANY_NAME} is a Part 141 flight school in Pikeville, North Carolina, focused on rigorous, full-time pilot training for individuals pursuing professional aviation careers.",
+    "telephone": "+19109008043",
+    "email": "info@mail.mhaviation.com",
+    "currenciesAccepted": "USD",
+    "priceRange": "$$$",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "278 Aviation Rd.",
+      "addressLocality": "Pikeville",
+      "addressRegion": "NC",
+      "postalCode": "27863",
+      "addressCountry": "US"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 35.4929,
+      "longitude": -77.9834
+    },
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+        "opens": "09:00",
+        "closes": "17:00"
+      }
+    ],
+    "sameAs": [
+      "https://www.facebook.com/mil2ATP",
+      "https://twitter.com/mil2atp",
+      "https://www.instagram.com/mil2ATP",
+      "https://www.linkedin.com/company/mil2atp-inc."
+    ],
+    "areaServed": {
+      "@type": "Place",
+      "name": [
+        "Pikeville, NC",
+        "Goldsboro, NC",
+        "Wayne County, NC",
+        "Eastern North Carolina"
+      ]
+    },
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Professional Pilot Training Programs",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Professional Airline Pilot Track"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Private Pilot Certificate (ASEL)"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Instrument Rating (ASEL)"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Commercial Pilot Certificate (ASEL)"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Multi-Engine Rating"
+          }
+        }
+      ]
+    }
+  }
+</script>
+
+<!-- Primary Meta Tags -->
+<title>{title}</title>
+<meta name="title" content={title} />
+<meta name="description" content={description} />
+<meta name="keywords" content={keywords} />
+<meta name="author" content="{COMPANY_NAME}" />
+<meta name="geo.region" content="US-NC" />
+<meta name="geo.placename" content="Pikeville" />
+<meta name="geo.position" content="35.4929;-77.9834" />
+<meta name="ICBM" content="35.4929, -77.9834" />
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website" />
+<meta property="og:url" content={Astro.url} />
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:image" content={new URL(image, Astro.url)} />
+<meta property="og:locale" content="en_US" />
+<meta property="og:site_name" content="{COMPANY_NAME}" />
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:url" content={Astro.url} />
+<meta property="twitter:title" content={title} />
+<meta property="twitter:description" content={description} />
+<meta property="twitter:image" content={new URL(image, Astro.url)} />

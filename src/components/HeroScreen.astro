@@ -1,0 +1,128 @@
+---
+import ImageComp from "./ImageComp.astro";
+import { PHONE_NUMBER } from "../data/consts";
+
+interface ctaProp {
+  url: string;
+  text: string;
+  variant?: string;
+}
+
+interface Props {
+  data: {
+    image: {
+      src: string;
+      alt: string;
+    };
+    title: string;
+    subTitle?: string;
+    cta?: ctaProp[];
+  };
+}
+
+const { data } = Astro.props;
+---
+
+<section
+  class="hero-section relative overflow-hidden flex justify-center items-center lg:items-end lg:pb-24 text-white min-h-[90vh]"
+  aria-label="Hero section"
+>
+  <!-- Background overlay for better text readability -->
+  <div
+    class="absolute inset-0 bg-linear-to-b from-black/10 to-black/20 -z-10"
+    aria-hidden="true"
+  >
+  </div>
+
+  <!-- Background Image -->
+  <ImageComp
+    src={data.image.src}
+    alt={data.image.alt}
+    class="absolute inset-0 h-full w-full object-cover object-left lg:object-center brightness-90 animate-slow-zoom -z-20"
+    loading="eager"
+    quality={100}
+  />
+
+  <!-- Content Container -->
+  <div class="max-w-7xl w-full px-5 md:px-8 lg:px-12 mx-auto">
+    <div
+      class="flex flex-col justify-center items-center lg:items-start max-w-4xl"
+    >
+      <!-- Main Content -->
+      <div
+        class="flex flex-col items-center lg:items-start gap-y-6 text-center lg:text-left"
+      >
+        <h1
+          class="font-title text-white text-3xl/tight sm:text-4xl/tight md:text-5xl/tight lg:text-6xl/16 uppercase font-bold drop-shadow-2xl"
+          set:html={data.title}
+        />
+        {
+          data.subTitle && (
+            <p
+              class="text-lg/7 sm:text-xl/8 md:text-xl/6 font-light text-muted-50 max-w-xl"
+              set:html={data.subTitle}
+            />
+          )
+        }
+      </div>
+
+      <!-- Call to Action Buttons -->
+      {
+        data.cta && data.cta.length > 0 && (
+          <div class="mt-10 flex flex-col gap-4 items-center sm:flex-row lg:items-start w-full sm:w-auto">
+            {data.cta.map((item, index) => (
+              <a
+                href={item.url}
+                class={`${index === 0 ? "btn-primary" : "btn-transparent"} text-base sm:text-lg md:text-xl px-8 py-4 min-w-[200px] text-center font-semibold transition-all duration-300 hover:scale-105 hover:shadow-2xl`}
+                aria-label={item.text}
+              >
+                {item.text}
+              </a>
+            ))}
+          </div>
+        )
+      }
+    </div>
+  </div>
+</section>
+
+<style>
+  .hero-section {
+    position: relative;
+  }
+
+  /* Improved text shadow for better readability */
+  h1,
+  h2 {
+    text-shadow:
+      0 2px 10px rgba(0, 0, 0, 0.7),
+      0 4px 20px rgba(0, 0, 0, 0.5);
+  }
+
+  /* Enhanced animation for background image */
+  @keyframes slow-zoom {
+    0% {
+      transform: scale(1);
+    }
+    100% {
+      transform: scale(1.1);
+    }
+  }
+
+  .animate-slow-zoom {
+    animation: slow-zoom 20s ease-in-out infinite alternate;
+  }
+
+  /* Button hover effects */
+  .btn-primary:hover,
+  .btn-transparent:hover {
+    transform: translateY(-2px);
+  }
+
+  /* Responsive adjustments */
+  @media (max-width: 640px) {
+    .hero-section {
+      min-height: 100vh;
+    }
+  }
+</style>

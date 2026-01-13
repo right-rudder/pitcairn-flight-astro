@@ -1,0 +1,38 @@
+---
+const { data } = Astro.props;
+---
+<section class="py-16 bg-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    {data.upperheader && <p class="text-red-600 font-bold uppercase tracking-wider mb-2">{data.upperheader}</p>}
+    <h2 class="text-3xl font-bold text-gray-900 mb-6">{data.title}</h2>
+    
+    {data.descriptionParagraphs && (
+      <div class="prose prose-lg text-gray-600 mb-8">
+        {data.descriptionParagraphs.map((p: string) => <p>{p}</p>)}
+      </div>
+    )}
+
+    <div class="bg-gray-50 rounded-xl p-8 border-l-4 border-red-600">
+      <ul class="space-y-4">
+        {data.opportunities.map((item: string) => (
+          <li class="flex items-start gap-2">
+          <svg 
+            xmlns="http://www.w3.org/2000/svg" 
+            class="w-5 h-5 shrink-0 text-green-700 mt-0.5"  
+            viewBox="0 0 32 32"
+          >
+            <path fill="currentColor" d="M16 2a14 14 0 1 0 14 14A14 14 0 0 0 16 2m-2 19.59l-5-5L10.59 15L14 18.41L21.41 11l1.596 1.586Z"/>
+            <path fill="none" d="m14 21.591l-5-5L10.591 15L14 18.409L21.41 11l1.595 1.585z"/>
+          </svg>
+            <span class="text-lg font-medium text-gray-900">{item}</span>
+          </li>
+        ))}
+      </ul>
+      {data.disclaimer && (
+        <p class="mt-6 text-sm text-gray-500 italic border-t pt-4">
+          * {data.disclaimer}
+        </p>
+      )}
+    </div>
+  </div>
+</section>

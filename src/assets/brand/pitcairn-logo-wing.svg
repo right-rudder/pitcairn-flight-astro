@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="132.91145"
+   zoomAndPan="magnify"
+   viewBox="0 0 99.683591 41.203124"
+   height="54.9375"
+   preserveAspectRatio="xMidYMid"
+   version="1.0"
+   id="svg228"
+   sodipodi:docname="Pitcairn Flight Logo (550 × 100 px).svg"
+   inkscape:export-filename="pitcairn-logo-400-white.webp"
+   inkscape:export-xdpi="96"
+   inkscape:export-ydpi="96"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview230"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     showgrid="false" />
+  <defs
+     id="defs10">
+    <clipPath
+       id="91f024dea9">
+      <path
+         d="M 7.664062,7.535156 H 107.58203 V 48.738281 H 7.664062 Z m 0,0"
+         clip-rule="nonzero"
+         id="path7" />
+    </clipPath>
+  </defs>
+  <path
+     fill="#0d9488"
+     d="M 79.402343,34.71875 H 59.441406 v -5.125 c 0,-1.710937 1.390625,-3.101562 3.109375,-3.101562 h 19.964843 v 5.125 c 0,1.714844 -1.390624,3.101562 -3.113281,3.101562"
+     fill-opacity="1"
+     fill-rule="nonzero"
+     id="path18" />
+  <path
+     fill="#164e63"
+     d="M 85.710937,21.800782 H 65.882812 c 0,-4.539063 2.785156,-8.226563 6.21875,-8.226563 h 19.828125 c 0,4.546875 -2.785156,8.226563 -6.21875,8.226563"
+     fill-opacity="1"
+     fill-rule="nonzero"
+     id="path20" />
+  <path
+     fill="#0d9488"
+     d="M 19.726562,34.71875 H 39.6875 v -5.125 c 0,-1.710937 -1.394532,-3.101562 -3.109376,-3.101562 H 16.617187 v 5.125 c 0,1.714844 1.390625,3.101562 3.109375,3.101562"
+     fill-opacity="1"
+     fill-rule="nonzero"
+     id="path22" />
+  <path
+     fill="#164e63"
+     d="M 13.417968,21.800782 H 33.25 c 0,-4.539063 -2.785157,-8.226563 -6.21875,-8.226563 H 7.199218 c 0,4.546875 2.785156,8.226563 6.21875,8.226563"
+     fill-opacity="1"
+     fill-rule="nonzero"
+     id="path24" />
+  <g
+     clip-path="url(#91f024dea9)"
+     id="g28"
+     transform="translate(-7.773438,-7.535156)">
+    <path
+       fill="#475569"
+       d="m 107.45703,7.535156 c 0,4.546875 -3.69531,8.226563 -8.249999,8.226563 h -21.84375 c -1.957031,0 -3.738281,1.140625 -4.558593,2.910156 l -13.5625,29.191406 c -0.292969,0.636719 -0.933594,1.039063 -1.636719,1.039063 -0.703125,0 -1.34375,-0.402344 -1.636719,-1.042969 l -13.542969,-29.1875 c -0.820312,-1.769531 -2.601562,-2.910156 -4.558593,-2.910156 h -21.84375 c -2.277344,0 -4.339844,-0.917969 -5.835938,-2.40625 C 8.695312,11.867188 7.773438,9.808594 7.773438,7.535156 h 34.324218 c 2.59375,0 4.949219,1.503906 6.042969,3.851563 l 9.476563,20.441406 9.476562,-20.441406 c 1.089844,-2.347657 3.445312,-3.851563 6.042969,-3.851563 h 34.320311"
+       fill-opacity="1"
+       fill-rule="nonzero"
+       id="path26" />
+  </g>
+</svg>

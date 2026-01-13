@@ -1,0 +1,66 @@
+---
+interface Props {
+  data: {
+    title?: string;
+    upperheader?: string;
+    descriptionParagraphs?: string[];
+    phases?: {
+      phaseTitle: string;
+      phaseBulletPoints: string[];
+    }[];
+    outcome?: string;
+  };
+}
+
+const { data } = Astro.props;
+---
+
+<section class="py-20 px-4 bg-gray-900">
+  <div class="max-w-4xl mx-auto">
+    
+    <div class="text-center mb-16 flex flex-col items-center">
+      {data.upperheader && (
+        <span class="subtitle !text-muted-50 mb-2">
+          {data.upperheader}
+        </span>
+      )}
+      {data.title && <h2 class="title !text-5xl max-w-xl">{data.title}</h2>}
+      {data.descriptionParagraphs?.map(p => <p class="paragraph-text !text-muted-50 max-w-xl" set:html={p}></p>)}
+    </div>
+
+    <div class="relative space-y-8 before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-muted-300 before:to-transparent">
+      
+      {data.phases?.map((phase, index) => (
+        <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
+          
+          <div class="flex items-center justify-center w-10 h-10 rounded-full border-4 border-muted-100 bg-muted-50 text-muted-950 shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 shadow-lg z-10">
+            <span class="font-bold font-subtitle text-sm">{index + 1}</span>
+          </div>
+          
+          <div class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] bg-white p-6 rounded-xl shadow-sm border-3 border-muted-100 hover:border-monza-600 transition-colors">
+            <h3 class="font-title text-xl font-bold text-madison-950 mb-4">{phase.phaseTitle}</h3>
+            <ul class="space-y-2">
+              {phase.phaseBulletPoints.map(point => (
+                <li class="flex items-start gap-2 text-muted-600 text-sm">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 shrink-0 text-monza-500 mt-0.5"  viewBox="0 0 24 24"><path fill="currentColor" d="M7 14v6q0 .425-.288.713T6 21t-.712-.288T5 20V5q0-.425.288-.712T6 4h7.175q.35 0 .625.225t.35.575L14.4 6H19q.425 0 .713.288T20 7v8q0 .425-.288.713T19 16h-5.175q-.35 0-.625-.225t-.35-.575L12.6 14z"/></svg>
+                  <span class="leading-relaxed">{point}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+          
+        </div>
+      ))}
+    </div>
+
+    {data.outcome && (
+      <div class="mt-16 text-center">
+        <div class="inline-block bg-gray-800 rounded-sm border-b-4 border-b-gray-700 text-white px-8 py-6 shadow-2xl transform hover:scale-105 transition-transform duration-300">
+          <span class="block subtitle !text-monza-600 mb-1">Final Outcome:</span>
+          <span class="font-title !text-3xl font-bold">{data.outcome}</span>
+        </div>
+      </div>
+    )}
+
+  </div>
+</section>

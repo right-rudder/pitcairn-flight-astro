@@ -1,0 +1,56 @@
+---
+import { PHONE_NUMBER, EMAIL_ADDRESS } from "../data/consts";
+import ImageComp from "./ImageComp.astro";
+
+interface Props {
+  title: string;
+  description: string;
+  image?: {
+    src: string;
+    alt: string;
+  };
+  primaryCTA: {
+    text: string;
+    href: string;
+  };
+  secondaryCTA?: {
+    text: string;
+    href: string;
+  };
+}
+
+const { title, description, primaryCTA, secondaryCTA } = Astro.props;
+---
+
+<section class="relative min-h-[850px] flex flex-col justify-start overflow-hidden bg-white">
+  <div class="absolute inset-0 z-0">
+    <div class="absolute inset-0 bg-gradient-to-b from-white from-0% via-white/60 via-30% to-transparent to-60% z-10"></div>
+    
+    <!-- <div class="absolute inset-0 bg-gradient-to-t from-white from-0% via-transparent via-20% to-transparent z-10"></div> -->
+
+    <ImageComp
+      src={Astro.props.image?.src || "/src/assets/avel-chuklanov-ZEiqbaQhmvE-unsplash.jpg"}
+      alt={Astro.props.image?.alt || "Call to action background"}
+      class="w-full h-full object-cover object-[70%_50%]"
+    />
+  </div>
+
+  <div class="relative z-20 w-full max-w-7xl mx-auto px-5 md:px-8 lg:px-12 pt-8 pb-40 md:pt-20 text-center">
+    <h2 class="title !text-lucky-950 mb-4 md:mb-6 drop-shadow-lg" set:html={title}/>
+    <p class="text-lg md:text-xl font-ubuntu text-gray-900 mb-8 max-w-3xl mx-auto leading-tight drop-shadow-[0_1.2px_1.2px_rgba(255,255,255,1)]">
+    {description}
+    </p>
+
+    <div class="flex flex-col sm:flex-row gap-4 justify-center items-center font-ubuntu mb-8">
+      <a href={primaryCTA.href} class="btn-primary">
+        {primaryCTA.text}
+      </a>
+
+      {secondaryCTA && (
+        <a href={secondaryCTA.href} class="btn-transparent !text-gray-900 !border-gray-900">
+          {secondaryCTA.text}
+        </a>
+      )}
+    </div>
+  </div>
+</section>

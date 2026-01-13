@@ -1,0 +1,82 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { getCollection } from "astro:content";
+import type { GetStaticPaths } from "astro";
+import type { CollectionEntry } from "astro:content";
+
+export const getStaticPaths = (async () => {
+  const crewMembers = await getCollection("crew");
+  return crewMembers.map((member: CollectionEntry<"crew">) => ({
+    params: { slug: member.slug },
+    props: { member },
+  }));
+}) satisfies GetStaticPaths;
+
+type Props = {
+  member: CollectionEntry<"crew">;
+};
+
+const { member } = Astro.props as Props;
+const { Content } = await member.render();
+---
+
+<BaseLayout
+  siteTitle={`${member.data.name} | {COMPANY_NAME}`}
+  siteDescription={member.data.bio}
+  siteImage={member.data.image}
+>
+  <article class="py-16 px-4">
+    <div class="max-w-4xl mx-auto">
+      <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+        <img
+          src={member.data.image}
+          alt={member.data.name}
+          class="w-full h-96 object-cover"
+        />
+        <div class="p-8">
+          <h1 class="text-4xl font-bold mb-2">{member.data.name}</h1>
+          <p class="text-2xl text-blue-600 mb-6">{member.data.title}</p>
+
+          {
+            member.data.experience && (
+              <div class="mb-6">
+                <h2 class="text-xl font-semibold mb-2">Experience</h2>
+                <p class="text-gray-700">{member.data.experience}</p>
+              </div>
+            )
+          }
+
+          {
+            member.data.certifications &&
+              member.data.certifications.length > 0 && (
+                <div class="mb-6">
+                  <h2 class="text-xl font-semibold mb-3">Certifications</h2>
+                  <ul class="grid grid-cols-1 md:grid-cols-2 gap-2">
+                    {member.data.certifications.map((cert: string) => (
+                      <li class="flex items-start">
+                        <span class="text-blue-600 mr-2">✓</span>
+                        <span>{cert}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )
+          }
+
+          <div class="prose max-w-none mt-8">
+            <Content />
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-8 text-center">
+        <a
+          href="/crew"
+          class="inline-block bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors"
+        >
+          ← Back to Team
+        </a>
+      </div>
+    </div>
+  </article>
+</BaseLayout>

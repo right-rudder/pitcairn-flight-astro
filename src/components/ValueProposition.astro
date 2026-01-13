@@ -1,0 +1,170 @@
+---
+import ImageWithGradientAndText from "./ImageWithGradientAndText.astro";
+import { FaCheckCircle, FaStar, FaPlane, FaTools } from "react-icons/fa";
+
+interface Props {
+  data: {
+    eyebrow: string;
+    title: string;
+    headline: string;
+    subtitle: string;
+    description: string[];
+    bodyCopy: {
+      title: string;
+      text: string;
+    }[];
+    stats: {
+      value: string;
+      label: string;
+    }[];
+    cta: {
+      text: string;
+      href: string;
+    };
+    image: {
+      src: string;
+      alt: string;
+    };
+    imageCentering?: string;
+  };
+}
+
+const { data } = Astro.props;
+
+const getStatIcon = (label: string, index: number) => {
+  const lowerLabel = label.toLowerCase();
+  if (lowerLabel.includes("star") || lowerLabel.includes("rate")) return FaStar;
+  if (
+    lowerLabel.includes("plane") ||
+    lowerLabel.includes("fleet") ||
+    lowerLabel.includes("training")
+  )
+    return FaPlane;
+  if (lowerLabel.includes("repair") || lowerLabel.includes("part 145"))
+    return FaTools;
+  return FaCheckCircle;
+};
+---
+
+<section
+  class="relative min-h-screen flex items-center bg-sky-950 overflow-hidden reveal-section"
+>
+  <div class="absolute inset-0 z-0 h-full w-full">
+    <ImageWithGradientAndText
+      src={data.image.src}
+      alt={data.image.alt}
+      class={`w-full h-full object-cover ${data.imageCentering || "object-center"}`}
+    />
+    <div
+      class="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-950/95 to-slate-900/50 lg:via-slate-950/90 lg:to-transparent"
+    >
+    </div>
+  </div>
+
+  <div
+    class="max-w-7xl mx-auto px-5 md:px-8 lg:px-12 relative z-10 w-full py-16 md:py-24"
+  >
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <div
+        class="order-2 lg:order-1 text-white opacity-0 translate-y-10 transition-all duration-1000 ease-out reveal-content"
+      >
+        <p
+          class="text-sky-500 font-bold uppercase tracking-widest text-sm mb-2"
+        >
+          {data.eyebrow}
+        </p>
+
+        <h2
+          class="title !text-[2.5rem] uppercase !font-main-header tracking-wide !text-slate-50"
+          set:html={data.headline}
+        />
+
+        <div
+          class="space-y-4 mb-8 text-slate-100/90 leading-relaxed text-base md:text-lg"
+        >
+          {data.description.map((paragraph) => <p set:html={paragraph} />)}
+        </div>
+
+        <div class="space-y-6 mb-10">
+          {
+            data.bodyCopy.map((item) => (
+              <div class="flex gap-4 items-start group">
+                <div class="mt-1 p-1 bg-sky-600/20 rounded-full text-sky-500 group-hover:bg-sky-600 group-hover:text-white transition-colors duration-300">
+                  <FaCheckCircle className="text-lg flex-shrink-0" />
+                </div>
+                <div>
+                  <h3 class="text-lg font-bold text-white mb-1 group-hover:text-sky-400 transition-colors duration-300">
+                    {item.title}
+                  </h3>
+                  <p class="text-slate-300 text-sm leading-relaxed">
+                    {item.text}
+                  </p>
+                </div>
+              </div>
+            ))
+          }
+        </div>
+
+        {
+          data.stats && data.stats.length > 0 && (
+            <div class="grid grid-cols-2 gap-4 mb-10">
+              {data.stats.map((stat, index) => {
+                const Icon = getStatIcon(stat.label, index);
+                return (
+                  <div class="bg-slate-900/60 backdrop-blur-sm border border-slate-800 rounded-sm p-5 hover:border-sky-600 hover:bg-slate-800/80 transition-all duration-300 group flex flex-col justify-between h-full">
+                    <div class="mb-3 text-sky-600/80 group-hover:text-sky-500 transition-colors">
+                      <Icon className="text-2xl" />
+                    </div>
+                    <div>
+                      <div class="font-sans text-2xl md:text-3xl font-bold text-white mb-1 tracking-tight">
+                        {stat.value}
+                      </div>
+                      <div class="text-xs md:text-sm font-medium text-slate-300 group-hover:text-slate-100 uppercase tracking-wide leading-snug">
+                        {stat.label}
+                      </div>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          )
+        }
+
+        {
+          data.cta && (
+            <div class="flex flex-col sm:flex-row gap-4  w-full">
+              <a class="btn-primary !w-full !px-4 !py-3 hover:cursor-pointer uppercase w-full sm:w-auto text-center shadow-lg shadow-sky-900/20">
+                {data.cta.text}
+              </a>
+            </div>
+          )
+        }
+      </div>
+
+      <div class="hidden lg:block lg:order-2 h-full min-h-[600px]"></div>
+    </div>
+  </div>
+</section>
+
+<script>
+  const observerOptions = {
+    threshold: 0.1,
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        const revealContent = entry.target.querySelector(".reveal-content");
+        if (revealContent) {
+          revealContent.classList.remove("opacity-0", "translate-y-10");
+          revealContent.classList.add("opacity-100", "translate-y-0");
+        }
+        observer.unobserve(entry.target);
+      }
+    });
+  }, observerOptions);
+
+  document.querySelectorAll(".reveal-section").forEach((section) => {
+    observer.observe(section);
+  });
+</script>

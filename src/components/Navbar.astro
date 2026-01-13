@@ -1,0 +1,573 @@
+---
+import ImageComp from "./ImageComp.astro";
+import { LOGO_ASSETS, LOGO_ASSETS_ALTERNATIVE } from "../data/consts";
+import { getCollection } from "astro:content";
+import type { CollectionEntry } from "astro:content";
+
+type Program = CollectionEntry<"programs">;
+
+const programs = await getCollection("programs");
+const sortedPrograms = programs.sort(
+  (a: Program, b: Program) => (a.data.order || 999) - (b.data.order || 999)
+);
+
+export type MenuItem = {
+  label: string;
+  url: string;
+  children?: MenuItem[];
+};
+
+export const menu: MenuItem[] = [
+  {
+    label: "New to Flying?",
+    url: "/new-to-flying",
+    children: [
+      { label: "New to Flying", url: "/new-to-flying" },
+      { label: "Financing", url: "/financing" },
+      { label: "FAQs", url: "/faqs" },
+    ],
+  },
+  {
+    label: "About Us",
+    url: "/about",
+    children: [
+      { label: "About {COMPANY_NAME}", url: "/about" },
+      { label: "Our Fleet", url: "/aircraft" },
+      { label: "Our Blog", url: "/blog" },
+    ],
+  },
+  {
+    label: "Maintenance & FBO",
+    url: "/about",
+  },
+];
+
+export const footerMenu: MenuItem[] = [
+  {
+    label: "About",
+    url: "/about",
+    children: [
+      { label: "New to Flying?", url: "/new-to-flying" },
+      { label: "About {COMPANY_NAME}", url: "/about/" },
+      { label: "FAQs", url: "/faq/" },
+      { label: "Financing", url: "/financing" },
+      { label: "Blog", url: "/blog" },
+      { label: "Contact Us", url: "/contact/" },
+    ],
+  },
+];
+
+const { pathname } = Astro.props;
+---
+
+<nav id="navbar" class="navbar font-ubuntu">
+  <div class="container px-4 md:px-0">
+    <a class="hover:cursor-pointer object-contain h-auto mx-auto lg:mx-0">
+      <ImageComp
+        class="mx-4 w-24 md:w-24"
+        src={LOGO_ASSETS}
+        alt="{COMPANY_NAME} Logo"
+      />
+    </a>
+
+    <ul class="nav">
+      {
+        sortedPrograms && (
+          <li
+            class={`menu-item ${sortedPrograms.length >= 1 ? "has-children" : ""}`}
+          >
+            <a class="hover:cursor-pointer">{sortedPrograms[0].collection}</a>
+            {sortedPrograms.length >= 1 ? (
+              <ul class="sub-menu">
+                {sortedPrograms.map((program: Program) => (
+                  <li>
+                    <a
+                      class={
+                        (`/programs/${program.slug}` === pathname ||
+                          `/programs/${program.slug}/` === pathname) &&
+                        `/programs/${program.slug}` !== "/programs/"
+                          ? "menu-link-hover hover:cursor-pointer"
+                          : "hover:cursor-pointer"
+                      }
+                    >
+                      {program.data.title}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            ) : (
+              ""
+            )}
+          </li>
+        )
+      }
+      {
+        menu.map((item, index) => (
+          <li
+            class={`menu-item ${item.children ? "has-children" : ""}`}
+            data-index={index}
+          >
+            <a
+              class="hover:cursor-pointer"
+              target={item.url.includes("http") ? "_blank" : ""}
+            >
+              {item.label}
+            </a>
+            {item.children && (
+              <ul class="sub-menu">
+                {item.children.map((child) => (
+                  <li>
+                    <a
+                      target={child.url.includes("http") ? "_blank" : ""}
+                      class={
+                        (child.url === pathname ||
+                          child.url + "/" === pathname) &&
+                        child.url !== "/"
+                          ? "menu-link-hover  hover:cursor-pointer"
+                          : " hover:cursor-pointer"
+                      }
+                    >
+                      {child.label}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            )}
+          </li>
+        ))
+      }
+    </ul>
+
+    <div class="buttons">
+      <a class="btn-primary !text-md hover:cursor-pointer"> CONTACT US </a>
+    </div>
+
+    <button id="mobile-toggle" class="hamburger" aria-label="Toggle menu">
+      <svg
+        class="hamburger-menu-bars"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <line x1="3" x2="21" y1="6" y2="6"></line>
+        <line x1="3" x2="21" y1="12" y2="12"></line>
+        <line x1="3" x2="21" y1="18" y2="18"></line>
+      </svg>
+      <svg
+        class="hamburger-menu-x"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <path d="M18 6 6 18"></path>
+        <path d="m6 6 12 12"></path>
+      </svg>
+    </button>
+  </div>
+
+  <div id="mobile-menu" class="mobile-menu">
+    <ul>
+      {
+        sortedPrograms && (
+          <li class="mobile-item">
+            <a class="hover:cursor-pointer">Programs</a>
+            {sortedPrograms.length >= 1 ? (
+              <ul class="mobile-submenu">
+                {sortedPrograms.map((program: Program) => (
+                  <li>
+                    <a
+                      class={
+                        (`/programs/${program.slug}` === pathname ||
+                          `/programs/${program.slug}/` === pathname) &&
+                        `/programs/${program.slug}` !== "/programs/"
+                          ? "menu-link-hover hover:cursor-pointer"
+                          : "hover:cursor-pointer"
+                      }
+                    >
+                      {program.data.title}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            ) : (
+              ""
+            )}
+          </li>
+        )
+      }
+      {
+        menu.map((item, index) => (
+          <li class="mobile-item" data-index={index}>
+            <a class="hover:cursor-pointer ">{item.label}</a>
+            {item.children && (
+              <ul class="mobile-submenu">
+                {item.children.map((child) => (
+                  <li>
+                    <a
+                      class={
+                        (child.url === pathname ||
+                          child.url + "/" === pathname) &&
+                        child.url !== "/"
+                          ? "menu-link-hover hover:cursor-pointer"
+                          : "hover:cursor-pointer"
+                      }
+                    >
+                      {child.label}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            )}
+          </li>
+        ))
+      }
+    </ul>
+
+    <div class="mobile-buttons">
+      <a class="btn-primary !text-lg hover:cursor-pointer"> CONTACT US </a>
+    </div>
+  </div>
+</nav>
+
+<style>
+  .navbar {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 16px 16px;
+    background: oklch(20.8% 0.042 265.755, 90%);
+    position: sticky;
+    top: 0;
+    z-index: 50;
+  }
+
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .nav {
+    display: flex;
+    gap: 0.75rem;
+    list-style: none;
+  }
+
+  .menu-item {
+    position: relative;
+  }
+
+  .menu-item a {
+    font-weight: 500;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    color: white;
+  }
+
+  .menu-item a:hover,
+  .menu-item a:has(+ ul > li > a.menu-link-hover) {
+    color: oklch(58.8% 0.158 241.966);
+  }
+
+  .sub-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 40;
+    min-width: 220px;
+    background: #fff;
+    border: 1px solid #ddd;
+    list-style: none;
+    padding: 0.5rem 0;
+    border-radius: 0.25rem;
+    visibility: hidden;
+    opacity: 0;
+    transform: translateY(6px);
+    pointer-events: none;
+    transition:
+      opacity 0.3s ease,
+      transform 0.3s ease,
+      visibility 0.3s step-end;
+  }
+
+  .menu-item:hover .sub-menu {
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+    transition:
+      opacity 0.3s ease,
+      transform 0.3s ease,
+      visibility 0.3s step-start;
+  }
+
+  .menu-item::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 100%;
+    height: 10px;
+    background: transparent;
+  }
+
+  .sub-menu li a {
+    display: block;
+    padding: 0.5rem 1rem;
+    white-space: nowrap;
+    color: #393d40;
+    transition:
+      background 0.3s ease,
+      color 0.3s ease,
+      transform 0.3s ease;
+    position: relative;
+  }
+
+  .sub-menu li a:before {
+    content: " ";
+    display: block;
+    height: 100%;
+    width: 0%;
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: oklch(58.8% 0.158 241.966);
+    transition: all 450ms ease-out;
+  }
+
+  .sub-menu li a:hover,
+  .sub-menu li a.menu-link-hover {
+    color: #fff;
+    background: oklch(58.8% 0.158 241.966);
+  }
+
+  .sub-menu li a:hover:before,
+  .sub-menu li a.menu-link-hover:before {
+    width: 100%;
+  }
+
+  .container .hamburger .hamburger-menu-x,
+  .container.open .hamburger .hamburger-menu-bars {
+    display: none;
+  }
+
+  .container.open .hamburger .hamburger-menu-x,
+  .container .hamburger .hamburger-menu-bars {
+    display: block;
+  }
+
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 4px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: white;
+  }
+
+  .mobile-menu {
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    top: 100%;
+    left: 0;
+    background: #f3f4f6;
+    padding: 0 1rem;
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.5s ease;
+  }
+
+  .mobile-menu.open {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    max-height: 100vh;
+    overflow: visible;
+  }
+
+  .mobile-submenu {
+    max-height: 0;
+    overflow: hidden;
+    transition:
+      max-height 0.5s ease,
+      opacity 0.3s ease;
+    opacity: 0;
+  }
+
+  .mobile-submenu.open {
+    max-height: 20rem;
+    opacity: 1;
+  }
+
+  @media (max-width: 1023px) {
+    .nav,
+    .buttons {
+      display: none;
+    }
+
+    .hamburger {
+      display: flex;
+    }
+
+    .mobile-menu {
+      padding: 0 16px;
+    }
+
+    .mobile-menu.open {
+      padding-top: 12px;
+      padding-bottom: 14px;
+      max-height: calc(100vh - 64px);
+      overflow: auto;
+    }
+
+    .mobile-item > a {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 4px;
+      font-weight: 600;
+      color: #101828;
+    }
+
+    .mobile-item > a::after {
+      content: "⟫";
+      margin-left: 0.5rem;
+      transition: transform 0.25s ease;
+    }
+
+    .mobile-item > a.open::after {
+      transform: rotate(90deg);
+    }
+
+    .mobile-submenu {
+      border-left: 2px solid #101828;
+      margin-left: 10px;
+      padding-left: 6px;
+    }
+
+    a:has(+ .mobile-submenu.open),
+    a:has(+ .mobile-submenu .menu-link-hover) {
+      color: oklch(58.8% 0.158 241.966);
+    }
+
+    .mobile-submenu li a {
+      display: block;
+      padding: 10px 12px 10px 24px;
+      border-radius: 6px;
+      color: #101828;
+    }
+
+    .mobile-submenu li a:hover {
+      background: oklch(58.8% 0.158 241.966);
+      color: #f3f4f6;
+      font-weight: bold;
+    }
+
+    .mobile-submenu li a.menu-link-hover {
+      background: oklch(0.278 0.033 256.848);
+      color: #f3f4f6;
+      font-weight: bold;
+    }
+
+    .mobile-buttons {
+      background-color: #f3f4f6;
+      position: sticky;
+      bottom: 0;
+      padding: 12px 0 14px;
+      border-top: 1px solid #101828;
+    }
+
+    .mobile-buttons a {
+      width: 100%;
+      display: flex;
+      text-align: center;
+    }
+  }
+
+  @media screen and (min-width: 1280px) {
+    .nav {
+      gap: 2rem;
+    }
+  }
+</style>
+
+<script type="module">
+  const mobileToggle = document.getElementById("mobile-toggle");
+  const mobileMenu = document.getElementById("mobile-menu");
+  const menuHeaderContainer = document.querySelector("#navbar > .container");
+
+  mobileToggle?.addEventListener("click", () => {
+    mobileMenu?.classList.toggle("open");
+    menuHeaderContainer?.classList.toggle("open");
+    document.body.classList.toggle("overflow-hidden");
+  });
+
+  const mobileItems = document.querySelectorAll(".mobile-item");
+  mobileItems.forEach((item) => {
+    const link = item.querySelector(":scope > a");
+    const submenu = item.querySelector(".mobile-submenu");
+    if (submenu && link) {
+      link.addEventListener("click", (e) => {
+        e.preventDefault();
+        const isOpen = submenu.classList.contains("open");
+        document
+          .querySelectorAll(".mobile-submenu.open")
+          .forEach((openSubmenu) => {
+            if (openSubmenu !== submenu) {
+              openSubmenu.classList.remove("open");
+              openSubmenu.style.maxHeight = "0px";
+              openSubmenu.style.opacity = "0";
+              const openLink =
+                openSubmenu.parentElement.querySelector(":scope > a.open");
+              if (openLink) openLink.classList.remove("open");
+            }
+          });
+        submenu.classList.toggle("open", !isOpen);
+        link.classList.toggle("open", !isOpen);
+        if (!isOpen) {
+          submenu.style.maxHeight = submenu.scrollHeight + "px";
+          submenu.style.opacity = "1";
+        } else {
+          submenu.style.maxHeight = "0px";
+          submenu.style.opacity = "0";
+        }
+      });
+    }
+  });
+
+  document.querySelectorAll("#mobile-menu a").forEach((link) => {
+    link.addEventListener("click", (e) => {
+      const parentItem = link.closest(".mobile-item");
+      const hasSubmenu =
+        parentItem && parentItem.querySelector(".mobile-submenu");
+      if (hasSubmenu && e.target.closest("a").nextElementSibling === hasSubmenu)
+        return;
+      if (mobileMenu.classList.contains("open")) {
+        mobileMenu.classList.remove("open");
+        menuHeaderContainer?.classList.remove("open");
+        document.body.classList.remove("overflow-hidden");
+      }
+      const href = link.getAttribute("href");
+      if (href && href.includes("#")) {
+        const targetId = href.split("#")[1];
+        const targetEl = document.getElementById(targetId);
+        if (targetEl) {
+          setTimeout(() => {
+            targetEl.scrollIntoView({ behavior: "smooth" });
+          }, 150);
+        }
+      }
+    });
+  });
+</script>
