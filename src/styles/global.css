@@ -2,8 +2,8 @@
 @plugin "@tailwindcss/typography";
 
 @theme {
-  --font-title: "Orbitron Variable", "serif";
-  --font-ubuntu: "Ubuntu Sans Variable", "sans-serif";
+  --font-title: "Quicksand", "serif";
+  --font-ubuntu: "Quicksand", "sans-serif";
   /* --font-sans: 'Poppins', 'sans-serif'; */
   /* --font-main-title: "Changa One", sans-serif; */
   --font-sans: "Inter Variable", "sans-serif";
