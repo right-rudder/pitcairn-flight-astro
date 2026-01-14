@@ -3,6 +3,7 @@ import ImageComp from "./ImageComp.astro";
 import { LOGO_ASSETS, LOGO_ASSETS_ALTERNATIVE } from "../data/consts";
 import { getCollection } from "astro:content";
 import type { CollectionEntry } from "astro:content";
+import NavScrollBackground from "./Navbar/NavScrollBackground.astro";
 
 type Program = CollectionEntry<"programs">;
 
@@ -60,6 +61,7 @@ export const footerMenu: MenuItem[] = [
 const { pathname } = Astro.props;
 ---
 
+<NavScrollBackground />
 <nav id="navbar" class="navbar font-ubuntu">
   <div class="container px-4 md:px-0">
     <a class="hover:cursor-pointer object-contain h-auto mx-auto lg:mx-0">

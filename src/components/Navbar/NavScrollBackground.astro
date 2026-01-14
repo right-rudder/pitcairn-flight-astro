@@ -1,0 +1,17 @@
+<div
+  class="h-18 fixed inset-0 left-0 transition-all duration-300 ease-in-out"
+  id="nav-scroll-background"
+>
+</div>
+
+<script type="module">
+  const navScrollBackground = document.getElementById("nav-scroll-background");
+  window.addEventListener("scroll", () => {
+    const scrollPosition = window.scrollY;
+    if (scrollPosition < 10) {
+      navScrollBackground.classList.remove("bg-sky-950");
+    } else {
+      navScrollBackground.classList.add("bg-sky-950");
+    }
+  });
+</script>
