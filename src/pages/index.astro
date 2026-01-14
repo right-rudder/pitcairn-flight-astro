@@ -17,6 +17,7 @@ import ProgramsOverviewSection from "../components/ProgramsOverview/ProgramsOver
 import SocialProofLeftSection from "../components/SocialProofLeftSection.astro";
 import BookDownloadSection from "../components/BookDownloadSection.astro";
 import ChatWidget from "../components/external/ChatWidget.astro";
+import ProgramsGrid from "../components/Programs/ProgramsGrid.astro";
 
 const heroData = {
   images: [
@@ -26,7 +27,7 @@ const heroData = {
       imageCentering: "",
     },
   ],
-  title: "Pilot Traiing in POTTSTOWN HERITAGE FIELD",
+  title: "Pilot Training in POTTSTOWN HERITAGE FIELD",
   subTitle: `Your Flight School by Northwest Philadelphia and Reading.`,
   cta: [
     {
@@ -321,9 +322,9 @@ const metaProps = {
   <ValueProposition data={valueAdvantageData} />
   <SocialProofSection data={socialProofData} />
   <SocialProofLeftSection data={repairStationData} />
-  <!-- TODO: Transform Testimonails design in Programs -->
   <Testimonials testimonials={testimonials} />
   <ImageSliderWithCopySection data={imageSliderData} />
+  <ProgramsGrid testimonials={testimonials} />
   <ProgramsOverviewSection />
   <BlogFeed />
   <TrainingPhilosophySection data={mentorshipData} />
