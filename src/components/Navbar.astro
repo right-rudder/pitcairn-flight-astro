@@ -64,9 +64,12 @@ const { pathname } = Astro.props;
 <NavScrollBackground />
 <nav id="navbar" class="navbar font-ubuntu">
   <div class="container px-4 md:px-0">
-    <a class="hover:cursor-pointer object-contain h-auto mx-auto lg:mx-0">
+    <a
+      class="hover:cursor-pointer object-contain h-auto mx-auto lg:mx-0 invert"
+      id="logo-home-link"
+    >
       <ImageComp
-        class="mx-4 w-24 md:w-24"
+        classes="mx-4 w-24 md:w-24"
         src={LOGO_ASSETS}
         alt="{COMPANY_NAME} Logo"
       />
