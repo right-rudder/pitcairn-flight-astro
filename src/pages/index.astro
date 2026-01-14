@@ -15,6 +15,7 @@ import SocialProofSection from "../components/SocialProofSection.astro";
 import ImageSliderWithCopySection from "../components/ImageSliderWithCopySection.astro";
 import ProgramsOverviewSection from "../components/ProgramsOverview/ProgramsOverviewSection.astro";
 import SocialProofLeftSection from "../components/SocialProofLeftSection.astro";
+import BookDownloadSection from "../components/BookDownloadSection.astro";
 
 const heroData = {
   images: [
@@ -82,6 +83,23 @@ const repairStationData = {
     src: "/src/assets/instagram/plane-being-filled.jpg",
     alt: "Aircraft on the ramp at Heritage Field",
   },
+};
+
+const bookDownloadData = {
+  eyebrow: "Still looking for more information on pilot training?",
+  headline: "Get Your FREE Pilot Training Guide Book!",
+  bodyCopy: `We've prepared this free booklet which explains everything you need to know for your pilot certificate.`,
+  image: {
+    src: "/src/assets/old-website/book-mockup.webp",
+    alt: "Aircraft on the ramp at Heritage Field",
+  },
+  buttons: [
+    {
+      title: "Download Ebook",
+      href: "#",
+      class: "btn-primary",
+    },
+  ],
 };
 
 const imageSliderData = {
@@ -308,6 +326,8 @@ const metaProps = {
   <TrainingPhilosophySection data={mentorshipData} />
   <TeamAndCultureSection data={teamCultureData} />
   <BlogFeed />
+  <!-- TODO: Book -->
   <LocationSection data={locationData} />
+  <BookDownloadSection data={bookDownloadData} />
   <FinalCTASection data={finalCtaData} />
 </BaseLayout>
