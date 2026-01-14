@@ -66,7 +66,7 @@ export const FAVICON = "/favicon.png";
 export const LOGO = ""; // verify primary logo path
 
 export const LOGO_ASSETS =
-  "/src/assets/brand/pitcairn-flight-academy-logo-white.png";
+  "/src/assets/brand/Pitcairn-FS-Typography-Logo-2.png";
 export const LOGO_ASSETS_ALTERNATIVE =
   "/src/assets/brand/pitcairn-flight-academy-logo-white.png";
 export const LOGO_ASSETS_2 =
