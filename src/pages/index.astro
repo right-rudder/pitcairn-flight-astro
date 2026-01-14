@@ -16,6 +16,7 @@ import ImageSliderWithCopySection from "../components/ImageSliderWithCopySection
 import ProgramsOverviewSection from "../components/ProgramsOverview/ProgramsOverviewSection.astro";
 import SocialProofLeftSection from "../components/SocialProofLeftSection.astro";
 import BookDownloadSection from "../components/BookDownloadSection.astro";
+import ChatWidget from "../components/external/ChatWidget.astro";
 
 const heroData = {
   images: [
@@ -330,4 +331,5 @@ const metaProps = {
   <LocationSection data={locationData} />
   <BookDownloadSection data={bookDownloadData} />
   <FinalCTASection data={finalCtaData} />
+  <ChatWidget />
 </BaseLayout>
