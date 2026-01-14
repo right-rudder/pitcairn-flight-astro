@@ -54,7 +54,7 @@ const { testimonials } = Astro.props;
 
           return (
             <div
-              class={`testimonial-card opacity-0 translate-y-10 bg-neutral-300 border-[1.5px] border-gray-300  rounded-3xl p-8 flex flex-col justify-between transition-all duration-700 ease-in-out hover:bg-slate-50 hover:-translate-y-2 hover:shadow-2xl hover:shadow-black/50 ${colSpan}`}
+              class={`testimonial-card opacity-0 translate-y-10 bg-white border-[1.5px] border-gray-300  rounded-3xl p-8 flex flex-col justify-between transition-all duration-700 ease-in-out hover:bg-slate-50 hover:-translate-y-2 hover:shadow-2xl hover:shadow-black/50 ${colSpan}`}
               style={`transition-delay : ${index * 150}ms;`}
             >
               <div>
@@ -88,7 +88,7 @@ const { testimonials } = Astro.props;
                   {testimonial.author}
                 </div>
                 {testimonial.role && (
-                  <div class="text-sm text-sans  font-semibold text-sky-400">
+                  <div class="text-sm text-sans  font-semibold text-sky-700">
                     {testimonial.role}
                   </div>
                 )}
