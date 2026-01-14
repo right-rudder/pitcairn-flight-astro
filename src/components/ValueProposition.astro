@@ -53,10 +53,10 @@ const getStatIcon = (label: string, index: number) => {
     <ImageWithGradientAndText
       src={data.image.src}
       alt={data.image.alt}
-      class={`w-full h-full object-cover  rounded-3xl  ${data.imageCentering || "object-center"}`}
+      class={`w-full h-full object-cover  ${data.imageCentering || "object-center"}`}
     />
     <div
-      class="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-950/95 to-slate-900/50 lg:via-slate-950/90 lg:to-transparent"
+      class="absolute inset-0 bg-linear-to-r from-sky-950 via-sky-900/95 to-white lg:via-sky-950/90 lg:to-transparent"
     >
     </div>
   </div>
@@ -82,26 +82,10 @@ const getStatIcon = (label: string, index: number) => {
         <div
           class="space-y-4 mb-8 text-slate-100/90 leading-relaxed text-base md:text-lg"
         >
-          {data.description.map((paragraph) => <p set:html={paragraph} />)}
-        </div>
-
-        <div class="space-y-6 mb-10">
           {
-            data.bodyCopy.map((item) => (
-              <div class="flex gap-4 items-start group">
-                <div class="mt-1 p-1 bg-sky-600/20 rounded-full text-sky-500 group-hover:bg-sky-600 group-hover:text-white transition-colors duration-300">
-                  <FaCheckCircle className="text-lg flex-shrink-0" />
-                </div>
-                <div>
-                  <h3 class="text-lg font-bold text-white mb-1 group-hover:text-sky-400 transition-colors duration-300">
-                    {item.title}
-                  </h3>
-                  <p class="text-slate-300 text-sm leading-relaxed">
-                    {item.text}
-                  </p>
-                </div>
-              </div>
-            ))
+            data.description
+              .slice(0, 1)
+              .map((paragraph) => <p set:html={paragraph} />)
           }
         </div>
 
@@ -129,6 +113,36 @@ const getStatIcon = (label: string, index: number) => {
             </div>
           )
         }
+
+        <div
+          class="space-y-4 mb-8 text-slate-100/90 leading-relaxed text-base md:text-lg"
+        >
+          {
+            data.description
+              .slice(1, data.description.length)
+              .map((paragraph) => <p set:html={paragraph} />)
+          }
+        </div>
+
+        <!-- <div class="space-y-6 mb-10">
+          {
+            data.bodyCopy.map((item) => (
+              <div class="flex gap-4 items-start group">
+                <div class="mt-1 p-1 bg-sky-600/20 rounded-full text-sky-500 group-hover:bg-sky-600 group-hover:text-white transition-colors duration-300">
+                  <FaCheckCircle className="text-lg flex-shrink-0" />
+                </div>
+                <div>
+                  <h3 class="text-lg font-bold text-white mb-1 group-hover:text-sky-400 transition-colors duration-300">
+                    {item.title}
+                  </h3>
+                  <p class="text-slate-300 text-sm leading-relaxed">
+                    {item.text}
+                  </p>
+                </div>
+              </div>
+            ))
+          }
+        </div> -->
 
         {
           data.cta && (
