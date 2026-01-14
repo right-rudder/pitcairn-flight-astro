@@ -1,0 +1,99 @@
+---
+import { COMPANY_NAME } from "../../data/consts";
+import { getCollection } from "astro:content";
+import type { CollectionEntry } from "astro:content";
+import ProgramsGridCard from "./ProgramsGridCard.astro";
+import { FaArrowRight } from "react-icons/fa";
+
+type Program = CollectionEntry<"programs">;
+
+const programs = await getCollection("programs");
+const sortedPrograms = programs
+  .sort(
+    (a: Program, b: Program) => (a.data.order || 999) - (b.data.order || 999)
+  )
+  .slice(0, 5);
+
+interface Testimonial {
+  quote: string;
+  author: string;
+  role?: string;
+  rating?: number;
+}
+
+interface Props {
+  testimonials: Testimonial[];
+}
+
+const { testimonials } = Astro.props;
+---
+
+<section
+  class="py-16 md:py-24 bg-sky-950 text-slate-50 overflow-hidden relative"
+>
+  <div
+    class="absolute top-0 left-0 w-96 h-96 bg-sky-600 rounded-full blur-[120px] opacity-30 -translate-x-1/2 -translate-y-1/2"
+  >
+  </div>
+  <div
+    class="absolute bottom-0 right-0 w-96 h-96 bg-sky-600 rounded-full blur-[120px] opacity-30 translate-x-1/2 translate-y-1/2"
+  >
+  </div>
+
+  <div class="max-w-7xl mx-auto px-5 md:px-8 lg:px-12 relative z-10">
+    <div class="text-center mb-12 md:mb-16">
+      <h2 class="!font-sans !font-medium uppercase text-sky-600 mb-2">
+        WHAT PILOTS SAY ABOUT US
+      </h2>
+      <h3
+        class="title !text-[2.5rem] uppercase !font-main-header tracking-wide !text-slate-50e mb-4"
+      >
+        Don't Take Our Word For It
+      </h3>
+      <p class="font-sans !text-slate-50 max-w-xl mx-auto">
+        We don't just train students; we build wingmen. See what the industry's
+        most respected pilots have to say about the {COMPANY_NAME} standard.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {
+        sortedPrograms.map((program, index) => {
+          const bentoIndex = index % 7;
+          const colSpan =
+            bentoIndex === 3 || bentoIndex === 6
+              ? "lg:col-span-2"
+              : "lg:col-span-1";
+          return (
+            <ProgramsGridCard
+              program={program}
+              index={index}
+              colSpan={colSpan}
+            />
+          );
+        })
+      }
+    </div>
+  </div>
+</section>
+
+<script>
+  const observerOptions = {
+    root: null,
+    threshold: 0.1,
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.remove("opacity-0", "translate-y-10");
+        entry.target.classList.add("opacity-100", "translate-y-0");
+        observer.unobserve(entry.target);
+      }
+    });
+  }, observerOptions);
+
+  document.querySelectorAll(".testimonial-card").forEach((card) => {
+    observer.observe(card);
+  });
+</script>
