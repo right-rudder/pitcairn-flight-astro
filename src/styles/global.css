@@ -116,5 +116,5 @@ h3,
 h4,
 h5,
 h6 {
-  @apply font-sans font-black;
+  @apply font-title font-black;
 }
