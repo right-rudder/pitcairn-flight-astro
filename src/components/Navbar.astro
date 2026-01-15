@@ -1,6 +1,10 @@
 ---
 import ImageComp from "./ImageComp.astro";
-import { LOGO_ASSETS, LOGO_ASSETS_ALTERNATIVE } from "../data/consts";
+import {
+  COMPANY_NAME,
+  LOGO_ASSETS,
+  LOGO_ASSETS_ALTERNATIVE,
+} from "../data/consts";
 import { getCollection } from "astro:content";
 import type { CollectionEntry } from "astro:content";
 import NavScrollBackground from "./Navbar/NavScrollBackground.astro";
@@ -32,7 +36,7 @@ export const menu: MenuItem[] = [
     label: "About Us",
     url: "/about",
     children: [
-      { label: "About {COMPANY_NAME}", url: "/about" },
+      { label: `About ${COMPANY_NAME}`, url: "/about" },
       { label: "Our Fleet", url: "/aircraft" },
       { label: "Our Blog", url: "/blog" },
     ],
@@ -54,7 +58,7 @@ export const footerMenu: MenuItem[] = [
     url: "/about",
     children: [
       { label: "New to Flying?", url: "/new-to-flying" },
-      { label: "About {COMPANY_NAME}", url: "/about/" },
+      { label: `About ${COMPANY_NAME}`, url: "/about/" },
       { label: "FAQs", url: "/faq/" },
       { label: "Financing", url: "/financing" },
       { label: "Blog", url: "/blog" },
@@ -76,7 +80,7 @@ const { pathname } = Astro.props;
       <ImageComp
         classes="mx-4 w-24 md:w-24"
         src={LOGO_ASSETS}
-        alt="{COMPANY_NAME} Logo"
+        alt={`About ${COMPANY_NAME}`}
       />
     </a>
 

@@ -2,7 +2,7 @@
 import ImageComp from "../ImageComp.astro";
 import ImageWithZoomEffect from "../ProgramSlug/ImageWithZoomEffect.astro";
 
-const mhAviationLogo = "/src/assets/{COMPANY_NAME}.png";
+const companyLogo = "/src/assets/brand/pitcairn-flight-academy-logo-white.png";
 
 const postPlaceholder = {
   slug: "example-post",
@@ -63,7 +63,7 @@ const { post = postPlaceholder, isHighlight = false } = Astro.props;
       >
         <ImageComp
           class={`${isHighlight ? "w-6" : "w-4"}`}
-          src={mhAviationLogo}
+          src={companyLogo}
           alt=" logo"
         />
       </div>

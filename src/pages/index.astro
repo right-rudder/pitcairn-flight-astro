@@ -2,7 +2,12 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import ValueProposition from "../components/ValueProposition.astro";
 import Testimonials from "../components/Testimonials.astro";
-import { PHONE_NUMBER, AIRPORT, AIRPORT_CODE } from "../data/consts";
+import {
+  PHONE_NUMBER,
+  AIRPORT,
+  AIRPORT_CODE,
+  COMPANY_NAME,
+} from "../data/consts";
 import HeroLandingPage from "../components/HeroLandingPage.astro";
 import BlogFeed from "../components/Blog/BlogFeed.astro";
 import IntroductionSection from "../components/IntroductionSection.astro";
@@ -212,8 +217,7 @@ const locationData = {
 const finalCtaData = {
   eyebrow: "Ready to Fly?",
   headline: "Your Aviation Journey<br>Begins Here",
-  bodyCopy:
-    "Whether you are looking for your first flight, aircraft maintenance,<br> or fueling services, {COMPANY_NAME} is ready to serve you.",
+  bodyCopy: `Whether you are looking for your first flight, aircraft maintenance,<br> or fueling services, ${COMPANY_NAME} is ready to serve you.`,
   cta: {
     text: "Schedule a Visit",
     subtext: `Call us directly at ${PHONE_NUMBER}`,
@@ -241,8 +245,7 @@ const teamCultureData = {
 
 const testimonials = [
   {
-    quote:
-      "{COMPANY_NAME}'s transparent pricing and professional instruction exceeded my expectations. No hidden costs, no surprises—just quality training with airline captains.",
+    quote: `${COMPANY_NAME}'s transparent pricing and professional instruction exceeded my expectations. No hidden costs, no surprises—just quality training with airline captains.`,
     author: "Peter Gibbons",
     role: "Commercial Pilot & CFI",
     rating: 5,
@@ -290,13 +293,11 @@ const testimonials = [
 ];
 
 const mentorshipData = {
-  eyebrow: "The {COMPANY_NAME} Legacy",
+  eyebrow: `The ${COMPANY_NAME} Legacy`,
   title: "Where Family Values<br>Meet Professional Precision and Care",
-  quote:
-    "We don’t just train students; we mentor future colleagues. At {COMPANY_NAME}, you’re part of a family-owned legacy that has served Fox Field for over two decades.",
+  quote: `We don’t just train students; we mentor future colleagues. At ${COMPANY_NAME}, you’re part of a family-owned legacy that has served Fox Field for over two decades.`,
   quoteAuthor: "President Jeff Haney",
-  description:
-    'Founded by Mike Haney in 1988 and led today by Jeff and Jessica, {COMPANY_NAME} is a <strong class="text-sky-600">one-stop aviation hub</strong>. By training at an active FAA Part 145 Repair Station and FBO, you gain a professional edge that \'pilot mills\' can\'t match. You’ll learn in a <strong class="text-sky-600">modern, glass-panel fleet</strong> and benefit from our exclusive <strong class="text-sky-600">multi-engine training</strong>—all while supported by a team that treats your success as a personal mission.',
+  description: `Founded by Mike Haney in 1988 and led today by Jeff and Jessica, ${COMPANY_NAME} is a <strong class="text-sky-600">one-stop aviation hub</strong>. By training at an active FAA Part 145 Repair Station and FBO, you gain a professional edge that \'pilot mills\' can\'t match. You’ll learn in a <strong class="text-sky-600">modern, glass-panel fleet</strong> and benefit from our exclusive <strong class="text-sky-600">multi-engine training</strong>—all while supported by a team that treats your success as a personal mission.`,
   image: {
     src: "/src/assets/old-website/pitcairn-flight-group-of-instructors.webp",
     alt: "imagePlaceholder",
@@ -308,11 +309,9 @@ const mentorshipData = {
 };
 
 const metaProps = {
-  siteTitle: "{COMPANY_NAME} | Professional Pilot Training in North Carolina",
-  siteDescription:
-    "Visit {COMPANY_NAME} at Wayne Executive Jetport. Contact our team to schedule a tour, discuss financing, or start your professional flight training journey.",
-  siteKeywords:
-    "contact  Aviation, flight school tour, pilot training info, Wayne Executive Jetport address,  phone number, aviation academy North Carolina",
+  siteTitle: `${COMPANY_NAME} | Professional Pilot Training in North Carolina`,
+  siteDescription: `Visit ${COMPANY_NAME} at Wayne Executive Jetport. Contact our team to schedule a tour, discuss financing, or start your professional flight training journey.`,
+  siteKeywords: `${COMPANY_NAME}, contact  Aviation, flight school tour, pilot training info, Wayne Executive Jetport address,  phone number, aviation academy North Carolina`,
 };
 ---
 

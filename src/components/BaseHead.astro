@@ -1,6 +1,6 @@
 ---
 import "../styles/global.css";
-import { SITE_TITLE, KEYWORDS, OG_IMAGE, FAVICON } from "../data/consts";
+import { SITE_TITLE, KEYWORDS, OG_IMAGE, FAVICON, COMPANY_NAME } from "../data/consts";
 
 interface Props {
   title: string;
@@ -69,12 +69,12 @@ const {
   {
     "@context": "https://schema.org",
     "@type": "FlightSchool",
-    "name": "{COMPANY_NAME}",
+    "name": `${COMPANY_NAME}`,
     "alternateName": "",
     "url": "",
     "logo": "/favicon.png",
-    "image": "/{COMPANY_NAME}.png",
-    "description": "{COMPANY_NAME} is a Part 141 flight school in Pikeville, North Carolina, focused on rigorous, full-time pilot training for individuals pursuing professional aviation careers.",
+    "image": `/${COMPANY_NAME}.png`,
+    "description": `${COMPANY_NAME} is a Part 141 flight school in Pikeville, North Carolina, focused on rigorous, full-time pilot training for individuals pursuing professional aviation careers.`,
     "telephone": "+19109008043",
     "email": "info@mail.mhaviation.com",
     "currenciesAccepted": "USD",
@@ -164,7 +164,7 @@ const {
 <meta name="title" content={title} />
 <meta name="description" content={description} />
 <meta name="keywords" content={keywords} />
-<meta name="author" content="{COMPANY_NAME}" />
+<meta name="author" content={`${COMPANY_NAME}`} />
 <meta name="geo.region" content="US-NC" />
 <meta name="geo.placename" content="Pikeville" />
 <meta name="geo.position" content="35.4929;-77.9834" />
@@ -177,7 +177,7 @@ const {
 <meta property="og:description" content={description} />
 <meta property="og:image" content={new URL(image, Astro.url)} />
 <meta property="og:locale" content="en_US" />
-<meta property="og:site_name" content="{COMPANY_NAME}" />
+<meta property="og:site_name" content={`${COMPANY_NAME}`} />
 
 <!-- Twitter -->
 <meta property="twitter:card" content="summary_large_image" />
