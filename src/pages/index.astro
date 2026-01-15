@@ -18,6 +18,7 @@ import SocialProofLeftSection from "../components/SocialProofLeftSection.astro";
 import BookDownloadSection from "../components/BookDownloadSection.astro";
 import ChatWidget from "../components/external/ChatWidget.astro";
 import ProgramsGrid from "../components/Programs/ProgramsGrid.astro";
+import GoogleReviews from "../components/external/GoogleReviews.astro";
 
 const heroData = {
   images: [
@@ -322,10 +323,11 @@ const metaProps = {
   <ValueProposition data={valueAdvantageData} />
   <SocialProofSection data={socialProofData} />
   <SocialProofLeftSection data={repairStationData} />
-  <Testimonials testimonials={testimonials} />
+  <GoogleReviews />
+  <!-- <Testimonials testimonials={testimonials} /> -->
   <ImageSliderWithCopySection data={imageSliderData} />
   <ProgramsGrid testimonials={testimonials} />
-  <ProgramsOverviewSection />
+  <!-- <ProgramsOverviewSection /> -->
   <BlogFeed />
   <TrainingPhilosophySection data={mentorshipData} />
   <TeamAndCultureSection data={teamCultureData} />
