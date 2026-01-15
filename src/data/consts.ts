@@ -82,8 +82,8 @@ export const COMPANY_NAME = "Pitcairn Flight Academy";
 export const COMPANY_NAME_CAPS = "PITCAIRN FLIGHT ACADEMY";
 export const COMPANY_NICKNAME = "Pitcairn Flight";
 
-export const PHONE_NUMBER = ""; // confirm public phone number
-export const PHONE_NUMBER_HEADER = "";
+export const PHONE_NUMBER = "(610) 495-7000"; // confirm public phone number
+export const PHONE_NUMBER_HEADER = "(610) 495-7000";
 
 export const ADDRESS_LINE_1 = "3310 W Ridge Pike";
 export const ADDRESS_LINE_2 = "Pottstown, PA 19464";
@@ -119,7 +119,7 @@ export const LOCATIONS = [
     state: "PA",
     zip: "19464",
     gMaps: "", // add maps link
-    phone: "",
+    phone: "(610) 495-7000",
     forwardPhone: "",
     fullAddress: "3310 W Ridge Pike, Pottstown, PA 19464",
     fullAddressLineBreak: "3310 W Ridge Pike\nPottstown, PA 19464",

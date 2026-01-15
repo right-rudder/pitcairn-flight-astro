@@ -82,7 +82,7 @@
 }
 
 .btn-secondary {
-  @apply bg-sky-900 tracking-widest  items-center px-5 py-2 border border-sky-600/30 hover:text-slate-50 text-white font-semibold rounded-lg hover:bg-sky-600 hover:border-sky-600 transition-all duration-300 shadow-lg shadow-black/20;
+  @apply bg-sky-900 tracking-widest  px-5 py-2 border border-sky-600/30 hover:text-slate-50 text-white font-semibold rounded-lg hover:bg-sky-600 hover:border-sky-600 transition-all duration-300 shadow-lg shadow-black/20;
 }
 
 .btn-transparent {

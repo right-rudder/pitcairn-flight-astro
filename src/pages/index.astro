@@ -298,7 +298,7 @@ const mentorshipData = {
   description:
     'Founded by Mike Haney in 1988 and led today by Jeff and Jessica, {COMPANY_NAME} is a <strong class="text-sky-600">one-stop aviation hub</strong>. By training at an active FAA Part 145 Repair Station and FBO, you gain a professional edge that \'pilot mills\' can\'t match. You’ll learn in a <strong class="text-sky-600">modern, glass-panel fleet</strong> and benefit from our exclusive <strong class="text-sky-600">multi-engine training</strong>—all while supported by a team that treats your success as a personal mission.',
   image: {
-    src: "/src/assets/placeholder-dark-clouds-pitcairn-flight-academy-instrument-rating.webp",
+    src: "/src/assets/old-website/pitcairn-flight-group-of-instructors.webp",
     alt: "imagePlaceholder",
   },
   cta: {
@@ -319,21 +319,20 @@ const metaProps = {
 <BaseLayout {...metaProps}>
   <HeroLandingPage data={heroData} />
   <IntroductionSection {...valuePropositionData} />
-  <RoadmapSection data={roadmapData} />
   <ValueProposition data={valueAdvantageData} />
+  <TrainingPhilosophySection data={mentorshipData} />
   <SocialProofSection data={socialProofData} />
   <SocialProofLeftSection data={repairStationData} />
   <GoogleReviews />
+  <RoadmapSection data={roadmapData} />
   <!-- <Testimonials testimonials={testimonials} /> -->
   <ImageSliderWithCopySection data={imageSliderData} />
   <ProgramsGrid testimonials={testimonials} />
   <!-- <ProgramsOverviewSection /> -->
   <BlogFeed />
-  <TrainingPhilosophySection data={mentorshipData} />
-  <TeamAndCultureSection data={teamCultureData} />
-  <!-- TODO: Book -->
-  <LocationSection data={locationData} />
   <BookDownloadSection data={bookDownloadData} />
+  <!-- <TeamAndCultureSection data={teamCultureData} /> -->
+  <LocationSection data={locationData} />
   <FinalCTASection data={finalCtaData} />
   <ChatWidget />
 </BaseLayout>
