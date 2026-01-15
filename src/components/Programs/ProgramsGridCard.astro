@@ -18,8 +18,8 @@ const duration = program.data.programIntroduction?.highlights?.find((h) =>
 
 <a
   href={`/programs/${program.slug}`}
-  class={`group relative overflow-hidden rounded-3xl bg-sky-950 min-h-[400px] h-full ${colSpan} transition-all duration-500 hover:shadow-2xl hover:shadow-sky-900/50`}
-  style={`transition-delay: ${index * 100}ms;`}
+  class={`group program-grid-card relative overflow-hidden rounded-3xl bg-sky-950 min-h-[400px] h-full ${colSpan} transition-all duration-500 hover:shadow-2xl hover:shadow-sky-900/50`}
+  style={`transition-delay: ${index * 150}ms`}
 >
   <div class="absolute inset-0 z-0">
     <ImageComp
@@ -63,3 +63,21 @@ const duration = program.data.programIntroduction?.highlights?.find((h) =>
     </div>
   </div>
 </a>
+
+<style>
+  .program-grid-card {
+    /* Start state: invisible and shifted down */
+    opacity: 0;
+    transform: translateY(30px);
+    transition:
+      opacity 0.8s ease-out,
+      transform 0.8s ease-out;
+    /* This ensures the hover transitions from our previous steps still work later */
+    will-change: transform, opacity;
+  }
+
+  .program-grid-card.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+</style>

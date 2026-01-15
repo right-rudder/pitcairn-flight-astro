@@ -87,7 +87,7 @@ const { testimonials } = Astro.props;
   </div>
 </section>
 
-<script>
+<!-- <script>
   const observerOptions = {
     root: null,
     threshold: 0.1,
@@ -104,6 +104,29 @@ const { testimonials } = Astro.props;
   }, observerOptions);
 
   document.querySelectorAll(".testimonial-card").forEach((card) => {
+    observer.observe(card);
+  });
+</script> -->
+
+<script>
+  const observerOptions = {
+    root: null,
+    threshold: 0.1, // Trigger when 10% of the card is visible
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        // Add the class that triggers the CSS transition
+        entry.target.classList.add("is-visible");
+        // Stop observing once animated
+        observer.unobserve(entry.target);
+      }
+    });
+  }, observerOptions);
+
+  // Target all cards
+  document.querySelectorAll(".program-grid-card").forEach((card) => {
     observer.observe(card);
   });
 </script>
