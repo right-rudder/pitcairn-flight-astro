@@ -59,11 +59,8 @@ const { testimonials } = Astro.props;
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
       {
         sortedPrograms.map((program, index) => {
-          const bentoIndex = index % 7;
-          const colSpan =
-            bentoIndex === 3 || bentoIndex === 6
-              ? "lg:col-span-2"
-              : "lg:col-span-1";
+          const bentoIndex = index % 2;
+          const colSpan = bentoIndex === 0 ? "lg:col-span-2" : "lg:col-span-1";
           return (
             <ProgramsGridCard
               program={program}

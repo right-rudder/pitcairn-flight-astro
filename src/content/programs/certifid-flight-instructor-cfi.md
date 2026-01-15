@@ -1,8 +1,8 @@
 ---
-title: "Private Pilot Certificate"
+title: "CFI - Certified Flight Instructor"
 description: "Start your aviation journey in the scenic Antelope Valley with a family-owned school dedicated to safety, integrity, and quality training."
 order: 1
-image: "/src/assets/placeholder-dark-clouds-pitcairn-flight-academy-instrument-rating.webp"
+image: "/src/assets/facebook/pitcairn-flight-academy-junior-aviators-camp.jpg"
 alt: "Private Pilot Training at Fox Field"
 top: true
 

@@ -18,7 +18,7 @@ const duration = program.data.programIntroduction?.highlights?.find((h) =>
 
 <a
   href={`/programs/${program.slug}`}
-  class={`group relative overflow-hidden rounded-3xl bg-sky-950 aspect-[4/5] ${colSpan} transition-all duration-500 hover:shadow-2xl hover:shadow-sky-900/50`}
+  class={`group relative overflow-hidden rounded-3xl bg-sky-950 aspect-4/5 ${colSpan} transition-all duration-500 hover:shadow-2xl hover:shadow-sky-900/50`}
   style={`transition-delay: ${index * 100}ms;`}
 >
   <div class="absolute inset-0 z-0">
@@ -30,7 +30,7 @@ const duration = program.data.programIntroduction?.highlights?.find((h) =>
   </div>
 
   <div
-    class="absolute inset-x-0 bottom-0 z-10 p-8 transition-transform duration-500 group-hover:-translate-y-32"
+    class="absolute inset-x-0 bottom-0 z-10 p-8 transition-transform duration-500 group-hover:-translate-y-32 z-50"
   >
     <h3 class="font-title text-2xl font-bold text-white leading-tight">
       {program.data.title}
@@ -45,7 +45,7 @@ const duration = program.data.programIntroduction?.highlights?.find((h) =>
   </div>
 
   <div
-    class="absolute inset-0 z-20 flex flex-col justify-end p-8 bg-gradient-to-t from-sky-950 via-sky-900/40 to-transparent translate-y-full transition-transform duration-500 ease-out group-hover:translate-y-0"
+    class="absolute inset-0 z-20 flex flex-col justify-end p-8 bg-linear-to-t from-sky-950 via-sky-900/40 to-transparent translate-y-full transition-transform duration-500 ease-out group-hover:translate-y-0"
   >
     <p
       class="text-white/90 text-sm leading-relaxed mb-6 line-clamp-4 opacity-0 transition-opacity duration-300 delay-200 group-hover:opacity-100"
