@@ -2,7 +2,6 @@
 title: "How Long Does It Take to Become an Airline Pilot?"
 description: "A realistic breakdown of the airline pilot timeline, why most paths take 4 to 6 years, and how a structured, full-time program can cut that time nearly in half."
 pubDate: 2025-12-08
-author: "{COMPANY_NAME}"
 image: "/src/assets/students/IMG_20240627_111845.jpg"
 tags:
   - "airline pilot"

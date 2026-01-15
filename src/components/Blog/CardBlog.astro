@@ -3,6 +3,7 @@ import { formatDate } from "./utils";
 import type { CollectionEntry } from "astro:content";
 import ImageComp from "../ImageComp.astro";
 import { FaArrowRight, FaCalendarAlt } from "react-icons/fa";
+import { COMPANY_NAME } from "../../data/consts";
 
 interface Props {
   blogEntry: CollectionEntry<"blog">;
@@ -60,7 +61,7 @@ const contentClasses = smallCard
         }
         <span class="w-1 h-1 bg-slate-700 rounded-full"></span>
         <span class="text-slate-400 truncate max-w-[100px]">
-          {blogEntry.data.author}
+          {blogEntry.data.author || COMPANY_NAME}
         </span>
       </div>
 
