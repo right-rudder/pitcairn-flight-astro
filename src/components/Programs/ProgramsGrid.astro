@@ -59,19 +59,19 @@ const { testimonials } = Astro.props;
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
       {
         sortedPrograms.map((program, index) => {
-          // Create a 4-card pattern cycle
+          // We use a modulo 4 pattern
           const patternIndex = index % 4;
           let colSpan = "";
 
           if (patternIndex === 0) {
-            // Card 1: Large (top left)
-            colSpan = "lg:col-span-2 lg:h-[600px]";
+            // Card 1: The "Anchor" (2 cols wide, 2 rows high)
+            colSpan = "lg:col-span-2 lg:row-span-2 lg:min-h-[700px]";
           } else if (patternIndex === 1 || patternIndex === 2) {
-            // Cards 2 & 3: Small (side or bottom)
-            colSpan = "lg:col-span-1 lg:h-[600px]";
+            // Cards 2 & 3: The "Side Stack" (1 col wide, 1 row high)
+            colSpan = "lg:col-span-1 lg:row-span-1 lg:min-h-[334px]";
           } else if (patternIndex === 3) {
-            // Card 4: Full Width Row
-            colSpan = "lg:col-span-3 lg:h-[400px]";
+            // Card 4: The "Wide Footer" (Full 3 columns wide)
+            colSpan = "lg:col-span-3 lg:row-span-1 lg:min-h-[350px]";
           }
 
           return (

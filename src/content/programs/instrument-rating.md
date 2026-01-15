@@ -1,7 +1,7 @@
 ---
 title: "Instrument Rating"
 description: "Start your aviation journey in the scenic Antelope Valley with a family-owned school dedicated to safety, integrity, and quality training."
-order: 1
+order: 2
 image: "/src/assets/placeholder-dark-clouds-pitcairn-flight-academy-instrument-rating.webp"
 alt: "Private Pilot Training at Fox Field"
 top: true
