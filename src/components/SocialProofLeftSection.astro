@@ -6,10 +6,18 @@ interface Props {
     eyebrow: string;
     headline: string;
     bodyCopy: string;
+    descriptions?: string[];
     image: {
       src: string;
       alt: string;
     };
+    buttons?: [
+      {
+        title: string;
+        href: string;
+        class: string;
+      },
+    ];
   };
 }
 
@@ -22,19 +30,40 @@ const { data } = Astro.props;
       <div
         class="reveal opacity-0 -translate-x-8 transition-all duration-1000 ease-out delay-200"
       >
-        <p
-          class="text-sky-700 font-bold uppercase tracking-widest text-sm mb-2"
-        >
+        <p class="text-white font-bold uppercase tracking-widest text-sm mb-2">
           {data.eyebrow}
         </p>
         <h2
           class="title !text-[2.5rem] uppercase !font-main-header tracking-wide !text-slate-50 mb-6"
           set:html={data.headline}
         />
-        <p
-          class="font-sans text-slate-50 leading-relaxed"
-          set:html={data.bodyCopy}
-        />
+        {
+          data.bodyCopy && (
+            <p
+              class="font-sans text-slate-50 leading-relaxed"
+              set:html={data.bodyCopy}
+            />
+          )
+        }
+        {
+          data.descriptions &&
+            data.descriptions.map((description: string) => (
+              <p
+                class="font-sans text-slate-50 leading-relaxed pt-2"
+                set:html={description}
+              />
+            ))
+        }
+        {
+          data.buttons &&
+            data.buttons.map((btn) => (
+              <div class="pt-8 flex justify-center">
+                <a href={btn.href} class={btn.class}>
+                  {btn.title}
+                </a>
+              </div>
+            ))
+        }
       </div>
 
       <div
