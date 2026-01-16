@@ -72,10 +72,10 @@ const { data } = Astro.props;
 
       {
         data.cta && data.cta.length > 0 && (
-          <div class="hero-cta mt-12 flex flex-col gap-4 items-center sm:flex-row lg:items-start w-full sm:w-auto">
+          <div class="hero-cta mt-12 flex flex-col gap-6 items-center sm:flex-row lg:items-start w-full sm:w-auto">
             {data.cta.map((item, index) => (
               <a
-                class={`cta-button ${index === 0 ? "btn-primary" : "btn-secondary"} hover:cursor-pointer text-base sm:text-lg md:text-xl px-10 py-5  text-center font-bold transition-all duration-500 hover:scale-110 relative overflow-hidden group`}
+                class={`cta-button ${index === 0 ? "btn-primary" : "btn-secondary"} hover:cursor-pointer text-base sm:text-lg md:text-xl px-10 py-5  text-center font-bold transition-all duration-500 hover:scale-105 relative overflow-hidden group`}
                 aria-label={item.text}
               >
                 <span class="relative z-10">{item.text}</span>

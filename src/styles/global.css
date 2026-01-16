@@ -86,7 +86,7 @@
 }
 
 .btn-transparent {
-  @apply bg-transparent rounded-sm border border-white px-5 py-2 text-white font-semibold cursor-pointer hover:bg-white hover:text-sky-600 transition duration-200 hover:scale-105;
+  @apply bg-transparent rounded-sm border border-white px-5 py-2 text-white font-semibold cursor-pointer hover:bg-white hover:text-sky-700 transition duration-200 hover:scale-105;
 }
 
 .title {
@@ -94,7 +94,7 @@
 }
 
 .subtitle {
-  @apply text-lg md:text-xl font-bold text-sky-600 max-w-3xl mx-auto;
+  @apply text-lg md:text-xl font-bold text-sky-700 max-w-3xl mx-auto;
 }
 
 .key-detail-title {
