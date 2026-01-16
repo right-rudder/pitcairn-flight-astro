@@ -26,7 +26,10 @@ export const menu: MenuItem[] = [
   {
     label: "New to Flying?",
     url: "/new-to-flying",
-    children: [{ label: "New to Flying", url: "/new-to-flying" }],
+    children: [
+      { label: "New to Flying", url: "/new-to-flying" },
+      { label: "Discovery Flight", url: "/new-to-flying" },
+    ],
   },
   {
     label: "About Us",
@@ -43,6 +46,7 @@ export const menu: MenuItem[] = [
     label: "Services",
     url: "/about",
     children: [
+      { label: "Discovery Flight", url: "#" },
       { label: "PennAir - Maintenance", url: "#" },
       { label: "PennJet - Jet", url: "#" },
       { label: "Pitcairn Aviation - FBO ", url: "#" },
