@@ -4,17 +4,17 @@ interface Props {
 }
 
 const example = {
-  lineColor: "bg-sky-800",
+  lineColor: "bg-sky-800/70",
 };
 const defaultProps: Props = {
-  lineColor: "bg-sky-800",
+  lineColor: "bg-sky-800/70",
 };
 
 const { lineColor = example.lineColor } = Astro.props;
 ---
 
 <div
-  class="bg-trasnparent flex mx-auto max-w-6xl items-center justify-center gap-4 my-12"
+  class="bg-transparent flex mx-auto max-w-6xl items-center justify-center gap-4 py-12"
 >
   <div class={`${lineColor} h-1 w-full rounded-l-full`}></div>
   <div class={`${lineColor} h-4 w-8 rounded-full`}></div>
