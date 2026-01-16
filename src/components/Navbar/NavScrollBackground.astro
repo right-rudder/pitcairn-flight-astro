@@ -4,14 +4,24 @@
 >
 </div>
 
+<div
+  class="h-18 lg:h-22 fixed inset-0 left-0 top-10 bg-sky-950 opacity-35 transition-all duration-300 ease-in-out"
+  id="nav-scroll-overlay"
+>
+</div>
+
 <script type="module">
   const navScrollBackground = document.getElementById("nav-scroll-background");
+  const navScrollOverlay = document.getElementById("nav-scroll-overlay");
+
   window.addEventListener("scroll", () => {
     const scrollPosition = window.scrollY;
     if (scrollPosition < 10) {
       navScrollBackground.classList.remove("bg-sky-950");
+      navScrollOverlay.classList.remove("hidden");
     } else {
       navScrollBackground.classList.add("bg-sky-950");
+      navScrollOverlay.classList.add("hidden");
     }
   });
 </script>
