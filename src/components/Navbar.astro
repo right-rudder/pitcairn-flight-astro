@@ -72,11 +72,11 @@ const { pathname } = Astro.props;
 <nav id="navbar" class="navbar font-ubuntu">
   <div class="container px-4 md:px-0">
     <a
-      class="hover:cursor-pointer object-contain h-auto mx-auto lg:mx-0 invert"
+      class="hover:cursor-pointer object-contain h-auto max-h-22 mx-auto lg:mx-0 invert"
       id="logo-home-link"
     >
       <ImageComp
-        classes="mx-4 w-24 md:w-24"
+        class="w-44 md:w-44 lg:w-56 mx-auto"
         src={LOGO_ASSETS}
         alt={`About ${COMPANY_NAME}`}
       />
@@ -256,6 +256,7 @@ const { pathname } = Astro.props;
     width: 100%;
     display: flex;
     justify-content: center;
+    flex-items: center;
     padding: 16px 16px;
     background: oklch(20.8% 0.042 265.755, 90%);
     position: sticky;

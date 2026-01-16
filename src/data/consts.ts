@@ -65,12 +65,11 @@ export const OG_IMAGE = "/pitcairn-flight-academy.png"; // verify file exists
 export const FAVICON = "/favicon.png";
 export const LOGO = ""; // verify primary logo path
 
-export const LOGO_ASSETS =
-  "/src/assets/brand/Pitcairn-FS-Typography-Logo-2.png";
+export const LOGO_ASSETS = "/src/assets/brand/Pitcairn-FS-Typography-Logo.png";
 export const LOGO_ASSETS_ALTERNATIVE =
-  "/src/assets/brand/pitcairn-flight-academy-logo-white.png";
+  "/src/assets/brand/Pitcairn-FS-Typography-Logo.png";
 export const LOGO_ASSETS_2 =
-  "/src/assets/brand/pitcairn-flight-academy-logo-white.png";
+  "/src/assets/brand/Pitcairn-FS-Typography-Logo.png";
 export const LOGO_ASSETS_3 =
   "/src/assets/brand/pitcairn-flight-academy-logo-white.png";
 
