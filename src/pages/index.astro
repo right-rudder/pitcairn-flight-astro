@@ -25,6 +25,7 @@ import ChatWidget from "../components/external/ChatWidget.astro";
 import ProgramsGrid from "../components/Programs/ProgramsGrid.astro";
 import GoogleReviews from "../components/external/GoogleReviews.astro";
 import Line from "../components/patterns and effects/Line.astro";
+import PartnersSection from "../components/PartnersSection.astro";
 
 const heroData = {
   images: [
@@ -227,6 +228,37 @@ const roadmapData = {
   ],
 };
 
+const partnersSection = {
+  eyebrow: "Our Partners",
+  headline: "Check Out These Great Aviation Services",
+  cards: [
+    {
+      title: "Pitcairn Aviation LLC",
+      logo: "/src/assets/partners/pitcairn-aviation-llc-logo.png",
+      href: "https://www.pitcairnaviation.com/",
+      logoClass: "",
+    },
+    {
+      title: "Penn Jet",
+      logo: "/src/assets/partners/penn-jet-logo.png",
+      href: "https://www.pennjet.com/",
+      logoClass: "",
+    },
+    {
+      title: "Penn Air Repair LLC",
+      logo: "/src/assets/partners/penn-air-repair-llc-logo.png",
+      href: "https://www.pennairrepair.com/",
+      logoClass: "",
+    },
+    {
+      title: "Lift Aviation",
+      logo: "/src/assets/partners/partner-lift-aviation-logo.avif",
+      href: "https://liftaviationusa.com",
+      logoClass: "invert",
+    },
+  ],
+};
+
 const locationData = {
   eyebrow: "Ideal Training Location",
   headline: "Train Where<br/> Students Thrive",
@@ -346,8 +378,10 @@ const metaProps = {
     <SocialProofLeftSection data={repairStationData} />
   </section>
   <RoadmapSection data={roadmapData} />
-  <Line />
+  <!-- <Line /> -->
   <ImageSliderWithCopySection data={imageSliderData} />
+
+  <PartnersSection data={partnersSection} />
   <ProgramsGrid testimonials={testimonials} />
   <BlogFeed />
   <TeamAndCultureSection data={teamCultureData} />
