@@ -1,13 +1,3 @@
-CONTACT US
-Pitcairn Flight Academy LLC logo
-(610) 495-7000
-Pitcairn Flight Academy Website Designed and Developed by Right Rudder Marketing
-Pitcairn Logo
-FLY WITH US
-BECOME A PILOT
-ABOUT US
-DISCOVERY FLIGHT
-CONTACT US
 The Pilot Training Process
 How to become a pilot
 Pitcairn Flight Academy is the perfect place to kickstart your pilot training journey. We're here to help you get your wings and achieve your dream of becoming a pilot. Join us and start on an exciting adventure in the world of aviation.
@@ -74,49 +64,3 @@ We've prepared this free booklet which explains everything you need to know for 
 
 DOWNLOAD THE FREE BOOK
 Picture of our free how to be a pilot training guide
-Contact Us
-Fill out the form below and a member of our team will reach out to you shortly
-Name
-Email
-If you are a human, ignore this field
-Phone
-###-###-####
-How can we help?
-logo backdrop
-Our Commitment
-Our unwavering commitment is to train student pilots to be successful in their careers. Our passion is aviation and we're invested in helping you accomplish your aviation goals. Give us a call today and let's fly.
-
-New to Flying?
-Your First Flight
-
-How to Become a Pilot
-
-Why Become a Pilot
-
-Aircraft Rentals
-
-PITCAIRN FLIGHT
-About Us
-
-Why Pitcairn
-
-Blog
-
-Contact Us
-
-Contact
-3310 W Ridge Pike
-Pottstown, PA 19464
-
-flynow@pitcairnflight.com
-
-(610) 495-7000
-
-© 2026 Pitcairn Flight Academy LLC. All Rights Reserved.
-Privacy Policy & Terms of Use
-Facebook page
-Google Page
-Pitcairn Flight Academy Website Designed and Developed by Right Rudder Marketing
-
-Avatar
-Hi there, have a question? Text us here.
