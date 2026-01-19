@@ -3,6 +3,9 @@ dist/
 # generated types
 .astro/
 
+# workflow drafts
+workflow/
+
 # dependencies
 node_modules/
 
