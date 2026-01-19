@@ -1,0 +1,113 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { getCollection } from "astro:content";
+import type { GetStaticPaths } from "astro";
+import type { CollectionEntry } from "astro:content";
+
+// Component Imports
+import ProgramIntro from "../components/ProgramSlug/ProgramIntro.astro";
+import ContentCTA from "../components/ProgramSlug/ContentCTA.astro";
+import WhatIsIncluded from "../components/ProgramSlug/WhatIsIncluded.astro";
+import WhyUs from "../components/ProgramSlug/WhyUs.astro";
+import TimelineProgression from "../components/ProgramSlug/TimelineProgression.astro";
+import FAQ from "../components/ProgramSlug/FAQ.astro";
+import FinalCTA from "../components/ProgramSlug/FinalCTA.astro";
+import Hero75 from "../components/Hero75.astro";
+import CTAMeetOurFleet from "../components/ProgramSlug/CTAMeetOurFleet.astro";
+
+// New
+import ProgramExpectations from "../components/ProgramSlug/ProgramExpectations.astro";
+import CareerPathways from "../components/ProgramSlug/CareerPathways.astro";
+import TargetAudience from "../components/ProgramSlug/TargetAudience.astro";
+import EnrollmentProcess from "../components/ProgramSlug/EnrollmentProcess.astro";
+
+// Static Path Generation
+export const getStaticPaths = (async () => {
+  const programs = await getCollection("programs");
+  return programs.map((program) => ({
+    params: { slug: program.slug },
+    props: { program },
+  }));
+}) satisfies GetStaticPaths;
+
+// Props
+type Props = {
+  program: CollectionEntry<"programs">;
+};
+
+const { program } = Astro.props;
+const { data } = program;
+
+const heroData = {
+  image: {
+    src: program.data.image,
+    alt: program.data.alt || program.data.title,
+    reverse: program.data.reverse || false,
+    top: program.data.top || false,
+  },
+  title: program.data.title,
+  subTitle: program.data.description,
+  cta: [
+    {
+      url: "/enroll",
+      text: "Enroll Now",
+    },
+  ],
+};
+---
+
+<BaseLayout
+  siteTitle={`${data.title} | {COMPANY_NAME}`}
+  siteDescription={data.description}
+  siteImage={data.image}
+  siteKeywords={`${data.title}, {COMPANY_NAME}, flight training NC, pilot certification, Part 141 course, ${data.title} requirements`}
+>
+  <main>
+    <Hero75 data={heroData} />
+
+    {
+      data.programIntroduction && (
+        <ProgramIntro data={data.programIntroduction} />
+      )
+    }
+
+    {
+      data.programExpectations && (
+        <ProgramExpectations data={data.programExpectations} />
+      )
+    }
+
+    {data.firstCTA && <ContentCTA data={data.firstCTA} />}
+
+    {data.whatIsIncluded && <WhatIsIncluded data={data.whatIsIncluded} />}
+
+    {data.whyUs && <WhyUs data={data.whyUs} />}
+
+    {data.targetAudience && <TargetAudience data={data.targetAudience} />}
+    {data.careerPathways && <CareerPathways data={data.careerPathways} />}
+
+    {
+      data.trainingProgression && (
+        <TimelineProgression data={data.trainingProgression} />
+      )
+    }
+
+    {
+      data.enrollmentProcess && (
+        <EnrollmentProcess data={data.enrollmentProcess} />
+      )
+    }
+
+    {
+      data.finalCTA && (
+        <FinalCTA
+          data={{ ...data.finalCTA, imagePosition: "object-[50%_50%]" }}
+        />
+      )
+    }
+
+    {data.faq && <FAQ data={data.faq} />}
+
+    <CTAMeetOurFleet imageSide="left" background="red" />
+  </main>
+</BaseLayout>
