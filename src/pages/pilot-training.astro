@@ -8,6 +8,7 @@ import CTAMeetOurFleet from "../components/ProgramSlug/CTAMeetOurFleet.astro";
 import ProgramsGrid from "../components/Programs/ProgramsGrid.astro";
 import BookDownloadSection from "../components/BookDownloadSection.astro";
 import LocationSection from "../components/LocationSection.astro";
+import DiscoveryFlightCTA from "../components/Programs/DiscoveryFlightCTA.astro";
 
 type Program = CollectionEntry<"programs">;
 
@@ -44,6 +45,7 @@ const metaProps = {
 <BaseLayout {...metaProps}>
   <Hero75 data={heroData} />
   <ProgramsGrid />
+  <DiscoveryFlightCTA />
   <!-- <OldProgrammGrid /> -->
   <BookDownloadSection />
   <LocationSection />
