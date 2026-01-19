@@ -1,0 +1,65 @@
+---
+const discoveryFlight = {
+  title: "Why do we recommend a discovery flight?",
+  description:
+    "A discovery flight is a sneak peek into the world of aviation and a chance to get your feet a little wet. We think it's a pretty good idea and the best first step for anyone dreaming of flying. At Pitcairn Flight Academy, we're all about providing a hands on experience and making sure you're making the right call when it comes to your aviation journey.\n\nDuring a discovery flight, you get to hop into the cockpit, take the controls, and feel what it's like to be the one flying the plane. It's a bit like a test drive for flying, without the pressure of committing to a full blown pilot's license. We recommend it because there's usually two outcomes out of the introductory flight. One, either you don't like it and you can determine that becoming is not right for you. Or two, you fall in love with it and you make the decision that becoming a pilot is right for you. It's usually the latter. So don't wait, get on the schedule today and let's go flying together.",
+  cta: {
+    text: "LET'S GO FLYING",
+    link: "/discovery-flight",
+  },
+  steps: [
+    {
+      title: "Start with a discovery flight",
+      description:
+        "Also known as an intro flight, this is the first flight you'll take where you're the pilot.",
+      cta: {
+        text: "SCHEDULE TODAY",
+        link: "/discovery-flight",
+      },
+    },
+    {
+      title:
+        "I liked the discovery flight and I want to be a pilot. What's next?",
+      description:
+        "This really depends on your aviation goals. Are you looking to make a career out of flying or do you want to fly for fun? Many pilots stop at their private or instrument and fly around town leisurely, while other pilots who want to make a career out of flying move on to getting their commercial certificate and flight instructor certificates.",
+      cta: {
+        text: "CONTACT US",
+        link: "/contact-us",
+        subtext:
+          "Contact us and talk to one of our team members to determine what's right for you.",
+      },
+    },
+  ],
+};
+
+const { content = discoveryFlight } = Astro.props;
+---
+
+<section
+  class="py-16 md:py-24 bg-sky-800 text-slate-50 overflow-hidden relative"
+>
+  <!-- background effect top left -->
+  <div
+    class="absolute top-0 right-0 w-96 h-96 bg-sky-600 rounded-full blur-[120px] opacity-30 -translate-x-1/2 -translate-y-1/2"
+  >
+  </div>
+
+  <!-- background effect top bottom right -->
+  <div
+    class="absolute bottom-0 left-0 w-96 h-96 bg-sky-600 rounded-full blur-[120px] opacity-30 translate-x-1/2 translate-y-1/2"
+  >
+  </div>
+
+  <div class="max-w-7xl mx-auto px-5 md:px-8 lg:px-12 relative z-10">
+    <div class="text-center mb-12 md:mb-16">
+      <h2 class="!font-sans !font-medium uppercase mb-2"></h2>
+      <h3
+        class="title !text-[2.5rem] uppercase !font-main-header tracking-wide !text-slate-50e mb-4"
+      >
+      </h3>
+      <p class="font-sans !text-slate-50 max-w-xl mx-auto"></p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"></div>
+  </div>
+</section>
