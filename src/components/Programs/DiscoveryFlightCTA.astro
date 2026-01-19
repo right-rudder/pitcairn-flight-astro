@@ -70,54 +70,54 @@ const { content = discoveryFlight } = Astro.props;
           </a>
         </div>
       </div>
-    </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
-      {
-        content.steps.map((step, index) => (
-          <div class="bg-sky-800/40 border border-sky-700/50 p-8 md:p-10 rounded-3xl backdrop-blur-sm flex flex-col justify-between group hover:border-sky-400/50 transition-all duration-300">
-            <div>
-              <span class="text-sky-400 font-mono text-xl font-bold mb-4 block">
-                0{index + 1}
-              </span>
-              <h4 class="text-2xl font-bold mb-4 leading-snug group-hover:text-sky-300 transition-colors">
-                {step.title}
-              </h4>
-              <p class="text-slate-300 leading-relaxed mb-8">
-                {step.description}
-              </p>
-            </div>
-
-            <div class="mt-auto">
-              <a
-                href={step.cta.link}
-                class="inline-flex items-center font-bold text-white group-hover:text-sky-300 underline underline-offset-8 decoration-sky-500 hover:decoration-sky-300 transition-all"
-              >
-                {step.cta.text}
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="h-5 w-5 ml-2 transform group-hover:translate-x-1 transition-transform"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M17 8l4 4m0 0l-4 4m4-4H3"
-                  />
-                </svg>
-              </a>
-              {step.cta.subtext && (
-                <p class="text-sm text-slate-400 mt-4 italic">
-                  {step.cta.subtext}
+      <div class="lg:col-span-2 flex flex-col gap-8 lg:gap-12">
+        {
+          content.steps.map((step, index) => (
+            <div class="bg-sky-800/40 border border-sky-700/50 p-8 md:p-10 rounded-3xl backdrop-blur-sm flex flex-col justify-between group hover:border-sky-400/50 transition-all duration-300">
+              <div>
+                <span class="text-sky-400 font-mono text-xl font-bold mb-4 block">
+                  0{index + 1}
+                </span>
+                <h4 class="text-2xl font-bold mb-4 leading-snug group-hover:text-sky-300 transition-colors">
+                  {step.title}
+                </h4>
+                <p class="text-slate-300 leading-relaxed mb-8">
+                  {step.description}
                 </p>
-              )}
+              </div>
+
+              <div class="mt-auto">
+                <a
+                  href={step.cta.link}
+                  class="inline-flex items-center font-bold text-white group-hover:text-sky-300 underline underline-offset-8 decoration-sky-500 hover:decoration-sky-300 transition-all"
+                >
+                  {step.cta.text}
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-5 w-5 ml-2 transform group-hover:translate-x-1 transition-transform"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M17 8l4 4m0 0l-4 4m4-4H3"
+                    />
+                  </svg>
+                </a>
+                {step.cta.subtext && (
+                  <p class="text-sm text-slate-400 mt-4 italic">
+                    {step.cta.subtext}
+                  </p>
+                )}
+              </div>
             </div>
-          </div>
-        ))
-      }
+          ))
+        }
+      </div>
     </div>
   </div>
 </section>
