@@ -6,7 +6,7 @@ import Hero75 from "../components/Hero75.astro";
 import ImageComp from "../components/ImageComp.astro";
 import CTAMeetOurFleet from "../components/ProgramSlug/CTAMeetOurFleet.astro";
 import ProgramsGrid from "../components/Programs/ProgramsGrid.astro";
-import OldProgrammGrid from "../components/Programs/OldProgrammGrid.astro";
+import BookDownloadSection from "../components/BookDownloadSection.astro";
 
 type Program = CollectionEntry<"programs">;
 
@@ -42,29 +42,8 @@ const metaProps = {
 
 <BaseLayout {...metaProps}>
   <Hero75 data={heroData} />
-  <section class="pt-20 px-20">
-    <div class="text-center flex flex-col items-center md:mb-16">
-      <div class="inline-block mb-4">
-        <span class="subtitle">Choose Your Path</span>
-      </div>
-      <h2 class="title !text-lucky-950 max-w-xl">
-        All-Inclusive Tracks & Individual Ratings
-      </h2>
-      <p class="text-lg text-gray-600 mb-8 leading-relaxed max-w-5xl">
-        From our intensive 8 to 10 month Professional Track to a la carte Part
-        141 and 61 courses, we offer a clear roadmap for every aviation goal. We
-        eliminate the uncertainty of hidden fees and waitlists by providing
-        on-site housing, immediate scheduling, and a senior cadre dedicated to
-        your progression.
-        <br /><br />
-        <strong
-          >Select the program that fits your mission, and we’ll provide the
-          mentorship to get you there.</strong
-        >
-      </p>
-    </div>
-  </section>
   <ProgramsGrid />
   <!-- <OldProgrammGrid /> -->
+  <BookDownloadSection />
   <CTAMeetOurFleet imageSide="left" background="red" />
 </BaseLayout>
