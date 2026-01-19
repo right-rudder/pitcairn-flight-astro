@@ -10,22 +10,9 @@ type Program = CollectionEntry<"programs">;
 const programs = await getCollection("programs");
 const sortedPrograms = programs
   .sort(
-    (a: Program, b: Program) => (a.data.order || 999) - (b.data.order || 999)
+    (a: Program, b: Program) => (a.data.order || 999) - (b.data.order || 999),
   )
   .slice(0, 5);
-
-interface Testimonial {
-  quote: string;
-  author: string;
-  role?: string;
-  rating?: number;
-}
-
-interface Props {
-  testimonials: Testimonial[];
-}
-
-const { testimonials } = Astro.props;
 ---
 
 <section
