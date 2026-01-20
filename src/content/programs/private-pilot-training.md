@@ -1,102 +1,147 @@
 ---
 title: "Private Pilot Certificate"
-description: "Start your aviation journey in the scenic Antelope Valley with a family-owned school dedicated to safety, integrity, and quality training."
+description: "Start your aviation journey by getting your private pilot certificate - the first step that allows you to fly planes with passengers and begin your career in aviation."
 order: 1
 image: "/src/assets/students/getting-started-with-flight-training-at-pitcairn-flight-academy.jpg"
-alt: "Private Pilot Training at Fox Field"
+alt: "Student pilot getting started with flight training at Pitcairn Flight Academy"
 top: true
 
 programIntroduction:
   upperheader: "Begin Your Journey"
   title: "Private Pilot Certificate"
   descriptionParagraphs:
-    - "{COMPANY_NAME} began as a maintenance shop building a loyal customer base for over 20 years. Now, we bring that same dedication to flight training."
-    - "Located at Fox Airfield (KWJF), our training offers great access to the scenic Antelope Valley, with views of Lancaster, Palmdale, and the surrounding high desert."
-    - "Whether you are flying for a hobby or starting a career, we offer a catered, honest experience where you are treated like family."
+    - "The first step in your aviation journey is to get your private pilot certificate, granting you the ability to operate an aircraft as the pilot in charge."
+    - "Training covers essential skills like flying maneuvers, navigation, handling emergencies, and planning cross-country flights. Many pursue this certification for leisure or sports, but it's the initial step towards a career as an airline pilot."
+    - "At Pitcairn Flight Academy, we're here to guide you safely through every step - from discovery flight to checkride completion."
   highlights:
-    - highlightName: "Location"
-      highlightValue: "Fox Airfield (KWJF)"
-    - highlightName: "Fleet"
-      highlightValue: "Glass-Panel Garmin G5"
-    - highlightName: "Atmosphere"
-      highlightValue: "Family-Owned"
+    - highlightName: "First Step"
+      highlightValue: "Required for all pilots"
+    - highlightName: "Allows You To"
+      highlightValue: "Fly with passengers"
+    - highlightName: "Pathway To"
+      highlightValue: "Advanced Certifications"
   programHighlights:
     benefits:
-      - "Training in newer, better-equipped fleet with 180 hp conversions"
-      - "Great for learning in windy conditions to build pilot proficiency"
-      - "Safety-first culture backed by an on-site FAA Repair Station"
-      - "Private rooms and nice break area/kitchen available"
+      - "Learn essential flying skills: maneuvers, navigation, and emergency procedures"
+      - "Fly cross-country and explore new destinations"
+      - "Build confidence as pilot in command of an aircraft"
+      - "Join a community of aviation enthusiasts"
     requirements:
-      - "Passion for aviation and willingness to learn"
-      - "Meeting FAA medical and age requirements"
+      - "Be 17 years of age or older"
+      - "Read, speak, write and understand English"
+      - "Hold a valid student pilot certificate"
+      - "Pass FAA medical, written, and practical exams"
 
 programExpectations:
-  mainImage: "/src/assets/placeholder-dark-clouds-pitcairn-flight-academy-instrument-rating.webp"
-  mainImageAlt: "Student pilot in training"
-  title: "Training Environment"
+  mainImage: "/src/assets/students/cfi-with-student.jpg"
+  mainImageAlt: "CFI with student pilot preparing for flight training"
+  title: "Training Process"
   descriptionParagraphs:
-    - "At {COMPANY_NAME}, safety is always the priority. Our environment is designed to be supportive, responsive, and respectful."
-    - "You will learn in a busy airport environment around KWJF, a well-known general aviation hub, which prepares you for real-world flying."
+    - "Our structured approach ensures you're prepared for every aspect of becoming a pilot. We guide you through the discovery flight, ground school, flight training, and final checkride."
+    - "Partner with a Certified Flight Instructor to develop a personalized plan that fits your schedule and aviation goals."
   listItems:
-    - "Planes don't get grounded as long due to on-site maintenance"
-    - "Fast and respectful communication"
-    - "Fair and honest service from day one"
+    - "Complete an introductory discovery flight"
+    - "Partner with a certified flight instructor"
+    - "Master aeronautical knowledge and flying skills"
+    - "Meet FAA Airman Certification Standards"
 
 whatIsIncluded:
-  upperheader: "One-Stop Operation"
-  title: "What We Provide"
+  upperheader: "Exam Preparation"
+  title: "What You'll Master"
   descriptionParagraphs:
-    - "We are a one-stop operation at Fox Field offering maintenance, quality flight training, and fuel under one roof."
+    - "We provide comprehensive preparation for all three FAA requirements: medical exam, written exam, and practical flight exam (checkride)."
   bulletPointLists:
-    - title: "The Fleet"
+    - title: "Medical Exam Support"
       items:
-        - "Single-engine aircraft"
-        - "Garmin G5 and Garmin GPS equipped"
-        - "180 hp conversions"
-        - "Glass to Six Pack configurations available"
-    - title: "Facilities"
+        - "Guidance through FAA medical requirements"
+        - "Connections to Aviation Medical Examiners (AME)"
+        - "Preparation for physical and mental fitness evaluation"
+        - "Assistance with potential challenges"
+    - title: "Written Exam Training"
       items:
-        - "Remodeled facilities"
-        - "Private rooms for study"
-        - "Nice break area and kitchen"
-        - "On-site maintenance ensures high aircraft availability"
+        - "In-depth ground school instruction"
+        - "Regulations, airspace, weather, and aerodynamics"
+        - "Aircraft performance and navigation"
+        - "Practice tests and study materials"
 
 whyUs:
-  upperheader: "Our Core Values"
-  title: "Why Train With {COMPANY_NAME}"
-  topicTitle: "Family-Owned Integrity"
+  upperheader: "Our Training Advantage"
+  title: "Why Choose Pitcairn Flight Academy"
+  topicTitle: "Experienced, Safe Aviators"
   topicDescriptionParagraphs:
-    - "We are a family-owned small business that truly cares about the customer. Our focus is on long-term relationships with customers who return from all over the country."
-  bulletTitle: "Operational Excellence"
+    - "We're a group of aviation professionals with extensive expertise in the flight training field, boasting decades of combined experience. Our mission is to guide you safely into the skies."
+  bulletTitle: "Personalized Training Approach"
   bulletDescriptionParagraphs:
-    - "With over 2 decades of continuous operation as a maintenance shop, we know aircraft inside and out. Our fleet is maintained to the highest standards by our own FAA Repair Station."
+    - "We understand every student is different. We work with your schedule, learning style, and aviation goals to create a training plan that works for you."
   bulletPoints:
-    - "Safety-first culture and regulatory compliance"
-    - "Great availability compared to congested LA airspace"
-    - "Weather is generally better for consistent training"
+    - "Professional, safe, and friendly instructors"
+    - "Learning tailored to you in private classrooms"
+    - "Supportive community for you and your family"
+    - "Available when you want to fly"
 
 enrollmentProcess:
-  title: "Start Your Adventure"
+  title: "How to Get Started"
   steps:
     - stepNumber: 1
-      title: "Contact Us"
-      description: "Call (661) 948-7779 or email info@mhaviation.com to discuss your goals."
-    - stepNumber: 2
       title: "Discovery Flight"
-      description: "Take a Discovery Flight to see the local mountains and desert scenery."
+      description: "Take your first flight lesson and experience flying from the pilot's seat with an instructor."
+    - stepNumber: 2
+      title: "Medical Exam"
+      description: "Complete your FAA medical exam with guidance from our team and certified AMEs."
     - stepNumber: 3
-      title: "Start Training"
-      description: "Begin your journey with our experienced instructors."
+      title: "Ground School"
+      description: "Master aeronautical knowledge through our comprehensive ground training program."
+    - stepNumber: 4
+      title: "Flight Training"
+      description: "Develop your flying skills with hands-on instruction and practice flights."
+    - stepNumber: 5
+      title: "Checkride Preparation"
+      description: "Get ready for your final practical exam with mock checkrides and oral exam practice."
 
 finalCTA:
-  mainImage: "/src/assets/placeholder-dark-clouds-pitcairn-flight-academy-instrument-rating.webp"
-  mainImageAlt: "{COMPANY_NAME} Flight Training"
-  upperheader: "Get Started"
-  title: "Earn Your Wings"
+  mainImage: "/src/assets/students/pilots-in-front-of-plane.jpg"
+  mainImageAlt: "Pilots celebrating private pilot certificate completion"
+  upperheader: "Ready to Fly?"
+  title: "Begin Your Aviation Journey Today"
   descriptionParagraphs:
-    - "{COMPANY_NAME} is a staple in the aviation community. Join us and experience a training environment that values integrity, safety, and family."
-  mainButtonText: "Contact Us"
-  mainButtonLink: "/contact"
-  secondButtonText: "Call (661) 948-7779"
-  secondButtonLink: "tel:6619487779"
+    - "Every pilot starts their journey with a single step. Take yours by scheduling a discovery flight and experiencing the joy of flying firsthand."
+    - "If you've been dreaming about flying, this is your chance to see if it's right for you. Flying isn't for everyone - a discovery flight is the best way to find out."
+  mainButtonText: "Book Discovery Flight"
+  mainButtonLink: "/discovery-flight"
+  secondButtonText: "Contact Us"
+  secondButtonLink: "/contact-us"
 ---
+
+## Training Duration & Schedule
+
+The time needed to earn a private pilot certificate can vary significantly, influenced by factors like weather, schedule availability, and frequency of flying lessons.
+
+- **Accelerated Training:** Fly daily and study full-time to obtain your certificate in about two months
+- **Part-Time Training:** Fly a few times weekly - typically takes several months to a year
+- **Flexible Scheduling:** We offer training options to work with your busy schedule
+
+## First Steps Experience
+
+During your discovery flight, you'll:
+
+- **Take the controls** and fly the plane with an instructor guiding you
+- **See firsthand** what it's like in the cockpit during takeoff and landing
+- **Speak with your instructor** about training requirements and expectations
+- **Determine if flying** is the right fit for your interests and goals
+
+## Complete Requirements
+
+To earn your Private Pilot Certificate, you must:
+
+- Be at least 17 years old
+- Read, speak, write, and understand English
+- Hold a valid student pilot certificate
+- Receive flight training and logbook endorsement from an authorized instructor
+- Meet the aeronautical experience requirements
+- Pass a practical test (checkride) for the aircraft rating sought
+
+_Reference 14 CFR §61.103 for the complete list of eligibility requirements._
+
+## What Are You Waiting For?
+
+Don't miss out on the adventure of a lifetime! Book a discovery flight and start enjoying flying today. Give us a call or contact us through our website to begin your journey to becoming a pilot.
