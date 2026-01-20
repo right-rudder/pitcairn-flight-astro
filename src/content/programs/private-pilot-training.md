@@ -2,7 +2,7 @@
 title: "Private Pilot Certificate"
 description: "Start your aviation journey by getting your private pilot certificate - the first step that allows you to fly planes with passengers and begin your career in aviation."
 order: 1
-image: "/src/assets/students/getting-started-with-flight-training-at-pitcairn-flight-academy.jpg"
+image: "/src/assets/placeholder-dark-clouds-pitcairn-flight-academy-instrument-rating.webp"
 alt: "Student pilot getting started with flight training at Pitcairn Flight Academy"
 top: true
 
@@ -33,7 +33,7 @@ programIntroduction:
       - "Pass FAA medical, written, and practical exams"
 
 programExpectations:
-  mainImage: "/src/assets/students/cfi-with-student.jpg"
+  mainImage: "/src/assets/placeholder-dark-clouds-pitcairn-flight-academy-instrument-rating.webp"
   mainImageAlt: "CFI with student pilot preparing for flight training"
   title: "Training Process"
   descriptionParagraphs:
@@ -99,7 +99,7 @@ enrollmentProcess:
       description: "Get ready for your final practical exam with mock checkrides and oral exam practice."
 
 finalCTA:
-  mainImage: "/src/assets/students/pilots-in-front-of-plane.jpg"
+  mainImage: "/src/assets/placeholder-dark-clouds-pitcairn-flight-academy-instrument-rating.webp"
   mainImageAlt: "Pilots celebrating private pilot certificate completion"
   upperheader: "Ready to Fly?"
   title: "Begin Your Aviation Journey Today"
@@ -111,6 +111,64 @@ finalCTA:
   secondButtonText: "Contact Us"
   secondButtonLink: "/contact-us"
   trainingDuration:
+  title: "Training Duration & Schedule"
+  description: "The time needed to earn a private pilot certificate can vary significantly, influenced by factors like weather, schedule availability, and frequency of flying lessons."
+  schedules:
+    - title: "Accelerated Training"
+      description: "Fly daily and study full-time to obtain your certificate in about two months"
+    - title: "Part-Time Training"
+      description: "Fly a few times weekly - typically takes several months to a year"
+    - title: "Flexible Scheduling"
+      description: "We offer training options to work with your busy schedule"
+      items:
+        - "Evening and weekend availability"
+        - "Custom training plans"
+        - "Progress at your own pace"
+
+faq:
+  title: "Private Pilot Certificate FAQs"
+  upperheader: "Common Questions"
+  qnas:
+    - question: "How long does it take to get a private pilot certificate?"
+      answer: "The time varies based on your schedule. With accelerated full-time training, you can complete it in about 2 months. For part-time students flying a few times weekly, it typically takes 6-12 months. Weather, availability, and study commitment all affect the timeline."
+
+    - question: "What are the age requirements for a private pilot certificate?"
+      answer: "You must be at least 17 years old to earn your private pilot certificate. However, you can begin training at any age - you just need to be 17 to take the final checkride."
+
+    - question: "Do I need perfect vision to become a pilot?"
+      answer: "No, you don't need perfect vision. The FAA allows corrected vision (glasses or contact lenses). You'll need to pass an FAA medical exam with an Aviation Medical Examiner (AME) who will evaluate your overall health and vision requirements."
+
+    - question: "What's the difference between Part 61 and Part 141 training?"
+      answer: "Part 61 offers more flexibility in training structure and scheduling, while Part 141 follows a structured, approved curriculum. At Pitcairn Flight Academy, we offer Part 61 training which allows us to customize your training plan to your individual needs and schedule."
+
+    - question: "How much does it cost to get a private pilot certificate?"
+      answer: "Costs vary based on aircraft rental, instructor fees, materials, and exam fees. The national average is $10,000-$15,000. We provide transparent pricing and can work with you to create a training plan that fits your budget."
+
+    - question: "What is a discovery flight and do I need one?"
+      answer: "A discovery flight is an introductory flight where you take the controls with an instructor. It's highly recommended to determine if flying is right for you before committing to full training. You'll experience what it's like to fly and can ask questions about the training process."
+
+    - question: "Can I fly at night with a private pilot certificate?"
+      answer: "Yes, your private pilot certificate allows you to fly at night. However, you'll need specific night flying training during your certification, including night takeoffs, landings, and cross-country navigation."
+
+    - question: "What medical certificate do I need for private pilot?"
+      answer: "For private pilot, you need at least a Third-Class Medical Certificate. This is valid for 5 years if you're under 40, or 2 years if you're 40 or older. We can help you find and prepare for your medical exam."
+
+    - question: "How many flight hours are required?"
+      answer: "The FAA requires a minimum of 40 hours of flight time, but the national average is 60-75 hours to reach proficiency. This includes at least 20 hours of flight training and 10 hours of solo flight."
+
+    - question: "Can I fly with passengers immediately after getting my certificate?"
+      answer: "Yes! Once you have your private pilot certificate, you can immediately fly with passengers. However, you'll want to build experience and confidence first. Many pilots recommend flying solo for a few hours before taking passengers."
+
+    - question: "What happens if I fail the checkride?"
+      answer: "If you don't pass a portion of the checkride, you'll receive notice of what areas need improvement. You can receive additional training and then retake only the portion you failed. Our instructors ensure you're fully prepared before recommending you for the checkride."
+
+    - question: "Do I need to own an airplane to train?"
+      answer: "No, you don't need to own an aircraft. We provide well-maintained training aircraft as part of our program. You'll train in our modern fleet equipped with glass-panel avionics."
+
+    - question: "Can I train if I have a full-time job?"
+      answer: "Absolutely! Many of our students train while working full-time. We offer flexible scheduling including evenings and weekends. You can progress at your own pace while balancing work and training commitments."
+
+trainingDuration:
   title: "Training Duration & Schedule"
   description: "The time needed to earn a private pilot certificate can vary significantly, influenced by factors like weather, schedule availability, and frequency of flying lessons."
   schedules:
