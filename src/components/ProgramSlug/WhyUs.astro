@@ -16,70 +16,173 @@ interface Props {
 const { data } = Astro.props;
 ---
 
-<section class="py-24 px-4 text-lucky-950 relative overflow-hidden">
+<section class="py-20 md:py-28 bg-slate-50 relative overflow-hidden">
+  <div class="absolute top-0 right-0 p-20 opacity-[0.03] pointer-events-none">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      class="w-64 h-64"
+      viewBox="0 0 24 24"
+      fill="currentColor"
+      ><path
+        d="M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z"
+      ></path></svg
+    >
+  </div>
 
-  <div class="max-w-7xl mx-auto relative z-10 md:px-8 lg:px-12">
-    
-    <div class="mb-10">
-      {data.upperheader && (
-        <span class="subtitle mb-2">
-          {data.upperheader}
-        </span>
-      )}
-      {data.title && <h2 class="title ml-[-8px]">{data.title}</h2>}
+  <div class="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
+    <div class="mb-16 lg:text-left text-center">
+      {
+        data.upperheader && (
+          <span class="inline-block py-1 px-3 bg-sky-100 text-sky-700 text-xs font-bold tracking-widest uppercase rounded mb-4">
+            {data.upperheader}
+          </span>
+        )
+      }
+      {
+        data.title && (
+          <h2 class="text-4xl md:text-5xl font-bold text-slate-900 tracking-tight">
+            {data.title}
+          </h2>
+        )
+      }
     </div>
 
-    <div class="grid grid-cols-1 lg:grid-cols-3 divide-y lg:divide-y-0 lg:divide-x divide-madison-800">
-      
-      <div class="pb-12 lg:pb-0 lg:pr-12">
-        <div class="w-18 h-18 bg-lucky-950 shadow-md rounded-lg flex items-center justify-center mb-6">
-         <svg xmlns="http://www.w3.org/2000/svg" class="w-10 h-10 text-muted-50" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-goal-icon lucide-goal"><path d="M12 13V2l8 4-8 4"/><path d="M20.561 10.222a9 9 0 1 1-12.55-5.29"/><path d="M8.002 9.997a5 5 0 1 0 8.9 2.02"/></svg>
+    <div
+      class="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-0 lg:divide-x lg:divide-slate-200"
+    >
+      <div class="pb-10 lg:pb-0 lg:pr-12 group">
+        <div
+          class="w-16 h-16 bg-sky-600 rounded-2xl flex items-center justify-center mb-8 shadow-lg shadow-sky-200 group-hover:scale-110 transition-transform duration-300"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="w-8 h-8 text-white"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <circle cx="12" cy="12" r="10" stroke-width="2"></circle><path
+              d="m12 8l4 4-4 4M8 12h7"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"></path>
+          </svg>
         </div>
-        <h3 class="font-title text-2xl font-bold mb-4 text-muted-950">{data.topicTitle}</h3>
-        {data.topicDescriptionParagraphs?.map(p => (
-          <p class="paragraph-text leading-relaxed mb-2" set:html={p}></p>
-        ))}
+        <h3 class="text-2xl font-bold text-slate-900 mb-4">
+          {data.topicTitle}
+        </h3>
+        <div class="space-y-4">
+          {
+            data.topicDescriptionParagraphs?.map((p) => (
+              <p class="text-slate-600 leading-relaxed" set:html={p} />
+            ))
+          }
+        </div>
       </div>
 
-      <div class="py-12 lg:py-0 lg:px-12">
-        <div class="w-18 h-18 bg-lucky-950 shadow-md rounded-lg flex items-center justify-center mb-6">
-          <svg xmlns="http://www.w3.org/2000/svg" class="w-10 h-10 text-muted-50" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" /></svg>
+      <div class="py-10 lg:py-0 lg:px-12">
+        <div
+          class="w-16 h-16 bg-sky-900 rounded-2xl flex items-center justify-center mb-8 shadow-lg shadow-slate-200 group-hover:scale-110 transition-transform duration-300"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="w-8 h-8 text-white"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path>
+          </svg>
         </div>
-        <h3 class="font-title text-2xl font-bold mb-4 text-muted-950">{data.bulletTitle}</h3>
-        {data.bulletDescriptionParagraphs?.map(p => (
-          <p class="paragraph-text">{p}</p>
-        ))}
-        <ul class="space-y-3 mt-6">
-          {data.bulletPoints?.map(item => (
-            <li class="flex items-start gap-3  bg-gray-700 backdrop-blur-sm p-3 rounded-lg border-2 border-gray-300 shadow-sm">
-            <svg 
-              xmlns="http://www.w3.org/2000/svg" 
-              class="w-4 h-4 shrink-0 text-madison-600 text-monza-600 mt-0.5"  
-              viewBox="0 0 32 32"
-            >
-              <path fill="currentColor" d="M16 2a14 14 0 1 0 14 14A14 14 0 0 0 16 2m-2 19.59l-5-5L10.59 15L14 18.41L21.41 11l1.596 1.586Z"/>
-              <path fill="none" d="m14 21.591l-5-5L10.591 15L14 18.409L21.41 11l1.595 1.585z"/>
-            </svg>
-            <span class="text-muted-50  font-sans !text-sm tracking-wide leading-tight">{item}</span>
-          </li>
-          ))}
+        <h3 class="text-2xl font-bold text-slate-900 mb-4">
+          {data.bulletTitle}
+        </h3>
+        <div class="space-y-4 mb-6">
+          {
+            data.bulletDescriptionParagraphs?.map((p) => (
+              <p class="text-slate-600 leading-relaxed">{p}</p>
+            ))
+          }
+        </div>
+        <ul class="space-y-3">
+          {
+            data.bulletPoints?.map((item) => (
+              <li class="flex items-start gap-3 bg-white p-3 rounded-xl border border-slate-200 shadow-sm hover:border-sky-300 transition-colors">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="w-5 h-5 shrink-0 text-sky-500 mt-0.5"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                    clip-rule="evenodd"
+                  />
+                </svg>
+                <span class="text-slate-700 font-medium text-sm leading-snug">
+                  {item}
+                </span>
+              </li>
+            ))
+          }
         </ul>
       </div>
 
-      <div class="pt-12 lg:pt-0 lg:pl-12">
-        <div class="w-18 h-18 bg-lucky-950 shadow-md rounded-lg flex items-center justify-center mb-6">
-          <svg xmlns="http://www.w3.org/2000/svg" class="w-10 h-10 text-muted-50" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg>
+      <div class="pt-10 lg:pt-0 lg:pl-12">
+        <div
+          class="w-16 h-16 bg-sky-100 rounded-2xl flex items-center justify-center mb-8 shadow-sm group-hover:scale-110 transition-transform duration-300"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="w-8 h-8 text-sky-700"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
+            ></path>
+          </svg>
         </div>
-        <h3 class="font-title text-2xl font-bold mb-4 text-muted-50">{data.closingTitle}</h3>
-        {data.closingDescriptionParagraphs?.map(p => (
-          <p class="text-muted-50 leading-relaxed mb-4" set:html={p}></p>
-        ))}
-        <div class="mt-8">
-           <div class="text-4xl font-bold text-muted-950 mb-1">10+</div>
-           <div class="font-subtitle uppercase tracking-widest font-bold">Years of <br>Part 141 <br>Training</div>
+        <h3 class="text-2xl font-bold text-slate-900 mb-4">
+          {data.closingTitle}
+        </h3>
+        <div class="space-y-4 text-slate-600 leading-relaxed mb-8">
+          {data.closingDescriptionParagraphs?.map((p) => <p set:html={p} />)}
+        </div>
+
+        <div
+          class="bg-sky-900 text-white p-6 rounded-2xl relative overflow-hidden shadow-xl shadow-sky-900/20"
+        >
+          <div class="absolute -right-4 -bottom-4 opacity-10">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="w-24 h-24"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path d="M12 14l9-5-9-5-9 5 9 5z"></path><path
+                d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"
+              ></path>
+            </svg>
+          </div>
+          <div class="text-5xl font-black text-white mb-2">10+</div>
+          <div
+            class="text-xs uppercase tracking-[0.2em] font-bold text-sky-200"
+          >
+            Years of Part 141 <br />Expertise
+          </div>
         </div>
       </div>
-
     </div>
   </div>
 </section>
