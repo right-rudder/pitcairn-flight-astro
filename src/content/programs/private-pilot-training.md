@@ -110,38 +110,51 @@ finalCTA:
   mainButtonLink: "/discovery-flight"
   secondButtonText: "Contact Us"
   secondButtonLink: "/contact-us"
+  trainingDuration:
+  title: "Training Duration & Schedule"
+  description: "The time needed to earn a private pilot certificate can vary significantly, influenced by factors like weather, schedule availability, and frequency of flying lessons."
+  schedules:
+    - title: "Accelerated Training"
+      description: "Fly daily and study full-time to obtain your certificate in about two months"
+    - title: "Part-Time Training"
+      description: "Fly a few times weekly - typically takes several months to a year"
+    - title: "Flexible Scheduling"
+      description: "We offer training options to work with your busy schedule"
+      items:
+        - "Evening and weekend availability"
+        - "Custom training plans"
+        - "Progress at your own pace"
+
+firstStepsExperience:
+  title: "First Steps Experience"
+  description: "During your discovery flight, you'll experience flying firsthand with guidance from our certified instructors."
+  experiences:
+    - "Take the controls and fly the plane with an instructor guiding you"
+    - "See firsthand what it's like in the cockpit during takeoff and landing"
+    - "Speak with your instructor about training requirements and expectations"
+    - "Determine if flying is the right fit for your interests and goals"
+
+completeRequirements:
+  title: "Complete Requirements"
+  description: "To earn your Private Pilot Certificate, you must meet the following FAA requirements:"
+  requirements:
+    - "Be at least 17 years old"
+    - "Read, speak, write, and understand English"
+    - "Hold a valid student pilot certificate"
+    - "Receive flight training and logbook endorsement from an authorized instructor"
+    - "Meet the aeronautical experience requirements"
+    - "Pass a practical test (checkride) for the aircraft rating sought"
+  legalReference: "Reference 14 CFR §61.103 for the complete list of eligibility requirements."
+
+urgentCTA:
+  title: "What Are You Waiting For?"
+  description: "Don't miss out on the adventure of a lifetime! Book a discovery flight and start enjoying flying today."
+  subtext: "Give us a call or contact us through our website to begin your journey to becoming a pilot."
+  buttons:
+    - text: "Book Discovery Flight"
+      link: "/discovery-flight"
+      type: "primary"
+    - text: "Contact Us"
+      link: "/contact-us"
+      type: "secondary"
 ---
-
-## Training Duration & Schedule
-
-The time needed to earn a private pilot certificate can vary significantly, influenced by factors like weather, schedule availability, and frequency of flying lessons.
-
-- **Accelerated Training:** Fly daily and study full-time to obtain your certificate in about two months
-- **Part-Time Training:** Fly a few times weekly - typically takes several months to a year
-- **Flexible Scheduling:** We offer training options to work with your busy schedule
-
-## First Steps Experience
-
-During your discovery flight, you'll:
-
-- **Take the controls** and fly the plane with an instructor guiding you
-- **See firsthand** what it's like in the cockpit during takeoff and landing
-- **Speak with your instructor** about training requirements and expectations
-- **Determine if flying** is the right fit for your interests and goals
-
-## Complete Requirements
-
-To earn your Private Pilot Certificate, you must:
-
-- Be at least 17 years old
-- Read, speak, write, and understand English
-- Hold a valid student pilot certificate
-- Receive flight training and logbook endorsement from an authorized instructor
-- Meet the aeronautical experience requirements
-- Pass a practical test (checkride) for the aircraft rating sought
-
-_Reference 14 CFR §61.103 for the complete list of eligibility requirements._
-
-## What Are You Waiting For?
-
-Don't miss out on the adventure of a lifetime! Book a discovery flight and start enjoying flying today. Give us a call or contact us through our website to begin your journey to becoming a pilot.
