@@ -33,16 +33,16 @@ const relatedPosts = post.data.tags
       .filter(
         (p) =>
           p.slug !== post.slug &&
-          p.data.tags?.some((tag) => post.data.tags?.includes(tag))
+          p.data.tags?.some((tag) => post.data.tags?.includes(tag)),
       )
       .slice(0, 3)
   : [];
-const eagleAirLogo = "/src/assets/-logo-vertical.png";
+const companyLogo = "/src/assets/brand/pitcairn-flight-academy-logo-white.png";
 
 const heroData = {
   image: {
-    src: post.data.image || "/src/assets/-Multiengine-training.jpg",
-    alt: post.data.title || "Background",
+    src: post.data.image,
+    alt: post.data.title,
   },
   upperHeader: "Latest Insights",
   title:
@@ -61,7 +61,7 @@ const ctaData = {
   description:
     "Your first step at  is defining that goal, as it will shape your standards, timeline, and path to the cockpit. Whether you are aiming for the airlines or mastering a new rating, we are here to provide the roadmap and the mentorship to get you there. Define your mission today, and let’s start your training plan.",
   image: {
-    src: "/src/assets/sebastian-zzWYD-tc_jI-unsplash.jpg",
+    src: "/src/assets/placeholder-dark-clouds-pitcairn-flight-academy-instrument-rating.webp",
     alt: "Training aircraft in flight",
   },
   primaryCTA: {
@@ -112,7 +112,7 @@ const metaProps = {
           >
             <ImageComp
               class="w-5"
-              src={eagleAirLogo}
+              src={companyLogo}
               alt="{COMPANY_NAME} logo"
             />
           </div>
