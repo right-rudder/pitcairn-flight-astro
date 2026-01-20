@@ -110,20 +110,6 @@ finalCTA:
   mainButtonLink: "/discovery-flight"
   secondButtonText: "Contact Us"
   secondButtonLink: "/contact-us"
-  trainingDuration:
-  title: "Training Duration & Schedule"
-  description: "The time needed to earn a private pilot certificate can vary significantly, influenced by factors like weather, schedule availability, and frequency of flying lessons."
-  schedules:
-    - title: "Accelerated Training"
-      description: "Fly daily and study full-time to obtain your certificate in about two months"
-    - title: "Part-Time Training"
-      description: "Fly a few times weekly - typically takes several months to a year"
-    - title: "Flexible Scheduling"
-      description: "We offer training options to work with your busy schedule"
-      items:
-        - "Evening and weekend availability"
-        - "Custom training plans"
-        - "Progress at your own pace"
 
 faq:
   title: "Private Pilot Certificate FAQs"
