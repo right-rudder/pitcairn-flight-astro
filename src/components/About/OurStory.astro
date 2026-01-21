@@ -1,0 +1,49 @@
+---
+import ImageComp from "../ImageComp.astro";
+import { COMPANY_NAME } from "../../data/consts";
+
+const ourStory = {
+  upperHeading: "Our Story",
+  title: "Building Professional Pilots With Purpose",
+  description: "",
+  descriptions: [``],
+  image: {
+    src: "/src/assets/placeholder-dark-clouds-pitcairn-flight-academy-instrument-rating.webp",
+    alt: `Professional flight training at ${COMPANY_NAME}`,
+  },
+};
+
+const { content = ourStory } = Astro.props;
+---
+
+<!-- Our Story Section -->
+<section class="py-16 md:py-24 bg-white">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 lg:px-12">
+    <div class="grid md:grid-cols-2 gap-12 items-center">
+      <div>
+        <h2
+          class="!font-sans !text-2xl not-italic text-monza-600"
+          set:html={content.upperHeading}
+        />
+        <h3 class="title !text-lucky-950" set:html={content.title} />
+        {
+          ourStory.descriptions && (
+            <div class="space-y-4 mt-10 text-gray-700 leading-relaxed">
+              {content.descriptions.map((desc: string) => (
+                <p set:html={desc} />
+              ))}
+            </div>
+          )
+        }
+      </div>
+
+      <div class="relative">
+        <ImageComp
+          src={content.image.src}
+          alt={content.image.alt}
+          class="rounded-2xl shadow-2xl"
+        />
+      </div>
+    </div>
+  </div>
+</section>
