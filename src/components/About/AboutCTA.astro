@@ -1,0 +1,56 @@
+---
+import { COMPANY_NAME, PHONE_NUMBER } from "../../data/consts";
+import ImageComp from "../ImageComp.astro";
+
+const ctaSection = {
+  title: "Ready to Start Your Aviation Journey?",
+  description: `Join our successful pilots who've trained with ${COMPANY_NAME}. From zero experience to airline careers—we'll guide you every step of the way.`,
+  backgroundImage: {
+    src: "/src/assets/placeholder-dark-clouds-pitcairn-flight-academy-instrument-rating.webp",
+    alt: "Call to action background",
+  },
+  primaryCta: {
+    url: "/programs",
+    text: "View Training Programs",
+  },
+  secondaryCta: {
+    url: `tel:${PHONE_NUMBER}`,
+    text: "Call Us Now",
+  },
+};
+
+const { content = ctaSection } = Astro.props;
+---
+
+<section class="relative py-16 md:py-24 text-white overflow-hidden">
+  <div class="absolute inset-0 bg-gray-900 -z-10"></div>
+
+  <ImageComp
+    src={content.backgroundImage.src}
+    alt={content.backgroundImage.alt}
+    class="absolute inset-0 w-full h-full object-cover opacity-20 -z-10 animate-slow-zoom"
+  />
+
+  <div class="max-w-4xl mx-auto px-5 md:px-8 lg:px-12 text-center z-0">
+    <h2 class="title !text-white">{content.title}</h2>
+    <p class="text-xl mb-8 text-muted-50">
+      {content.description}
+    </p>
+
+    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+      <a
+        href={content.primaryCta.url}
+        class="inline-flex items-center justify-center px-8 py-4 bg-white text-monza-600 font-semibold rounded-xl hover:bg-gray-100 transition"
+      >
+        {content.primaryCta.text}
+      </a>
+
+      <a
+        href={content.secondaryCta.url}
+        class="inline-flex items-center justify-center px-8 py-4 bg-monza-800 text-white font-semibold rounded-xl hover:bg-monza-900 transition"
+      >
+        {content.secondaryCta.text}
+      </a>
+    </div>
+  </div>
+</section>
