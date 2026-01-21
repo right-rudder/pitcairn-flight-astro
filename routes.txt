@@ -3,6 +3,9 @@ DONE
 ✔️ https://pitcairnflightacademy.com/
 ✔️ https://pitcairnflightacademy.com/pilot-training (TODO add take the quiz section)
 ✔️ https://pitcairnflightacademy.com/private-pilot-training
+✔️ https://pitcairnflightacademy.com/instrument-rating
+✔️ https://pitcairnflightacademy.com/become-a-cfi
+✔️  https://pitcairnflightacademy.com/commercial-pilot-training
 
 DONE BLOG POSTS
 
@@ -53,11 +56,6 @@ DONE BLOG POSTS
 
 DOING
 
-💠 https://pitcairnflightacademy.com/instrument-rating
-
-💠 https://pitcairnflightacademy.com/become-a-cfi
-
-💠 https://pitcairnflightacademy.com/commercial-pilot-training
 
 
 TODO
