@@ -5,6 +5,11 @@ import Hero75 from "../components/Hero75.astro";
 import { COMPANY_NAME, PHONE_NUMBER } from "../data/consts";
 import { getCollection } from "astro:content";
 import type { CollectionEntry } from "astro:content";
+import OurStory from "../components/About/OurStory.astro";
+import OurMission from "../components/About/OurMission.astro";
+import OurAdvantages from "../components/About/OurAdvantages.astro";
+import OurLocation from "../components/About/OurLocation.astro";
+import AboutCTA from "../components/About/AboutCTA.astro";
 
 type Member = CollectionEntry<"crew">;
 
@@ -13,18 +18,16 @@ const sortedMembers = members.sort(
   (a: Member, b: Member) => (a.data.order || 999) - (b.data.order || 999),
 );
 
-const pageTitle = "About {COMPANY_NAME}";
-const pageDescription =
-  "Learn about {COMPANY_NAME}'s mission, values, and commitment to professional pilot training excellence. Award-winning flight school with 34,000+ successful pilots, veteran airline captain instructors, and proven career pathways.";
+const pageTitle = `About ${COMPANY_NAME}`;
+const pageDescription = `Learn about ${COMPANY_NAME}'s mission, values, and commitment to professional pilot training excellence. Award-winning flight school with 34,000+ successful pilots, veteran airline captain instructors, and proven career pathways.`;
 
 const heroData = {
   image: {
     src: "/src/assets/placeholder-dark-clouds-pitcairn-flight-academy-instrument-rating.webp",
     alt: "imagePlaceholder",
   },
-  title: "About ",
-  subTitle:
-    "Learn about {COMPANY_NAME}'s mission, values, and commitment to professional pilot training excellence.",
+  title: "About Us",
+  subTitle: `Learn about ${COMPANY_NAME}'s mission, values, and commitment to professional pilot training excellence.`,
   cta: [
     {
       url: "/enroll",
@@ -168,183 +171,17 @@ const ctaSection = {
   <Hero75 data={heroData} />
 
   <!-- Our Story Section -->
-  <section class="py-16 md:py-24 bg-white">
-    <div class="max-w-7xl mx-auto px-5 md:px-8 lg:px-12">
-      <div class="grid md:grid-cols-2 gap-12 items-center">
-        <div>
-          <h2
-            class="!font-sans !text-2xl not-italic text-monza-600"
-            set:html={ourStory.upperHeading}
-          />
-          <h3 class="title !text-lucky-950" set:html={ourStory.title} />
-          {
-            ourStory.descriptions && (
-              <div class="space-y-4 mt-10 text-gray-700 leading-relaxed">
-                {ourStory.descriptions.map((desc) => (
-                  <p set:html={desc} />
-                ))}
-              </div>
-            )
-          }
-        </div>
-
-        <div class="relative">
-          <ImageComp
-            src={ourStory.image.src}
-            alt={ourStory.image.alt}
-            class="rounded-2xl shadow-2xl"
-          />
-        </div>
-      </div>
-    </div>
-  </section>
+  <OurStory content={ourStory} />
 
   <!-- Mission & Values Section -->
-  <section class="py-16 md:py-24 bg-white">
-  <div class="max-w-7xl mx-auto px-5 md:px-8 lg:px-12">
-    <div class="text-center mb-12">
-      <h2 class="title !text-lucky-950">{ourMission.upperHeading}</h2>
-      <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-        {ourMission.description}
-      </p>
-    </div>
+  <OurMission content={ourMission} />
 
-    <div class="grid md:grid-cols-3 gap-8">
-      {ourMission.items.map((item) => (
-        <div class="bg-white px-10 py-12 rounded-2xl shadow-md border border-gray-100 hover:scale-105 hover:shadow-lg transition duration-300">
-          <div class="w-16 h-16 bg-monza-600 rounded-full flex items-center justify-center mb-6">
-            <!-- icon stays hardcoded for now -->
-            <svg class="w-12 h-12 text-monza-50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-            </svg>
-          </div>
-
-          <h3 class="text-3xl font-bold text-gray-900 mb-4 font-title">
-            {item.title}
-          </h3>
-          <p class="text-gray-700 leading-relaxed">
-            {item.description}
-          </p>
-        </div>
-      ))}
-    </div>
-  </div>
-</section>
-
-<!-- Our Differences  -->
-<section class="py-16 md:py-24 bg-white">
-  <div class="max-w-7xl mx-auto px-5 md:px-8 lg:px-12">
-    <div class="text-center mb-12">
-      <h2 class="title !text-lucky-950">{whatSetsApart.title}</h2>
-      <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-        {whatSetsApart.description}
-      </p>
-    </div>
-
-    <div class="grid md:grid-cols-2 gap-8">
-      {whatSetsApart.items.map((item) => (
-        <div class="flex gap-4">
-          <div class="shrink-0">
-            <div class="w-12 h-12 bg-monza-100 rounded-lg flex items-center justify-center">
-              <!-- icon placeholder (same SVGs you already use) -->
-              <svg
-                class="w-6 h-6 text-monza-600"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
-                />
-              </svg>
-            </div>
-          </div>
-
-          <div>
-            <h3 class="text-xl font-bold text-gray-900 mb-2">
-              {item.title}
-            </h3>
-            <p class="text-gray-700 leading-relaxed">
-              {item.description}
-            </p>
-          </div>
-        </div>
-      ))}
-    </div>
-  </div>
-</section>
-
+  <!-- Our Differences  -->
+  <OurAdvantages content={whatSetsApart} />
 
   <!-- Our Location -->
-<section class="py-16 md:py-24 bg-white">
-  <div class="max-w-7xl mx-auto px-5 md:px-8 lg:px-12">
-    <div class="grid md:grid-cols-2 gap-12 items-center">
-      <div>
-        <h2 class="title !text-lucky-950">{ourLocation.title}</h2>
-
-        <div class="space-y-4 mt-10 text-gray-700 leading-relaxed">
-          {ourLocation.descriptions.map((desc) => (
-            <p set:html={desc} />
-          ))}
-
-          <div class="space-y-3">
-            {ourLocation.features.map((feature) => (
-              <div class="flex items-start gap-3">
-                <svg class="w-6 h-6 text-monza-600 shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>
-                <p>{feature}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
-
-      <ImageComp
-        src={ourLocation.image.src}
-        alt={ourLocation.image.alt}
-        class="rounded-2xl shadow-2xl w-full h-full object-cover"
-      />
-    </div>
-  </div>
-</section>
-
+  <OurLocation content={ourLocation} />
 
   <!-- CTA Section -->
-<section class="relative py-16 md:py-24 text-white overflow-hidden">
-  <div class="absolute inset-0 bg-gray-900 -z-10"></div>
-
-  <ImageComp
-    src={ctaSection.backgroundImage.src}
-    alt={ctaSection.backgroundImage.alt}
-    class="absolute inset-0 w-full h-full object-cover opacity-20 -z-10 animate-slow-zoom"
-  />
-
-  <div class="max-w-4xl mx-auto px-5 md:px-8 lg:px-12 text-center z-0">
-    <h2 class="title !text-white">{ctaSection.title}</h2>
-    <p class="text-xl mb-8 text-muted-50">
-      {ctaSection.description}
-    </p>
-
-    <div class="flex flex-col sm:flex-row gap-4 justify-center">
-      <a
-        href={ctaSection.primaryCta.url}
-        class="inline-flex items-center justify-center px-8 py-4 bg-white text-monza-600 font-semibold rounded-xl hover:bg-gray-100 transition"
-      >
-        {ctaSection.primaryCta.text}
-      </a>
-
-      <a
-        href={ctaSection.secondaryCta.url}
-        class="inline-flex items-center justify-center px-8 py-4 bg-monza-800 text-white font-semibold rounded-xl hover:bg-monza-900 transition"
-      >
-        {ctaSection.secondaryCta.text}
-      </a>
-    </div>
-  </div>
-</section>
-
+  <AboutCTA content={ctaSection} />
 </BaseLayout>
