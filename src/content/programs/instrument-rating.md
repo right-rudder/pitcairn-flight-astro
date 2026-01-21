@@ -1,102 +1,163 @@
 ---
 title: "Instrument Rating"
-description: "Start your aviation journey in the scenic Antelope Valley with a family-owned school dedicated to safety, integrity, and quality training."
+description: "Fly safely and confidently in IFR conditions by earning your Instrument Rating and expanding your capabilities as a pilot."
 order: 2
-image: "/src/assets/fleet/N8414J - C150/N8414J New Avionics.jpg"
-alt: "Private Pilot Training at Fox Field"
+image: "/src/assets/placeholder-dark-clouds-pitcairn-flight-academy-instrument-rating.webp"
+alt: "Instrument flight training in IFR conditions at Pitcairn Flight Academy"
 top: true
 
 programIntroduction:
-  upperheader: "Begin Your Journey"
-  title: "Private Pilot Certificate"
+  upperheader: "Advance Your Skills"
+  title: "Instrument Rating"
   descriptionParagraphs:
-    - "{COMPANY_NAME} began as a maintenance shop building a loyal customer base for over 20 years. Now, we bring that same dedication to flight training."
-    - "Located at Fox Airfield (KWJF), our training offers great access to the scenic Antelope Valley, with views of Lancaster, Palmdale, and the surrounding high desert."
-    - "Whether you are flying for a hobby or starting a career, we offer a catered, honest experience where you are treated like family."
+    - "After earning your private pilot certificate, the next major milestone is the Instrument Rating. This rating allows you to fly in IFR conditions and rely solely on your aircraft’s instruments."
+    - "Instrument training emphasizes precision, decision-making, and confidence. A skilled instrument pilot can safely navigate from departure to arrival without visual reference outside the cockpit, except during takeoff and landing."
+    - "At Pitcairn Flight Academy, we work with your schedule and provide personalized training to help you become a confident, capable instrument-rated pilot."
   highlights:
-    - highlightName: "Location"
-      highlightValue: "Fox Airfield (KWJF)"
-    - highlightName: "Fleet"
-      highlightValue: "Glass-Panel Garmin G5"
-    - highlightName: "Atmosphere"
-      highlightValue: "Family-Owned"
+    - highlightName: "Fly In"
+      highlightValue: "IFR & IMC conditions"
+    - highlightName: "Enhances"
+      highlightValue: "Safety & confidence"
+    - highlightName: "Required For"
+      highlightValue: "Professional pilot pathways"
   programHighlights:
     benefits:
-      - "Training in newer, better-equipped fleet with 180 hp conversions"
-      - "Great for learning in windy conditions to build pilot proficiency"
-      - "Safety-first culture backed by an on-site FAA Repair Station"
-      - "Private rooms and nice break area/kitchen available"
+      - "Fly safely in low visibility and adverse weather conditions"
+      - "Develop precision flying and advanced navigation skills"
+      - "Gain confidence operating solely by instruments"
+      - "Prepare for advanced and professional certifications"
     requirements:
-      - "Passion for aviation and willingness to learn"
-      - "Meeting FAA medical and age requirements"
+      - "Read, speak, write and understand English"
+      - "Hold a valid Private Pilot Certificate"
+      - "Meet FAA aeronautical experience requirements"
+      - "Pass FAA written and practical exams"
 
 programExpectations:
   mainImage: "/src/assets/placeholder-dark-clouds-pitcairn-flight-academy-instrument-rating.webp"
-  mainImageAlt: "Student pilot in training"
-  title: "Training Environment"
+  mainImageAlt: "Student pilot training under instrument flight rules"
+  title: "Training Process"
   descriptionParagraphs:
-    - "At {COMPANY_NAME}, safety is always the priority. Our environment is designed to be supportive, responsive, and respectful."
-    - "You will learn in a busy airport environment around KWJF, a well-known general aviation hub, which prepares you for real-world flying."
+    - "Our instrument training program is structured to build both technical skill and real-world confidence. You’ll combine flight training, ground instruction, and exam preparation."
+    - "Your Certified Flight Instructor will tailor a training plan around your availability, experience level, and goals."
   listItems:
-    - "Planes don't get grounded as long due to on-site maintenance"
-    - "Fast and respectful communication"
-    - "Fair and honest service from day one"
+    - "Accumulate required cross-country and instrument flight time"
+    - "Train under IFR with experienced instructors"
+    - "Master instrument procedures and navigation"
+    - "Meet FAA Airman Certification Standards"
 
 whatIsIncluded:
-  upperheader: "One-Stop Operation"
-  title: "What We Provide"
+  upperheader: "Exam Preparation"
+  title: "What You'll Master"
   descriptionParagraphs:
-    - "We are a one-stop operation at Fox Field offering maintenance, quality flight training, and fuel under one roof."
+    - "We provide comprehensive preparation for the FAA instrument written exam and practical checkride."
   bulletPointLists:
-    - title: "The Fleet"
+    - title: "Instrument Flight Training"
       items:
-        - "Single-engine aircraft"
-        - "Garmin G5 and Garmin GPS equipped"
-        - "180 hp conversions"
-        - "Glass to Six Pack configurations available"
-    - title: "Facilities"
+        - "40 hours of instrument time"
+        - "Precision approaches and holding procedures"
+        - "Instrument meteorological conditions (IMC)"
+        - "IFR navigation and communication"
+    - title: "Written Exam Training"
       items:
-        - "Remodeled facilities"
-        - "Private rooms for study"
-        - "Nice break area and kitchen"
-        - "On-site maintenance ensures high aircraft availability"
+        - "Instrument Flight Rules (IFR) regulations"
+        - "Weather theory and decision-making"
+        - "Instrument navigation and procedures"
+        - "Practice tests and instructor-led review"
 
 whyUs:
-  upperheader: "Our Core Values"
-  title: "Why Train With {COMPANY_NAME}"
-  topicTitle: "Family-Owned Integrity"
+  upperheader: "Our Training Advantage"
+  title: "Why Choose Pitcairn Flight Academy"
+  topicTitle: "Experienced Instrument Instructors"
   topicDescriptionParagraphs:
-    - "We are a family-owned small business that truly cares about the customer. Our focus is on long-term relationships with customers who return from all over the country."
-  bulletTitle: "Operational Excellence"
+    - "Our instructors have extensive experience teaching instrument flight and are committed to helping you build real-world IFR proficiency."
+  bulletTitle: "Flexible & Personalized Training"
   bulletDescriptionParagraphs:
-    - "With over 2 decades of continuous operation as a maintenance shop, we know aircraft inside and out. Our fleet is maintained to the highest standards by our own FAA Repair Station."
+    - "We understand every student’s schedule and learning pace is different. Our training adapts to you."
   bulletPoints:
-    - "Safety-first culture and regulatory compliance"
-    - "Great availability compared to congested LA airspace"
-    - "Weather is generally better for consistent training"
+    - "Hands-on, personalized instruction"
+    - "Flexible scheduling options"
+    - "Supportive learning environment"
+    - "Focused on real-world IFR readiness"
 
 enrollmentProcess:
-  title: "Start Your Adventure"
+  title: "How to Earn Your Instrument Rating"
   steps:
     - stepNumber: 1
-      title: "Contact Us"
-      description: "Call (661) 948-7779 or email info@mhaviation.com to discuss your goals."
+      title: "Flight Training"
+      description: "Build 50 hours of cross-country time and 40 hours of instrument training, mastering IFR procedures and navigation."
     - stepNumber: 2
-      title: "Discovery Flight"
-      description: "Take a Discovery Flight to see the local mountains and desert scenery."
+      title: "Written Exam"
+      description: "Prepare for and pass the FAA instrument written exam with guided study and practice tests."
     - stepNumber: 3
-      title: "Start Training"
-      description: "Begin your journey with our experienced instructors."
+      title: "Long Cross Country"
+      description: "Complete a 250 NM IFR cross-country flight using ATC routing and/or Victor Airways with instrument approaches."
+    - stepNumber: 4
+      title: "Checkride"
+      description: "Demonstrate your skills to a designated FAA examiner and earn your Instrument Rating."
 
 finalCTA:
   mainImage: "/src/assets/placeholder-dark-clouds-pitcairn-flight-academy-instrument-rating.webp"
-  mainImageAlt: "{COMPANY_NAME} Flight Training"
-  upperheader: "Get Started"
-  title: "Earn Your Wings"
+  mainImageAlt: "Instrument-rated pilot preparing for flight"
+  upperheader: "Ready To Fly IFR?"
+  title: "Take Control In Any Weather"
   descriptionParagraphs:
-    - "{COMPANY_NAME} is a staple in the aviation community. Join us and experience a training environment that values integrity, safety, and family."
-  mainButtonText: "Contact Us"
-  mainButtonLink: "/contact"
-  secondButtonText: "Call (661) 948-7779"
-  secondButtonLink: "tel:6619487779"
+    - "An Instrument Rating dramatically expands your capabilities as a pilot and improves safety in all flying conditions."
+    - "Take the next step in your aviation journey with expert instruction and flexible scheduling."
+  mainButtonText: "Enroll Today"
+  mainButtonLink: "/contact-us"
+  secondButtonText: "Contact Us"
+  secondButtonLink: "/contact-us"
+
+faq:
+  title: "Instrument Rating FAQs"
+  upperheader: "Common Questions"
+  qnas:
+    - question: "How long does it take to earn an Instrument Rating?"
+      answer: "Training time varies based on schedule, weather, and availability. With full-time training, it can take 2–3 months. Part-time students may take several months up to a year."
+
+    - question: "What are the eligibility requirements?"
+      answer: "You must hold a private pilot certificate, read and understand English, complete required flight time, and pass FAA written and practical exams."
+
+    - question: "What is the long cross-country flight?"
+      answer: "It’s a 250 nautical mile IFR flight using ATC routing and/or Victor Airways, including instrument approaches at multiple airports."
+
+trainingDuration:
+  title: "Training Duration & Schedule"
+  description: "The time required to earn your Instrument Rating depends on flying frequency, weather, and study commitment."
+  schedules:
+    - title: "Accelerated Training"
+      description: "Fly and study full-time to complete training in approximately 2–3 months"
+    - title: "Part-Time Training"
+      description: "Fly a few times per week — typically several months to a year"
+    - title: "Flexible Scheduling"
+      description: "We work around your availability"
+      items:
+        - "Custom training plans"
+        - "Progress at your own pace"
+        - "Schedule-friendly options"
+
+completeRequirements:
+  title: "Complete Requirements"
+  description: "To earn your Instrument Rating, you must meet the following FAA requirements:"
+  requirements:
+    - "Hold a Private Pilot Certificate"
+    - "Read, speak, write, and understand English"
+    - "50 hours of cross-country flight time"
+    - "40 hours of instrument time"
+    - "Complete a 250 NM IFR cross-country flight"
+    - "Receive instructor endorsement"
+    - "Pass the FAA practical test (checkride)"
+  legalReference: "Reference 14 CFR §61.65 for the complete list of eligibility requirements."
+
+urgentCTA:
+  title: "Ready To Fly Regardless Of Weather?"
+  description: "Expand your skills, confidence, and safety with an Instrument Rating."
+  subtext: "Contact us today to start your instrument training journey."
+  buttons:
+    - text: "Enroll Today"
+      link: "/contact-us"
+      type: "primary"
+    - text: "Contact Us"
+      link: "/contact-us"
+      type: "secondary"
 ---
