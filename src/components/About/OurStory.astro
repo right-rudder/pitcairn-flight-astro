@@ -2,47 +2,123 @@
 import ImageComp from "../ImageComp.astro";
 import { COMPANY_NAME } from "../../data/consts";
 
-const ourStory = {
+const ourStoryPlaceholder = {
   upperHeading: "Our Story",
   title: "Building Professional Pilots With Purpose",
-  description: "",
-  descriptions: [``],
+  descriptions: [
+    `Founded on a passion for aviation excellence, ${COMPANY_NAME} was established to bridge the gap between basic flight instruction and professional career readiness. We don't just teach you how to fly; we mentor you into becoming a captain.`,
+    `Our approach combines rigorous Part 141 standards with a supportive community atmosphere, ensuring every student has the tools, technology, and guidance needed to excel in the modern flight deck.`,
+  ],
   image: {
     src: "/src/assets/placeholder-dark-clouds-pitcairn-flight-academy-instrument-rating.webp",
     alt: `Professional flight training at ${COMPANY_NAME}`,
   },
 };
 
-const { content = ourStory } = Astro.props;
+const { content = ourStoryPlaceholder } = Astro.props;
 ---
 
-<!-- Our Story Section -->
-<section class="py-16 md:py-24 bg-white">
-  <div class="max-w-7xl mx-auto px-5 md:px-8 lg:px-12">
-    <div class="grid md:grid-cols-2 gap-12 items-center">
-      <div>
-        <h2
-          class="!font-sans !text-2xl not-italic text-monza-600"
-          set:html={content.upperHeading}
-        />
-        <h3 class="title !text-lucky-950" set:html={content.title} />
+<section class="py-24 md:py-32 bg-white relative overflow-hidden">
+  <div class="absolute inset-0 z-0 opacity-[0.03] pointer-events-none">
+    <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+          <path
+            d="M 40 0 L 0 0 0 40"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1"></path>
+        </pattern>
+      </defs>
+      <rect width="100%" height="100%" fill="url(#grid)"></rect>
+    </svg>
+  </div>
+
+  <div class="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+      <div class="lg:col-span-7">
         {
-          ourStory.descriptions && (
-            <div class="space-y-4 mt-10 text-gray-700 leading-relaxed">
+          content.upperHeading && (
+            <div class="flex items-center gap-3 mb-6">
+              <div class="w-12 h-[2px] bg-sky-600" />
+              <span class="text-sky-600 font-bold uppercase tracking-[0.3em] text-xs">
+                {content.upperHeading}
+              </span>
+            </div>
+          )
+        }
+
+        <h2
+          class="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 leading-[1.1] mb-8 tracking-tight"
+        >
+          {content.title.split(" ").slice(0, -1).join(" ")}
+          <span class="text-sky-600">{content.title.split(" ").pop()}</span>
+        </h2>
+
+        {
+          content.descriptions && (
+            <div class="space-y-6 text-lg text-slate-600 leading-relaxed border-l-4 border-slate-100 pl-8">
               {content.descriptions.map((desc: string) => (
                 <p set:html={desc} />
               ))}
             </div>
           )
         }
+
+        <div class="mt-10 flex items-center gap-6">
+          <div class="flex -space-x-3">
+            <div
+              class="w-12 h-12 rounded-full border-4 border-white bg-slate-200"
+            >
+            </div>
+            <div
+              class="w-12 h-12 rounded-full border-4 border-white bg-slate-300"
+            >
+            </div>
+            <div
+              class="w-12 h-12 rounded-full border-4 border-white bg-slate-400"
+            >
+            </div>
+          </div>
+          <p class="text-sm font-medium text-slate-500">
+            Join <span class="text-slate-900 font-bold">500+</span> graduates flying
+            for major airlines.
+          </p>
+        </div>
       </div>
 
-      <div class="relative">
-        <ImageComp
-          src={content.image.src}
-          alt={content.image.alt}
-          class="rounded-2xl shadow-2xl"
-        />
+      <div class="lg:col-span-5 relative">
+        <div class="relative group">
+          <div
+            class="absolute -top-6 -right-6 w-32 h-32 bg-sky-50 rounded-full z-0 group-hover:scale-110 transition-transform duration-500"
+          >
+          </div>
+
+          <div
+            class="relative z-10 rounded-3xl overflow-hidden shadow-2xl transition-transform duration-500 group-hover:-rotate-1"
+          >
+            <ImageComp
+              src={content.image.src}
+              alt={content.image.alt}
+              class="w-full h-full object-cover aspect-[4/5]"
+            />
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-slate-900/40 to-transparent"
+            >
+            </div>
+          </div>
+
+          <div
+            class="absolute -bottom-8 -left-8 bg-sky-900 text-white p-8 rounded-2xl shadow-xl z-20"
+          >
+            <p
+              class="text-xs font-bold uppercase tracking-widest text-sky-300 mb-1"
+            >
+              Established
+            </p>
+            <p class="text-3xl font-black italic">EST. 2014</p>
+          </div>
+        </div>
       </div>
     </div>
   </div>
