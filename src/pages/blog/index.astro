@@ -4,6 +4,7 @@ import { getCollection } from "astro:content";
 import BlogPostCard from "../../components/Blog/BlogPostCard.astro";
 import Hero75 from "../../components/Hero75.astro";
 import CTASection from "../../components/CTASection.astro";
+import CardBlog from "../../components/Blog/CardBlog.astro";
 
 const blogPosts = await getCollection("blog");
 const sortedPosts = blogPosts.sort(
@@ -88,20 +89,17 @@ const metaProps = {
                 <span class="absolute top-4 left-4 bg-monza-600 text-white px-4 py-1 text-sm font-bold uppercase z-10">
                   Featured
                 </span>
-                <BlogPostCard
-                  isHighlight={true}
-                  post={featuredPost}
-                  featured={true}
-                />
+
+                <CardBlog blogEntry={featuredPost} />
               </div>
             </div>
           )
         }
         <div class="flex flex-wrap gap-y-6 gap-x-4 justify-between">
           {
-            remainingPosts.map((post) => (
+            remainingPosts.map((post, i) => (
               <div class="w-full md:w-1/2 lg:w-[30%]">
-                <BlogPostCard post={post} />
+                <CardBlog blogEntry={post} index={i + 1} />
               </div>
             ))
           }
