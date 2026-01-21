@@ -7,7 +7,7 @@ import CTASection from "../../components/CTASection.astro";
 
 const blogPosts = await getCollection("blog");
 const sortedPosts = blogPosts.sort(
-  (a, b) => b.data.pubDate.getTime() - a.data.pubDate.getTime()
+  (a, b) => b.data.pubDate.getTime() - a.data.pubDate.getTime(),
 );
 
 // Separar o primeiro post (featured) dos demais
@@ -25,7 +25,7 @@ const formatDate = (date: Date) => {
 
 const heroData = {
   image: {
-    src: "/src/assets/-Multiengine-training.jpg",
+    src: "/src/assets/placeholder-dark-clouds-pitcairn-flight-academy-instrument-rating.webp",
     alt: "CFI and Student Pilot Training on a Piper Seneca II",
   },
   upperHeader: "Latest Insights",
@@ -53,7 +53,7 @@ const ctaData = {
   description:
     "Your first step at  is defining that goal, as it will shape your standards, timeline, and path to the cockpit. Whether you are aiming for the airlines or mastering a new rating, we are here to provide the roadmap and the mentorship to get you there. Define your mission today, and let’s start your training plan.",
   image: {
-    src: "/src/assets/sebastian-zzWYD-tc_jI-unsplash.jpg",
+    src: "/src/assets/placeholder-dark-clouds-pitcairn-flight-academy-instrument-rating.webp",
     alt: "Training aircraft in flight",
   },
   primaryCTA: {
