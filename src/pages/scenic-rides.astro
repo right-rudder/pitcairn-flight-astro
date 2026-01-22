@@ -1,0 +1,64 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Hero75 from "../components/Hero75.astro";
+import CTASection from "../components/CTASection.astro";
+import { COMPANY_NAME } from "../input/consts";
+import ScenicRidesComponent from "../components/ScenicRides/ScenicRides.astro";
+
+const heroData = {
+  image: {
+    src: "/src/assets/placeholder-dark-clouds-pitcairn-flight-academy-instrument-rating.webp",
+    alt: "CFI and Student Pilot Training on a Piper Seneca II",
+  },
+  upperHeader: "Latest Insights",
+  title: "Stay Informed <br> About Aviation",
+  subTitle: `Explore articles, tips, and updates from ${COMPANY_NAME}. Learn from our instructors, discover industry news, and enhance your pilot knowledge.`,
+  cta: [
+    { url: "/bew-to-flying", text: "New to Flying?" },
+    { url: "/about", text: "Meet the Team" },
+  ],
+};
+
+const constBlogData = {
+  upperHeader: `${COMPANY_NAME}'s`,
+  title: "Blog",
+  paragraphs: [
+    "Stay informed with the latest aviation insights, training tips, relevant informations, and industry news.",
+  ],
+  upperHeaderTwo: "They Are Here For You",
+  titleTwo: "Our Fleet Aircrafts",
+};
+
+const ctaData = {
+  title: "Define Your Mission. Let’s Reach the Majors Together.",
+  description:
+    "Your first step at  is defining that goal, as it will shape your standards, timeline, and path to the cockpit. Whether you are aiming for the airlines or mastering a new rating, we are here to provide the roadmap and the mentorship to get you there. Define your mission today, and let’s start your training plan.",
+  image: {
+    src: "/src/assets/placeholder-dark-clouds-pitcairn-flight-academy-instrument-rating.webp",
+    alt: "Training aircraft in flight",
+  },
+  primaryCTA: {
+    text: "Schedule a Tour",
+    href: "/contact",
+  },
+  secondaryCTA: {
+    text: "Enroll Now",
+    href: "/enroll",
+  },
+};
+
+const metaProps = {
+  siteTitle: "Aviation Blog & Training Insights | {COMPANY_NAME}",
+  siteDescription:
+    "Read the latest flight training tips, academy news, and career advice from the senior instructor cadre at {COMPANY_NAME}.",
+  siteKeywords:
+    " Aviation blog, flight training tips, airline pilot career advice, student pilot news, aviation articles, learn to fly blog North Carolina",
+};
+---
+
+<BaseLayout {...metaProps}>
+  <Hero75 data={heroData} />
+
+  <ScenicRidesComponent />
+  <CTASection {...ctaData} />
+</BaseLayout>
