@@ -6,10 +6,10 @@ import Hero75 from "../components/Hero75.astro";
 import CTASection from "../components/CTASection.astro";
 import IsFlyingRightForYou from "../components/NewToFlying/IsFlyingRightForYou.astro";
 import BeginnerExpectations from "../components/NewToFlying/BeginnerExpectations.astro";
-import CommomFears from "../components/NewToFlying/CommomFears.astro";
 import CostandTime from "../components/NewToFlying/CostandTime.astro";
 import NextStep from "../components/NewToFlying/NextStep.astro";
 import CommonFears from "../components/NewToFlying/CommonFears.astro";
+import HeroWhyPilot from "../components/Hero/HeroWhyPilot.astro";
 
 const heroData = {
   image: {
@@ -50,7 +50,7 @@ const metaProps = {
 
 <BaseLayout {...metaProps}>
   <!-- Hero Section -->
-  <Hero75 data={heroData} />
+  <HeroWhyPilot data={heroData} />
   <IsFlyingRightForYou />
   <BeginnerExpectations />
   <CommonFears />
