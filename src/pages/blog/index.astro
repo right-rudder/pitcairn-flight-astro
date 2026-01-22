@@ -5,6 +5,7 @@ import BlogPostCard from "../../components/Blog/BlogPostCard.astro";
 import Hero75 from "../../components/Hero75.astro";
 import CTASection from "../../components/CTASection.astro";
 import CardBlog from "../../components/Blog/CardBlog.astro";
+import { COMPANY_NAME } from "../../input/consts";
 
 const blogPosts = await getCollection("blog");
 const sortedPosts = blogPosts.sort(
@@ -31,8 +32,7 @@ const heroData = {
   },
   upperHeader: "Latest Insights",
   title: "Stay Informed <br> About Aviation",
-  subTitle:
-    "Explore articles, tips, and updates from {COMPANY_NAME}. Learn from our instructors, discover industry news, and enhance your pilot knowledge.",
+  subTitle: `Explore articles, tips, and updates from ${COMPANY_NAME}. Learn from our instructors, discover industry news, and enhance your pilot knowledge.`,
   cta: [
     { url: "/bew-to-flying", text: "New to Flying?" },
     { url: "/about", text: "Meet the Team" },
@@ -40,7 +40,7 @@ const heroData = {
 };
 
 const constBlogData = {
-  upperHeader: "{COMPANY_NAME}'s",
+  upperHeader: `${COMPANY_NAME}'s`,
   title: "Blog",
   paragraphs: [
     "Stay informed with the latest aviation insights, training tips, relevant informations, and industry news.",
