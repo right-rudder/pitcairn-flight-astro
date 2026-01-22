@@ -13,6 +13,7 @@ import AboutCTA from "../components/About/AboutCTA.astro";
 import WhyUs from "../components/WhyUs/WhyUs.astro";
 import HeroWhyPilot from "../components/Hero/HeroWhyPilot.astro";
 import GoogleReviews from "../components/external/GoogleReviews.astro";
+import LocationSection from "../components/LocationSection.astro";
 
 type Member = CollectionEntry<"crew">;
 
@@ -149,6 +150,7 @@ const ctaSection = {
   <GoogleReviews />
   <!-- Our Location -->
   <OurLocation />
+  <LocationSection />
   <!-- CTA Section -->
   <AboutCTA />
 </BaseLayout>
