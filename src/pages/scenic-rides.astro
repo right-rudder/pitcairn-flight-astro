@@ -4,29 +4,25 @@ import Hero75 from "../components/Hero75.astro";
 import CTASection from "../components/CTASection.astro";
 import { COMPANY_NAME } from "../input/consts";
 import ScenicRidesComponent from "../components/ScenicRides/ScenicRides.astro";
+import Routes from "../components/ScenicRides/Routes.astro";
+import SliderRoutes from "../components/ScenicRides/SliderRoutes.astro";
+import RoutesRoadmap from "../components/ScenicRides/RoutesRoadmap.astro";
+import LocalDiscoveryRoutes from "../components/ScenicRides/LocalDiscoveryRoutes.astro";
+import PackagesRoutes from "../components/ScenicRides/PackagesRoutes.astro";
+import PhillyRoutes from "../components/ScenicRides/PhillyRoutes.astro";
 
 const heroData = {
   image: {
     src: "/src/assets/placeholder-dark-clouds-pitcairn-flight-academy-instrument-rating.webp",
     alt: "CFI and Student Pilot Training on a Piper Seneca II",
   },
-  upperHeader: "Latest Insights",
-  title: "Stay Informed <br> About Aviation",
-  subTitle: `Explore articles, tips, and updates from ${COMPANY_NAME}. Learn from our instructors, discover industry news, and enhance your pilot knowledge.`,
+  upperHeader: "Fly for fun",
+  title: "Fly for fun",
+  subTitle: `Whether interested in seeing Philly from above, organizing a unique family event, or having a special occasion, allow us to take you up in the sky`,
   cta: [
     { url: "/bew-to-flying", text: "New to Flying?" },
     { url: "/about", text: "Meet the Team" },
   ],
-};
-
-const constBlogData = {
-  upperHeader: `${COMPANY_NAME}'s`,
-  title: "Blog",
-  paragraphs: [
-    "Stay informed with the latest aviation insights, training tips, relevant informations, and industry news.",
-  ],
-  upperHeaderTwo: "They Are Here For You",
-  titleTwo: "Our Fleet Aircrafts",
 };
 
 const ctaData = {
@@ -60,5 +56,11 @@ const metaProps = {
   <Hero75 data={heroData} />
 
   <ScenicRidesComponent />
+  <!-- <SliderRoutes /> -->
+  <!-- <RoutesRoadmap /> -->
+  <PhillyRoutes />
+  <LocalDiscoveryRoutes />
+  <PackagesRoutes />
+  <Routes />
   <CTASection {...ctaData} />
 </BaseLayout>
