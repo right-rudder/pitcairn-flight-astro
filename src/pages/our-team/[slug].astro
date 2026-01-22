@@ -3,6 +3,8 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 import { getCollection } from "astro:content";
 import type { GetStaticPaths } from "astro";
 import type { CollectionEntry } from "astro:content";
+import { COMPANY_NAME } from "../../input/consts";
+import ImageComp from "../../components/ImageComp.astro";
 
 export const getStaticPaths = (async () => {
   const crewMembers = await getCollection("crew");
@@ -21,14 +23,14 @@ const { Content } = await member.render();
 ---
 
 <BaseLayout
-  siteTitle={`${member.data.name} | {COMPANY_NAME}`}
+  siteTitle={`${member.data.name} | ${COMPANY_NAME}`}
   siteDescription={member.data.bio}
   siteImage={member.data.image}
 >
   <article class="py-16 px-4">
     <div class="max-w-4xl mx-auto">
       <div class="bg-white rounded-lg shadow-lg overflow-hidden">
-        <img
+        <ImageComp
           src={member.data.image}
           alt={member.data.name}
           class="w-full h-96 object-cover"
