@@ -1,0 +1,211 @@
+---
+import ImageComp from "../ImageComp.astro";
+
+const placeholder =
+  "/src/assets/placeholder-dark-clouds-pitcairn-flight-academy-instrument-rating.webp";
+
+const regionalTours = [
+  {
+    title: "Pottstown Local Discovery",
+    price: "$185",
+    desc: "A short flight around the Reno area and get a feel for flying. This introductory flight is perfect for those new to aviation.",
+    features: [
+      "Approx. 40-minutes flight with a CFI",
+      "Hands-on flying experience",
+      "Pre-flight & Post-flight briefing",
+      "Ask questions about flight training",
+    ],
+    image: placeholder,
+    reverse: false,
+  },
+  {
+    title: "Philly Skyline Scenic",
+    price: "$275",
+    desc: "Experience the breathtaking views of the Philadelphia skyline. This extended flight allows you to enjoy the stunning scenery and get a more in-depth experience.",
+    features: [
+      "Approx. 75-minutes flight with a CFI",
+      "More in-depth flying experience",
+      "Extended pre-and-post flight briefings",
+      "Take the controls for a longer period",
+    ],
+    image: placeholder,
+    reverse: true,
+  },
+  {
+    title: "Valley Forge Historic",
+    price: "$185",
+    desc: "Fly over the historic town of Valley Forge and experience the thrill of flying. Perfect for those interested in both aviation and history.",
+    features: [
+      "Approx. 40-minutes flight with a CFI",
+      "Hands-on flying experience",
+      "Historical landmark views",
+      "Intro to pilot navigation",
+    ],
+    image: placeholder,
+    reverse: false,
+  },
+];
+---
+
+<section class="py-20 bg-slate-950 text-white">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="grid lg:grid-cols-2 gap-16 items-center">
+      <div>
+        <p class="text-sky-400 font-bold mb-2">$275</p>
+        <h1 class="text-5xl font-black uppercase mb-6 tracking-tighter">
+          Philly Skyline Scenic Tour
+        </h1>
+        <p class="text-slate-300 leading-relaxed mb-8">
+          The Philadelphia Discovery Flight is a one-of-a-kind experience that
+          lets you explore both the art of flying and the natural majesty of the
+          East Coast. Departing from Heritage Field, you'll fly with a certified
+          instructor toward the city, learning the basics of flight controls as
+          you navigate over valleys, ridges, and the brilliant skyline. You'll
+          not only witness stunning aerial views but also take the controls
+          yourself under professional guidance.
+        </p>
+        <a
+          href="#book"
+          class="inline-block px-8 py-4 bg-sky-600 hover:bg-sky-500 font-bold rounded-lg transition-colors mb-12"
+          >Book Your Scenic Tour Today</a
+        >
+
+        <div class="grid grid-cols-2 gap-8">
+          <div>
+            <h3
+              class="font-bold border-b border-sky-900 pb-2 mb-4 text-sky-400"
+            >
+              Features
+            </h3>
+            <ul class="text-sm space-y-2 text-slate-400">
+              <li>• Certified instructor guidance</li>
+              <li>• Hands-on pilot experience</li>
+              <li>• Pre- and post-flight briefings</li>
+              <li>• Perfect introduction to training</li>
+            </ul>
+          </div>
+          <div>
+            <h3
+              class="font-bold border-b border-sky-900 pb-2 mb-4 text-sky-400"
+            >
+              Scenic Highlights
+            </h3>
+            <ul class="text-sm space-y-2 text-slate-400">
+              <li>• Philly Skyscraper views</li>
+              <li>• Schuylkill River Valley</li>
+              <li>• Historic Valley Forge</li>
+              <li>• Heritage Field approach</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div
+        class="relative bg-slate-900 rounded-3xl p-4 border border-white/10 shadow-2xl"
+      >
+        <div class="aspect-square relative overflow-hidden rounded-2xl">
+          <ImageComp
+            src={placeholder}
+            alt="Flight Path"
+            class="w-full h-full object-cover opacity-50"
+          />
+          <div class="absolute inset-0 flex items-center justify-center">
+            <p class="text-sky-400 font-mono text-sm uppercase tracking-widest">
+              Skyline Flight Path Overlay
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-12">
+      {
+        [1, 2, 3, 4].map(() => (
+          <div class="h-32 md:h-48 rounded-xl overflow-hidden grayscale hover:grayscale-0 transition-all duration-500">
+            <ImageComp
+              src={placeholder}
+              alt="Gallery image"
+              class="w-full h-full object-cover"
+            />
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>
+
+<section class="py-24 bg-white">
+  <div class="max-w-6xl mx-auto px-6 space-y-32">
+    {
+      regionalTours.map((tour) => (
+        <div
+          class={`flex flex-col lg:items-center gap-12 ${tour.reverse ? "lg:flex-row-reverse" : "lg:flex-row"}`}
+        >
+          <div class="lg:w-1/2">
+            <div class="rounded-3xl overflow-hidden shadow-2xl">
+              <ImageComp
+                src={tour.image}
+                alt={tour.title}
+                class="w-full h-[400px] object-cover"
+              />
+            </div>
+          </div>
+          <div class="lg:w-1/2">
+            <h2 class="text-3xl font-black uppercase text-slate-900 mb-2">
+              {tour.title}
+            </h2>
+            <p class="text-sky-600 font-bold text-xl mb-4">{tour.price}</p>
+            <p class="text-slate-600 mb-6 leading-relaxed">{tour.desc}</p>
+            <ul class="space-y-3 mb-8">
+              {tour.features.map((f) => (
+                <li class="flex items-center gap-3 text-slate-700 text-sm">
+                  <div class="w-1.5 h-1.5 bg-sky-500 rounded-full" /> {f}
+                </li>
+              ))}
+            </ul>
+            <a
+              href="#book"
+              class="inline-block px-6 py-3 border-2 border-slate-900 hover:bg-slate-900 hover:text-white font-bold transition-all uppercase text-sm tracking-widest"
+            >
+              Book Now
+            </a>
+          </div>
+        </div>
+      ))
+    }
+  </div>
+</section>
+
+<section class="py-24 bg-slate-900 text-white">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="text-center mb-16">
+      <h2 class="text-4xl font-black uppercase mb-4 tracking-tighter">
+        Discovery Flight Packages
+      </h2>
+      <p class="text-slate-400 max-w-2xl mx-auto">
+        Whether you're considering a career in aviation or just want to see what
+        it's like to be in the cockpit, this flight is perfect for you.
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-8">
+      {
+        regionalTours.map((pkg) => (
+          <div class="bg-slate-800 p-8 rounded-[2rem] border border-white/5 flex flex-col hover:border-sky-500 transition-colors">
+            <h3 class="text-xl font-bold uppercase mb-2">{pkg.title}</h3>
+            <p class="text-sky-400 font-bold text-2xl mb-6">{pkg.price}</p>
+            <p class="text-slate-400 text-sm mb-8 flex-grow">{pkg.desc}</p>
+            <ul class="text-xs space-y-3 mb-8 text-slate-300">
+              {pkg.features.map((f) => (
+                <li class="flex items-start gap-2">• {f}</li>
+              ))}
+            </ul>
+            <button class="w-full py-4 bg-sky-600 font-bold rounded-xl uppercase tracking-widest text-sm hover:bg-sky-500 transition-colors">
+              Book Now
+            </button>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>
