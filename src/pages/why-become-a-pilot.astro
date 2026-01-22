@@ -1,0 +1,102 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import ImageComp from "../components/ImageComp.astro";
+import { PHONE_NUMBER } from "../data/consts";
+import Hero75 from "../components/Hero75.astro";
+import CTASection from "../components/CTASection.astro";
+import IsFlyingRightForYou from "../components/NewToFlying/IsFlyingRightForYou.astro";
+import BeginnerExpectations from "../components/NewToFlying/BeginnerExpectations.astro";
+import CommomFears from "../components/NewToFlying/CommomFears.astro";
+import CostandTime from "../components/NewToFlying/CostandTime.astro";
+import NextStep from "../components/NewToFlying/NextStep.astro";
+import CommonFears from "../components/NewToFlying/CommonFears.astro";
+
+const heroData = {
+  image: {
+    src: "/src/assets/placeholder-dark-clouds-pitcairn-flight-academy-instrument-rating.webp",
+    alt: "Flight Training Programs",
+  },
+  title: "New to Flying?<br>Start Here",
+  subTitle:
+    "If you've never flown before, this is where you find out what it takes, what it costs, and whether a professional pilot path is right for you, without any pressure to enroll today.",
+};
+
+const ctaData = {
+  title: "Define Your Mission. Let’s Reach the Majors Together.",
+  description:
+    "Your first step at  is defining that goal, as it will shape your standards, timeline, and path to the cockpit. Whether you are aiming for the airlines or mastering a new rating, we are here to provide the roadmap and the mentorship to get you there. Define your mission today, and let’s start your training plan.",
+  image: {
+    src: "/src/assets/placeholder-dark-clouds-pitcairn-flight-academy-instrument-rating.webp",
+    alt: "Training aircraft in flight",
+  },
+  primaryCTA: {
+    text: "Schedule a Tour",
+    href: "/contact",
+  },
+  secondaryCTA: {
+    text: "Enroll Now",
+    href: "/enroll",
+  },
+};
+
+const metaProps = {
+  siteTitle: "New to Flying? Start here | {COMPANY_NAME}",
+  siteDescription:
+    "Learn how to become a pilot at {COMPANY_NAME}. We guide beginners through medical certificates, discovery flights, and the path to a professional aviation career.",
+  siteKeywords:
+    "how to become a pilot, start flight training, student pilot guide, FAA medical certificate, flight school for beginners, pilot career path,  Aviation",
+};
+---
+
+<BaseLayout {...metaProps}>
+  <!-- Hero Section -->
+  <Hero75 data={heroData} />
+  <IsFlyingRightForYou />
+  <BeginnerExpectations />
+  <CommonFears />
+  <CostandTime />
+  <NextStep />
+  <CTASection {...ctaData} />
+</BaseLayout>
+<script>
+  const observerOptions = {
+    root: null,
+    threshold: 0.1,
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        // Seleciona todos os elementos que têm a classe 'reveal' dentro do container
+        const reveals = entry.target.querySelectorAll(".reveal");
+        reveals.forEach((el, index) => {
+          // Adiciona um atraso dinâmico baseado no índice (0.2s, 0.4s, 0.6s...)
+          setTimeout(() => {
+            el.classList.add("active");
+          }, index * 200);
+        });
+        // Para de observar após animar uma vez
+        observer.unobserve(entry.target);
+      }
+    });
+  }, observerOptions);
+
+  // Observa a seção dos cards e a timeline
+  const sections = document.querySelectorAll(".observe-section");
+  sections.forEach((section) => observer.observe(section));
+</script>
+
+<style>
+  /* Estado Inicial: Invisível e levemente para baixo */
+  .reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.4s ease-out;
+  }
+
+  /* Estado Ativo: Visível e na posição original */
+  .reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+  }
+</style>
