@@ -3,7 +3,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 import { getCollection } from "astro:content";
 import type { GetStaticPaths } from "astro";
 import type { CollectionEntry } from "astro:content";
-import { COMPANY_NAME } from "../../input/consts";
+import { COMPANY_NAME } from "../../data/consts"; // Updated path
 import ImageComp from "../../components/ImageComp.astro";
 
 export const getStaticPaths = (async () => {
@@ -27,57 +27,130 @@ const { Content } = await member.render();
   siteDescription={member.data.bio}
   siteImage={member.data.image}
 >
-  <article class="py-16 px-4">
-    <div class="max-w-4xl mx-auto">
-      <div class="bg-white rounded-lg shadow-lg overflow-hidden">
-        <ImageComp
-          src={member.data.image}
-          alt={member.data.name}
-          class="w-full h-96 object-cover"
-        />
-        <div class="p-8">
-          <h1 class="text-4xl font-bold mb-2">{member.data.name}</h1>
-          <p class="text-2xl text-blue-600 mb-6">{member.data.title}</p>
+  <article class="py-20 md:py-32 bg-slate-50 min-h-screen">
+    <div class="max-w-6xl mx-auto px-6">
+      <a
+        href="/our-team"
+        class="inline-flex items-center text-sky-600 font-bold text-sm uppercase tracking-widest mb-10 group"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="w-4 h-4 mr-2 transition-transform group-hover:-translate-x-1"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2.5"
+            d="M15 19l-7-7 7-7"></path>
+        </svg>
+        Back to the Flight Deck
+      </a>
 
-          {
-            member.data.experience && (
-              <div class="mb-6">
-                <h2 class="text-xl font-semibold mb-2">Experience</h2>
-                <p class="text-gray-700">{member.data.experience}</p>
+      <div
+        class="bg-white rounded-[2.5rem] shadow-xl shadow-slate-200/60 overflow-hidden border border-slate-100"
+      >
+        <div class="grid grid-cols-1 lg:grid-cols-12">
+          <div class="lg:col-span-5 bg-slate-900 relative min-h-[400px]">
+            <ImageComp
+              src={member.data.image}
+              alt={member.data.name}
+              class="w-full h-full object-cover opacity-90 grayscale-[10%]"
+            />
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent"
+            >
+            </div>
+
+            <div
+              class="absolute bottom-8 left-8 right-8 p-6 bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl text-white"
+            >
+              <p
+                class="text-[10px] font-bold text-sky-400 uppercase tracking-[0.2em] mb-1"
+              >
+                Assigned Rank
+              </p>
+              <h2 class="text-xl font-bold">{member.data.title}</h2>
+            </div>
+          </div>
+
+          <div class="lg:col-span-7 p-8 md:p-14">
+            <header class="mb-10">
+              <h1
+                class="text-4xl md:text-5xl font-black text-slate-900 tracking-tight mb-2"
+              >
+                {member.data.name}
+              </h1>
+              <div class="h-1.5 w-20 bg-sky-600 rounded-full"></div>
+            </header>
+
+            <div class="grid grid-cols-1 gap-10">
+              {
+                member.data.experience && (
+                  <div class="relative pl-6 border-l-2 border-sky-100">
+                    <h2 class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-3">
+                      Flight Experience
+                    </h2>
+                    <p class="text-xl font-bold text-slate-800 leading-tight">
+                      {member.data.experience}
+                    </p>
+                  </div>
+                )
+              }
+
+              {
+                member.data.certifications &&
+                  member.data.certifications.length > 0 && (
+                    <div>
+                      <h2 class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-4">
+                        Credentials & Ratings
+                      </h2>
+                      <div class="flex flex-wrap gap-2">
+                        {member.data.certifications.map((cert: string) => (
+                          <span class="px-4 py-2 bg-slate-50 border border-slate-200 text-slate-700 text-sm font-bold rounded-lg flex items-center gap-2">
+                            <svg
+                              class="w-4 h-4 text-sky-600"
+                              fill="currentColor"
+                              viewBox="0 0 20 20"
+                            >
+                              <path
+                                fill-rule="evenodd"
+                                d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                clip-rule="evenodd"
+                              />
+                            </svg>
+                            {cert}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                  )
+              }
+
+              <div
+                class="prose prose-slate max-w-none prose-p:text-slate-600 prose-p:leading-relaxed prose-strong:text-slate-950 pt-8 border-t border-slate-100"
+              >
+                <Content />
               </div>
-            )
-          }
-
-          {
-            member.data.certifications &&
-              member.data.certifications.length > 0 && (
-                <div class="mb-6">
-                  <h2 class="text-xl font-semibold mb-3">Certifications</h2>
-                  <ul class="grid grid-cols-1 md:grid-cols-2 gap-2">
-                    {member.data.certifications.map((cert: string) => (
-                      <li class="flex items-start">
-                        <span class="text-blue-600 mr-2">✓</span>
-                        <span>{cert}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              )
-          }
-
-          <div class="prose max-w-none mt-8">
-            <Content />
+            </div>
           </div>
         </div>
       </div>
 
-      <div class="mt-8 text-center">
-        <a
-          href="/crew"
-          class="inline-block bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors"
-        >
-          ← Back to Team
-        </a>
+      <div class="mt-16 text-center">
+        <div class="inline-flex flex-col items-center">
+          <p class="text-slate-500 text-sm mb-4 italic">
+            Interested in training with {member.data.name.split(" ")[0]}?
+          </p>
+          <a
+            href="/enroll"
+            class="px-8 py-4 bg-sky-600 text-white font-bold rounded-full hover:bg-sky-700 transition-all shadow-xl shadow-sky-900/20"
+          >
+            Request an Admissions Meeting
+          </a>
+        </div>
       </div>
     </div>
   </article>
