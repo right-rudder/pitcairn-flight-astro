@@ -10,6 +10,8 @@ import OurMission from "../components/About/OurMission.astro";
 import OurAdvantages from "../components/About/OurAdvantages.astro";
 import OurLocation from "../components/About/OurLocation.astro";
 import AboutCTA from "../components/About/AboutCTA.astro";
+import GoogleReviews from "../components/external/GoogleReviews.astro";
+import LocationSection from "../components/LocationSection.astro";
 
 type Member = CollectionEntry<"crew">;
 
@@ -177,9 +179,11 @@ const ctaSection = {
 
   <!-- Our Differences  -->
   <OurAdvantages />
-
+  <GoogleReviews />
   <!-- Our Location -->
   <OurLocation />
+
+  <LocationSection />
 
   <!-- CTA Section -->
   <AboutCTA />
