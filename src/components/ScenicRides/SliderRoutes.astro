@@ -34,8 +34,11 @@ const displayLocations = [...locations, ...locations];
       class="flex flex-nowrap w-max animate-infinite-scroll hover:[animation-play-state:paused] cursor-pointer"
     >
       {
-        displayLocations.map((loc) => (
-          <div class="w-[300px] shrink-0 px-3 md:px-4">
+        displayLocations.map((loc, index) => (
+          <div
+            class="w-[300px] shrink-0 px-3 md:px-4"
+            key={`${loc.name}-${index}`}
+          >
             <div class="relative rounded-3xl overflow-hidden border border-white/10 group shadow-2xl">
               <ImageComp
                 src={loc.img}
@@ -43,7 +46,7 @@ const displayLocations = [...locations, ...locations];
                 class="w-full h-full object-cover grayscale-[0.2] group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700"
               />
 
-              <div class="absolute inset-0 bg-linear-to-t from-slate-950/90 via-transparent to-transparent opacity-80 transition-opacity group-hover:opacity-100" />
+              <div class="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-transparent to-transparent opacity-80 transition-opacity group-hover:opacity-100" />
 
               <div class="absolute bottom-0 left-0 w-full p-8 translate-y-2 group-hover:translate-y-0 transition-transform">
                 <p class="text-sky-400 font-mono text-xs mb-1">{loc.dist}</p>
@@ -59,11 +62,11 @@ const displayLocations = [...locations, ...locations];
     </div>
 
     <div
-      class="pointer-events-none absolute inset-y-0 left-0 w-24 bg-linear-to-r from-slate-950 to-transparent z-10"
+      class="pointer-events-none absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-slate-950 to-transparent z-10"
     >
     </div>
     <div
-      class="pointer-events-none absolute inset-y-0 right-0 w-24 bg-linear-to-l from-slate-950 to-transparent z-10"
+      class="pointer-events-none absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-slate-950 to-transparent z-10"
     >
     </div>
   </div>
