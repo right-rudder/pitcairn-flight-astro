@@ -11,7 +11,7 @@ const heroData = {
     "A combination of factors such as mandatory retirement ages, COVID-induced early retirements, and the surging demand for pilots, indicates a pilot supply challenge in the aviation industry. Forecasts from experts suggest that, within the coming year or two, global demand for pilots will outstrip the available supply, and this trend is expected to persist over the next decade.",
 };
 
-const industryStats = [
+const statsDataExample = [
   { label: "New Pilots Needed", value: "280,000", sub: "Next 10 Years" },
   { label: "Mandatory Retirements", value: "45,000", sub: "Upcoming Decade" },
   { label: "Industry Growth", value: "39%", sub: "Demand Surge" },
@@ -25,7 +25,7 @@ interface ctaProp {
 }
 
 interface Props {
-  data: {
+  data?: {
     image: {
       src: string;
       alt: string;
@@ -34,9 +34,14 @@ interface Props {
     subTitle?: string;
     cta?: ctaProp[];
   };
+  statsData?: {
+    label: string;
+    value: string;
+    sub?: string;
+  }[];
 }
 
-const { data = heroData } = Astro.props;
+const { data = heroData, statsData = statsDataExample } = Astro.props;
 ---
 
 <section
@@ -117,7 +122,7 @@ const { data = heroData } = Astro.props;
           </h2>
           <div class="grid grid-cols-2 gap-y-8 gap-x-4">
             {
-              industryStats.map((stat) => (
+              statsData.map((stat) => (
                 <div>
                   <div class="text-3xl font-black text-white">{stat.value}</div>
                   <div class="text-[10px] text-sky-300 uppercase font-bold tracking-wider mt-1">
@@ -138,7 +143,7 @@ const { data = heroData } = Astro.props;
   <div class="lg:hidden bg-slate-900 border-t border-white/10 py-6">
     <div class="flex overflow-x-auto gap-8 px-6 no-scrollbar">
       {
-        industryStats.map((stat) => (
+        statsData.map((stat) => (
           <div class="flex-shrink-0">
             <div class="text-xl font-black text-white">{stat.value}</div>
             <div class="text-[9px] text-sky-400 uppercase font-bold tracking-tighter">
