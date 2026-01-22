@@ -1,6 +1,7 @@
 EXTRA PAGES
 ✔️ https://pitcairnflightacademy.com/our-team
 ✔️ https://pitcairnflightacademy.com/our-team/slug
+✔️ https://pitcairnflightacademy.com/airplane-rentals/slug
 
 DONE
 
@@ -11,6 +12,10 @@ DONE
 ✔️ https://pitcairnflightacademy.com/become-a-cfi
 ✔️ https://pitcairnflightacademy.com/commercial-pilot-training
 ✔️ https://pitcairnflightacademy.com/about-us
+✔️ https://pitcairnflightacademy.com/airplane-rentals
+✔️ https://pitcairnflightacademy.com/why-become-a-pilot
+✔️ https://pitcairnflightacademy.com/why-pitcairn-flight-academy
+✔️ 
 
 DONE BLOG POSTS
 
@@ -62,14 +67,7 @@ DONE BLOG POSTS
 
 DOING
 
-💠 https://pitcairnflightacademy.com/airplane-rentals
-
-https://pitcairnflightacademy.com/why-become-a-pilot
-
-
-https://pitcairnflightacademy.com/why-pitcairn-flight-academy
-
-https://pitcairnflightacademy.com/scenic-rides
+💠 https://pitcairnflightacademy.com/scenic-rides
 
 https://pitcairnflightacademy.com/terms-of-service-privacy-policy
 
