@@ -1,0 +1,121 @@
+---
+import { COMPANY_NAME } from "../../data/consts";
+
+const faqs = [
+  {
+    question: "Is it safe?",
+    answer: `Safety is our primary directive. Beyond FAA oversight, ${COMPANY_NAME} maintains a dedicated on-site maintenance team and a senior instructor cadre with decades of airline experience. Our 12-year zero-cancellation record for checkrides is proof that our aircraft and pilots are mission-ready.`,
+    icon: "M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z",
+  },
+  {
+    question: "What if I'm nervous about heights or bumps?",
+    answer:
+      "Cockpit security is different from standing on a ledge; you are strapped into a structured environment. Turbulence is simply air movement—much like driving over a gravel road. Most students find their anxiety vanishes once they understand the aerodynamics behind the movement.",
+    icon: "M13 10V3L4 14h7v7l9-11h-7z",
+  },
+  {
+    question: "How fit do I need to be?",
+    answer:
+      "For the Professional Track, you'll need an FAA First Class Medical Certificate (checking vision, hearing, and heart health). Most people pass without issue. We will guide you to a local Aviation Medical Examiner (AME) to get cleared before you spend a dime on training.",
+    icon: "M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z",
+  },
+  {
+    question: "When do I actually touch the controls?",
+    answer:
+      "Immediately. We believe in tactile learning. On your very first flight, you’ll handle basic maneuvers while airborne. Your instructor manages the critical takeoff and landing phases, but you are the one flying for the majority of the lesson.",
+    icon: "M7 11.5V14m0-2.5v-6a1.5 1.5 0 113 0m-3 6a1.5 1.5 0 00-3 0v2a7.5 7.5 0 0015 0v-5a1.5 1.5 0 013 0m-6-3V11m0-5.5v-1a1.5 1.5 0 013 0v1",
+  },
+  {
+    question: "Do I have to commit to an airline career now?",
+    answer:
+      "No. Every captain started with a single discovery flight. You can earn your Private Pilot License first and transition into the Professional Track later. Your training remains modular and high-standard regardless of your end goal.",
+    icon: "M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2",
+  },
+  {
+    question: "What about motion sickness?",
+    answer:
+      "Flying the airplane yourself actually reduces motion sickness because your brain anticipates the movement. If you're prone to car sickness, we simply take the first few lessons at a slower pace until your 'inner ear' adjusts to the new environment.",
+    icon: "M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z",
+  },
+];
+---
+
+<section class="py-24 md:py-32 bg-slate-950 relative overflow-hidden">
+  <div
+    class="absolute inset-0 opacity-10"
+    style="background-image: radial-gradient(#334155 1px, transparent 1px); background-size: 40px 40px;"
+  >
+  </div>
+
+  <div class="max-w-7xl mx-auto px-6 relative z-10">
+    <div class="max-w-4xl mx-auto">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl md:text-5xl font-black text-white leading-tight">
+          Common Fears & <span class="text-sky-400 italic">Questions</span>
+        </h2>
+        <p class="text-slate-400 mt-6 text-lg">
+          Clear answers for those ready to leave the ground.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-6">
+        {
+          faqs.map((faq) => (
+            <div class="bg-slate-900/50 backdrop-blur-sm p-8 rounded-3xl border border-slate-800 hover:border-sky-500/50 transition-all duration-300 group">
+              <div class="w-10 h-10 bg-sky-500/10 rounded-lg flex items-center justify-center mb-6 border border-sky-500/20">
+                <svg
+                  class="w-5 h-5 text-sky-400"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d={faq.icon}
+                  />
+                </svg>
+              </div>
+              <h3 class="text-xl font-bold text-white mb-4 group-hover:text-sky-400 transition-colors">
+                {faq.question}
+              </h3>
+              <p class="text-slate-400 leading-relaxed text-sm">{faq.answer}</p>
+            </div>
+          ))
+        }
+      </div>
+
+      <div class="mt-16 relative">
+        <div
+          class="absolute -inset-1 bg-gradient-to-r from-sky-600 to-slate-800 rounded-[2rem] blur opacity-25"
+        >
+        </div>
+        <div
+          class="relative bg-slate-900 border border-white/10 p-10 rounded-[2rem] text-center"
+        >
+          <p class="text-xl text-slate-200 font-light leading-relaxed">
+            Your first decision isn't a long-term contract—it's simply: <br
+              class="hidden md:block"
+            />
+            <span class="text-white font-bold italic"
+              >"Do I enjoy being in the cockpit enough to take the next step?"</span
+            >
+          </p>
+          <div class="mt-8 flex flex-col sm:flex-row justify-center gap-4">
+            <a
+              href="/discovery-flight"
+              class="px-8 py-4 bg-sky-600 text-white font-black rounded-xl hover:bg-sky-500 transition-all"
+              >Book a Discovery Flight</a
+            >
+            <a
+              href="/contact"
+              class="px-8 py-4 bg-transparent text-white border border-slate-700 font-bold rounded-xl hover:bg-slate-800 transition-all"
+              >Talk to an Instructor</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
