@@ -1,3 +1,8 @@
+EXTRA PAGES
+✔️ https://pitcairnflightacademy.com/our-team
+✔️ https://pitcairnflightacademy.com/our-team/slug
+
+
 DONE
 
 ✔️ https://pitcairnflightacademy.com/
@@ -5,7 +10,8 @@ DONE
 ✔️ https://pitcairnflightacademy.com/private-pilot-training
 ✔️ https://pitcairnflightacademy.com/instrument-rating
 ✔️ https://pitcairnflightacademy.com/become-a-cfi
-✔️  https://pitcairnflightacademy.com/commercial-pilot-training
+✔️ https://pitcairnflightacademy.com/commercial-pilot-training
+✔️ https://pitcairnflightacademy.com/about-us
 
 DONE BLOG POSTS
 
@@ -57,17 +63,20 @@ DONE BLOG POSTS
 
 DOING
 
-💠 https://pitcairnflightacademy.com/about-us
-
-https://pitcairnflightacademy.com/airplane-rentals
+💠 https://pitcairnflightacademy.com/airplane-rentals
 
 https://pitcairnflightacademy.com/why-become-a-pilot
 
-https://pitcairnflightacademy.com/terms-of-service-privacy-policy
 
 https://pitcairnflightacademy.com/why-pitcairn-flight-academy
 
 https://pitcairnflightacademy.com/scenic-rides
+
+https://pitcairnflightacademy.com/terms-of-service-privacy-policy
+
+https://pitcairnflightacademy.com/404
+
+https://pitcairnflightacademy.com/500
 
 TODO
 
@@ -76,6 +85,5 @@ https://pitcairnflightacademy.com/contact-us
 https://pitcairnflightacademy.com/enroll-at-pitcairn-flight-academy
 
 https://pitcairnflightacademy.com/discovery-flight
-
 
 https://pitcairnflightacademy.com/quiz
