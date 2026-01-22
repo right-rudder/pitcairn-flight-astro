@@ -1,0 +1,108 @@
+---
+import ImageComp from "../ImageComp.astro";
+
+const placeholder =
+  "/src/assets/placeholder-dark-clouds-pitcairn-flight-academy-instrument-rating.webp";
+
+const regionalTours = [
+  {
+    title: "Pottstown Local Discovery",
+    price: "$185",
+    desc: "A short flight around the Pottstown area to get a feel for the sky. This introductory lesson is the ultimate first step for aspiring aviators.",
+    features: [
+      "Approx. 40-minute flight",
+      "Hands-on flying",
+      "Pre-flight briefing",
+      "Loggable flight time",
+    ],
+    image: placeholder,
+    reverse: false,
+  },
+  {
+    title: "Philly Skyline Scenic",
+    price: "$275",
+    desc: "Experience breathtaking views of the Philadelphia skyline from 2,500 feet. This extended flight provides an in-depth introduction to cross-country navigation.",
+    features: [
+      "Approx. 75-minute flight",
+      "Advanced maneuvers",
+      "Extended briefings",
+      "Center City skyline tour",
+    ],
+    image: placeholder,
+    reverse: true,
+  },
+  {
+    title: "Valley Forge Historic",
+    price: "$185",
+    desc: "Fly over the rolling hills of Valley Forge National Park. This route combines scenic beauty with a lesson on pilotage and ground reference maneuvers.",
+    features: [
+      "Approx. 40-minute flight",
+      "Historic landmark views",
+      "Pilot navigation intro",
+      "Perfect for photography",
+    ],
+    image: placeholder,
+    reverse: false,
+  },
+];
+---
+
+<section class="py-32 bg-slate-900 text-white relative overflow-hidden">
+  <div class="max-w-7xl mx-auto px-6 relative z-10">
+    <div class="text-center max-w-3xl mx-auto mb-20 space-y-4">
+      <h2 class="text-5xl lg:text-7xl font-black uppercase tracking-tighter">
+        Lesson <span class="text-sky-500 italic">Packages</span>
+      </h2>
+      <p class="text-slate-400 text-lg">
+        Transparent pricing for your first loggable hours of flight training.
+      </p>
+    </div>
+
+    <div class="grid lg:grid-cols-3 gap-8">
+      {
+        regionalTours.map((pkg) => (
+          <div class="group relative bg-slate-800/50 backdrop-blur-xl p-10 rounded-[2.5rem] border border-white/5 flex flex-col hover:bg-slate-800 hover:-translate-y-4 transition-all duration-500">
+            <div class="absolute top-0 right-10 w-12 h-1 bg-sky-500 opacity-0 group-hover:opacity-100 transition-opacity" />
+
+            <h3 class="text-2xl font-black uppercase mb-2 tracking-tight">
+              {pkg.title}
+            </h3>
+            <div class="flex items-baseline gap-2 mb-8">
+              <p class="text-sky-400 font-black text-4xl">{pkg.price}</p>
+              <p class="text-slate-500 text-xs font-bold uppercase tracking-widest">
+                / session
+              </p>
+            </div>
+
+            <p class="text-slate-400 text-sm leading-relaxed mb-8 flex-grow">
+              {pkg.desc}
+            </p>
+
+            <ul class="space-y-4 mb-10">
+              {pkg.features.map((f) => (
+                <li class="flex items-center gap-3 text-xs font-bold uppercase tracking-widest text-slate-300">
+                  <svg
+                    class="w-4 h-4 text-sky-500"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                      clip-rule="evenodd"
+                    />
+                  </svg>
+                  {f}
+                </li>
+              ))}
+            </ul>
+
+            <button class="w-full py-5 bg-white text-slate-900 font-black rounded-2xl uppercase tracking-[0.2em] text-xs hover:bg-sky-500 hover:text-white transition-all shadow-xl group-hover:scale-[1.05]">
+              Confirm Slot
+            </button>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>
