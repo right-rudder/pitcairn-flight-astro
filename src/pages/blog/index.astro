@@ -80,7 +80,7 @@ const metaProps = {
   <Hero75 data={heroData} />
 
   <section class="py-16 px-4 bg-muted-50">
-    <div class="max-w-6xl mx-auto">
+    <div class="max-w-7xl mx-auto">
       <div class="flex flex-col gap-6 lg:gap-12">
         {
           featuredPost && (
@@ -95,10 +95,10 @@ const metaProps = {
             </div>
           )
         }
-        <div class="flex flex-wrap gap-y-6 gap-x-4 justify-between">
+        <div class="flex flex-wrap gap-y-6 gap-x-2 justify-between">
           {
             remainingPosts.map((post, i) => (
-              <div class="w-full md:w-1/2 lg:w-[30%]">
+              <div class="w-full md:w-1/2 lg:w-[32%]">
                 <CardBlog blogEntry={post} index={i + 1} />
               </div>
             ))
