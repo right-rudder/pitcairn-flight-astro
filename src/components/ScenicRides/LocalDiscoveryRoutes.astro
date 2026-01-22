@@ -51,18 +51,20 @@ const regionalTours = [
 ---
 
 <section class="py-24 bg-white overflow-hidden">
-  <div class="max-w-7xl mx-auto px-6 space-y-32 lg:space-y-48">
+  <div
+    class="max-w-7xl mx-auto space-y-12 grid grid-cols-1 lg:grid-cols-3 gap-12"
+  >
     {
       regionalTours.map((tour) => (
         <div
-          class={`flex flex-col lg:items-center gap-12 lg:gap-20 ${tour.reverse ? "lg:flex-row-reverse" : "lg:flex-row"}`}
+          class={`flex group flex-col lg:items-center gap-12 lg:gap-20 lg:flex-row}`}
         >
-          <div class="lg:w-[55%] group relative">
-            <div class="relative h-[300px] md:h-[400px] rounded-[2rem] overflow-hidden shadow-2xl transition-transform duration-700 group-hover:-translate-y-2">
+          <div class="lg:w-1/3 flex  relative">
+            <div class="relative h-[100px] rounded-[2rem] overflow-hidden shadow-2xl transition-transform duration-700 group-hover:-translate-y-2">
               <ImageComp
                 src={tour.image}
                 alt={tour.title}
-                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000"
+                classes="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000"
               />
 
               <div class="absolute top-6 left-6 px-5 py-2 bg-white/10 backdrop-blur-md border border-white/20 rounded-full">
@@ -75,13 +77,9 @@ const regionalTours = [
                 <span class="text-white font-black text-xl">{tour.price}</span>
               </div>
             </div>
-
-            <div
-              class={`absolute -bottom-6 ${tour.reverse ? "-left-6" : "-right-6"} w-32 h-32 bg-sky-50 -z-10 rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-1000`}
-            />
           </div>
-
-          <div class="lg:w-[45%]">
+          {/* Text */}
+          <div class="lg:w-1/3 flex flex-col">
             <div class="inline-flex items-center gap-3 mb-6">
               <div class="h-[2px] w-8 bg-sky-500" />
               <span class="text-sky-600 font-bold text-xs uppercase tracking-widest">
