@@ -10,7 +10,7 @@ const blogEntries = await getCollection("blog", ({ id }) => {
 
 const blogPosts: CollectionEntry<"blog">[] = blogEntries.sort(
   (a: CollectionEntry<"blog">, b: CollectionEntry<"blog">) =>
-    b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+    b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
 );
 
 // Get the top 3 posts
@@ -61,7 +61,7 @@ const data = {
     </div>
 
     <div class="text-center flex items-center justify-center">
-      <a class="btn-primary">
+      <a class="btn-primary" href="/blog">
         Read All Articles
         <FaArrowRight />
       </a>
