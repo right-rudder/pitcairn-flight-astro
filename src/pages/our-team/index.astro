@@ -2,6 +2,8 @@
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import { getCollection } from "astro:content";
 import type { CollectionEntry } from "astro:content";
+import ImageComp from "../../components/ImageComp.astro";
+import { COMPANY_NAME } from "../../input/consts";
 
 type CrewMember = CollectionEntry<"crew">;
 
@@ -13,7 +15,7 @@ const sortedCrew = crewMembers.sort(
 ---
 
 <BaseLayout
-  siteTitle="Our Team | {COMPANY_NAME}"
+  siteTitle=`Our Team | ${COMPANY_NAME}`
   siteDescription="Meet our experienced flight instructors and staff"
 >
   <section class="py-16 px-4">
@@ -31,7 +33,7 @@ const sortedCrew = crewMembers.sort(
               href={`/our-team/${member.slug}`}
               class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow"
             >
-              <img
+              <ImageComp
                 src={member.data.image}
                 alt={member.data.name}
                 class="w-full h-64 object-cover"
