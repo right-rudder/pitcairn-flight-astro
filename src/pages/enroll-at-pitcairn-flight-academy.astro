@@ -1,0 +1,615 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import ImageComp from "../components/ImageComp.astro";
+import { EMAIL_ADDRESS, PHONE_NUMBER, COMPANY_NAME } from "../data/consts";
+import Hero75 from "../components/Hero75.astro";
+import CTASectionWithGradientCover from "../components/CTASectionWithGradientCover.astro";
+import FAQSidebarEnroll from "../components/FAQSidebarEnroll.astro";
+
+// Import environment variables
+const ENROLLMENT_FORM_WEBHOOK_URL = import.meta.env.ENROLLMENT_FORM_WEBHOOK_URL;
+const PORTAL_API_KEY = import.meta.env.PORTAL_API_KEY;
+const CP_ACCOUNT_RANDOM_ID = import.meta.env.CP_ACCOUNT_RANDOM_ID;
+
+const heroData = {
+  image: {
+    src: "/src/assets/placeholder-dark-clouds-pitcairn-flight-academy-instrument-rating.webp",
+    alt: "Enroll at {COMPANY_NAME}",
+  },
+  title: "Start Your Aviation Journey",
+  subTitle:
+    "Take the first step towards your pilot career. Complete the enrollment form below and our admissions team will contact you within 24 hours.",
+};
+
+const ctaData = {
+  title: "Define Your Mission. Let’s Reach the Majors Together.",
+  description:
+    "Your first step at  is defining that goal, as it will shape your standards, timeline, and path to the cockpit. Whether you are aiming for the airlines or mastering a new rating, we are here to provide the roadmap and the mentorship to get you there. Define your mission today, and let’s start your training plan.",
+  image: {
+    src: "/src/assets/placeholder-dark-clouds-pitcairn-flight-academy-instrument-rating.webp",
+    alt: "Training aircraft in flight",
+  },
+  primaryCTA: {
+    text: "Schedule a Tour",
+    href: "/contact",
+  },
+  secondaryCTA: {
+    text: "Enroll Now",
+    href: "/enroll",
+  },
+};
+
+const faqData = {
+  upperheader: "Ready to Launch",
+  title: "Enrollment & Training FAQs",
+  qnas: [
+    {
+      question: "What happens if I don't have my financing secured yet?",
+      answer:
+        "That is perfectly fine for the initial application. You can apply today to start the interview process. Once you are accepted, we will help guide you toward our financing partners, like Stratus, to secure your loan and finalize your start date.",
+    },
+    {
+      question: "Is the housing included really located near the academy?",
+      answer:
+        "Yes. For our Professional Pilot Track students, we provide housing for up to 8 months. This eliminates the stress of searching for a short-term lease and ensures you are surrounded by a community of fellow students who are just as focused on the mission as you are.",
+    },
+    {
+      question:
+        "The schedule seems intense. Can I work a part-time job while enrolled?",
+      answer:
+        "We treat our Professional Pilot Track like a full-time career from day one. Expect to be at the flight school 8 hours a day, Monday through Friday. To ensure you succeed and meet the 8-10 month timeline, we strongly recommend students dedicate themselves fully to the program without the distraction of outside employment.",
+    },
+    {
+      question: "How do the 'incentive-based' jobs work?",
+      answer:
+        "We are looking for our future colleagues. If you excel in the course and demonstrate the character of a professional pilot, we don't just graduate you—we want to hire you. This includes potential paths to CFI, MEI, and even Part 135 positions within our network, with  covering costs for advanced ratings for top-tier performers.",
+    },
+    {
+      question: "I’m not a military pilot; is this program still right for me?",
+      answer:
+        "Absolutely. While our roots are in the USAF and we specialize in transitioning military aviators, the Academy was built to bring that same high-level discipline and 'wingman' culture to civilian students. You’ll be training alongside and learning from instructors who have flown at the highest levels of combat and commercial aviation.",
+    },
+  ],
+};
+
+const metaProps = {
+  siteTitle: "Enrollment | {COMPANY_NAME}",
+  siteDescription:
+    "Take the first step toward your professional pilot career. Complete the  Aviation enrollment form to begin your interview process and secure your start date.",
+  siteKeywords:
+    "flight school enrollment, pilot training application, apply for flight school,  admission, start pilot training, flight training application NC",
+};
+---
+
+<BaseLayout {...metaProps}>
+  <Hero75 data={heroData} />
+  <section class="py-16 md:py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-5 md:px-8 lg:px-12">
+      <div class="grid lg:grid-cols-2 gap-16">
+        <div>
+          <h2
+            class="text-3xl font-bold text-sky-950 mb-6 uppercase tracking-tight"
+          >
+            Enrollment Application
+          </h2>
+          <p class="text-lg text-gray-600 mb-8">
+            Complete the form below to begin your enrollment process. Our
+            admissions team will review your application and contact you within
+            24 hours to schedule your consultation.
+          </p>
+
+          <form id="enrollForm" class="space-y-6">
+            <div class="hidden" aria-hidden="true">
+              <label for="website">Website</label>
+              <input
+                type="text"
+                id="website"
+                name="website"
+                tabindex="-1"
+                autocomplete="off"
+              />
+            </div>
+
+            <div
+              class="bg-slate-50 p-6 rounded-xl border border-slate-200 shadow-sm"
+            >
+              <h3
+                class="font-bold text-sky-900 mb-4 uppercase text-sm tracking-widest"
+              >
+                Personal Information
+              </h3>
+              <div class="grid sm:grid-cols-2 gap-4">
+                <div class="sm:col-span-2">
+                  <label
+                    for="name"
+                    class="block text-sm font-semibold text-gray-700 mb-2"
+                    >Full Name <span class="text-sky-600">*</span></label
+                  >
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    required
+                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-sky-600 focus:border-sky-600 outline-hidden transition-colors"
+                    placeholder="John Doe"
+                  />
+                </div>
+                <div>
+                  <label
+                    for="email"
+                    class="block text-sm font-semibold text-gray-700 mb-2"
+                    >Email Address <span class="text-sky-600">*</span></label
+                  >
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    required
+                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-sky-600 focus:border-sky-600 outline-hidden transition-colors"
+                    placeholder="john@example.com"
+                  />
+                </div>
+                <div>
+                  <label
+                    for="phone"
+                    class="block text-sm font-semibold text-gray-700 mb-2"
+                    >Phone Number <span class="text-sky-600">*</span></label
+                  >
+                  <input
+                    type="tel"
+                    id="phone"
+                    name="phone"
+                    required
+                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-sky-600 focus:border-sky-600 outline-hidden transition-colors"
+                    placeholder="(555) 123-4567"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="bg-slate-50 p-6 rounded-xl border border-slate-200 shadow-sm"
+            >
+              <h3
+                class="font-bold text-sky-900 mb-4 uppercase text-sm tracking-widest"
+              >
+                Program & Schedule
+              </h3>
+              <div class="space-y-4">
+                <div>
+                  <label
+                    for="program"
+                    class="block text-sm font-semibold text-gray-700 mb-2"
+                    >Interest <span class="text-sky-600">*</span></label
+                  >
+                  <select
+                    id="program"
+                    name="program"
+                    required
+                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-sky-600 focus:border-sky-600 outline-hidden"
+                  >
+                    <option value="">Select a program...</option>
+                    <option value="Zero to Airlines"
+                      >Zero to Airlines (Career Track)</option
+                    >
+                    <option value="Private Pilot">Private Pilot License</option>
+                    <option value="Instrument Rating">Instrument Rating</option>
+                    <option value="Commercial Pilot"
+                      >Commercial Pilot License</option
+                    >
+                    <option value="Multi-Engine">Multi-Engine Rating</option>
+                  </select>
+                </div>
+                <div>
+                  <label
+                    for="startDate"
+                    class="block text-sm font-semibold text-gray-700 mb-2"
+                    >Desired Start <span class="text-sky-600">*</span></label
+                  >
+                  <select
+                    id="startDate"
+                    name="startDate"
+                    required
+                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-sky-600 focus:border-sky-600 outline-hidden"
+                  >
+                    <option value="">Select timeframe...</option>
+                    <option value="Immediately">Immediately</option>
+                    <option value="1-3 Months">1-3 Months</option>
+                    <option value="3-6 Months">3-6 Months</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <div class="space-y-4">
+              <div class="flex gap-x-4">
+                <button
+                  type="button"
+                  id="terms-toggle"
+                  class="bg-gray-200 flex w-8 flex-none cursor-pointer rounded-full p-px ring-1 ring-inset ring-gray-900/5 transition-colors duration-200 focus-visible:outline-sky-600"
+                  role="switch"
+                  aria-checked="false"
+                >
+                  <span class="sr-only">Agree to terms</span>
+                  <span
+                    id="terms-thumb"
+                    class="translate-x-0 h-4 w-4 transform rounded-full bg-white shadow-sm ring-1 ring-gray-900/5 transition duration-200"
+                  ></span>
+                </button>
+                <label class="text-sm leading-6 text-gray-600">
+                  I agree to the <a
+                    href="/privacy-policy"
+                    class="font-semibold text-sky-600 hover:text-sky-800"
+                    >Privacy Policy</a
+                  >. By providing my number, I agree to receive text updates.
+                </label>
+              </div>
+
+              <button
+                type="submit"
+                id="submit-btn"
+                disabled
+                class="w-full bg-slate-400 cursor-not-allowed text-white px-8 py-4 rounded-lg font-bold text-lg transition-all shadow-lg flex items-center justify-center"
+              >
+                Submit Enrollment Application
+              </button>
+            </div>
+          </form>
+        </div>
+
+        <div class="space-y-12">
+          <section>
+            <h2 class="text-3xl font-bold text-sky-950 mb-6">
+              Why Fly at Pitcairn Flight Academy?
+            </h2>
+            <p class="text-gray-700 leading-relaxed mb-6">
+              Your success means the world to us. Learning to fly is a
+              life-changing journey, and we're committed to giving you the
+              knowledge, expertise, and guidance to help you start flying.
+              Whether you're looking to fly for fun or you're pursuing a career
+              in the pilot's seat, count on us for top-notch training that paves
+              your way to success.
+            </p>
+
+            <div class="grid gap-6">
+              <div class="p-5 bg-sky-50 rounded-xl border-l-4 border-sky-600">
+                <h3 class="font-bold text-sky-900 mb-2">
+                  Programs to Fit Your Schedule
+                </h3>
+                <p class="text-sm text-gray-700">
+                  Pursuing your flying goals doesn't require giving up your
+                  other responsibilities. We provide training programs tailored
+                  to work with your schedule, whether you need fast-paced
+                  full-time or adaptable part-time choices.
+                </p>
+              </div>
+            </div>
+          </section>
+
+          <div>
+            <h2
+              class="text-2xl font-bold text-sky-950 mb-8 uppercase tracking-tight"
+            >
+              The Enrollment Process
+            </h2>
+            <div class="space-y-8">
+              {
+                [
+                  {
+                    step: "1",
+                    title: "Application Review",
+                    desc: "Our admissions team reviews your goals to prepare a personalized training plan that maximizes your career potential.",
+                  },
+                  {
+                    step: "2",
+                    title: "Consultation Call",
+                    desc: "We'll contact you within 24 hours to define specific milestones and answer questions about our curriculum.",
+                  },
+                  {
+                    step: "3",
+                    title: "Facility Tour",
+                    desc: "Visit our training facility, meet our senior CFI cadre, and see our modern fleet firsthand.",
+                  },
+                  {
+                    step: "4",
+                    title: "Start Training",
+                    desc: "Finalize paperwork, clear your medical, and get assigned your primary instructor.",
+                  },
+                ].map((item) => (
+                  <div class="flex items-start">
+                    <div class="w-10 h-10 bg-sky-800 text-white rounded-full flex items-center justify-center shrink-0 mr-4 font-black">
+                      {item.step}
+                    </div>
+                    <div>
+                      <h3 class="font-bold text-sky-900 text-lg">
+                        {item.title}
+                      </h3>
+                      <p class="text-gray-600 text-sm">{item.desc}</p>
+                    </div>
+                  </div>
+                ))
+              }
+            </div>
+          </div>
+
+          <div class="bg-sky-900 text-white rounded-2xl p-8 shadow-xl">
+            <h3 class="font-bold text-xl mb-2">Ready to Start Your Career?</h3>
+            <p class="text-sky-100 mb-6 text-sm">
+              Every airline pilot started at a local flight school. This is your
+              chance to be part of the action.
+            </p>
+            <a
+              href="/programs"
+              class="inline-flex items-center justify-center w-full sm:w-auto px-6 py-3 bg-white text-sky-900 font-bold rounded-lg hover:bg-sky-50 transition-colors"
+            >
+              VIEW PROGRAMS
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 md:py-24 bg-sky-950 text-white">
+    <div class="max-w-7xl mx-auto px-5 text-center">
+      <h2 class="text-3xl md:text-4xl font-black uppercase mb-12">
+        The {COMPANY_NAME} Advantage
+      </h2>
+      <div class="grid md:grid-cols-3 gap-12">
+        <div class="space-y-4">
+          <div
+            class="w-16 h-16 bg-sky-800 rounded-full flex items-center justify-center mx-auto text-sky-400"
+          >
+            <svg
+              class="w-8 h-8"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              ><path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
+              ></path></svg
+            >
+          </div>
+          <h3 class="font-bold text-xl">FAA Certified</h3>
+          <p class="text-sky-200/70 text-sm">
+            Part 141 & 61 approved facility with a curriculum designed for
+            professional standards.
+          </p>
+        </div>
+        <div class="space-y-4">
+          <div
+            class="w-16 h-16 bg-sky-800 rounded-full flex items-center justify-center mx-auto text-sky-400"
+          >
+            <svg
+              class="w-8 h-8"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              ><path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"
+              ></path></svg
+            >
+          </div>
+          <h3 class="font-bold text-xl">Expert Instruction</h3>
+          <p class="text-sky-200/70 text-sm">
+            Learn from veteran CFIs with thousands of hours in commercial and
+            military aviation.
+          </p>
+        </div>
+        <div class="space-y-4">
+          <div
+            class="w-16 h-16 bg-sky-800 rounded-full flex items-center justify-center mx-auto text-sky-400"
+          >
+            <svg
+              class="w-8 h-8"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              ><path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg
+            >
+          </div>
+          <h3 class="font-bold text-xl">Modern Fleet</h3>
+          <p class="text-sky-200/70 text-sm">
+            Well-maintained aircraft equipped with the latest Garmin avionics
+            and safety tech.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <CTASectionWithGradientCover {...ctaData} />
+</BaseLayout>
+
+<script
+  define:vars={{
+    ENROLLMENT_FORM_WEBHOOK_URL,
+    PORTAL_API_KEY,
+    CP_ACCOUNT_RANDOM_ID,
+  }}
+>
+  // Elements
+  const form = document.getElementById("enrollForm");
+  const successMessage = document.getElementById("successMessage");
+  const errorMessage = document.getElementById("errorMessage");
+  const errorText = document.getElementById("errorText");
+  const buttonText = document.getElementById("buttonText");
+  const buttonSpinner = document.getElementById("buttonSpinner");
+  const submitButton = form.querySelector('button[type="submit"]');
+
+  // Terms Toggle Elements
+  const toggle = document.getElementById("terms-toggle");
+  const thumb = document.getElementById("terms-thumb");
+  const hiddenInput = document.getElementById("agree-terms");
+  let isChecked = false;
+
+  const SUBMIT_COOLDOWN = 30 * 1000; // 30 seconds
+
+  // Handle Terms Toggle
+  if (toggle && thumb && hiddenInput) {
+    toggle.addEventListener("click", () => {
+      isChecked = !isChecked;
+      hiddenInput.value = isChecked ? "yes" : "no";
+      toggle.setAttribute("aria-checked", isChecked.toString());
+
+      // Update styling
+      if (isChecked) {
+        toggle.classList.remove("bg-gray-200");
+        toggle.classList.add("bg-monza-600");
+        thumb.classList.remove("translate-x-0");
+        thumb.classList.add("translate-x-3.5");
+
+        // Enable Submit Button
+        submitButton.disabled = false;
+        submitButton.classList.remove(
+          "bg-gray-400",
+          "cursor-not-allowed",
+          "opacity-50",
+        );
+        submitButton.classList.add(
+          "bg-monza-600",
+          "hover:bg-monza-700",
+          "hover:shadow-xl",
+        );
+      } else {
+        toggle.classList.add("bg-gray-200");
+        toggle.classList.remove("bg-monza-600");
+        thumb.classList.add("translate-x-0");
+        thumb.classList.remove("translate-x-3.5");
+
+        // Disable Submit Button
+        submitButton.disabled = true;
+        submitButton.classList.add(
+          "bg-gray-400",
+          "cursor-not-allowed",
+          "opacity-50",
+        );
+        submitButton.classList.remove(
+          "bg-monza-600",
+          "hover:bg-monza-700",
+          "hover:shadow-xl",
+        );
+      }
+    });
+  }
+
+  if (!form) {
+    console.error("Form element not found.");
+  } else {
+    form.addEventListener("submit", async (event) => {
+      event.preventDefault();
+
+      // Ensure terms are agreed to
+      if (!isChecked) {
+        alert("Please agree to the Terms of Service to proceed.");
+        return;
+      }
+
+      // Hide previous messages
+      successMessage?.classList.add("hidden");
+      errorMessage?.classList.add("hidden");
+
+      // Honeypot check
+      const formData = new FormData(form);
+      if (formData.get("website")?.trim()) {
+        console.log("Bot detected");
+        return;
+      }
+
+      // Remove website field from data payload to prevent clutter
+      formData.delete("website");
+
+      // Cooldown check
+      const lastSubmit = parseInt(
+        localStorage.getItem("lastEnrollSubmit") || "0",
+        10,
+      );
+      const now = Date.now();
+      if (now - lastSubmit < SUBMIT_COOLDOWN) {
+        alert("Please wait a few seconds before submitting again.");
+        return;
+      }
+      localStorage.setItem("lastEnrollSubmit", now.toString());
+
+      // Show loading state
+      submitButton.disabled = true;
+      submitButton.classList.add("opacity-50", "cursor-not-allowed");
+      buttonText.textContent = "Submitting...";
+      buttonSpinner.classList.remove("hidden");
+
+      // Logic to split Full Name for Portal API
+      const fullName = formData.get("name")?.toString() || "";
+      const nameParts = fullName.split(" ");
+      const firstName = nameParts[0] || "";
+      const lastName = nameParts.slice(1).join(" ") || "";
+
+      // Append standard fields expected by CRM if needed, or rely on form-urlencoded keys
+      // Adding timestamp and source type for Webhook context
+      formData.append("timestamp", new Date().toISOString());
+      formData.append("type", "enrollment");
+
+      try {
+        const [ghlRes, portalRes] = await Promise.all([
+          // 1. GHL Webhook (x-www-form-urlencoded)
+          fetch(ENROLLMENT_FORM_WEBHOOK_URL, {
+            method: "POST",
+            headers: { "Content-Type": "application/x-www-form-urlencoded" },
+            body: new URLSearchParams(formData).toString(),
+          }),
+          // 2. Portal API (Lead Creation - JSON)
+          fetch("https://portal.rightruddermarketing.com/api/leads", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+              Accept: "application/json",
+              "x-api-key": PORTAL_API_KEY,
+            },
+            body: JSON.stringify({
+              first_name: firstName,
+              last_name: lastName,
+              email: formData.get("email")?.toString() || "",
+              phone: formData.get("phone")?.toString() || "",
+              campaign: "enrollment", // Using 'enrollment' campaign for this form
+              account_random_id: CP_ACCOUNT_RANDOM_ID,
+              // Optional: You can pass notes if supported
+              // notes: formData.get("message")?.toString()
+            }),
+          }),
+        ]);
+
+        if (ghlRes.ok && portalRes.ok) {
+          // Redirect to confirmation page
+          window.location.href = "/enroll-confirmation";
+        } else {
+          throw new Error("One or both requests failed");
+        }
+      } catch (err) {
+        console.error("Submission error:", err);
+        errorMessage?.classList.remove("hidden");
+        if (errorText) {
+          errorText.textContent =
+            "Something went wrong. Please try again or call us directly.";
+        }
+        errorMessage?.scrollIntoView({ behavior: "smooth", block: "nearest" });
+      } finally {
+        // Reset button state (If success, it stays disabled due to reset toggle logic, if error, we re-enable)
+        if (isChecked) {
+          submitButton.disabled = false;
+          submitButton.classList.remove("opacity-50", "cursor-not-allowed");
+        }
+
+        buttonText.textContent = "Submit Enrollment Application";
+        buttonSpinner.classList.add("hidden");
+      }
+    });
+  }
+</script>
