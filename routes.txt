@@ -21,6 +21,8 @@ DONE
 ✔️ https://pitcairnflightacademy.com/500
 ✔️ https://pitcairnflightacademy.com/contact-us
 ✔️ https://pitcairnflightacademy.com/contact-confiramtion
+✔️ https://pitcairnflightacademy.com/enroll-at-pitcairn-flight-academy
+✔️ https://pitcairnflightacademy.com/enroll-at-pitcairn-flight-academy-confirmation
 
 DONE BLOG POSTS
 
@@ -72,12 +74,8 @@ DONE BLOG POSTS
 
 DOING
 
-
 💠 https://pitcairnflightacademy.com/discovery-flight
 💠 https://pitcairnflightacademy.com/discovery-flight-confirmation
-
-💠 https://pitcairnflightacademy.com/enroll-at-pitcairn-flight-academy
-💠 https://pitcairnflightacademy.com/enroll-at-pitcairn-flight-academy-confirmation
 
 💠 https://pitcairnflightacademy.com/quiz
 💠 https://pitcairnflightacademy.com/quiz-confirmation
@@ -87,4 +85,4 @@ TODO
 - Update all images
 - Update meta title meta description and check h1 
 - Design Improvements in each page / align experimental designs
-- 
+- Add animations and Transitions 
