@@ -16,6 +16,9 @@ DONE
 ✔️ https://pitcairnflightacademy.com/why-become-a-pilot
 ✔️ https://pitcairnflightacademy.com/why-pitcairn-flight-academy
 ✔️ https://pitcairnflightacademy.com/scenic-rides
+✔️ https://pitcairnflightacademy.com/terms-of-service-privacy-policy
+✔️ https://pitcairnflightacademy.com/404
+✔️ https://pitcairnflightacademy.com/500
 
 DONE BLOG POSTS
 
@@ -67,11 +70,13 @@ DONE BLOG POSTS
 
 DOING
 
-💠 https://pitcairnflightacademy.com/terms-of-service-privacy-policy
+💠 https://pitcairnflightacademy.com/contact-us
 
-https://pitcairnflightacademy.com/404
+💠 https://pitcairnflightacademy.com/discovery-flight
 
-https://pitcairnflightacademy.com/500
+💠 https://pitcairnflightacademy.com/enroll-at-pitcairn-flight-academy
+
+💠 https://pitcairnflightacademy.com/quiz
 
 TODO
 
