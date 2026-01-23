@@ -1,0 +1,298 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { EMAIL_ADDRESS, PHONE_NUMBER } from "../data/consts";
+import Hero75 from "../components/Hero75.astro";
+
+const heroData = {
+  image: {
+    src: "/src/assets/mael-balland-QRQHIYyIlp8-unsplash.jpg",
+    alt: "Privacy Policy and Terms",
+  },
+  title: "Privacy Policy & Terms of Service",
+  subTitle:
+    "Transparency is at the heart of our academy. Review our privacy policies and terms of service below.",
+};
+
+const companyName = "Pitcairn Flight Academy LLC";
+const lastUpdated = "January 2026";
+---
+
+<BaseLayout
+  siteTitle={`Privacy Policy & Terms of Service | ${companyName}`}
+  siteDescription={`Review the Privacy Policy and Terms of Service for ${companyName} in Pottstown, PA.`}
+>
+  <Hero75 data={heroData} />
+
+  <section class="py-16 md:py-24 bg-white">
+    <div
+      class="max-w-7xl mx-auto px-6 lg:px-8 flex flex-col lg:flex-row gap-16"
+    >
+      <aside class="lg:w-1/4">
+        <div class="sticky top-32 space-y-4">
+          <p class="text-xs font-black uppercase tracking-widest text-sky-600">
+            On this page
+          </p>
+          <nav class="flex flex-col gap-3">
+            <a
+              href="#privacy"
+              class="text-sm font-bold text-slate-600 hover:text-sky-600 transition-colors"
+              >Privacy Policy</a
+            >
+            <a
+              href="#collection"
+              class="text-xs text-slate-500 pl-4 border-l border-slate-200 hover:border-sky-500 hover:text-sky-500 transition-all"
+              >Information Use</a
+            >
+            <a
+              href="#security"
+              class="text-xs text-slate-500 pl-4 border-l border-slate-200 hover:border-sky-500 hover:text-sky-500 transition-all"
+              >Data Security</a
+            >
+            <a
+              href="#terms"
+              class="text-sm font-bold text-slate-600 hover:text-sky-600 transition-colors mt-4"
+              >Terms of Service</a
+            >
+            <a
+              href="#license"
+              class="text-xs text-slate-500 pl-4 border-l border-slate-200 hover:border-sky-500 hover:text-sky-500 transition-all"
+              >Use License</a
+            >
+            <a
+              href="#disclaimer"
+              class="text-xs text-slate-500 pl-4 border-l border-slate-200 hover:border-sky-500 hover:text-sky-500 transition-all"
+              >Disclaimer</a
+            >
+          </nav>
+
+          <div class="pt-8 border-t border-slate-100">
+            <p
+              class="text-[10px] text-slate-400 font-bold uppercase tracking-tighter italic"
+            >
+              Last Updated: {lastUpdated}
+            </p>
+          </div>
+        </div>
+      </aside>
+
+      <div
+        class="lg:w-3/4 max-w-none prose prose-slate prose-headings:uppercase prose-headings:tracking-tighter prose-headings:font-black prose-h2:text-4xl prose-h3:text-xl"
+      >
+        <div id="privacy" class="scroll-mt-32 mb-24">
+          <h2 class="text-slate-950">Privacy Policy</h2>
+          <p class="lead text-lg text-slate-600 italic">
+            Pitcairn Flight Academy LLC operates the pitcairnflightacademy.com
+            website, a flight school located in Pottstown, PA.
+          </p>
+          <p>
+            If you choose to use our Service, then you agree to the collection
+            and use of information in relation with this policy. The Personal
+            Information that we collect are used for providing and improving the
+            Service. We will not use or share your information with anyone
+            except as described in this Privacy Policy.
+          </p>
+
+          <h3 id="collection">Information Collection and Use</h3>
+          <p>
+            For a better experience, while using our Service, we may require you
+            to provide us with certain personally identifiable information,
+            including but not limited to your name, email, phone number, and
+            postal address. The information that we collect will be used to
+            contact or identify you.
+          </p>
+
+          <h3>Log Data & Cookies</h3>
+          <p>
+            Whenever you visit our Service, we collect information that your
+            browser sends to us called Log Data. This may include your IP
+            address, browser version, pages visited, and time spent on our site.
+          </p>
+          <p>
+            Our website uses “cookies” to collection information and to improve
+            our Service. You have the option to either accept or refuse these
+            cookies. If you choose to refuse our cookies, you may not be able to
+            use some portions of our Service.
+          </p>
+
+          <h3>Service Providers</h3>
+          <p>
+            We may employ third-party companies and individuals to facilitate
+            our Service, to provide the Service on our behalf, or to assist us
+            in analyzing how our Service is used. These third parties may have
+            access to your Personal Information to perform assigned tasks but
+            are obligated not to disclose or use the information for any other
+            purpose.
+          </p>
+
+          <h3 id="security">Security</h3>
+          <p>
+            We strive to use commercially acceptable means of protecting your
+            Personal Information. However, remember that no method of
+            transmission over the internet, or method of electronic storage is
+            100% secure and reliable, and we cannot guarantee its absolute
+            security.
+          </p>
+
+          <h3>Children's Privacy</h3>
+          <p>
+            Our Services do not address anyone under the age of 13. In the case
+            we discover that a child under 13 has provided us with personal
+            information, we immediately delete this from our servers.
+          </p>
+        </div>
+
+        <hr class="border-slate-100 my-16" />
+
+        <div id="terms" class="scroll-mt-32 mb-24">
+          <h2 class="text-slate-950">Terms of Service</h2>
+          <p>
+            By accessing this website, you are agreeing to be bound by the Terms
+            and Conditions of Use and agree that you are responsible for the
+            agreement with any applicable local laws. If you disagree with any
+            of these terms, you are prohibited from accessing this site.
+          </p>
+
+          <h3 id="license">Use License</h3>
+          <div class="bg-slate-50 p-8 rounded-3xl border border-slate-100">
+            <p
+              class="text-sm font-bold uppercase tracking-widest text-slate-400 mb-4"
+            >
+              Grant of License
+            </p>
+            <p class="text-sm">
+              Permission is granted to temporarily download one copy of the
+              materials for personal, non-commercial transitory viewing only.
+              Under this license you may not:
+            </p>
+            <ul class="text-sm space-y-1">
+              <li>Modify or copy the materials.</li>
+              <li>Use the materials for any commercial purpose.</li>
+              <li>
+                Attempt to reverse engineer any software contained on the site.
+              </li>
+              <li>Remove any copyright or other proprietary notations.</li>
+              <li>
+                Transfer the materials to another person or “mirror” the
+                materials.
+              </li>
+            </ul>
+          </div>
+
+          <h3 id="disclaimer">Disclaimer</h3>
+          <p>
+            All the materials on Pitcairn Flight Academy Website are provided
+            “as is”. Pitcairn Flight Academy LLC makes no warranties, may it be
+            expressed or implied, therefore negates all other warranties.
+            Furthermore, Pitcairn Flight Academy does not make any
+            representations concerning the accuracy or reliability of the use of
+            the materials on its Website.
+          </p>
+
+          <h3>Limitations of Liability</h3>
+          <p>
+            Pitcairn Flight Academy or its suppliers will not be hold
+            accountable for any damages that will arise with the use or
+            inability to use the materials on Pitcairn Flight Academy Website,
+            even if Pitcairn Flight Academy or an authorized representative has
+            been notified of the possibility of such damage.
+          </p>
+
+          <h3>Governing Law</h3>
+          <p>
+            Any claim related to Pitcairn Flight Academy Website shall be
+            governed by the laws of the United States without regards to its
+            conflict of law provisions.
+          </p>
+        </div>
+
+        <div
+          class="bg-slate-900 text-white p-10 rounded-[3rem] shadow-2xl relative overflow-hidden group"
+        >
+          <div
+            class="absolute top-0 right-0 w-32 h-32 bg-sky-500/20 blur-3xl rounded-full translate-x-1/2 -translate-y-1/2 group-hover:bg-sky-500/40 transition-colors"
+          >
+          </div>
+          <h3 class="text-white mt-0">Questions?</h3>
+          <p class="text-slate-400 text-sm mb-8">
+            If you have any questions or suggestions about our Privacy Policy or
+            Terms, do not hesitate to contact us.
+          </p>
+
+          <div class="grid md:grid-cols-2 gap-8 not-prose">
+            <div>
+              <p
+                class="text-[10px] font-black uppercase tracking-widest text-sky-500 mb-2"
+              >
+                Location
+              </p>
+              <p class="text-sm font-bold leading-relaxed">
+                Pitcairn Flight Academy<br />
+                Heritage Field Airport (KPTW)<br />
+                Pottstown, PA
+              </p>
+            </div>
+            <div class="flex flex-col gap-4">
+              <a
+                href={`tel:${PHONE_NUMBER}`}
+                class="flex items-center gap-3 text-white hover:text-sky-400 transition-colors"
+              >
+                <div
+                  class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center"
+                >
+                  <svg
+                    class="w-4 h-4"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    ><path
+                      d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
+                    ></path></svg
+                  >
+                </div>
+                <span class="text-sm font-black">{PHONE_NUMBER}</span>
+              </a>
+              <a
+                href={`mailto:${EMAIL_ADDRESS}`}
+                class="flex items-center gap-3 text-white hover:text-sky-400 transition-colors"
+              >
+                <div
+                  class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center"
+                >
+                  <svg
+                    class="w-4 h-4"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    ><path
+                      d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                    ></path></svg
+                  >
+                </div>
+                <span class="text-sm font-black underline decoration-sky-500/50"
+                  >{EMAIL_ADDRESS}</span
+                >
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  /* Typography enhancements */
+  .prose h2 {
+    border-bottom: 1px solid #f1f5f9;
+    padding-bottom: 1rem;
+    margin-top: 4rem;
+  }
+  .prose p {
+    line-height: 1.8;
+    color: #475569;
+  }
+  .prose li {
+    color: #475569;
+    font-size: 0.95rem;
+  }
+</style>
