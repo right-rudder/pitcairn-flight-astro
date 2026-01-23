@@ -80,10 +80,7 @@ DOING
 
 TODO
 
-https://pitcairnflightacademy.com/contact-us
-
-https://pitcairnflightacademy.com/enroll-at-pitcairn-flight-academy
-
-https://pitcairnflightacademy.com/discovery-flight
-
-https://pitcairnflightacademy.com/quiz
+- Update all images
+- Update meta title meta description and check h1 
+- Design Improvements in each page / align experimental designs
+- 
