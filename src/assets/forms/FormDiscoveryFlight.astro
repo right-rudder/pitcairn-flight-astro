@@ -1,0 +1,398 @@
+---
+import {
+  ADDRESS_LINE_1,
+  ADDRESS_LINE_2,
+  PHONE_NUMBER,
+} from "../../data/consts";
+import type { Field, FieldOption, FormData } from "../utils/types";
+
+// --- DATA CONFIGURATION ---
+const data = {
+  eyebrow: "Discovery Flight",
+  heading: "Let's Plan Your Flight",
+  subheading:
+    "Prepare to take off. Schedule your discovery flight and experience the joy of flying through the Florida sky.",
+  info: {
+    title: "Fill out this form and let's start flying",
+    intro:
+      "We're here to help you get started on your aviation journey. Call us if you need anything.",
+    locationLabel: "Our Base",
+    addressLine1: ADDRESS_LINE_1,
+    addressLine2: ADDRESS_LINE_2,
+    phoneLabel: "Operations",
+    phoneValue: PHONE_NUMBER,
+  },
+  form: {
+    id: "discovery-flight-form",
+    redirection: "/discovery-flight-confirmation",
+    campaign: "discovery_flight",
+    submitBtnText: "Schedule My Flight",
+    fields: [
+      {
+        id: "first_name",
+        label: "First Name",
+        placeholder: "John",
+        required: true,
+        type: "text",
+        autocomplete: "given-name",
+      },
+      {
+        id: "last_name",
+        label: "Last Name",
+        placeholder: "Doe",
+        required: true,
+        type: "text",
+        autocomplete: "family-name",
+      },
+      {
+        id: "email",
+        label: "Email",
+        placeholder: "example@yourmail.com",
+        required: true,
+        type: "email",
+        inputmode: "email",
+        autocomplete: "email",
+      },
+      {
+        id: "phone",
+        label: "Phone Number",
+        placeholder: "+1 234 567 8910",
+        required: true,
+        type: "tel",
+        inputmode: "tel",
+        autocomplete: "tel",
+      },
+      {
+        id: "flight_date",
+        label: "Preferred Day",
+        type: "select",
+        required: true,
+        options: [
+          { value: "", label: "Select a day" },
+          { value: "Sunday", label: "Sunday" },
+          { value: "Monday", label: "Monday" },
+          { value: "Tuesday", label: "Tuesday" },
+          { value: "Wednesday", label: "Wednesday" },
+          { value: "Thursday", label: "Thursday" },
+          { value: "Friday", label: "Friday" },
+          { value: "Saturday", label: "Saturday" },
+        ],
+      },
+      {
+        id: "flight_time",
+        label: "Preferred Time",
+        type: "select",
+        required: true,
+        options: [
+          { value: "", label: "Select a time" },
+          { value: "Morning", label: "Morning" },
+          { value: "Early afternoon", label: "Early afternoon" },
+          { value: "Late afternoon", label: "Late afternoon" },
+        ],
+      },
+      {
+        id: "discovery-flight-sights",
+        label: "What would you like to see during your flight?",
+        type: "checkboxes",
+        options: [
+          { value: "Siesta Key Beach", label: "Siesta Key Beach" },
+          { value: "St. Armands Circle", label: "St. Armands Circle" },
+          { value: "Longboat Key", label: "Longboat Key" },
+          { value: "Other", label: "Other" },
+        ],
+        colSpan: "full",
+        addClass: "grid-cols-1 sm:grid-cols-2",
+      },
+      {
+        id: "goal",
+        label: "What is your primary goal?",
+        type: "select",
+        colSpan: "full",
+        options: [
+          { value: "", label: "Select your goal" },
+          {
+            value: "Just for fun",
+            label: "See what it's like to fly a small aircraft",
+          },
+          {
+            value: "Career Exploration",
+            label: "Find out if flight training is right for me",
+          },
+          {
+            value: "Training Start",
+            label: "Take the first step toward becoming a pilot",
+          },
+          {
+            value: "Confidence",
+            label: "Build confidence flying in a small airplane",
+          },
+          {
+            value: "Gift",
+            label: "Enjoy a unique experience or give this as a gift",
+          },
+        ],
+      },
+      {
+        id: "additional-info",
+        label: "Additional Information",
+        placeholder: "Tell us anything else...",
+        type: "textarea",
+        colSpan: "full",
+        rows: 4,
+      },
+    ],
+  } as FormData,
+};
+
+const { form } = data;
+---
+
+<section
+  class="bg-slate-50 px-4 py-16 sm:px-6 lg:px-8 lg:py-24"
+  aria-labelledby="contact-heading"
+>
+  <div class="flex flex-col gap-16 max-w-7xl mx-auto lg:flex-row">
+    <div class="w-full lg:w-5/12 lg:sticky lg:top-32 lg:self-start">
+      <div class="space-y-10">
+        <div>
+          <h2
+            class="text-4xl font-black text-sky-950 sm:text-5xl tracking-tighter uppercase mb-6 leading-none"
+          >
+            {data.info?.title}
+          </h2>
+          <p class="text-slate-600 text-xl font-medium leading-relaxed">
+            {data.info.intro}
+          </p>
+        </div>
+
+        <div class="space-y-8 border-t border-slate-200 pt-10">
+          <div class="flex items-start gap-5">
+            <div
+              class="w-12 h-12 bg-sky-800 text-white rounded-xl flex items-center justify-center shadow-lg shadow-sky-900/20"
+            >
+              <svg
+                class="w-6 h-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                ><path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                ></path><path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg
+              >
+            </div>
+            <div>
+              <p
+                class="text-sky-900 font-bold uppercase tracking-widest text-xs mb-1"
+              >
+                {data.info.locationLabel}
+              </p>
+              <p class="text-slate-600 font-semibold">
+                {data.info.addressLine1}<br />{data.info.addressLine2}
+              </p>
+            </div>
+          </div>
+
+          <div class="flex items-start gap-5">
+            <div
+              class="w-12 h-12 bg-sky-800 text-white rounded-xl flex items-center justify-center shadow-lg shadow-sky-900/20"
+            >
+              <svg
+                class="w-6 h-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                ><path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
+                ></path></svg
+              >
+            </div>
+            <div>
+              <p
+                class="text-sky-900 font-bold uppercase tracking-widest text-xs mb-1"
+              >
+                {data.info.phoneLabel}
+              </p>
+              <a
+                href={`tel:${data.info.phoneValue}`}
+                class="text-slate-600 font-semibold hover:text-sky-600 transition-colors text-lg"
+                >{data.info.phoneValue}</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="w-full lg:w-7/12">
+      <div
+        class="bg-white rounded-3xl p-8 md:p-12 shadow-2xl shadow-sky-900/5 border border-slate-100"
+      >
+        <div class="mb-6">
+          <span
+            class="inline-block px-4 py-1 rounded-full bg-sky-100 text-sky-800 text-xs font-black uppercase tracking-widest mb-4"
+          >
+            {data.eyebrow}
+          </span>
+          <h2
+            id="contact-heading"
+            class="text-3xl font-bold text-slate-900 tracking-tight mb-2"
+          >
+            {data.heading}
+          </h2>
+          <p class="text-slate-500">{data.subheading}</p>
+        </div>
+
+        <form id={form.id} class="mt-8 space-y-6" method="post" action="#">
+          <p class="hidden">
+            <label
+              >Don't fill this out if you're human: <input
+                name="confirm_email"
+              /></label
+            >
+          </p>
+
+          <div class="grid grid-cols-1 gap-6 md:grid-cols-2">
+            {
+              form.fields.map((f: Field) => (
+                <div
+                  class={`flex flex-col ${f.colSpan ? "col-span-full" : ""}`}
+                >
+                  <label
+                    for={f.id}
+                    class="text-slate-700 text-sm font-bold uppercase tracking-tight"
+                  >
+                    {f.label}{" "}
+                    {f.required && <span class="text-sky-600">*</span>}
+                  </label>
+
+                  {/* Input Logic */}
+                  {!["textarea", "select", "checkboxes"].includes(
+                    f.type || "",
+                  ) && (
+                    <input
+                      id={f.id}
+                      name={f.id}
+                      type={(f.type as any) || "text"}
+                      required={f.required}
+                      placeholder={f.placeholder}
+                      class="mt-2 h-12 rounded-lg border-slate-200 bg-slate-50 px-4 text-slate-900 focus:border-sky-500 focus:ring-sky-500 transition-all placeholder:text-slate-400"
+                      autocomplete={f.autocomplete}
+                    />
+                  )}
+
+                  {f.type === "select" && (
+                    <select
+                      id={f.id}
+                      name={f.id}
+                      required={f.required}
+                      class="mt-2 h-12 rounded-lg border-slate-200 bg-slate-50 px-4 text-slate-900 focus:border-sky-500 focus:ring-sky-500"
+                    >
+                      {f.options?.map((o: FieldOption) => (
+                        <option value={o.value}>{o.label}</option>
+                      ))}
+                    </select>
+                  )}
+
+                  {f.type === "textarea" && (
+                    <textarea
+                      id={f.id}
+                      name={f.id}
+                      rows={f.rows || 4}
+                      required={f.required}
+                      placeholder={f.placeholder}
+                      class="mt-2 rounded-lg border-slate-200 bg-slate-50 px-4 py-3 text-slate-900 focus:border-sky-500 focus:ring-sky-500"
+                    />
+                  )}
+
+                  {f.type === "checkboxes" && (
+                    <fieldset
+                      id={f.id}
+                      class={`mt-3 grid gap-3 ${f.addClass || "grid-cols-1"}`}
+                    >
+                      {f.options?.map((item) => (
+                        <label class="group relative flex rounded-xl border border-slate-200 bg-white p-4 cursor-pointer hover:border-sky-200 transition-all has-checked:border-sky-600 has-checked:bg-sky-50/30">
+                          <input
+                            type="checkbox"
+                            name={f.id}
+                            value={item.value}
+                            class="absolute inset-0 appearance-none cursor-pointer"
+                          />
+                          <div class="flex-1 flex justify-between items-center">
+                            <span class="text-sm font-semibold text-slate-600 group-has-checked:text-sky-900">
+                              {item.label}
+                            </span>
+                            <svg
+                              viewBox="0 0 20 20"
+                              fill="currentColor"
+                              class="size-5 text-sky-600 opacity-0 group-has-checked:opacity-100 transition-opacity"
+                            >
+                              <path
+                                fill-rule="evenodd"
+                                d="M10 18a8 8 0 1 0 0-16 8 8 0 0 0 0 16Zm3.857-9.809a.75.75 0 0 0-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 1 0-1.06 1.061l2.5 2.5a.75.75 0 0 0 1.137-.089l4-5.5Z"
+                                clip-rule="evenodd"
+                              />
+                            </svg>
+                          </div>
+                        </label>
+                      ))}
+                    </fieldset>
+                  )}
+                </div>
+              ))
+            }
+
+            <div
+              id={`${form.id}-error-message`}
+              class="max-h-0 overflow-hidden border-l-4 border-yellow-400 bg-yellow-50 transition-all col-span-full"
+            >
+              <div class="flex p-4">
+                <p class="text-sm text-yellow-700"></p>
+              </div>
+            </div>
+          </div>
+
+          <div class="space-y-6 pt-4">
+            <div class="flex items-start gap-3">
+              <input
+                id="terms"
+                name="terms"
+                type="checkbox"
+                class="mt-1 h-5 w-5 rounded border-slate-300 text-sky-600 focus:ring-sky-500"
+                required
+              />
+              <label for="terms" class="text-slate-500 text-sm leading-snug">
+                I agree to the <a
+                  href="/privacy-policy"
+                  class="text-sky-700 underline font-medium">Privacy Policy</a
+                > and <a
+                  href="/terms-of-service"
+                  class="text-sky-700 underline font-medium">Terms of Service</a
+                >. I consent to receive text messages from Pitcairn Flight
+                Academy.
+              </label>
+            </div>
+
+            <button
+              id={`${form.id}-submitBtn`}
+              type="submit"
+              class="w-full bg-sky-800 hover:bg-sky-900 text-white font-bold py-4 rounded-xl shadow-lg shadow-sky-900/20 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+              disabled
+            >
+              {form.submitBtnText}
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
