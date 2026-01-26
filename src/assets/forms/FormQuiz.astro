@@ -849,3 +849,226 @@ const otherFields = quizQuestions
     </form>
   </div>
 </section>
+
+<script define:vars={{ QUIZ_FORM_WEBHOOK_URL, PORTAL_API_KEY, otherFields }}>
+  const checkbox = document.getElementById("agree-data-collection");
+  const submitButton = document.getElementById("submit-button");
+  const yesVisit = document.getElementById("yes-visit");
+  const noVisit = document.getElementById("no-visit");
+  let isSubmitting = false;
+
+  function updateSubmitButtonState(enabled, text) {
+    submitButton.disabled = !enabled;
+    if (text) {
+      submitButton.textContent = text;
+    }
+
+    if (enabled) {
+      submitButton.classList.remove(
+        "cursor-not-allowed",
+        "bg-gray-400",
+        "hover:bg-gray-400",
+        "hover:text-white",
+      );
+    } else {
+      submitButton.classList.add(
+        "cursor-not-allowed",
+        "bg-gray-400",
+        "hover:bg-gray-400",
+        "hover:text-white",
+      );
+    }
+  }
+
+  function checkOtherFilled(idOther, idOtherText, idErrorMsg) {
+    const other = document.getElementById(idOther);
+    const otherText = document.getElementById(idOtherText);
+    const otherErrorMsg = document.getElementById(idErrorMsg);
+
+    if (other && other.checked && otherText.value.trim() === "") {
+      otherErrorMsg.classList.remove("hidden");
+      otherText.focus();
+      return false;
+    }
+
+    if (otherErrorMsg) {
+      otherErrorMsg.classList.add("hidden");
+    }
+    return true;
+  }
+
+  yesVisit.addEventListener("change", function () {
+    if (yesVisit.checked) {
+      document.getElementById("location-container").classList.remove("hidden");
+      document.getElementById("location-container").classList.add("flex");
+    } else {
+      document.getElementById("location-container").classList.add("hidden");
+    }
+  });
+
+  noVisit.addEventListener("change", function () {
+    if (noVisit.checked) {
+      document.getElementById("location-container").classList.add("hidden");
+    }
+  });
+
+  const dateInput = document.getElementById("visit-date");
+  const today = new Date().toISOString().split("T")[0];
+  dateInput.setAttribute("min", today);
+
+  checkbox.addEventListener("change", function () {
+    updateSubmitButtonState(checkbox.checked);
+  });
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const form = document.getElementById("quiz-form");
+    if (!form) {
+      console.error("Form element not found.");
+      return;
+    }
+
+    form.addEventListener("submit", async (event) => {
+      event.preventDefault();
+
+      if (isSubmitting) return;
+
+      const formData = new FormData(form);
+      const confirmEmail = formData.get("confirm-email")?.trim();
+      if (confirmEmail) return;
+
+      // Check other fields using the otherFields array from front matter
+      for (const item of otherFields) {
+        if (!checkOtherFilled(item.id, item.idText, item.idErrorMsg)) {
+          return;
+        }
+      }
+
+      const inspirations = [];
+      formData.getAll("inspirations").forEach((inspiration) => {
+        inspirations.push(inspiration);
+      });
+
+      formData.delete("inspirations");
+      formData.append("what-inspires-you", inspirations.join(","));
+
+      const kindOfGuidance = [];
+      formData.getAll("kind-of-guidance").forEach((guidance) => {
+        kindOfGuidance.push(guidance);
+      });
+
+      formData.delete("kind-of-guidance");
+      formData.append(
+        "what-kind-of-guidance-and-support-you-prefer",
+        kindOfGuidance.join(","),
+      );
+
+      const webhookURL = QUIZ_FORM_WEBHOOK_URL;
+      const apiKey = PORTAL_API_KEY;
+
+      const urlEncodedBody = new URLSearchParams(formData).toString();
+
+      const jsonBody = {
+        first_name: formData.get("first-name")?.trim() || "",
+        last_name: formData.get("last-name")?.trim() || "",
+        email: formData.get("email")?.trim() || "",
+        phone: formData.get("phone")?.trim() || "",
+        "visit-location": formData.get("visit-location")?.trim() || "",
+        "visit-date": formData.get("visit-date")?.trim() || "",
+        "visit-time": formData.get("visit-time")?.trim() || "",
+        campaign: "quiz",
+        account_random_id: "ac_vwzfezsv",
+        metadata: {
+          "preferred-method-of-contact":
+            formData.get("method-contact")?.trim() || "",
+          "level-of-experience":
+            formData.get("level-of-experience")?.trim() || "",
+          "aspirations-and-mindset": {
+            "what-inspires-you": inspirations.join(","),
+            "preferred-learning-style":
+              formData.get("preferred-learning-style")?.trim() || "",
+            "pilot-certainty": formData.get("pilot-certainty")?.trim() || "",
+            "preferred-approach":
+              formData.get("preferred-approach")?.trim() || "",
+            "what-kind-of-guidance-and-support-you-prefer":
+              kindOfGuidance.join(","),
+          },
+          medical: {
+            "medical-age-range":
+              formData.get("medical-age-range")?.trim() || "",
+            "medical-weight-range":
+              formData.get("medical-weight-range")?.trim() || "",
+            "medical-conditions":
+              formData.get("medical-conditions")?.trim() || "",
+            "medical-medication":
+              formData.get("medical-medication")?.trim() || "",
+          },
+          "time-commitment": {
+            "time-commitment-weekly":
+              formData.get("time-commitment-weekly")?.trim() || "",
+            "time-commitment-flexibility":
+              formData.get("time-commitment-flexibility")?.trim() || "",
+          },
+          financial: formData.get("financial")?.trim() || "",
+          "anything-else-youd-like-us-to-know-about-your-interests-or-expectations-regarding-flight-training":
+            formData
+              .get(
+                "anything-else-youd-like-us-to-know-about-your-interests-or-expectations-regarding-flight-training",
+              )
+              ?.trim() || "",
+          "visit-nextgen": formData.get("visit-nextgen")?.trim() || "",
+          "visit-location": formData.get("visit-location")?.trim() || "",
+        },
+      };
+
+      try {
+        isSubmitting = true;
+        updateSubmitButtonState(false, "Submitting...");
+
+        const [crmResponse, portalResponse] = await Promise.all([
+          fetch(webhookURL, {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/x-www-form-urlencoded",
+            },
+            body: urlEncodedBody,
+          }),
+          fetch("https://portal.rightruddermarketing.com/api/leads", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+              Accept: "application/json",
+              "x-api-key": apiKey,
+            },
+            body: JSON.stringify(jsonBody),
+          }),
+        ]);
+
+        if (crmResponse.ok && portalResponse.ok) {
+          window.location.href = "/quiz-confirmation";
+        } else {
+          console.error("Submission failed", {
+            crm: {
+              status: crmResponse.status,
+              body: await crmResponse.json(),
+            },
+            portal: {
+              status: portalResponse.status,
+              body: await portalResponse.json(),
+            },
+          });
+          alert(
+            "There was an error submitting your form. Please try again or contact us directly.",
+          );
+        }
+      } catch (err) {
+        console.error("Submission error:", err);
+        alert(
+          "There was an error submitting your form. Please try again or contact us directly.",
+        );
+      } finally {
+        isSubmitting = false;
+        updateSubmitButtonState(false, "Submit");
+      }
+    });
+  });
+</script>
