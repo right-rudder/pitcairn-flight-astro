@@ -2,7 +2,7 @@
 title: "Understanding an Aircraft Instrument Panel"
 description: "A practical guide to the aircraft instrument panel, how pilots use it in VFR and IFR conditions, and why mastering it is essential for safe flight."
 pubDate: 2024-02-14
-image: "/src/assets/placeholder-dark-clouds-pitcairn-flight-academy-instrument-rating.webp"
+image: "/src/assets/fleet/N8891V - C172/pitcairn-flight-academy_pottstown-PA_pilot-training_aircraft-N8891V-Cessna-172-cockpit3.JPG"
 tags:
   - "instrument panel"
   - "pilot resources"

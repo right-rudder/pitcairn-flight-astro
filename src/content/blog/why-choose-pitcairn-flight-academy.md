@@ -2,7 +2,7 @@
 title: "Why Choose Pitcairn Flight Academy?"
 description: "What to look for in a flight school, and why Pitcairn Flight Academy stands out with structured training, experienced instructors, and a proven record of student success."
 pubDate: 2023-12-15
-image: "/src/assets/placeholder-dark-clouds-pitcairn-flight-academy-instrument-rating.webp"
+image: "/src/assets/instructors/pitcairn-flight-academy_Philadelphia-PA_pilot-trainingpottstown-PA_CFIs-chris-barry-andy2.webp"
 tags:
   - "flight training"
   - "private pilot"

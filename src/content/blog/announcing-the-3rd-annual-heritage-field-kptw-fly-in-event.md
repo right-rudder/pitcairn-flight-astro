@@ -2,7 +2,7 @@
 title: "Announcing the 3rd Annual Heritage Field (KPTW) Fly-In Event"
 description: "Heritage Field Airport hosts its 3rd Annual Fly-In Event from May 10–12, 2024, welcoming pilots and aviation enthusiasts from across the region."
 pubDate: 2024-03-27
-image: "/src/assets/placeholder-dark-clouds-pitcairn-flight-academy-instrument-rating.webp"
+image: "/src/assets/blog/pitcairn-flight-academy_Philadelphia-PA_flight-training_fly-in.webp"
 tags:
   - "news"
   - "fly-in event"

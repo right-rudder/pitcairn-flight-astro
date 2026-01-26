@@ -2,7 +2,7 @@
 title: "The Evolution of Aviation Training & Pitcairn Aviation's Contribution"
 description: "A look back at the history of aviation training and how Pitcairn Flight Academy continues that legacy at Heritage Field Airport."
 pubDate: 2024-01-17
-image: "/src/assets/placeholder-dark-clouds-pitcairn-flight-academy-instrument-rating.webp"
+image: "/src/assets/aircraft/pitcairn-flight-academy_Philadelphia-PA_flight-training_facorty-plane-sunset.jpg"
 tags:
   - "pilot resources"
   - "aviation history"

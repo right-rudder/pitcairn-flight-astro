@@ -2,7 +2,7 @@
 title: "Planning Ahead for Election Season: What is a TFR?"
 description: "An overview of Temporary Flight Restrictions (TFRs), how election season impacts flight training, and how Pitcairn Flight Academy helps students stay on track."
 pubDate: 2024-04-24
-image: "/src/assets/placeholder-dark-clouds-pitcairn-flight-academy-instrument-rating.webp"
+image: "/src/assets/blog/pitcairn-flight-academy_Philadelphia-PA_flight-training_skyvector-chart-of-pottstown-reading-pennsylvania.webp"
 tags:
   - "pilot resources"
   - "TFR"

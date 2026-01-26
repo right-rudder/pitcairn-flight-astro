@@ -2,7 +2,7 @@
 title: "Why Train All the Way Zero to Hero"
 description: "Learn why a zero-to-hero flight training program is an efficient and streamlined path to a professional pilot career."
 pubDate: 2024-11-07
-image: "/src/assets/placeholder-dark-clouds-pitcairn-flight-academy-instrument-rating.webp"
+image: "/src/assets/blog/pitcairn-flight-academy_Philadelphia-PA_flight-training_thom-milkovic-mef-_dKTZjU-unsplash.jpg"
 tags:
   - "pilot resources"
   - "zero to hero"

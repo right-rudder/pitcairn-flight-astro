@@ -2,7 +2,7 @@
 title: "Understanding the Differences Between Part 61 and Part 141 Flight Schools"
 description: "Learn the key differences between Part 61 and Part 141 flight training programs and why Part 61 may be the right choice for you."
 pubDate: 2024-09-04
-image: "/src/assets/placeholder-dark-clouds-pitcairn-flight-academy-instrument-rating.webp"
+image: "/src/assets/blog/pitcairn-flight-academy-heritage-field-airport-runway.webp"
 tags:
   - "pilot resources"
   - "part 61"

@@ -2,7 +2,7 @@
 title: "Ace the Private Pilot Written Exam"
 description: "Learn why the FAA Private Pilot written exam is a critical first step in flight training and how Pitcairn Flight Academy helps students prepare for success."
 pubDate: 2024-03-13
-image: "/src/assets/placeholder-dark-clouds-pitcairn-flight-academy-instrument-rating.webp"
+image: "/src/assets/blog/pitcairn-flight-academy_Philadelphia-PA_flight-training_office.webp"
 tags:
   - "pilot resources"
   - "private pilot"

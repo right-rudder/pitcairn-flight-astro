@@ -2,7 +2,7 @@
 title: "Pitcairn Flight Academy Students Shine at Aero Club of Pennsylvania Scholarship Dinner"
 description: "Pitcairn Flight Academy celebrates student success as three students earn scholarships at the Aero Club of Pennsylvania Scholarship Dinner."
 pubDate: 2024-06-24
-image: "/src/assets/placeholder-dark-clouds-pitcairn-flight-academy-instrument-rating.webp"
+image: "/src/assets/blog/pitcairn-flight-academy_Philadelphia-PA_flight-training_NancyDavidBarryEvaKatia&Marisa.jpg"
 tags:
   - "news"
   - "scholarships"

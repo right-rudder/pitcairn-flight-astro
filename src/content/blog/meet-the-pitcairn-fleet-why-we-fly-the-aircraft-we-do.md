@@ -2,7 +2,7 @@
 title: "Meet the Pitcairn Fleet: Why We Fly the Aircraft We Do"
 description: "Learn why Pitcairn Flight Academy chooses aircraft like the Cessna 152, Cessna 172 Skyhawk, and Beechcraft Sierra for flight training and scenic flights."
 pubDate: 2024-06-13
-image: "/src/assets/placeholder-dark-clouds-pitcairn-flight-academy-instrument-rating.webp"
+image: "/src/assets/blog/pitcairn-flight-academy-fleet-flight-lessons-allentown-pa.webp"
 tags:
   - "pilot resources"
   - "training aircraft"

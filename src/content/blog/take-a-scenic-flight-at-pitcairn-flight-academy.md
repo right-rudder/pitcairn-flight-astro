@@ -2,7 +2,7 @@
 title: "Take a Scenic Flight at Pitcairn Flight Academy"
 description: "Experience southeastern Pennsylvania from the sky with scenic flights offered by Pitcairn Flight Academy, combining safety, comfort, and unforgettable views."
 pubDate: 2024-05-20
-image: "/src/assets/placeholder-dark-clouds-pitcairn-flight-academy-instrument-rating.webp"
+image: "/src/assets/blog/pitcairn-flight-academy_Philadelphia-PA_flight-training_Smiling Pilot Tour.jpg"
 tags:
   - "news"
   - "scenic flight"

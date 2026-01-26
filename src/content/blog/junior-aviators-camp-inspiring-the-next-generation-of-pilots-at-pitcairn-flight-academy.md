@@ -2,7 +2,7 @@
 title: "Junior Aviators Camp: Inspiring the Next Generation of Pilots at Pitcairn Flight Academy"
 description: "Learn how Pitcairn Flight Academy’s Junior Aviators Camp introduces young students to aviation through hands-on learning and flight experiences."
 pubDate: 2024-08-07
-image: "/src/assets/placeholder-dark-clouds-pitcairn-flight-academy-instrument-rating.webp"
+image: "/src/assets/blog/pitcairn-flight-academy-junior-aviators-camp-july-2024.webp"
 tags:
   - "news"
   - "youth aviation"

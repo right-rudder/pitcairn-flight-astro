@@ -2,7 +2,7 @@
 title: "Understanding R-ATP and ATP Certification"
 description: "Learn the differences between R-ATP and ATP certification, flight hour requirements, and how Pitcairn Flight Academy prepares pilots for the path to airline careers."
 pubDate: 2024-07-15
-image: "/src/assets/placeholder-dark-clouds-pitcairn-flight-academy-instrument-rating.webp"
+image: "/src/assets/blog/side-wing-of-cessna-at-pitcairn-flight-academy-allentown-pa (1).webp"
 tags:
   - "pilot resources"
   - "ATP"

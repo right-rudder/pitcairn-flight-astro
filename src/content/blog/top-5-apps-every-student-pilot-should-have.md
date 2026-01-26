@@ -2,7 +2,7 @@
 title: "Top 5 Apps Every Student Pilot Should Have"
 description: "Discover the top mobile apps every student pilot should use for flight planning, studying, simulation, and FAA exam preparation."
 pubDate: 2024-12-18
-image: "/src/assets/placeholder-dark-clouds-pitcairn-flight-academy-instrument-rating.webp"
+image: "/src/assets/blog/pitcairn-flight-academy_Philadelphia-PA_flight-training-connect-ahrs-and-gps-800x600-1m.webp"
 tags:
   - "pilot resources"
   - "student pilots"
