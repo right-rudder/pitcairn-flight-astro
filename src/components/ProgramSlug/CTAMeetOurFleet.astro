@@ -7,14 +7,14 @@ const ctaMeetOurFleetPlaceholder = {
   title: `THE ${COMPANY_NAME} FLEET`,
   description: `Train in technologically advanced aircraft (TAA) maintained by the best maintenance team in the industry. From foundational single-engine trainers to multi-engine glass cockpits, our fleet is selected to ensure you master the craft with reliable, high-quality equipment.`,
   image: {
-    src: "/src/assets/placeholder-dark-clouds-pitcairn-flight-academy-instrument-rating.webp",
+    src: "/src/assets/instagram/pitcairn-flight-academy_pottstown-PA_flight-training_planes-on-field.jpg",
     alt: "Training aircraft in the clouds",
   },
 };
 
 const imagePlaceholder = {
-  src: "/src/assets/placeholder-dark-clouds-pitcairn-flight-academy-instrument-rating.webp",
-  alt: "imagePlaceholder",
+  src: "/src/assets/instagram/pitcairn-flight-academy_pottstown-PA_flight-training_planes-on-field.jpg",
+  alt: "Planes on field at Pitcairn Flight Academy in Pottstown, PA flight training",
 };
 
 const {
@@ -29,7 +29,7 @@ const isImageOnLeft = imageSide === "left";
 const isBackgroundBlue = background === "blue";
 
 // Logic for conditional classes to keep the JSX clean
-const sectionBg = isBackgroundBlue ? "bg-slate-950" : "bg-slate-900";
+const sectionBg = isBackgroundBlue ? "bg-sky-950" : "bg-sky-900";
 const textOrder = isImageOnLeft ? "lg:order-2" : "lg:order-1";
 const imageOrder = isImageOnLeft ? "lg:order-1" : "lg:order-2";
 ---
@@ -60,7 +60,7 @@ const imageOrder = isImageOnLeft ? "lg:order-1" : "lg:order-2";
           {ctaData.title}
         </h2>
 
-        <div class="space-y-6 text-slate-300 text-lg leading-relaxed mb-10">
+        <div class="space-y-6 text-sky-300 text-lg leading-relaxed mb-10">
           <p>
             Our fleet is meticulously maintained to the highest standards,
             combining reliability, safety, and modern avionics to deliver a
@@ -76,13 +76,13 @@ const imageOrder = isImageOnLeft ? "lg:order-1" : "lg:order-2";
           showButton && (
             <div class="flex justify-center lg:justify-start">
               <a
-                href="/aircraft"
+                href="/airplane-rentals/"
                 class="group relative inline-flex items-center justify-center px-8 py-4 font-bold text-white bg-sky-600 rounded-full overflow-hidden transition-all duration-300 hover:bg-sky-500 hover:shadow-[0_0_20px_rgba(14,165,233,0.4)]"
               >
                 <span class="relative z-10">Meet Our Fleet</span>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  class="w-5 h-5 ml-2 transition-transform duration-300 group-hover:translate-x-1"
+                  class="w-5 h-5 ml-2 transition-transform duration-300 group-hover:transky-x-1"
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"

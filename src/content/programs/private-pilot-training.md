@@ -33,7 +33,7 @@ programIntroduction:
       - "Pass FAA medical, written, and practical exams"
 
 programExpectations:
-  mainImage: "/src/assets/placeholder-dark-clouds-pitcairn-flight-academy-instrument-rating.webp"
+  mainImage: "/src/assets/old-website/pitcairn-flight-academy_Philadelphia-PA_pilot-trainingpottstown-PA_pitcairn-flight-cessna-172.webp"
   mainImageAlt: "CFI with student pilot preparing for flight training"
   title: "Training Process"
   descriptionParagraphs:
@@ -99,7 +99,7 @@ enrollmentProcess:
       description: "Get ready for your final practical exam with mock checkrides and oral exam practice."
 
 finalCTA:
-  mainImage: "/src/assets/placeholder-dark-clouds-pitcairn-flight-academy-instrument-rating.webp"
+  mainImage: "/src/assets/instagram/pitcairn-flight-academy_Philadelphia-PA_flight-training_pilots-inside-plane-talking.jpg"
   mainImageAlt: "Pilots celebrating private pilot certificate completion"
   upperheader: "Ready to Fly?"
   title: "Begin Your Aviation Journey Today"

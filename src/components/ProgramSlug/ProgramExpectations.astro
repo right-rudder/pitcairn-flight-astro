@@ -15,7 +15,7 @@ interface Props {
 const { data } = Astro.props;
 ---
 
-<section class="py-20 md:py-28 bg-slate-950 relative overflow-hidden">
+<section class="py-20 md:py-28 bg-sky-950 relative overflow-hidden">
   <div
     class="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none"
   >
@@ -34,7 +34,7 @@ const { data } = Astro.props;
           {data.title}
         </h2>
 
-        <div class="space-y-6 text-slate-300 text-lg leading-relaxed mb-10">
+        <div class="space-y-6 text-sky-300 text-lg leading-relaxed mb-10">
           {data.descriptionParagraphs.map((p) => <p set:html={p} />)}
         </div>
 
@@ -81,7 +81,7 @@ const { data } = Astro.props;
                 class="w-full h-full object-cover transition-transform duration-700"
               />
 
-              <div class="absolute inset-0 bg-gradient-to-t from-slate-950/40 to-transparent pointer-events-none" />
+              <div class="absolute inset-0 bg-gradient-to-t from-sky-950/40 to-transparent pointer-events-none" />
             </div>
           </div>
         )

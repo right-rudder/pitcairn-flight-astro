@@ -13,12 +13,12 @@ const {
 } = Astro.props;
 
 const images = import.meta.glob<{ default: ImageMetadata }>(
-  "/src/assets/**/*.{jpeg,jpg,png,gif,webp,avif}"
+  "/src/assets/**/*.{jpeg,jpg,png,gif,webp,avif}",
 );
 
 if (!images[src])
   throw new Error(
-    `"${src}" does not exist in glob: "src/assets/**/*.{jpeg,jpg,png,gif,webp,avif}"`
+    `"${src}" does not exist in glob: "src/assets/**/*.{jpeg,jpg,png,gif,webp,avif}"`,
   );
 
 const image = await images[src]();
