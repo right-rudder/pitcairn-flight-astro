@@ -1,12 +1,14 @@
 ---
 import FormQuiz from "../assets/forms/FormQuiz.astro";
+import { COMPANY_NAME } from "../input/consts";
 import BaseLayout from "../layouts/BaseLayout.astro";
+const metaProps = {
+  siteTitle: `${COMPANY_NAME} | Pilot Career Quiz`,
+  siteDescription: `Take our pilot career quiz to see if flight training at ${COMPANY_NAME} is right for you.`,
+  siteKeywords: `${COMPANY_NAME}, pilot quiz, aviation career quiz, become a pilot`,
+};
 ---
 
-<BaseLayout
-  siteTitle="Aviation Knowledge Quiz | Pitcairn Flight Academy"
-  siteDescription="Test your aviation knowledge with our interactive quiz. Perfect for aspiring pilots and aviation enthusiasts looking to challenge themselves."
-  class="bg-slate-50 text-slate-900"
->
+<BaseLayout {...metaProps}>
   <FormQuiz />
 </BaseLayout>

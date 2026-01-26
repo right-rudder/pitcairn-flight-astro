@@ -20,6 +20,7 @@ import ProgramExpectations from "../components/ProgramSlug/ProgramExpectations.a
 import CareerPathways from "../components/ProgramSlug/CareerPathways.astro";
 import TargetAudience from "../components/ProgramSlug/TargetAudience.astro";
 import EnrollmentProcess from "../components/ProgramSlug/EnrollmentProcess.astro";
+import { COMPANY_NAME } from "../input/consts";
 
 // Static Path Generation
 export const getStaticPaths = (async () => {
@@ -57,10 +58,10 @@ const heroData = {
 ---
 
 <BaseLayout
-  siteTitle={`${data.title} | {COMPANY_NAME}`}
+  siteTitle={`${data.title} | ${COMPANY_NAME}`}
   siteDescription={data.description}
   siteImage={data.image}
-  siteKeywords={`${data.title}, {COMPANY_NAME}, flight training NC, pilot certification, Part 141 course, ${data.title} requirements`}
+  siteKeywords={`${data.title}, ${COMPANY_NAME}, flight training NC, pilot certification, Part 141 course, ${data.title} requirements`}
 >
   <main>
     <Hero75 data={heroData} />

@@ -1,13 +1,16 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import { COMPANY_NAME } from "../data/consts";
+
+const metaProps = {
+  siteTitle: `${COMPANY_NAME} | Enrollment Confirmation`,
+  siteDescription: `Your enrollment request with ${COMPANY_NAME} has been received. We look forward to helping you begin flight training.`,
+  siteKeywords: `${COMPANY_NAME}, enrollment confirmation, flight school signup`,
+};
 ---
 
-<BaseLayout
-  siteTitle={`Application Received | ${COMPANY_NAME}`}
-  siteDescription="Your enrollment application has been received. Our admissions team will contact you shortly to begin your aviation journey."
-  class="bg-slate-50 text-slate-900"
->
+<BaseLayout {...metaProps}>
+  class="bg-slate-50 text-slate-900" >
   <div
     class="relative min-h-[85vh] flex items-center justify-center px-6 overflow-hidden"
   >

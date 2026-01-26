@@ -3,6 +3,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import Hero75 from "../components/Hero75.astro";
 import ImageComp from "../components/ImageComp.astro";
 import CTASectionWithGradientCover from "../components/CTASectionWithGradientCover.astro";
+import { COMPANY_NAME } from "../input/consts";
 
 const heroData = {
   image: {
@@ -84,12 +85,14 @@ const ctaData = {
 };
 
 const categories = [...new Set(partners.map((partner) => partner.category))];
+const metaProps = {
+  siteTitle: `${COMPANY_NAME} | Training & Industry Partners`,
+  siteDescription: `Discover the trusted aviation partners and organizations that support training at ${COMPANY_NAME}.`,
+  siteKeywords: `${COMPANY_NAME}, aviation partners, flight training partners, pilot career network`,
+};
 ---
 
-<BaseLayout
-  siteTitle="Partners | {COMPANY_NAME}"
-  siteDescription="A list of third party organizations that may be relevant to pilots pursuing professional training and career development."
->
+<BaseLayout {...metaProps}>
   <Hero75 data={heroData} />
 
   <section class="py-8 md:py-24 bg-white">

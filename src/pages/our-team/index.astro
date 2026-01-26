@@ -12,12 +12,15 @@ const sortedCrew = crewMembers.sort(
   (a: CrewMember, b: CrewMember) =>
     (a.data.order || 999) - (b.data.order || 999),
 );
+
+const metaProps = {
+  siteTitle: `${COMPANY_NAME} | Meet Our Flight Instructors`,
+  siteDescription: `Meet the experienced and dedicated flight instructors at ${COMPANY_NAME}.`,
+  siteKeywords: `${COMPANY_NAME}, flight instructors, aviation instructors, pilot training staff`,
+};
 ---
 
-<BaseLayout
-  siteTitle={`Our Team | ${COMPANY_NAME}`}
-  siteDescription="Meet our experienced flight instructors and veteran airline captains."
->
+<BaseLayout {...metaProps}>
   <section class="py-24 bg-slate-50 relative overflow-hidden">
     <div
       class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-1 bg-gradient-to-r from-transparent via-sky-500/20 to-transparent"

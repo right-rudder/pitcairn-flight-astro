@@ -1,13 +1,16 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import { COMPANY_NAME } from "../data/consts";
+
+const metaProps = {
+  siteTitle: `${COMPANY_NAME} | Contact Request Received`,
+  siteDescription: `Thanks for contacting ${COMPANY_NAME}. Our team will respond to your inquiry shortly.`,
+  siteKeywords: `${COMPANY_NAME}, contact confirmation, flight school inquiry`,
+};
 ---
 
-<BaseLayout
-  siteTitle={`Mission Logged | ${COMPANY_NAME}`}
-  siteDescription="Your transmission has been received. Our flight operations team will be in touch shortly."
-  class="bg-sky-50 text-sky-900"
->
+<BaseLayout {...metaProps}>
+  class="bg-sky-50 text-sky-900" >
   <div
     class="relative min-h-[90vh] flex items-center justify-center px-6 overflow-hidden"
   >

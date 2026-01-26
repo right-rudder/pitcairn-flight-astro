@@ -9,6 +9,7 @@ import ProgramsGrid from "../components/Programs/ProgramsGrid.astro";
 import BookDownloadSection from "../components/BookDownloadSection.astro";
 import LocationSection from "../components/LocationSection.astro";
 import DiscoveryFlightCTA from "../components/Programs/DiscoveryFlightCTA.astro";
+import { COMPANY_NAME } from "../input/consts";
 
 type Program = CollectionEntry<"programs">;
 
@@ -34,11 +35,9 @@ const heroData = {
 };
 
 const metaProps = {
-  siteTitle: "Flight Training Programs | {COMPANY_NAME}",
-  siteDescription:
-    "Explore our Part 141 and Part 61 pilot training programs. From the Professional Airline Pilot Track to individual ratings, we provide a structured path to the cockpit.",
-  siteKeywords:
-    "flight school programs, professional pilot track, private pilot license, instrument rating, commercial pilot certificate, multi-engine training,  flight courses",
+  siteTitle: `${COMPANY_NAME} | Pilot Training Programs`,
+  siteDescription: `Explore pilot training programs at ${COMPANY_NAME}, from Private Pilot to Commercial and Flight Instructor training.`,
+  siteKeywords: `${COMPANY_NAME}, pilot training programs, flight school PA, private pilot, commercial pilot, CFI training`,
 };
 ---
 
