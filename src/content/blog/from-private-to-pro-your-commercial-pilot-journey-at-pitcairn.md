@@ -2,7 +2,7 @@
 title: "From Private to Pro: Your Commercial Pilot Journey at Pitcairn"
 description: "Explore the step-by-step path from Private Pilot to Commercial Pilot and beyond, and how Pitcairn Flight Academy supports every stage of your aviation career."
 pubDate: 2025-07-07
-image: "/src/assets/placeholder-dark-clouds-pitcairn-flight-academy-instrument-rating.webp"
+image: "/src/assets/old-website/pitcairn-flight-airliner-cockpit.webp"
 tags:
   - "pilot resources"
   - "commercial pilot"

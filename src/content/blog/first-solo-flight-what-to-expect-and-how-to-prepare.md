@@ -2,7 +2,7 @@
 title: "First Solo Flight: What to Expect and How to Prepare"
 description: "Learn what student pilots can expect during their first solo flight and how to prepare mentally, technically, and safely for this milestone."
 pubDate: 2025-09-15
-image: "/src/assets/placeholder-dark-clouds-pitcairn-flight-academy-instrument-rating.webp"
+image: "/src/assets/students/pitcairn-flight-academy_Philadelphia-PA_pilot-training_student-passes-private-pilot-checkride-at-pitcairn-aviation.jpg"
 tags:
   - "pilot resources"
   - "first solo"

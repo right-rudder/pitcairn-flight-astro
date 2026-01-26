@@ -2,7 +2,7 @@
 title: "Preparing for Your FAA Written Exam: Study Tips and Tricks"
 description: "Learn effective study strategies to prepare for your FAA written exam, including study schedules, practice tests, and instructor guidance."
 pubDate: 2025-02-25
-image: "/src/assets/placeholder-dark-clouds-pitcairn-flight-academy-instrument-rating.webp"
+image: "/src/assets/old-website/pitcairn-flight-academy_Philadelphia-PA_pilot-trainingpottstown-PA_pitcairn-flight-written-exam.webp"
 tags:
   - "pilot resources"
   - "faa written exam"

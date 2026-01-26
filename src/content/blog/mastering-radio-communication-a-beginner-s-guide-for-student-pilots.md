@@ -2,7 +2,7 @@
 title: "Mastering Radio Communication: A Beginner’s Guide for Student Pilots"
 description: "Discover how student pilots can build confidence and clarity with aviation radio communication, from basic phraseology to common mistakes."
 pubDate: 2025-07-25
-image: "/src/assets/placeholder-dark-clouds-pitcairn-flight-academy-instrument-rating.webp"
+image: "/src/assets/instagram/pitcairn-flight-academy_Philadelphia-PA_flight-training_pilots-inside-plane-talking.jpg"
 tags:
   - "pilot resources"
   - "radio communication"

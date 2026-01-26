@@ -2,7 +2,7 @@
 title: "The Art of Perfect Landings: Techniques for Greasing It Every Time"
 description: "Learn the proven techniques student pilots use to achieve smooth, consistent landings, including approach setup, flare execution, and crosswind control."
 pubDate: 2025-03-20
-image: "/src/assets/placeholder-dark-clouds-pitcairn-flight-academy-instrument-rating.webp"
+image: "/src/assets/old-website/pitcairn-flight-academy_Philadelphia-PA_pilot-trainingpottstown-PA_pitcairn-flight-cessna-landing.webp"
 tags:
   - "pilot resources"
   - "landings"

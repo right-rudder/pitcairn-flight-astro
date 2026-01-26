@@ -2,7 +2,7 @@
 title: "Experience the Pitcairn Advantage: Cross-Country Flying in Pennsylvania"
 description: "Discover why cross-country flight training near Philadelphia gives student pilots real-world experience in diverse airspace and prepares them for confident, professional flying."
 pubDate: 2025-05-14
-image: "/src/assets/placeholder-dark-clouds-pitcairn-flight-academy-instrument-rating.webp"
+image: "/src/assets/instagram/pitcairn-flight-academy_Philadelphia-PA_flight-training_river-vision-front-plane.jpg"
 tags:
   - "pilot resources"
   - "cross-country flying"

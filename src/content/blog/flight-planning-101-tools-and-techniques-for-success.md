@@ -2,7 +2,7 @@
 title: "Flight Planning 101: Tools and Techniques for Success"
 description: "Learn the essential tools, weather analysis techniques, and planning habits every student pilot needs for safe and confident flights."
 pubDate: 2025-06-20
-image: "/src/assets/placeholder-dark-clouds-pitcairn-flight-academy-instrument-rating.webp"
+image: "/src/assets/facebook/pitcairn-flight-academy_pottstown-PA_pilot-training_vision-plane-good-points-of-reference.jpg"
 tags:
   - "pilot resources"
   - "flight planning"

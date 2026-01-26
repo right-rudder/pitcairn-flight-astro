@@ -2,7 +2,7 @@
 title: "The Benefits of Learning to Fly in Uncongested Airspace"
 description: "Discover why uncongested airspace provides a safer, more effective learning environment for student pilots, especially during early flight training."
 pubDate: 2025-08-18
-image: "/src/assets/placeholder-dark-clouds-pitcairn-flight-academy-instrument-rating.webp"
+image: "/src/assets/instagram/pitcairn-flight-academy_Philadelphia-PA_flight-training_cards and plane-Philadelphia-country-side-vision-from-wing.jpg"
 tags:
   - "pilot resources"
   - "flight training environment"

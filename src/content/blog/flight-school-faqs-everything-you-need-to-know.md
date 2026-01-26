@@ -2,7 +2,7 @@
 title: "Flight School FAQs: Everything You Need to Know"
 description: "Get answers to common flight school questions, including requirements, training timelines, aircraft, and career opportunities at Pitcairn Flight Academy."
 pubDate: 2025-01-14
-image: "/src/assets/placeholder-dark-clouds-pitcairn-flight-academy-instrument-rating.webp"
+image: "/src/assets/old-website/pitcairn-flight-academy_Philadelphia-PA_pilot-trainingpottstown-PA_pitcairn-flight-entrance.webp"
 tags:
   - "pilot resources"
   - "flight school"

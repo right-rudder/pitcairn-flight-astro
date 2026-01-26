@@ -2,7 +2,7 @@
 title: "Instrument Rating: How It Enhances Your Safety and Career Prospects"
 description: "Learn how earning an Instrument Rating improves flight safety, expands weather capability, and opens doors to professional aviation careers."
 pubDate: 2025-11-19
-image: "/src/assets/placeholder-dark-clouds-pitcairn-flight-academy-instrument-rating.webp"
+image: "/src/assets/fleet/N3341L - Sierra/pitcairn-flight-academy_pottstown-PA_pilot-training_aircraft-N3341L-Sierra-cockpit.JPG"
 tags:
   - "pilot resources"
   - "instrument rating"
