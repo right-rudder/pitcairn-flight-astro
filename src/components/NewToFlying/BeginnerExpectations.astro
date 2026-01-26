@@ -1,5 +1,6 @@
 ---
 import { COMPANY_NAME } from "../../data/consts";
+import ImageComp from "../ImageComp.astro";
 
 const features = [
   {
@@ -33,7 +34,7 @@ const timeline = [
 ];
 ---
 
-<section class="py-24 md:py-32 bg-slate-50 overflow-hidden observe-section">
+<section class="py-24 md:py-32 bg-sky-50 overflow-hidden observe-section">
   <div class="max-w-7xl mx-auto px-6">
     <div class="max-w-3xl mx-auto text-center mb-20">
       <span class="text-sky-600 font-bold text-sm uppercase tracking-[0.2em]"
@@ -83,16 +84,13 @@ const timeline = [
 
       <div class="reveal h-full min-h-[400px]">
         <div
-          class="rounded-[2.5rem] overflow-hidden shadow-2xl bg-slate-900 h-full relative group"
+          class="rounded-[2.5rem] overflow-hidden shadow-2xl bg-sky-900 h-full relative group"
         >
-          <video
-            src="/videos/-alex-power-off-180.mp4"
-            autoplay
-            loop
-            muted
-            playsinline
+          <ImageComp
+            src="/src/assets/instagram/pitcairn-flight-academy_Philadelphia-PA_flight-training_pilots-inside-plane-talking.jpg"
+            alt="Pilots inside plane talking at Pitcairn Flight Academy in Philadelphia, PA flight training"
             class="w-full h-full object-cover opacity-90 transition-transform duration-1000 group-hover:scale-105"
-          ></video>
+          />
           <div
             class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent"
           >
@@ -114,7 +112,7 @@ const timeline = [
     </div>
 
     <div
-      class="bg-slate-950 p-10 md:p-16 rounded-[3rem] shadow-2xl relative overflow-hidden border border-white/5"
+      class="bg-sky-950 p-10 md:p-16 rounded-[3rem] shadow-2xl relative overflow-hidden border border-white/5"
     >
       <div
         class="absolute top-0 right-0 w-64 h-64 bg-sky-600/10 rounded-full blur-[100px]"
@@ -144,7 +142,7 @@ const timeline = [
           {
             timeline.map((t) => (
               <div class="relative flex flex-col items-center group">
-                <div class="w-12 h-12 bg-slate-900 border-2 border-sky-500 rounded-full flex items-center justify-center text-white font-black z-10 group-hover:bg-sky-500 transition-all duration-300 shadow-[0_0_20px_rgba(14,165,233,0.3)]">
+                <div class="w-12 h-12 bg-sky-900 border-2 border-sky-500 rounded-full flex items-center justify-center text-white font-black z-10 group-hover:bg-sky-500 transition-all duration-300 shadow-[0_0_20px_rgba(14,165,233,0.3)]">
                   {t.step}
                 </div>
                 <h4 class="text-white font-bold mt-6 mb-1 text-lg">
