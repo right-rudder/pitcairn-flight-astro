@@ -1,0 +1,851 @@
+---
+import { MdOutlineQuiz } from "react-icons/md";
+import { COMPANY_NAME } from "../../data/consts";
+import FieldsetPersonalInfo from "./FieldsetPersonalInfo.astro";
+import FieldsetRadioBox from "./FieldsetRadioBox.astro";
+import FieldsetCheckBox from "./FieldsetCheckBox.astro";
+import FieldsetConfirmation from "./FieldsetConfirmation.astro";
+import FieldsetAdditionalInfo from "./FieldsetAdditionalInfo.astro";
+
+const quizForm = {
+  data: {
+    //SEO Header Stuff
+    pageTitle: "Pilot Readiness Quiz | {COMPANY_NAME} Flight Academy",
+    pageDescription:
+      "Take the Pilot Readiness Quiz from {COMPANY_NAME} Flight Academy to find out if you have what it takes to become a pilot. Evaluate your skills and readiness for flight training.",
+    pageKeywords:
+      "pilot readiness quiz, am I ready to be a pilot, pilot aptitude test, flight training readiness assessment, should I become a pilot quiz, pilot skills evaluation, aviation career assessment, pilot training quiz, flight school readiness test, become a pilot assessment, pilot career quiz, aviation aptitude test, flight training evaluation, pilot training readiness, aviation career readiness, flight school assessment quiz, pilot training preparation, aviation career evaluation, discover pilot potential",
+
+    //top header
+    header: {
+      imagePath: "/src/assets/redlands-plane-on-dry-lake-header.jpg",
+      imageAlt: "redlands-plane-on-dry-lake-header",
+      headerH1: "Pilot Readiness Quiz",
+      headerH2: "Are you ready to become a pilot?",
+    },
+
+    checkboxText:
+      "By providing my email and phone number, I agree to receive email and text messages from {COMPANY_NAME} Flight Academy and understand I can opt-out anytime.",
+  },
+};
+
+const { data } = quizForm;
+const QUIZ_FORM_WEBHOOK_URL = import.meta.env.QUIZ_FORM_WEBHOOK_URL;
+const PORTAL_API_KEY = import.meta.env.PORTAL_API_KEY;
+
+// Define the quiz questions as an array of objects
+const quizQuestions = [
+  {
+    section: "Personal Information",
+    fields: [
+      {
+        type: "text",
+        id: "first-name",
+        name: "first-name",
+        label: "First name",
+        autocomplete: "given-name",
+        required: true,
+        colSpan: "sm:col-span-3",
+      },
+      {
+        type: "text",
+        id: "last-name",
+        name: "last-name",
+        label: "Last name",
+        autocomplete: "family-name",
+        required: true,
+        colSpan: "sm:col-span-3",
+      },
+      {
+        type: "email",
+        id: "email",
+        name: "email",
+        label: "Email address",
+        autocomplete: "email",
+        required: true,
+        colSpan: "sm:col-span-3",
+      },
+      {
+        type: "tel",
+        id: "phone",
+        name: "phone",
+        label: "Phone",
+        autocomplete: "phone",
+        required: true,
+        colSpan: "sm:col-span-3",
+      },
+    ],
+  },
+  {
+    section: "Preferred Method of Contact",
+    type: "radio",
+    name: "method-contact",
+    legend: "Preferred method of contact",
+    options: [
+      { id: "method-contact-email", value: "Email", label: "Email" },
+      { id: "method-contact-phone", value: "Phone call", label: "Phone Call" },
+      {
+        id: "method-contact-text",
+        value: "Text message",
+        label: "Text message",
+      },
+    ],
+  },
+  {
+    section: "Flight Experience",
+    type: "radio",
+    name: "flight-experience",
+    legend: "Do you have any prior flight experience or training?",
+    hasOther: true,
+    otherId: "experience-other",
+    otherTextId: "experience-other-text",
+    otherErrorId: "experience-other-error",
+    options: [
+      {
+        id: "experience-no",
+        value: "No prior experience",
+        label: "No prior experience",
+      },
+      {
+        id: "experience-sim",
+        value: "Flight simulator experience",
+        label: "Flight simulator experience",
+      },
+      {
+        id: "experience-drones",
+        value: "Drone piloting experience",
+        label: "Drone piloting experience",
+      },
+      {
+        id: "experience-lessons",
+        value: "Some flight lessons",
+        label: "Some flight lessons",
+      },
+      {
+        id: "experience-other",
+        value: "Other:",
+        label: "Other (please specify)",
+        isOther: true,
+      },
+    ],
+  },
+  {
+    section: "Aspirations and Mindset",
+    type: "checkbox",
+    name: "inspirations",
+    legend: "What inspires you to pursue a career as a pilot?",
+    note: "You can select multiple options",
+    hasOther: true,
+    otherId: "other",
+    otherTextId: "other-text",
+    otherErrorId: "other-error-msg",
+    options: [
+      {
+        id: "adventure",
+        value: "A passion for adventure",
+        label: "A passion for adventure",
+      },
+      {
+        id: "opportunities",
+        value: "Professional growth and opportunities",
+        label: "Professional growth and opportunities",
+      },
+      {
+        id: "hobby",
+        value: "Personal hobby",
+        label: "Personal hobby",
+      },
+      {
+        id: "other",
+        value: "Other:",
+        label: "Other (please specify)",
+        isOther: true,
+      },
+    ],
+  },
+  {
+    type: "radio",
+    name: "plane-reaction",
+    legend:
+      "When a plane flies overhead during a conversation, how do you react?",
+    options: [
+      {
+        id: "plane-identify",
+        value: "I immediately try to identify it",
+        label: "I immediately try to identify it",
+      },
+      {
+        id: "plane-wish",
+        value: "I wish I were up there",
+        label: "I wish I were up there",
+      },
+      {
+        id: "plane-glance",
+        value: "I glance at it and continue",
+        label: "I glance at it and continue",
+      },
+      {
+        id: "plane-focused",
+        value: "I acknowledge it but stay focused",
+        label: "I acknowledge it but stay focused",
+      },
+      {
+        id: "plane-not-notice",
+        value: "I don't notice it",
+        label: "I don't notice it",
+      },
+    ],
+  },
+  {
+    type: "radio",
+    name: "pilot-type",
+    legend: "What kind of pilot do you aspire to be?",
+    options: [
+      {
+        id: "type-recreational",
+        value: "Recreational/Hobby Pilot",
+        label: "Recreational/Hobby Pilot",
+      },
+      {
+        id: "type-cfi",
+        value: "Flight Instructor (CFI)",
+        label: "Flight Instructor (CFI)",
+      },
+      { id: "type-airline", value: "Airline Pilot", label: "Airline Pilot" },
+      {
+        id: "type-corporate",
+        value: "Corporate/Business Pilot",
+        label: "Corporate/Business Pilot",
+      },
+      { id: "type-military", value: "Military Pilot", label: "Military Pilot" },
+      {
+        id: "type-helicopter",
+        value: "Helicopter Pilot",
+        label: "Helicopter Pilot",
+      },
+      {
+        id: "type-unsure",
+        value: "Still exploring options",
+        label: "Still exploring options",
+      },
+    ],
+  },
+  {
+    type: "checkbox",
+    name: "learning-methods",
+    legend: "Which learning methods do you prefer?",
+    note: "Select all that apply",
+    options: [
+      {
+        id: "learn-visual",
+        value: "Visual (e.g., diagrams, videos)",
+        label: "Visual (e.g., diagrams, videos)",
+      },
+      {
+        id: "learn-auditory",
+        value: "Auditory (e.g., lectures, discussions)",
+        label: "Auditory (e.g., lectures, discussions)",
+      },
+      {
+        id: "learn-reading",
+        value: "Reading/Writing (e.g., manuals, note-taking)",
+        label: "Reading/Writing (e.g., manuals, note-taking)",
+      },
+      {
+        id: "learn-kinesthetic",
+        value: "Kinesthetic (e.g., hands-on practice, simulations)",
+        label: "Kinesthetic (e.g., hands-on practice, simulations)",
+      },
+    ],
+  },
+  {
+    type: "checkbox",
+    name: "training-formats",
+    legend: "Which of the following training formats are you interested in?",
+    note: "Select all that apply",
+    options: [
+      {
+        id: "format-one-on-one",
+        value: "One-on-one instruction (most personalized)",
+        label: "One-on-one instruction (most personalized)",
+      },
+      {
+        id: "format-small-group",
+        value: "Small group classes",
+        label: "Small group classes",
+      },
+      {
+        id: "format-online",
+        value: "Online/self-paced ground school",
+        label: "Online/self-paced ground school",
+      },
+      {
+        id: "format-hybrid",
+        value: "Hybrid (in-person + online)",
+        label: "Hybrid (in-person + online)",
+      },
+      {
+        id: "format-accelerated",
+        value: "Accelerated/immersion program",
+        label: "Accelerated/immersion program",
+      },
+    ],
+  },
+  {
+    type: "radio",
+    name: "pilot-certainty",
+    legend: "How certain are you about becoming a pilot?",
+    options: [
+      { id: "pilot-certainty-100", value: "100%", label: "100%" },
+      { id: "pilot-certainty-90", value: "90%", label: "90%" },
+      { id: "pilot-certainty-75", value: "75%", label: "75%" },
+      {
+        id: "pilot-certainty-less-75",
+        value: "Less than 75%",
+        label: "Less than 75%",
+      },
+      {
+        id: "pilot-certainty-still-considering",
+        value: "Still considering",
+        label: "Still considering",
+      },
+    ],
+  },
+  {
+    type: "radio",
+    name: "preferred-approach",
+    legend:
+      "Do you prefer a structured learning environment with clearly defined expectations, or a more flexible, adaptable approach?",
+    options: [
+      {
+        id: "structured",
+        value: "I prefer a structured approach",
+        label: "I prefer a structured approach",
+      },
+      {
+        id: "flexible",
+        value: "I prefer a flexible approach",
+        label: "I prefer a flexible approach",
+        required: true,
+      },
+    ],
+  },
+  {
+    type: "checkbox",
+    name: "kind-of-guidance",
+    legend:
+      "What kind of guidance and support would you prefer from your flight instructor?",
+    note: "You can select multiple options",
+    hasOther: true,
+    otherId: "other2",
+    otherTextId: "other2-text",
+    otherErrorId: "other2-error-msg",
+    options: [
+      {
+        id: "personalized-approach",
+        value:
+          "A personalized approach tailored to my individual learning needs and preferences",
+        label:
+          "A personalized approach tailored to my individual learning needs and preferences",
+      },
+      {
+        id: "hands-on-involvement",
+        value:
+          "Hands-on involvement from the instructor, with constant feedback and guidance",
+        label:
+          "Hands-on involvement from the instructor, with constant feedback and guidance",
+      },
+      {
+        id: "structured-approach",
+        value: "A structured approach with clear goals and objectives",
+        label: "A structured approach with clear goals and objectives",
+      },
+      {
+        id: "guidance",
+        value:
+          "Supportive and encouraging guidance, with a focus on building confidence",
+        label:
+          "Supportive and encouraging guidance, with a focus on building confidence",
+      },
+      {
+        id: "other2",
+        value: "Other:",
+        label: "Other (please specify)",
+        isOther: true,
+      },
+    ],
+  },
+  {
+    type: "radio",
+    name: "problem-solving",
+    legend:
+      "You have a major project due tomorrow and are only partially through. What do you do?",
+    options: [
+      {
+        id: "solve-ahead",
+        value: "Complete it ahead of schedule",
+        label: "Complete it ahead of schedule",
+      },
+      {
+        id: "solve-work",
+        value: "Work through the night if needed",
+        label: "Work through the night if needed",
+      },
+      {
+        id: "solve-extension",
+        value: "Request an extension",
+        label: "Request an extension",
+      },
+      {
+        id: "solve-break",
+        value: "Take a short break and continue",
+        label: "Take a short break and continue",
+      },
+      {
+        id: "solve-overwhelmed",
+        value: "Feel overwhelmed and freeze up",
+        label: "Feel overwhelmed and freeze up",
+      },
+    ],
+  },
+  {
+    type: "radio",
+    name: "education-degree",
+    legend: "Do you currently hold a college degree?",
+    options: [
+      { id: "degree-yes", value: "Yes", label: "Yes" },
+      { id: "degree-no", value: "No", label: "No" },
+      {
+        id: "degree-current",
+        value: "Currently pursuing",
+        label: "Currently pursuing",
+      },
+    ],
+  },
+  {
+    type: "radio",
+    name: "education-interest",
+    legend:
+      "Are you interested in pursuing a degree in conjunction with your flight training?",
+    note: "{COMPANY_NAME} has partnerships with aviation degree programs",
+    options: [
+      {
+        id: "edu-before",
+        value: "Yes, before flight training",
+        label: "Yes, before flight training",
+      },
+      {
+        id: "edu-during",
+        value: "Yes, during flight training",
+        label: "Yes, during flight training",
+      },
+      {
+        id: "edu-after",
+        value: "Yes, after flight training",
+        label: "Yes, after flight training",
+      },
+      {
+        id: "edu-no",
+        value: "No, flight training only",
+        label: "No, flight training only",
+      },
+    ],
+  },
+  {
+    section: "Medical Fitness",
+    note: "All pilots must obtain an FAA Medical Certificate. It's essential to assess your medical fitness early in your training journey.",
+    fields: [],
+  },
+  {
+    type: "radio",
+    name: "medical-age-range",
+    legend: "Age range",
+    required: true,
+    options: [
+      { id: "medical-age-under-25", value: "Under 25", label: "Under 25" },
+      { id: "medical-age-26-55", value: "26-55", label: "26-55" },
+      { id: "medical-age-over-55", value: "Over 55", label: "Over 55" },
+    ],
+  },
+  {
+    type: "radio",
+    name: "medical-weight-range",
+    legend: "Weight range",
+    required: true,
+    options: [
+      {
+        id: "medical-weight-under-200-lbs",
+        value: "Under 200 lbs",
+        label: "Under 200 lbs",
+      },
+      {
+        id: "medical-weight-200-250-lbs",
+        value: "200-250 lbs",
+        label: "200-250 lbs",
+      },
+      {
+        id: "medical-weight-over-250-lbs",
+        value: "Over 250 lbs",
+        label: "Over 250 lbs",
+      },
+    ],
+  },
+  {
+    type: "radio",
+    name: "medical-conditions",
+    legend:
+      "Do you currently have any known medical conditions that might affect your ability to obtain an FAA Medical Certificate?",
+    required: true,
+    options: [
+      { id: "medical-conditions-yes", value: "Yes", label: "Yes" },
+      { id: "medical-conditions-no", value: "No", label: "No" },
+      { id: "medical-conditions-unsure", value: "Unsure", label: "Unsure" },
+    ],
+  },
+  {
+    type: "radio",
+    name: "medical-medication",
+    legend: "Are you currently taking any medications?",
+    required: true,
+    note: "If you are taking medications or have medical conditions, we recommend consulting with an FAA-certified Aviation Medical Examiner (AME) to determine your eligibility for a medical certificate.",
+    options: [
+      { id: "medical-medication-yes", value: "Yes", label: "Yes" },
+      { id: "medical-medication-no", value: "No", label: "No" },
+      {
+        id: "medical-medication-not-saying",
+        value: "Prefer not to say",
+        label: "Prefer not to say",
+      },
+    ],
+  },
+  {
+    section: "Time Commitment",
+    fields: [],
+  },
+  {
+    type: "radio",
+    name: "time-commitment-weekly",
+    legend: "How many flying lessons do you plan to schedule per week?",
+    required: true,
+    options: [
+      {
+        id: "time-commitment-weekly-1-or-fewer",
+        value: "1 or fewer",
+        label: "1 or fewer",
+      },
+      { id: "time-commitment-weekly-2-3", value: "2-3", label: "2-3" },
+      {
+        id: "time-commitment-weekly-4-or-more",
+        value: "4 or more",
+        label: "4 or more",
+      },
+    ],
+  },
+  {
+    type: "radio",
+    name: "time-commitment-flexibility",
+    legend:
+      "Do you have flexibility in your schedule to accommodate additional study or practice time?",
+    required: true,
+    note: "Consistent practice and study are crucial for success in flight training. Less frequent flying can lead to longer training durations and increased costs.",
+    options: [
+      { id: "time-commitment-flexibility-yes", value: "Yes", label: "Yes" },
+      { id: "time-commitment-flexibility-no", value: "No", label: "No" },
+      {
+        id: "time-commitment-flexibility-limited",
+        value: "Limited flexibility",
+        label: "Limited flexibility",
+      },
+    ],
+  },
+  {
+    section: "Financial Planning",
+    type: "radio",
+    name: "financial",
+    legend:
+      "Have you prepared financially for the costs associated with flight training?",
+    required: true,
+    options: [
+      {
+        id: "financial-yes-full-amount",
+        value:
+          "Yes, I have the full amount saved (~$12,000 for a Private Pilot License)",
+        label:
+          "Yes, I have the full amount saved (~$12,000 for a Private Pilot License)",
+      },
+      {
+        id: "financial-yes-as-i-go",
+        value: "Yes, I plan to pay as I go",
+        label: "Yes, I plan to pay as I go",
+      },
+      {
+        id: "financial-yes-assitance",
+        value:
+          "Yes, I have financial assistance (e.g., Stratus, scholarships, employer reimbursement)",
+        label:
+          "Yes, I have financial assistance (e.g., Stratus, scholarships, employer reimbursement)",
+      },
+      {
+        id: "financial-no",
+        value: "No, I need guidance on financing options",
+        label: "No, I need guidance on financing options",
+      },
+    ],
+  },
+  {
+    section: "Motivation & Drive",
+    type: "checkbox",
+    name: "motivation-factors",
+    legend: "What motivates you to pursue flight training?",
+    options: [
+      {
+        id: "motivate-adventure",
+        value: "Sense of adventure and freedom",
+        label: "Sense of adventure and freedom",
+      },
+      {
+        id: "motivate-career",
+        value: "Career advancement and opportunities",
+        label: "Career advancement and opportunities",
+      },
+      {
+        id: "motivate-challenge",
+        value: "Personal challenge and achievement",
+        label: "Personal challenge and achievement",
+      },
+      {
+        id: "motivate-travel",
+        value: "Ability to travel",
+        label: "Ability to travel",
+      },
+      {
+        id: "motivate-family",
+        value: "Family tradition/influence",
+        label: "Family tradition/influence",
+      },
+      {
+        id: "motivate-income",
+        value: "High earning potential",
+        label: "High earning potential",
+      },
+      {
+        id: "motivate-flexibility",
+        value: "Schedule flexibility",
+        label: "Schedule flexibility",
+      },
+    ],
+  },
+  {
+    type: "radio",
+    name: "timeline",
+    legend: "When do you hope to start flight training?",
+    options: [
+      {
+        id: "timeline-immediate",
+        value: "Immediately (within 30 days)",
+        label: "Immediately (within 30 days)",
+      },
+      {
+        id: "timeline-3months",
+        value: "Within 3 months",
+        label: "Within 3 months",
+      },
+      {
+        id: "timeline-6months",
+        value: "Within 6 months",
+        label: "Within 6 months",
+      },
+      { id: "timeline-year", value: "Within 1 year", label: "Within 1 year" },
+      {
+        id: "timeline-exploring",
+        value: "Just exploring for now",
+        label: "Just exploring for now",
+      },
+    ],
+  },
+  {
+    type: "radio",
+    name: "support-system",
+    legend: "Do you have family/friend support for your flight training?",
+    options: [
+      {
+        id: "support-strong",
+        value: "Strong support system",
+        label: "Strong support system",
+      },
+      { id: "support-some", value: "Some support", label: "Some support" },
+      {
+        id: "support-neutral",
+        value: "Neutral/indifferent",
+        label: "Neutral/indifferent",
+      },
+      {
+        id: "support-little",
+        value: "Little to no support",
+        label: "Little to no support",
+      },
+      {
+        id: "support-not-sure",
+        value: "Prefer not to say",
+        label: "Prefer not to say",
+      },
+    ],
+  },
+];
+
+const additionalQuestions = [
+  {
+    type: "checkbox",
+    name: "heard-about",
+    legend: "How did you hear about {COMPANY_NAME} Flight Academy?",
+    hasOther: true,
+    otherId: "source-other",
+    otherTextId: "source-other-text",
+    otherErrorId: "source-other-error",
+    options: [
+      { id: "source-google", value: "Google search", label: "Google search" },
+      {
+        id: "source-social",
+        value: "Social media (Facebook, Instagram, TikTok)",
+        label: "Social media (Facebook, Instagram, TikTok)",
+      },
+      {
+        id: "source-friend",
+        value: "Referred by a friend or pilot",
+        label: "Referred by a friend or pilot",
+      },
+      {
+        id: "source-visit",
+        value: "Visited the airport",
+        label: "Visited the airport",
+      },
+      {
+        id: "source-event",
+        value: "Aviation event or airshow",
+        label: "Aviation event or airshow",
+      },
+      {
+        id: "source-school",
+        value: "School/college career fair",
+        label: "School/college career fair",
+      },
+      {
+        id: "source-other",
+        value: "Other:",
+        label: "Other (please specify)",
+        isOther: true,
+      },
+    ],
+  },
+];
+// Create array of other fields for JavaScript validation
+const otherFields = quizQuestions
+  .filter((q) => q.hasOther)
+  .map((q) => ({
+    id: q.otherId,
+    idText: q.otherTextId,
+    idErrorMsg: q.otherErrorId,
+  }));
+---
+
+<section class="bg-slate-50 py-16 px-5 lg:py-24">
+  <div class="max-w-4xl mx-auto">
+    <!-- Intro -->
+    <div class="text-center mb-16">
+      <div
+        class="inline-flex items-center justify-center p-4 bg-mustard-yellow/10 rounded-2xl mb-6"
+      >
+        <MdOutlineQuiz className="size-12 text-mustard-yellow" />
+      </div>
+      <h2
+        class="text-primary font-black uppercase tracking-[0.2em] text-sm mb-4"
+      >
+        Pilot Readiness Assessment
+      </h2>
+      <p class="text-slate-500 text-lg max-w-2xl mx-auto italic font-medium">
+        "Fill out the quiz to find out if you're ready to become a pilot"
+      </p>
+    </div>
+    <!-- Form -->
+    <form id="quiz-form" method="POST" action="" class="space-y-10">
+      <div class="bg-white p-8 rounded-3xl shadow-sm border border-slate-200">
+        <div class="flex flex-col md:flex-row gap-8">
+          <div class="flex-1">
+            <h3 class="text-slate-900 font-bold mb-2">Purpose</h3>
+            <p class="text-slate-600 text-sm leading-relaxed">
+              To help prospective students evaluate their preparedness for
+              flight training and allow {COMPANY_NAME} Flight Academy to tailor a
+              personalized training plan.
+            </p>
+          </div>
+          <div
+            class="flex-1 border-t md:border-t-0 md:border-l border-slate-100 pt-6 md:pt-0 md:pl-8"
+          >
+            <h3 class="text-slate-900 font-bold mb-2">Instructions</h3>
+            <p class="text-slate-600 text-sm leading-relaxed">
+              Please answer the following questions honestly. Your responses
+              remain confidential and assist in your training journey.
+            </p>
+          </div>
+        </div>
+      </div>
+      <!-- Questions -->
+      {
+        quizQuestions.map((question, index) => {
+          const shouldRenderSection =
+            question.section &&
+            (!quizQuestions[index - 1] ||
+              quizQuestions[index - 1].section !== question.section);
+
+          return (
+            <div class="contents">
+              {shouldRenderSection && (
+                <div class="pt-8 pb-2 border-b-2 border-primary/10">
+                  <h3 class="text-primary text-2xl font-black uppercase tracking-tight">
+                    {question.section}
+                  </h3>
+                </div>
+              )}
+
+              <div class="bg-white p-8 rounded-3xl shadow-sm border border-slate-100 transition-all hover:shadow-md">
+                {question.note && !question.type && (
+                  <div class="bg-sky-50 p-4 rounded-xl border-l-4 border-sky-400 mb-6">
+                    <p class="text-sky-900 text-sm">
+                      <span class="font-bold uppercase text-[10px] tracking-widest block mb-1">
+                        Flight Note:
+                      </span>
+                      {question.note}
+                    </p>
+                  </div>
+                )}
+
+                {/* Personal Information Grid */}
+                {question.fields && question.fields.length > 0 && (
+                  <div class="grid grid-cols-1 gap-6 sm:grid-cols-6">
+                    {question.fields.map((field) => (
+                      <FieldsetPersonalInfo field={field} />
+                    ))}
+                  </div>
+                )}
+
+                {/* Radio Group Design */}
+                {question.type === "radio" && (
+                  <FieldsetRadioBox question={question} />
+                )}
+
+                {/* Checkbox Group Design */}
+                {question.type === "checkbox" && (
+                  <FieldsetCheckBox question={question} />
+                )}
+              </div>
+            </div>
+          );
+        })
+      }
+      <!-- Additional Information -->
+      <FieldsetAdditionalInfo />
+      <!-- Confirmation Check -->
+      <FieldsetConfirmation />
+    </form>
+  </div>
+</section>
