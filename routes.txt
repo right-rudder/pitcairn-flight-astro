@@ -23,6 +23,8 @@ DONE
 ✔️ https://pitcairnflightacademy.com/contact-confiramtion
 ✔️ https://pitcairnflightacademy.com/enroll-at-pitcairn-flight-academy
 ✔️ https://pitcairnflightacademy.com/enroll-at-pitcairn-flight-academy-confirmation
+✔️ https://pitcairnflightacademy.com/quiz
+✔️ https://pitcairnflightacademy.com/quiz-confirmation
 
 DONE BLOG POSTS
 
@@ -77,12 +79,10 @@ DOING
 💠 https://pitcairnflightacademy.com/discovery-flight
 💠 https://pitcairnflightacademy.com/discovery-flight-confirmation
 
-💠 https://pitcairnflightacademy.com/quiz
-💠 https://pitcairnflightacademy.com/quiz-confirmation
-
 TODO
 
 - Update all images
 - Update meta title meta description and check h1 
 - Design Improvements in each page / align experimental designs
 - Add animations and Transitions 
+- Make clouds texture to white bg
