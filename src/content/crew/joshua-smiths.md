@@ -2,7 +2,7 @@
 name: "Joshua Smiths"
 title: "Flight Instructor"
 bio: "Joshua Smiths is a Certified Flight Instructor and Instrument Instructor at Pitcairn Flight Academy. Joshua focuses on clear communication, strong fundamentals, and helping students build confidence throughout their training."
-image: "/src/assets/instructors/4D7CF825-4D63-4655-8A33-1559D6B377A2.jpeg"
+image: "/src/assets/instructors/placeholder-pitcairn-flight-academy_Philadelphia-PA_pilot-trainingpottstown-PAteam-pilot-silhouette-removebg-preview.png"
 order: 8
 certifications:
   - "CFI - Certified Flight Instructor"
