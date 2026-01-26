@@ -2,7 +2,7 @@
 title: "Commercial Pilot Certificate"
 description: "Earn your Commercial Pilot Certificate and begin flying for compensation or hire while continuing your professional pilot training."
 order: 3
-image: "/src/assets/placeholder-dark-clouds-pitcairn-flight-academy-instrument-rating.webp"
+image: "/src/assets/old-website/pitcairn-flight-academy_Philadelphia-PA_pilot-trainingpottstown-PA_pitcairn-flight-commercial-pilot-smiling.webp"
 alt: "Commercial pilot training aircraft on the ramp at Pitcairn Flight Academy"
 top: true
 

@@ -2,7 +2,7 @@
 title: "Instrument Rating"
 description: "Fly safely and confidently in IFR conditions by earning your Instrument Rating and expanding your capabilities as a pilot."
 order: 2
-image: "/src/assets/placeholder-dark-clouds-pitcairn-flight-academy-instrument-rating.webp"
+image: "/src/assets/fleet/N8414J - C150/pitcairn-flight-academy_pottstown-PA_pilot-training_aircraft-N8414J-Cessna-150-instruments.jpg"
 alt: "Instrument flight training in IFR conditions at Pitcairn Flight Academy"
 top: true
 

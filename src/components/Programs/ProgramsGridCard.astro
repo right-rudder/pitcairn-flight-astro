@@ -12,12 +12,12 @@ interface Props {
 const { program, index, colSpan } = Astro.props;
 
 const duration = program.data.programIntroduction?.highlights?.find((h) =>
-  h.highlightName.toLowerCase().includes("duration")
+  h.highlightName.toLowerCase().includes("duration"),
 )?.highlightValue;
 ---
 
 <a
-  href={`/programs/${program.slug}`}
+  href={`/${program.slug}`}
   class={`group program-grid-card relative overflow-hidden rounded-3xl bg-sky-950 min-h-[400px] h-full ${colSpan} transition-all duration-500 hover:shadow-2xl hover:shadow-sky-900/50`}
   style={`transition-delay: ${index * 150}ms`}
 >

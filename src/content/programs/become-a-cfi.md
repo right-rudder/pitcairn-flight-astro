@@ -2,7 +2,7 @@
 title: "Certified Flight Instructor (CFI)"
 description: "Become a Certified Flight Instructor and share your passion for aviation while building valuable professional flight experience."
 order: 4
-image: "/src/assets/placeholder-dark-clouds-pitcairn-flight-academy-instrument-rating.webp"
+image: "/src/assets/old-website/pitcairn-flight-bg-blue-cessna.webp"
 alt: "Certified Flight Instructor training aircraft at Pitcairn Flight Academy"
 top: true
 

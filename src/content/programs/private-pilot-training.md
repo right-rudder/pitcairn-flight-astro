@@ -2,7 +2,7 @@
 title: "Private Pilot Certificate"
 description: "Start your aviation journey by getting your private pilot certificate - the first step that allows you to fly planes with passengers and begin your career in aviation."
 order: 1
-image: "/src/assets/placeholder-dark-clouds-pitcairn-flight-academy-instrument-rating.webp"
+image: "/src/assets/students/pitcairn-flight-academy_Philadelphia-PA_pilot-training_student-getting-started-with-flight-training-at-pitcairn-flight-academy.jpg"
 alt: "Student pilot getting started with flight training at Pitcairn Flight Academy"
 top: true
 
