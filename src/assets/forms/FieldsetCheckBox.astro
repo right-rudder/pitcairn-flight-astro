@@ -1,0 +1,53 @@
+---
+const example = {
+  options: [
+    { id: "apple", label: "Apple", name: "Apple", value: "apple" },
+    { id: "banana", label: "Banana", name: "Banana", value: "banana" },
+    { id: "cherry", label: "Cherry", name: "Cherry", value: "cherry" },
+    { id: "date", label: "Date", name: "Date", value: "date" },
+  ],
+  hasOther: true,
+  otherTextId: "otherFruit",
+  otherErrorId: "otherFruitError",
+};
+const { question = example } = Astro.props;
+---
+
+<fieldset class="w-full">
+  <legend class="text-lg font-bold text-slate-900 mb-4 leading-tight">
+    {question.legend}
+  </legend>
+  <div class="space-y-3">
+    {
+      question.options.map((option: any) => (
+        <label class="flex items-center p-4 rounded-2xl border border-slate-200 cursor-pointer hover:bg-slate-50 transition-all has-checked:border-primary">
+          <input
+            id={option.id}
+            name={question.name}
+            type="checkbox"
+            class="h-5 w-5 rounded border-slate-300 text-primary focus:ring-primary"
+            value={option.value}
+          />
+          <span class="ml-3 text-slate-700 font-medium">{option.label}</span>
+        </label>
+      ))
+    }
+
+    {
+      question.hasOther && (
+        <div class="mt-4 pt-4 border-t border-slate-100">
+          <label class="text-[10px] font-black uppercase tracking-widest text-slate-400 mb-2 block">
+            Other Specification
+          </label>
+          <input
+            class="block w-full rounded-xl border-slate-200 bg-slate-50 px-4 py-3 text-slate-900 outline-none focus:border-primary focus:ring-4 focus:ring-primary/10 transition-all"
+            type="text"
+            name={question.name}
+            id={question.otherTextId}
+            placeholder="Please specify..."
+          />
+        </div>
+      )
+    }
+  </div>
+</fieldset>
