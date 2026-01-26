@@ -2,7 +2,7 @@
 name: "Cessna 172 Skyhawk"
 model: "172N"
 description: "Reliable single-engine trainer widely used for primary flight training, instrument instruction, and cross-country experience. Known for its forgiving handling, excellent visibility, and predictable performance."
-image: "/src/assets/placeholder-dark-clouds-pitcairn-flight-academy-instrument-rating.webp"
+image: "/src/assets/old-website/pitcairn-flight-academy_Philadelphia-PA_pilot-training-aircraft-for-rent-at-pitcairn-heritage-field-airport-flight-school_pottstown-PA.webp"
 order: 2
 tailNumber: "N734JR"
 specifications:

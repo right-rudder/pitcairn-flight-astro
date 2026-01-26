@@ -2,7 +2,7 @@
 name: "Beechcraft Sierra"
 model: "C24R"
 description: "Single-engine, fixed-gear aircraft designed for advanced training and cross-country flying. Known for its stability, speed, and strong performance, making it an excellent platform for commercial pilot training and time building."
-image: "/src/assets/placeholder-dark-clouds-pitcairn-flight-academy-instrument-rating.webp"
+image: "/src/assets/fleet/N3341L - Sierra/pitcairn-flight-academy_pottstown-PA_pilot-training_aircraft-N3341L-Sierra-frontview.JPG"
 order: 1
 tailNumber: "N3341L"
 specifications:

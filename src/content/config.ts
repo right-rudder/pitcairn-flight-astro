@@ -278,6 +278,7 @@ const aircraftCollection = defineCollection({
     description: z.string(),
     tailNumber: z.string().optional(),
     image: z.string(),
+    images: z.array(z.string()).optional(),
     specifications: z
       .object({
         engines: z.number().optional(),
