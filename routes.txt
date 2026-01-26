@@ -82,7 +82,8 @@ DOING
 TODO
 
 - Update all images
+- Add animations and Transitions 
+
 - Update meta title meta description and check h1 
 - Design Improvements in each page / align experimental designs
-- Add animations and Transitions 
 - Make clouds texture to white bg
