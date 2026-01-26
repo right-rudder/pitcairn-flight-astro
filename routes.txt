@@ -25,6 +25,7 @@ DONE
 ✔️ https://pitcairnflightacademy.com/enroll-at-pitcairn-flight-academy-confirmation
 ✔️ https://pitcairnflightacademy.com/quiz
 ✔️ https://pitcairnflightacademy.com/quiz-confirmation
+✔️ https://pitcairnflightacademy.com/discovery-flight
 
 DONE BLOG POSTS
 
@@ -76,7 +77,6 @@ DONE BLOG POSTS
 
 DOING
 
-💠 https://pitcairnflightacademy.com/discovery-flight
 💠 https://pitcairnflightacademy.com/discovery-flight-confirmation
 
 TODO
