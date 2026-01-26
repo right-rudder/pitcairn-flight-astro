@@ -1,0 +1,54 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import ImageComp from "../components/ImageComp.astro";
+import { EMAIL_ADDRESS, LOCATIONS, PHONE_NUMBER } from "../data/consts";
+import Hero75 from "../components/Hero75.astro";
+import CTASectionWithGradientCover from "../components/CTASectionWithGradientCover.astro";
+import FormDiscoveryFlight from "../assets/forms/FormDiscoveryFlight.astro";
+
+const COMPANY_NAME = "Pitcairn Flight Academy";
+
+// Import environment variables
+const CONTACT_FORM_WEBHOOK_URL = import.meta.env.CONTACT_FORM_WEBHOOK_URL;
+const PORTAL_API_KEY = import.meta.env.PORTAL_API_KEY;
+const CP_ACCOUNT_RANDOM_ID = import.meta.env.CP_ACCOUNT_RANDOM_ID;
+
+const heroData = {
+  image: {
+    src: "/src/assets/placeholder-dark-clouds-pitcairn-flight-academy-instrument-rating.webp",
+    alt: "Flight Training Programs",
+  },
+  title: `Contact ${COMPANY_NAME}`,
+  subTitle:
+    "Have questions about our programs, admissions, or flight training? Our flight operations team is standing by to help you clear for takeoff.",
+};
+
+const ctaData = {
+  title: "Define Your Mission. Reach the Majors.",
+  description:
+    "Your aviation journey begins with a single heading. Whether you are aiming for the airlines or mastering a new rating, we provide the roadmap and mentorship to get you there.",
+  image: {
+    src: "/src/assets/placeholder-dark-clouds-pitcairn-flight-academy-instrument-rating.webp",
+    alt: "Training aircraft in flight",
+  },
+  primaryCTA: {
+    text: "Schedule a Tour",
+    href: "/contact",
+  },
+  secondaryCTA: {
+    text: "Enroll Now",
+    href: "/enroll",
+  },
+};
+
+const metaProps = {
+  siteTitle: `Contact Us | ${COMPANY_NAME}`,
+  siteDescription: `Get in touch with ${COMPANY_NAME}. Schedule your visit to Wayne Executive Jetport, speak with our instructors, or get answers to your flight training questions.`,
+};
+---
+
+<BaseLayout {...metaProps}>
+  <Hero75 data={heroData} />
+  <FormDiscoveryFlight />
+  <CTASectionWithGradientCover {...ctaData} />
+</BaseLayout>
