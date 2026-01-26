@@ -1,82 +1,82 @@
-const crewImages = [
+const images = [
   {
-    src: "src/assets/instructors/4D7CF825-4D63-4655-8A33-1559D6B377A2.jpeg",
-    alt: "Flight instructor at flight school",
+    src: "src/assets/instructors/pitcairn-flight-academy_Philadelphia-PA_pilot-trainingpottstown-PA_CFI-Andy.jpg",
+    alt: "CFI Andy at Pitcairn Flight Academy in Philadelphia, PA pilot training Pottstown, PA",
   },
   {
-    src: "src/assets/instructors/4D7CF825-4D63-4655-8A33-1559D6B377A2.webp",
-    alt: "Flight instructor portrait",
+    src: "src/assets/instructors/pitcairn-flight-academy_Philadelphia-PA_pilot-trainingpottstown-PA_CFI-Andy.webp",
+    alt: "CFI Andy at Pitcairn Flight Academy in Philadelphia, PA pilot training Pottstown, PA",
   },
   {
-    src: "src/assets/instructors/70FC0524-C24E-4DCC-A670-4E9E25D5BABA.jpeg",
-    alt: "Aviation instructor profile",
+    src: "src/assets/instructors/pitcairn-flight-academy_Philadelphia-PA_pilot-trainingpottstown-PA_CFI-Barry.jpeg",
+    alt: "CFI Barry at Pitcairn Flight Academy in Philadelphia, PA pilot training Pottstown, PA",
   },
   {
-    src: "src/assets/instructors/Andy.jpg",
-    alt: "Flight instructor Andy",
+    src: "src/assets/instructors/pitcairn-flight-academy_Philadelphia-PA_pilot-trainingpottstown-PA_CFI-BarryC.jpeg",
+    alt: "CFI Barry C at Pitcairn Flight Academy in Philadelphia, PA pilot training Pottstown, PA",
   },
   {
-    src: "src/assets/instructors/Andy.webp",
-    alt: "Instructor Andy profile picture",
+    src: "src/assets/instructors/pitcairn-flight-academy_Philadelphia-PA_pilot-trainingpottstown-PA_CFI-BarryC.webp",
+    alt: "CFI Barry C at Pitcairn Flight Academy in Philadelphia, PA pilot training Pottstown, PA",
   },
   {
-    src: "src/assets/instructors/Barry.jpeg",
-    alt: "Flight instructor Barry",
+    src: "src/assets/instructors/pitcairn-flight-academy_Philadelphia-PA_pilot-trainingpottstown-PA_CFI-Bill.jpg",
+    alt: "CFI Bill at Pitcairn Flight Academy in Philadelphia, PA pilot training Pottstown, PA",
   },
   {
-    src: "src/assets/instructors/BarryC.jpeg",
-    alt: "Flight instructor Barry C",
+    src: "src/assets/instructors/pitcairn-flight-academy_Philadelphia-PA_pilot-trainingpottstown-PA_CFI-Chris.jpeg",
+    alt: "CFI Chris at Pitcairn Flight Academy in Philadelphia, PA pilot training Pottstown, PA",
   },
   {
-    src: "src/assets/instructors/BarryC.webp",
-    alt: "Instructor Barry C profile",
+    src: "src/assets/instructors/pitcairn-flight-academy_Philadelphia-PA_pilot-trainingpottstown-PA_CFI-ChrisS.jpeg",
+    alt: "CFI Chris S at Pitcairn Flight Academy in Philadelphia, PA pilot training Pottstown, PA",
   },
   {
-    src: "src/assets/instructors/Bill.jpg",
-    alt: "Flight instructor Bill",
+    src: "src/assets/instructors/pitcairn-flight-academy_Philadelphia-PA_pilot-trainingpottstown-PA_CFI-ChrisS.webp",
+    alt: "CFI Chris S at Pitcairn Flight Academy in Philadelphia, PA pilot training Pottstown, PA",
   },
   {
-    src: "src/assets/instructors/Chris.jpeg",
-    alt: "Flight instructor Chris",
+    src: "src/assets/instructors/pitcairn-flight-academy_Philadelphia-PA_pilot-trainingpottstown-PA_CFI-Darren.jpg",
+    alt: "CFI Darren at Pitcairn Flight Academy in Philadelphia, PA pilot training Pottstown, PA",
   },
   {
-    src: "src/assets/instructors/ChrisS.jpeg",
-    alt: "Flight instructor Chris S",
+    src: "src/assets/instructors/pitcairn-flight-academy_Philadelphia-PA_pilot-trainingpottstown-PA_CFI-Darren.webp",
+    alt: "CFI Darren at Pitcairn Flight Academy in Philadelphia, PA pilot training Pottstown, PA",
   },
   {
-    src: "src/assets/instructors/ChrisS.webp",
-    alt: "Instructor Chris S profile",
+    src: "src/assets/instructors/pitcairn-flight-academy_Philadelphia-PA_pilot-trainingpottstown-PA_CFI-Ian.jpg",
+    alt: "CFI Ian at Pitcairn Flight Academy in Philadelphia, PA pilot training Pottstown, PA",
   },
   {
-    src: "src/assets/instructors/Darren.jpg",
-    alt: "Flight instructor Darren",
+    src: "src/assets/instructors/pitcairn-flight-academy_Philadelphia-PA_pilot-trainingpottstown-PA_CFI-Marisa.jpeg",
+    alt: "CFI Marisa at Pitcairn Flight Academy in Philadelphia, PA pilot training Pottstown, PA",
   },
   {
-    src: "src/assets/instructors/Darren.webp",
-    alt: "Instructor Darren profile picture",
+    src: "src/assets/instructors/pitcairn-flight-academy_Philadelphia-PA_pilot-trainingpottstown-PA_CFI-Marisa.webp",
+    alt: "CFI Marisa at Pitcairn Flight Academy in Philadelphia, PA pilot training Pottstown, PA",
   },
   {
-    src: "src/assets/instructors/Ian.jpg",
-    alt: "Flight instructor Ian",
+    src: "src/assets/instructors/pitcairn-flight-academy_Philadelphia-PA_pilot-trainingpottstown-PA_CFI-Ron.jpeg",
+    alt: "CFI Ron at Pitcairn Flight Academy in Philadelphia, PA pilot training Pottstown, PA",
   },
   {
-    src: "src/assets/instructors/Marisa.jpeg",
-    alt: "Flight instructor Marisa",
+    src: "src/assets/instructors/pitcairn-flight-academy_Philadelphia-PA_pilot-trainingpottstown-PA_CFI-Ron.webp",
+    alt: "CFI Ron at Pitcairn Flight Academy in Philadelphia, PA pilot training Pottstown, PA",
   },
   {
-    src: "src/assets/instructors/Marisa.webp",
-    alt: "Instructor Marisa profile",
+    src: "src/assets/instructors/pitcairn-flight-academy_Philadelphia-PA_pilot-trainingpottstown-PA_CFI-RonR.jpeg",
+    alt: "CFI Ron R at Pitcairn Flight Academy in Philadelphia, PA pilot training Pottstown, PA",
   },
   {
-    src: "src/assets/instructors/Ron.jpeg",
-    alt: "Flight instructor Ron",
+    src: "src/assets/instructors/pitcairn-flight-academy_Philadelphia-PA_pilot-trainingpottstown-PA_CFIs-chris-barry-andy2.webp",
+    alt: "CFIs Chris, Barry, and Andy at Pitcairn Flight Academy in Philadelphia, PA pilot training Pottstown, PA",
   },
   {
-    src: "src/assets/instructors/Ron.webp",
-    alt: "Instructor Ron profile picture",
+    src: "src/assets/instructors/pitcairn-flight-academy_Philadelphia-PA_pilot-trainingpottstown-PA_CFIs-chris-barry-andy3.jpeg",
+    alt: "CFIs Chris, Barry, and Andy at Pitcairn Flight Academy in Philadelphia, PA pilot training Pottstown, PA",
   },
   {
-    src: "src/assets/instructors/RonR.jpeg",
-    alt: "Flight instructor Ron R",
+    src: "src/assets/instructors/pitcairn-flight-academy_Philadelphia-PA_pilot-trainingpottstown-PA_CFIs-chris-barry-andy4.jpeg",
+    alt: "CFIs Chris, Barry, and Andy at Pitcairn Flight Academy in Philadelphia, PA pilot training Pottstown, PA",
   },
 ];
