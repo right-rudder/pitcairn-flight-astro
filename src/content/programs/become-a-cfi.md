@@ -33,8 +33,8 @@ programIntroduction:
       - "Pass FAA written and practical exams"
 
 programExpectations:
-  mainImage: "/src/assets/placeholder-dark-clouds-pitcairn-flight-academy-instrument-rating.webp"
-  mainImageAlt: "CFI candidate preparing for instructional flight"
+  mainImage: "/src/assets/students/pitcairn-flight-academy_Philadelphia-PA_pilot-training_student-first-time-pilot-training-with-cfi-at-pitcairn-flight-academy.jpeg"
+  mainImageAlt: "Student first time pilot training with CFI at Pitcairn Flight Academy in Philadelphia, PA"
   title: "Training Process"
   descriptionParagraphs:
     - "CFI training emphasizes mastery of aeronautical knowledge and the ability to clearly communicate complex concepts to students."
@@ -93,8 +93,8 @@ enrollmentProcess:
       description: "Begin teaching others the joy of flight and sharing your passion for aviation."
 
 finalCTA:
-  mainImage: "/src/assets/placeholder-dark-clouds-pitcairn-flight-academy-instrument-rating.webp"
-  mainImageAlt: "Certified Flight Instructor with student pilot"
+  mainImage: "/src/assets/students/pitcairn-flight-academy_Philadelphia-PA_pilot-training_student-first-solo-plate-outside-aircrafcompleting-a-checkride-at-pitcairn-allentown-king-of-prussia.jpg"
+  mainImageAlt: "Student first solo plate outside aircraft completing a checkride at Pitcairn Allentown King of Prussia in Philadelphia, PA"
   upperheader: "Ready To Teach?"
   title: "Start CFI Training Today"
   descriptionParagraphs:

@@ -3,7 +3,7 @@ title: "Instrument Rating"
 description: "Fly safely and confidently in IFR conditions by earning your Instrument Rating and expanding your capabilities as a pilot."
 order: 2
 image: "/src/assets/fleet/N8414J - C150/pitcairn-flight-academy_pottstown-PA_pilot-training_aircraft-N8414J-Cessna-150-instruments.jpg"
-alt: "Instrument flight training in IFR conditions at Pitcairn Flight Academy"
+alt: "N8414J Cessna 150 instrument panel at Pitcairn Flight Academy in Pottstown, PA"
 top: true
 
 programIntroduction:
@@ -33,8 +33,8 @@ programIntroduction:
       - "Pass FAA written and practical exams"
 
 programExpectations:
-  mainImage: "/src/assets/placeholder-dark-clouds-pitcairn-flight-academy-instrument-rating.webp"
-  mainImageAlt: "Student pilot training under instrument flight rules"
+  mainImage: "/src/assets/instagram/pitcairn-flight-academy_Philadelphia-PA_flight-training_pilot-looking-window.jpg"
+  mainImageAlt: "Pilot looking out window at Pitcairn Flight Academy in Philadelphia, PA flight training"
   title: "Training Process"
   descriptionParagraphs:
     - "Our instrument training program is structured to build both technical skill and real-world confidence. You’ll combine flight training, ground instruction, and exam preparation."
@@ -96,7 +96,7 @@ enrollmentProcess:
       description: "Demonstrate your skills to a designated FAA examiner and earn your Instrument Rating."
 
 finalCTA:
-  mainImage: "/src/assets/placeholder-dark-clouds-pitcairn-flight-academy-instrument-rating.webp"
+  mainImage: "/src/assets/old-website/pitcairn-flight-academy_Philadelphia-PA_pilot-trainingpottstown-PA_pitcairn-flight-instrument.webp"
   mainImageAlt: "Instrument-rated pilot preparing for flight"
   upperheader: "Ready To Fly IFR?"
   title: "Take Control In Any Weather"

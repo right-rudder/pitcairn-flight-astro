@@ -2,8 +2,8 @@
 title: "Commercial Pilot Certificate"
 description: "Earn your Commercial Pilot Certificate and begin flying for compensation or hire while continuing your professional pilot training."
 order: 3
-image: "/src/assets/old-website/pitcairn-flight-academy_Philadelphia-PA_pilot-trainingpottstown-PA_pitcairn-flight-commercial-pilot-smiling.webp"
-alt: "Commercial pilot training aircraft on the ramp at Pitcairn Flight Academy"
+image: "/src/assets/old-website/pitcairn-flight-airliner-cockpit.webp"
+alt: "Pitcairn Flight airliner cockpit in Philadelphia, PA"
 top: true
 
 programIntroduction:
@@ -32,8 +32,8 @@ programIntroduction:
       - "Receive instructor endorsement"
 
 programExpectations:
-  mainImage: "/src/assets/placeholder-dark-clouds-pitcairn-flight-academy-instrument-rating.webp"
-  mainImageAlt: "Commercial pilot training flight in progress"
+  mainImage: "/src/assets/old-website/pitcairn-flight-academy_Philadelphia-PA_pilot-trainingpottstown-PA_Pitcairn-flight-team-Tyler.webp"
+  mainImageAlt: "Pitcairn Flight team Tyler in Pottstown, PA"
   title: "Training Process"
   descriptionParagraphs:
     - "Commercial pilot training builds on your existing skills while emphasizing accuracy, professionalism, and consistency."
@@ -92,7 +92,7 @@ enrollmentProcess:
       description: "Earn the ability to fly for compensation or hire and continue advancing your pilot training."
 
 finalCTA:
-  mainImage: "/src/assets/placeholder-dark-clouds-pitcairn-flight-academy-instrument-rating.webp"
+  mainImage: "/src/assets/aircraft/large-aircraft-at-heritage-field-airport.jpeg"
   mainImageAlt: "Commercial pilot preparing for flight"
   upperheader: "Ready To Go Pro?"
   title: "Start Commercial Pilot Training"
