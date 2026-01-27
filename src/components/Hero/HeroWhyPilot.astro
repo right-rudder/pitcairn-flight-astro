@@ -29,6 +29,8 @@ interface Props {
     image: {
       src: string;
       alt: string;
+      invert?: boolean;
+      mirror?: boolean;
     };
     title: string;
     subTitle?: string;
@@ -51,7 +53,9 @@ const { data = heroData, statsData = statsDataExample } = Astro.props;
     <ImageComp
       src={data.image.src}
       alt={data.image.alt}
-      class="h-full w-full object-cover object-center animate-slow-zoom brightness-[0.7] contrast-[1.1]"
+      class={`h-full w-full object-cover object-center animate-slow-zoom brightness-[0.7] contrast-[1.1]` +
+        (data.image.invert ? "filter invert" : "") +
+        (data.image.mirror ? " scale-x-[-1]" : "")}
       loading="eager"
     />
     <div
