@@ -68,14 +68,14 @@ const contentClasses = smallCard
         class="flex items-center gap-3 text-[10px] font-bold uppercase tracking-[0.2em] text-sky-400 mb-4"
       >
         <span
-          class="flex items-center gap-1.5 bg-sky-800/20 px-2 py-0.5 rounded"
+          class="flex items-center gap-1.5 bg-sky-800/90 text-white px-4 py-2 rounded text-xs"
         >
-          <FaCalendarAlt className="text-sky-500" />
+          <FaCalendarAlt />
           {formatDate(blogEntry.data.pubDate)}
         </span>
         <span class="w-1 h-1 bg-slate-700 rounded-full"></span>
-        <span class="text-slate-500 truncate max-w-[120px]">
-          By {blogEntry.data.author || "Chief Instructor"}
+        <span class="text-slate-500 text-xs truncate max-w-[120px]">
+          By {blogEntry.data.author || COMPANY_NAME}
         </span>
       </div>
 
@@ -90,7 +90,7 @@ const contentClasses = smallCard
       </h3>
 
       <p
-        class={`text-sky-900 text-sm leading-relaxed mb-6 font-sans ${smallCard ? "line-clamp-2" : "line-clamp-3"}`}
+        class={`text-sky-900 text-lg leading-relaxed mb-6 font-sans ${smallCard ? "line-clamp-2" : "line-clamp-3"}`}
       >
         {blogEntry.data.description}
       </p>
@@ -102,9 +102,11 @@ const contentClasses = smallCard
           class="text-lg font-bold uppercase tracking-[0.2em] text-sky-900 group-hover:text-sky-600 transition-colors flex items-center gap-2"
         >
           Read More
-          <FaArrowRight
-            class="text-sky-600 group-hover:translate-x-2 transition-transform duration-500"
-          />
+          <div
+            class="text-sky-900 px-4 group-hover:text-sky-600 group-hover:translate-x-2 transition-transform duration-500 group-hover:bounce-horizontal"
+          >
+            <FaArrowRight />
+          </div>
         </span>
 
         {/* Decorative corner accent */}
