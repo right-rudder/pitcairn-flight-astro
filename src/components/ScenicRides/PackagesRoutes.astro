@@ -15,7 +15,10 @@ const regionalTours = [
       "Pre-flight Briefing",
       "Loggable Hours",
     ],
-    image: placeholder,
+    image: {
+      src: "/src/assets/facebook/pitcairn-flight-academy_pottstown-PA_pilot-training_vision-plane-good-points-of-reference.jpg",
+      alt: "Vision plane with good points of reference at Pitcairn Flight Academy in Pottstown, PA",
+    },
     tag: "Introductory",
   },
   {
@@ -28,7 +31,10 @@ const regionalTours = [
       "Advanced Briefing",
       "Instructor Guided",
     ],
-    image: placeholder,
+    image: {
+      src: "/src/assets/instagram/pitcairn-flight-academy_Philadelphia-PA_flight-training_cards and plane-Philadelphia-city-vision-from-plane-day.jpg",
+      alt: "Cards and plane with Philadelphia city view from plane during day at Pitcairn Flight Academy in Philadelphia, PA",
+    },
     tag: "Most Popular",
     popular: true,
   },
@@ -42,7 +48,10 @@ const regionalTours = [
       "Basic Navigation",
       "Photo Opportunities",
     ],
-    image: placeholder,
+    image: {
+      src: "/src/assets/facebook/pitcairn-flight-academy_pottstown-PA_pilot-training_plane-vision-clouds-sunset.jpg",
+      alt: "Plane vision with clouds at sunset at Pitcairn Flight Academy in Pottstown, PA",
+    },
     tag: "Scenic",
   },
 ];
@@ -89,8 +98,8 @@ const regionalTours = [
           >
             <div class="relative rounded-3xl h-48 w-full overflow-hidden rounded-t-[2.5rem]">
               <ImageComp
-                src={pkg.image}
-                alt={pkg.title}
+                src={pkg.image.src}
+                alt={pkg.image.alt}
                 class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
               />
               <div class="absolute inset-0 bg-gradient-to-t from-slate-800 via-slate-800/20 to-transparent" />
