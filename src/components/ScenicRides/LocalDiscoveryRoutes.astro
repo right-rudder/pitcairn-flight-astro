@@ -67,11 +67,11 @@ const regionalTours = [
       regionalTours.map((tour) => (
         <div class={`flex group flex-col lg:items-center gap-12 lg:gap-20 }`}>
           <div class=" flex  relative">
-            <div class="relative h-full rounded-[2rem] aspect-square overflow-hidden shadow-2xl transition-transform duration-700 group-hover:-translate-y-2">
+            <div class="relative h-full rounded-3xl overflow-hidden shadow-2xl transition-transform duration-700 group-hover:-translate-y-2">
               <ImageComp
                 src={tour.image.src}
                 alt={tour.image.alt}
-                classes="w-full h-full object-cover aspect-square group-hover:scale-105 transition-transform duration-1000"
+                class=" aspect-4/5 group-hover:scale-105 transition-transform duration-1000"
               />
 
               <div class="absolute top-6 left-6 px-5 py-2 bg-white/10 backdrop-blur-md border border-white/20 rounded-full">
