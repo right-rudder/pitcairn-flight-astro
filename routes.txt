@@ -1,5 +1,6 @@
 OTHER
 ✔️ Update meta title meta description 
+✔️ Update all images
 
 EXTRA PAGES
 ✔️ https://pitcairnflightacademy.com/our-team
@@ -81,15 +82,17 @@ DONE BLOG POSTS
 DOING
 
 💠 https://pitcairnflightacademy.com/discovery-flight-confirmation
-💠 Update all images
 💠 Add animations and Transitions 
 💠 Design Improvements in each page / align experimental designs
 
 TODO
 
 - Check h1s
-- Design Improvements in each page / align experimental designs
+- Check every link from every page to be working [ / ]
+- Add more CTA button/links around components
+- Make Quiz CTA Component
 - Make clouds texture to white bg
+- Update fleet info 
 - Financing Page
 - Partners Page / Services Index Page
 - scenic tours differnt then scenic rides (check if they have the certification and change to tour for now)
