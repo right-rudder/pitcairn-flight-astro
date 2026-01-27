@@ -78,26 +78,24 @@ const heroData = {
       )
     }
 
+    {
+      data.enrollmentProcess && (
+        <EnrollmentProcess data={data.enrollmentProcess} />
+      )
+    }
     {data.firstCTA && <ContentCTA data={data.firstCTA} />}
-
-    {data.whatIsIncluded && <WhatIsIncluded data={data.whatIsIncluded} />}
-
-    {data.whyUs && <WhyUs data={data.whyUs} />}
-
-    {data.targetAudience && <TargetAudience data={data.targetAudience} />}
     {data.careerPathways && <CareerPathways data={data.careerPathways} />}
 
+    {data.targetAudience && <TargetAudience data={data.targetAudience} />}
     {
       data.trainingProgression && (
         <TimelineProgression data={data.trainingProgression} />
       )
     }
 
-    {
-      data.enrollmentProcess && (
-        <EnrollmentProcess data={data.enrollmentProcess} />
-      )
-    }
+    {data.whatIsIncluded && <WhatIsIncluded data={data.whatIsIncluded} />}
+
+    {data.whyUs && <WhyUs data={data.whyUs} />}
 
     {
       data.finalCTA && (
