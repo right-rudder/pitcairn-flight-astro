@@ -21,7 +21,7 @@ if (category) {
 
 // Sort by order
 const sortedFaqs = faqs.sort(
-  (a: FAQ, b: FAQ) => (a.data.order || 999) - (b.data.order || 999)
+  (a: FAQ, b: FAQ) => (a.data.order || 999) - (b.data.order || 999),
 );
 
 // Limit results if specified
@@ -29,9 +29,11 @@ const displayFaqs = limit ? sortedFaqs.slice(0, limit) : sortedFaqs;
 ---
 
 <div class="space-y-4">
-   <div class="flex items-center justify-center">
-      <h2 class="title !text-center !text-lucky-950">Frequently Asked<br>Questions</h2>
-   </div>
+  <div class="flex items-center justify-center">
+    <h2 class="title !text-center !text-lucky-950">
+      Frequently Asked<br />Questions
+    </h2>
+  </div>
   {
     displayFaqs.map(async (faq: FAQ) => {
       const { Content } = await faq.render();
@@ -39,7 +41,6 @@ const displayFaqs = limit ? sortedFaqs.slice(0, limit) : sortedFaqs;
         <details class="group bg-white border border-gray-200 rounded-xl overflow-hidden hover:border-monza-300 transition-colors">
           <summary class="flex items-start justify-between cursor-pointer p-6 hover:bg-gray-50 transition-colors">
             <div class="flex items-start flex-1 pr-4">
-            
               <svg
                 class="w-6 h-6 text-monza-600 mr-3 shrink-0 mt-0.5"
                 fill="none"
@@ -58,7 +59,7 @@ const displayFaqs = limit ? sortedFaqs.slice(0, limit) : sortedFaqs;
                   {faq.data.question}
                 </h3>
                 {showCategory && faq.data.category && (
-                  <span class="inline-block font-ubuntu text-xs font-semibold text-monza-600 bg-monza-50 px-2 py-1 rounded-full">
+                  <span class="inline-block font-ubuntu text-xs font-semibold text-monza-600 bg-monza-50 px-2 py-1 rounded-2xl">
                     {faq.data.category}
                   </span>
                 )}

@@ -38,11 +38,11 @@ const { content = discoveryFlight } = Astro.props;
   class="py-20 md:py-28 bg-sky-900 text-slate-50 overflow-hidden relative"
 >
   <div
-    class="absolute top-0 right-0 w-96 h-96 bg-sky-500 rounded-full blur-[120px] opacity-20 -translate-x-1/4 -translate-y-1/2"
+    class="absolute top-0 right-0 w-96 h-96 bg-sky-500 rounded-2xl blur-[120px] opacity-20 -translate-x-1/4 -translate-y-1/2"
   >
   </div>
   <div
-    class="absolute bottom-0 left-0 w-96 h-96 bg-sky-400 rounded-full blur-[120px] opacity-20 translate-x-1/4 translate-y-1/2"
+    class="absolute bottom-0 left-0 w-96 h-96 bg-sky-400 rounded-2xl blur-[120px] opacity-20 translate-x-1/4 translate-y-1/2"
   >
   </div>
 
@@ -64,7 +64,7 @@ const { content = discoveryFlight } = Astro.props;
         <div class="mt-8">
           <a
             href={content.cta.link}
-            class="inline-block bg-white text-sky-900 font-bold px-8 py-4 rounded-full hover:bg-sky-100 transition-colors duration-300 shadow-xl shadow-sky-950/50"
+            class="inline-block bg-white text-sky-900 font-bold px-8 py-4 rounded-2xl hover:bg-sky-100 transition-colors duration-300 shadow-xl shadow-sky-950/50"
           >
             {content.cta.text}
           </a>
@@ -74,7 +74,7 @@ const { content = discoveryFlight } = Astro.props;
       <div class="lg:col-span-2 flex flex-col gap-8 lg:gap-12">
         {
           content.steps.map((step, index) => (
-            <div class="bg-sky-800/40 border border-sky-700/50 p-8 md:p-10 rounded-3xl backdrop-blur-sm flex flex-col justify-between group hover:border-sky-400/50 transition-all duration-300">
+            <div class="bg-sky-800/40 border border-sky-700/50 p-8 md:p-10 rounded-2xl backdrop-blur-sm flex flex-col justify-between group hover:border-sky-400/50 transition-all duration-300">
               <div>
                 <span class="text-sky-400 font-mono text-xl font-bold mb-4 block">
                   0{index + 1}

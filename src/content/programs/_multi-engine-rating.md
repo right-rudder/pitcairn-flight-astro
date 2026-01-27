@@ -24,7 +24,7 @@ programIntroduction:
     benefits:
       - "Rates are much cheaper compared to the competition"
       - "Brand new avionics and autopilot/complex configurations"
-      - "High aircraft availability—planes don't get grounded for long"
+      - "High aircraft availability—planes don't get grounded-2xlfor long"
       - "Training available for PPL through to CFII"
     requirements:
       - "Private Pilot Certificate (ASEL)"

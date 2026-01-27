@@ -7,7 +7,7 @@ const ourLocation = {
   title: "Located at Heritage Field Airport",
   descriptions: [
     `<strong>${COMPANY_NAME}</strong> operates out of <strong>Heritage Field Airport (KPTW)</strong> in Pottstown, Pennsylvania.`,
-    `Our home airport offers an ideal balance of uncongested airspace and access to complex operations, supporting safe, efficient, and well-rounded flight training.`,
+    `Our home airport offers an ideal balance of uncongested airspace and access to complex operations, supporting safe, efficient, and well-rounded-2xlflight training.`,
   ],
   features: [
     "Uncongested airspace ideal for student-focused flight training",
@@ -61,7 +61,7 @@ const { content = ourLocation } = Astro.props;
           {
             content.features.map((feature: any) => (
               <div class="group flex items-start gap-4 p-3 rounded-xl hover:bg-sky-50 transition-colors duration-300">
-                <div class="mt-1 shrink-0 w-6 h-6 rounded-full bg-sky-100 flex items-center justify-center group-hover:bg-sky-600 transition-colors duration-300">
+                <div class="mt-1 shrink-0 w-6 h-6 rounded-2xl bg-sky-100 flex items-center justify-center group-hover:bg-sky-600 transition-colors duration-300">
                   <svg
                     class="w-4 h-4 text-sky-600 group-hover:text-white transition-colors duration-300"
                     fill="none"

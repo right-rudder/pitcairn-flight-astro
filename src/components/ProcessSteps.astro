@@ -37,11 +37,11 @@ const { title, subtitle, steps } = Astro.props;
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
         {
           steps.map((step, index) => (
-            <div 
+            <div
               class="step-card opacity-0 translate-y-10 bg-white group flex flex-col justify-between items-center rounded-lg px-5 py-8 shadow-md transition-all ease-in-out duration-700 h-full hover:scale-105 hover:shadow-2xl hover:-translate-y-2"
               style={`transition-delay: ${index * 150}ms;`}
             >
-              <div class="z-10 inline-flex items-center group-hover:bg-monza-600 justify-center bg-gray-800 text-white text-4xl font-bold rounded-full mb-6 shadow-lg h-12 w-12 group-hover:scale-110 transition-all duration-500">
+              <div class="z-10 inline-flex items-center group-hover:bg-monza-600 justify-center bg-gray-800 text-white text-4xl font-bold rounded-2xl mb-6 shadow-lg h-12 w-12 group-hover:scale-110 transition-all duration-500">
                 {step.number}
               </div>
 
@@ -77,14 +77,14 @@ const { title, subtitle, steps } = Astro.props;
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
-        entry.target.classList.remove('opacity-0', 'translate-y-10');
-        entry.target.classList.add('opacity-100', 'translate-y-0');
+        entry.target.classList.remove("opacity-0", "translate-y-10");
+        entry.target.classList.add("opacity-100", "translate-y-0");
         observer.unobserve(entry.target);
       }
     });
   }, observerOptions);
 
-  document.querySelectorAll('.step-card').forEach((card) => {
+  document.querySelectorAll(".step-card").forEach((card) => {
     observer.observe(card);
   });
 </script>

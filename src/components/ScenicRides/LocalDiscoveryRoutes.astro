@@ -67,14 +67,14 @@ const regionalTours = [
       regionalTours.map((tour) => (
         <div class={`flex group flex-col lg:items-center gap-12 lg:gap-20 }`}>
           <div class=" flex  relative">
-            <div class="relative h-full rounded-3xl overflow-hidden shadow-2xl transition-transform duration-700 group-hover:-translate-y-2">
+            <div class="relative h-full rounded-2xl overflow-hidden shadow-2xl transition-transform duration-700 group-hover:-translate-y-2">
               <ImageComp
                 src={tour.image.src}
                 alt={tour.image.alt}
                 class=" aspect-4/5 group-hover:scale-105 transition-transform duration-1000"
               />
 
-              <div class="absolute top-6 left-6 px-5 py-2 bg-white/10 backdrop-blur-md border border-white/20 rounded-full">
+              <div class="absolute top-6 left-6 px-5 py-2 bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl">
                 <span class="text-white text-[10px] font-black uppercase tracking-[0.2em]">
                   {tour.subtitle}
                 </span>
@@ -105,7 +105,7 @@ const regionalTours = [
             <div class="grid grid-cols-2 gap-y-4 gap-x-8 mb-10 pb-10 border-b border-slate-100">
               {tour.features.map((f) => (
                 <div class="flex items-center gap-3 group/item">
-                  <div class="w-2 h-2 rounded-full bg-sky-200 group-hover/item:bg-sky-500 transition-colors" />
+                  <div class="w-2 h-2 rounded-2xl bg-sky-200 group-hover/item:bg-sky-500 transition-colors" />
                   <span class="text-slate-800 font-bold text-[11px] uppercase tracking-wider">
                     {f}
                   </span>
@@ -114,7 +114,7 @@ const regionalTours = [
             </div>
 
             <a href="#book" class="group flex items-center gap-6">
-              <div class="flex items-center justify-center w-14 h-14 rounded-full bg-slate-900 text-white group-hover:bg-sky-600 transition-all duration-500 group-hover:rotate-[360deg]">
+              <div class="flex items-center justify-center w-14 h-14 rounded-2xl bg-slate-900 text-white group-hover:bg-sky-600 transition-all duration-500 group-hover:rotate-[360deg]">
                 <svg
                   class="w-6 h-6"
                   fill="none"

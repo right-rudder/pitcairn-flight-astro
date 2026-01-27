@@ -18,7 +18,7 @@ const { data } = Astro.props;
     <div class="text-center mb-16 flex flex-col items-center">
       {
         data.upperheader && (
-          <span class="inline-block py-1 px-4 bg-sky-50 text-sky-600 text-xs font-bold tracking-[0.2em] uppercase rounded-full mb-4">
+          <span class="inline-block py-1 px-4 bg-sky-50 text-sky-600 text-xs font-bold tracking-[0.2em] uppercase rounded-2xl mb-4">
             {data.upperheader}
           </span>
         )
@@ -41,7 +41,7 @@ const { data } = Astro.props;
                 {qna.question}
               </h3>
 
-              <div class="flex-shrink-0 w-8 h-8 rounded-full bg-white border border-slate-200 flex items-center justify-center group-open:bg-sky-600 group-open:border-sky-600 transition-all duration-300">
+              <div class="flex-shrink-0 w-8 h-8 rounded-2xl bg-white border border-slate-200 flex items-center justify-center group-open:bg-sky-600 group-open:border-sky-600 transition-all duration-300">
                 <svg
                   class="h-5 w-5 transition-transform duration-300 group-open:rotate-180 text-slate-400 group-open:text-white"
                   xmlns="http://www.w3.org/2000/svg"

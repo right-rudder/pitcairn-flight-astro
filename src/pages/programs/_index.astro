@@ -73,7 +73,7 @@ const metaProps = {
             <div class="flex items-center justify-between mb-6">
               <div class="flex items-center gap-3">
                 {program.data.programIntroduction?.highlights?.find(h => h.highlightName.toLowerCase().includes('duration')) && (
-                  <div class="flex items-center gap-1.5 text-sm text-muted-600 bg-muted-100 px-3 py-1.5 rounded-full">
+                  <div class="flex items-center gap-1.5 text-sm text-muted-600 bg-muted-100 px-3 py-1.5 rounded-2xl">
                     <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                     </svg>
@@ -105,7 +105,7 @@ const metaProps = {
                 <ul class="space-y-2.5">
                   {program.data.programIntroduction.programHighlights.benefits.slice(0, 4).map((highlight) => (
                     <li class="flex items-start text-sm text-gray-700">
-                      <div class="shrink-0 w-5 h-5 rounded-full bg-monza-100 flex items-center justify-center mr-3 mt-0.5 group-hover:bg-monza-600 transition-colors duration-1000">
+                      <div class="shrink-0 w-5 h-5 rounded-2xl bg-monza-100 flex items-center justify-center mr-3 mt-0.5 group-hover:bg-monza-600 transition-colors duration-1000">
                         <svg class="w-3 h-3 text-monza-600 group-hover:text-white transition-colors duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path>
                         </svg>

@@ -57,13 +57,13 @@ const { title, subtitle, description, imageCentering, image, cta } =
 
       {
         image && (
-          <div class="order-1 h-64 md:h-[500px] rounded-3xl lg:h-full relative  overflow-hidden shadow-2xl reveal-image opacity-0 scale-95 transition-all duration-1000 ease-out">
+          <div class="order-1 h-64 md:h-[500px] rounded-2xl lg:h-full relative  overflow-hidden shadow-2xl reveal-image opacity-0 scale-95 transition-all duration-1000 ease-out">
             <ImageWithGradientAndText
               title=""
               subtitle=""
               src={image.src}
               alt={image.alt}
-              class={`w-full h-full object-cover rounded-3xl ${imageCentering ? imageCentering : "object-center"}`}
+              class={`w-full h-full object-cover rounded-2xl ${imageCentering ? imageCentering : "object-center"}`}
             />
           </div>
         )

@@ -29,7 +29,7 @@ const contentClasses = smallCard
 
 <a
   href={`/posts/${blogEntry.slug}`}
-  class="group relative block bg-white overflow-hidden border border-sky-500 rounded-3xl transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_50px_rgba(0,0,0,0.5)] opacity-0 translate-y-8 blog-card"
+  class="group relative block bg-white overflow-hidden border border-sky-500 rounded-2xl transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_50px_rgba(0,0,0,0.5)] opacity-0 translate-y-8 blog-card"
   style={`transition-delay: ${index * 100}ms;`}
   data-astro-prefetch
 >
@@ -68,12 +68,12 @@ const contentClasses = smallCard
         class="flex items-center gap-3 text-[10px] font-bold uppercase tracking-[0.2em] text-sky-400 mb-4"
       >
         <span
-          class="flex items-center gap-1.5 bg-sky-800/90 text-white px-4 py-2 rounded text-xs"
+          class="flex items-center gap-1.5 bg-sky-800/90 text-white px-4 py-2 rounded-2xltext-xs"
         >
           <FaCalendarAlt />
           {formatDate(blogEntry.data.pubDate)}
         </span>
-        <span class="w-1 h-1 bg-slate-700 rounded-full"></span>
+        <span class="w-1 h-1 bg-slate-700 rounded-2xl"></span>
         <span class="text-slate-500 text-xs truncate max-w-[120px]">
           By {blogEntry.data.author || COMPANY_NAME}
         </span>
@@ -111,7 +111,7 @@ const contentClasses = smallCard
 
         {/* Decorative corner accent */}
         <div
-          class="w-1.5 h-1.5 lg:w-2 lg:h-2 rounded-full bg-sky-950 group-hover:bg-sky-500 transition-colors"
+          class="w-1.5 h-1.5 lg:w-2 lg:h-2 rounded-2xl bg-sky-950 group-hover:bg-sky-500 transition-colors"
         >
         </div>
       </div>

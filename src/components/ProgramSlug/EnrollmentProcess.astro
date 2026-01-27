@@ -13,13 +13,13 @@ const { data } = Astro.props;
       <h2 class="text-4xl md:text-5xl font-bold text-slate-900 tracking-tight">
         {data.title}
       </h2>
-      <div class="w-20 h-1.5 bg-sky-500 mx-auto mt-6 rounded-full"></div>
+      <div class="w-20 h-1.5 bg-sky-500 mx-auto mt-6 rounded-2xl"></div>
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
       {
         data.steps.map((step: any, index: number) => (
-          <div class="group relative p-8 bg-slate-50 rounded-3xl border border-slate-100 hover:bg-white hover:shadow-2xl hover:shadow-sky-100 transition-all duration-500 hover:-translate-y-2">
+          <div class="group relative p-8 bg-slate-50 rounded-2xl border border-slate-100 hover:bg-white hover:shadow-2xl hover:shadow-sky-100 transition-all duration-500 hover:-translate-y-2">
             <div class="text-8xl font-black text-slate-200/50 absolute -top-2 -right-2 group-hover:text-sky-100 transition-colors duration-500 select-none pointer-events-none">
               {step.stepNumber}
             </div>
