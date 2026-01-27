@@ -1,5 +1,6 @@
 ---
 import ImageComp from "./ImageComp.astro";
+import Line from "./patterns and effects/Line.astro";
 
 interface Props {
   data: {
@@ -20,29 +21,31 @@ const { data } = Astro.props;
 
 <section class="py-6 md:pb-24 bg-white overflow-hidden">
   <div class="max-w-7xl mx-auto px-5 md:px-8 lg:px-12 text-center">
-    <p class="text-sky-800 font-bold uppercase tracking-widest text-2xl mb-1">
+    <Line lineColor={"bg-sky-600/50"} />
+    <h2 class="text-sky-800 font-bold uppercase tracking-widest text-2xl mb-1">
       {data.eyebrow}
-    </p>
-    <!-- <h2
-      class="title !text-[2.5rem] uppercase !font-main-header tracking-wide mb-24 mx-auto max-w-3xl"
+    </h2>
+    <p
+      class="title text-2xl uppercase font-main-header tracking-widest py-6 mx-auto max-w-3xl"
       set:html={data.headline}
-    /> -->
+    />
 
     <div
-      class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 py-12"
-      id="stagger-container"
+      class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 py-12 lg:pb-24"
+      id=""
     >
       {
         data.cards.map((card, index) => {
           return (
             <a
-              class="stagger-card  translate-y-10 flex flex-col items-center justify-center group hover:border-sky-600 hover:-translate-y-1 transition-all duration-700 px-4  rounded "
-              style={`transition-delay: ${index * 150}ms;`}
+              class=" flex flex-col items-center justify-center group hover:border-sky-600  px-4 "
               href={card.href}
+              data-aos="fade-down"
+              data-aos-delay={`${index * 150}`}
             >
               <div
                 class={
-                  "flex items-center justify-center transition-colors duration-300 " +
+                  "translate-y-10 flex items-center justify-center group-hover:-translate-y-1 transition-all ease-in-out  duration-700 " +
                   card.logoClass
                 }
               >
@@ -65,27 +68,7 @@ const { data } = Astro.props;
         })
       }
     </div>
+
+    <Line lineColor={"bg-sky-600/50"} />
   </div>
 </section>
-
-<script>
-  const observerOptions = {
-    threshold: 0.1,
-  };
-
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        const cards = entry.target.querySelectorAll(".stagger-card");
-        cards.forEach((card) => {
-          card.classList.remove("opacity-0", "translate-y-10");
-          card.classList.add("opacity-100", "translate-y-0");
-        });
-        observer.unobserve(entry.target);
-      }
-    });
-  }, observerOptions);
-
-  const container = document.querySelector("#stagger-container");
-  if (container) observer.observe(container);
-</script>
