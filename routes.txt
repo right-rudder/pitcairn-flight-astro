@@ -1,3 +1,6 @@
+OTHER
+✔️ Update meta title meta description 
+
 EXTRA PAGES
 ✔️ https://pitcairnflightacademy.com/our-team
 ✔️ https://pitcairnflightacademy.com/our-team/slug
@@ -78,12 +81,14 @@ DONE BLOG POSTS
 DOING
 
 💠 https://pitcairnflightacademy.com/discovery-flight-confirmation
+💠 Update all images
+💠 Add animations and Transitions 
+💠 Design Improvements in each page / align experimental designs
 
 TODO
 
-- Update all images
-- Add animations and Transitions 
-
-- Update meta title meta description and check h1 
+- Check h1s
 - Design Improvements in each page / align experimental designs
 - Make clouds texture to white bg
+- Financing Page
+- Partners Page / Services Index Page
