@@ -14,8 +14,10 @@ const experiences = [
       "30-60 Min Flight Time",
       "Logbook Entry Included",
     ],
-    image:
-      "/src/assets/placeholder-dark-clouds-pitcairn-flight-academy-instrument-rating.webp", // Replace with your path
+    image: {
+      src: "/src/assets/instagram/pitcairn-flight-academy_Philadelphia-PA_flight-training_pilots-inside-plane-talking.jpg",
+      alt: "Pilots inside plane talking at Pitcairn Flight Academy in Philadelphia, PA flight training",
+    },
     cta: "Book Discovery Flight",
     url: "/enroll",
     theme: "sky",
@@ -31,8 +33,10 @@ const experiences = [
       "Customized Route",
       "Perfect for Photography",
     ],
-    image:
-      "/src/assets/placeholder-dark-clouds-pitcairn-flight-academy-instrument-rating.webp", // Replace with your path
+    image: {
+      src: "/src/assets/facebook/pitcairn-flight-academy_pottstown-PA_pilot-training_plane-flying-country-side.jpg",
+      alt: "Plane flying over countryside at Pitcairn Flight Academy in Pottstown, PA pilot training",
+    },
     cta: "Schedule Scenic Ride",
     url: "/contact",
     theme: "slate",
@@ -64,8 +68,8 @@ const experiences = [
           <div class="group relative flex flex-col h-full bg-slate-50 rounded-[3rem] overflow-hidden border border-slate-100 transition-all duration-500 hover:shadow-2xl hover:shadow-sky-500/10 hover:-translate-y-2">
             <div class="relative h-[300px] lg:h-[400px] overflow-hidden">
               <ImageComp
-                src={item.image}
-                alt={item.title}
+                src={item.image.src}
+                alt={item.image.alt}
                 class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
               />
               <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent" />
