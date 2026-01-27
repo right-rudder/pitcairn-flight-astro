@@ -5,6 +5,7 @@ import { EMAIL_ADDRESS, LOCATIONS, PHONE_NUMBER } from "../data/consts";
 import Hero75 from "../components/Hero75.astro";
 import CTASectionWithGradientCover from "../components/CTASectionWithGradientCover.astro";
 import FormDiscoveryFlight from "../components/Forms/FormDiscoveryFlight.astro";
+import LocationSection from "../components/LocationSection.astro";
 
 const COMPANY_NAME = "Pitcairn Flight Academy";
 
@@ -51,5 +52,6 @@ const metaProps = {
 <BaseLayout {...metaProps}>
   <Hero75 data={heroData} />
   <FormDiscoveryFlight />
+  <LocationSection />
   <CTASectionWithGradientCover {...ctaData} />
 </BaseLayout>
