@@ -48,6 +48,7 @@ programExpectations:
 whatIsIncluded:
   upperheader: "Exam Preparation"
   title: "What You'll Master"
+  mainImage: "/src/assets/facebook/pitcairn-flight-academy_pottstown-PA_pilot-training_pilot-smilling-to-camera-inside-cockpit.jpg"
   descriptionParagraphs:
     - "We provide comprehensive preparation for all three FAA requirements: medical exam, written exam, and practical flight exam (checkride)."
   bulletPointLists:
