@@ -28,6 +28,7 @@ export const menu: MenuItem[] = [
     url: "/new-to-flying",
     children: [
       { label: "New to Flying", url: "/why-become-a-pilot" },
+      { label: "Take the Quiz", url: "/quiz" },
       { label: "Discovery Flight", url: "/discovery-flight" },
     ],
   },
@@ -36,18 +37,20 @@ export const menu: MenuItem[] = [
     url: "/about-us",
     children: [
       { label: `About ${COMPANY_NAME}`, url: "/about-us" },
+      { label: `Why ${COMPANY_NAME}`, url: "/why-pitcairn-flight-academy" },
       { label: `Our Team`, url: "/our-team" },
       { label: "Our Fleet", url: "/airplane-rentals" },
       { label: "Our Blog", url: "/blog" },
-      { label: "Financing", url: "/financing" },
-      { label: "FAQs", url: "/faqs" },
+      // { label: "Financing", url: "/financing" }, // TODO: Implement Financing Page
+      // { label: "FAQs", url: "/faqs" }, // TODO: Implement FAQs Page
     ],
   },
   {
     label: "Services",
     url: "/about",
     children: [
-      { label: "Discovery Flight", url: "#" },
+      { label: "Discovery Flight", url: "/discovery-flight" },
+      { label: "Scenic Rides", url: "/scenic-rides" },
       { label: "Airplane Rentals", url: "/airplane-rentals" },
       { label: "PennAir - Maintenance", url: "#" },
       { label: "PennJet - Jet", url: "#" },
