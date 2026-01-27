@@ -3,11 +3,33 @@ import ImageComp from "../ImageComp.astro";
 
 const placeholder =
   "/src/assets/placeholder-dark-clouds-pitcairn-flight-academy-instrument-rating.webp";
+
+const image = {
+  src: "/src/assets/instagram/pitcairn-flight-academy_Philadelphia-PA_flight-training_cards and plane-Philadelphia-city-vision-from-plane-day.jpg",
+  alt: "Cards and plane with Philadelphia city view from plane during day at Pitcairn Flight Academy in Philadelphia, PA",
+};
+
+const images = [
+  {
+    src: "/src/assets/instagram/pitcairn-flight-academy_Philadelphia-PA_flight-training_cards and plane-Philadelphia-mountain-vision-wing.jpg",
+    alt: "Cards and plane with Philadelphia mountain view from wing at Pitcairn Flight Academy in Philadelphia, PA",
+  },
+  {
+    src: "/src/assets/instagram/pitcairn-flight-academy_Philadelphia-PA_flight-training_cards and plane-Philadelphia-city-vision-from-wing-at-night-2.jpg",
+    alt: "Cards and plane with Philadelphia city view from wing at night at Pitcairn Flight Academy in Philadelphia, PA",
+  },
+  {
+    src: "/src/assets/instagram/pitcairn-flight-academy_Philadelphia-PA_flight-training_cards and plane-Philadelphia-country-side-vision-from-wing.jpg",
+    alt: "Cards and plane with Philadelphia countryside view from wing at Pitcairn Flight Academy in Philadelphia, PA",
+  },
+  {
+    src: "/src/assets/instagram/pitcairn-flight-academy_Philadelphia-PA_flight-training_cards and plane-Philadelphia-city-vision-from-wing-at-night.jpg",
+    alt: "Cards and plane with Philadelphia city view from wing at night at Pitcairn Flight Academy in Philadelphia, PA",
+  },
+];
 ---
 
-<section
-  class="relative py-24 lg:py-32 bg-slate-950 text-white overflow-hidden"
->
+<section class="relative py-24 lg:py-32 bg-sky-950 text-white overflow-hidden">
   <div
     class="absolute top-0 left-1/4 w-96 h-96 bg-sky-500/10 blur-[120px] rounded-full"
   >
@@ -99,14 +121,14 @@ const placeholder =
         >
         </div>
         <div
-          class="relative bg-slate-900 rounded-[2rem] p-4 border border-white/10 overflow-hidden shadow-2xl"
+          class="relative bg-sky-900 rounded-[2rem] p-4 border border-white/10 overflow-hidden shadow-2xl"
         >
           <div
             class="aspect-square relative overflow-hidden rounded-2xl group-hover:scale-[1.02] transition-transform duration-700"
           >
             <ImageComp
-              src={placeholder}
-              alt="Flight Path"
+              src={image.src}
+              alt={image.alt}
               class="w-full h-full object-cover opacity-40 group-hover:opacity-60 transition-opacity"
             />
             <div
@@ -140,11 +162,11 @@ const placeholder =
 
     <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mt-20">
       {
-        [1, 2, 3, 4].map(() => (
+        images.map((image) => (
           <div class="relative h-48 rounded-2xl overflow-hidden group cursor-crosshair shadow-lg">
             <ImageComp
-              src={placeholder}
-              alt="Gallery"
+              src={image.src}
+              alt={image.alt}
               class="w-full h-full object-cover transition-all duration-700 group-hover:scale-125 group-hover:rotate-3"
             />
             <div class="absolute inset-0 bg-sky-900/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
