@@ -92,3 +92,4 @@ TODO
 - Make clouds texture to white bg
 - Financing Page
 - Partners Page / Services Index Page
+- scenic tours differnt then scenic rides (check if they have the certification and change to tour for now)
