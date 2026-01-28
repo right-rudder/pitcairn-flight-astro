@@ -18,7 +18,7 @@ const { data } = Astro.props;
             <ul class="space-y-4 mt-8">
               {data.listItems.map((item: string) => (
                 <li class="flex items-start group ">
-                  <span class="flex-shrink-0 w-8 h-8 flex items-center justify-center rounded-2xl bg-monza-600 text-white text-xs font-bold mr-3 group-hover:scale-110 transition-transform">
+                  <span class="flex-shrink-0 w-8 h-8 flex items-center justify-center rounded-2xl  bg-monza-600 text-white text-xs font-bold mr-3 group-hover:scale-110 transition-transform">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       class="w-5 h-5"
@@ -47,7 +47,7 @@ const { data } = Astro.props;
               <ImageWithZoomEffect
                 src={data.mainImage}
                 alt={data.mainImageAlt || data.title}
-                class="w-full h-full object-cover rounded-2xlshadow-2xl"
+                class="w-full h-full object-cover rounded-2xl shadow-2xl"
               />
             </div>
           </div>

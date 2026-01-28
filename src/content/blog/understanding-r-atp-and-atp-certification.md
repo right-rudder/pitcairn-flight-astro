@@ -25,7 +25,7 @@ Achieving an unrestricted ATP certificate is a demanding process, requiring:
 
 Flight Hours: A minimum of 1,500 flight hours is required. This ensures that the pilot has ample experience and exposure to various flight scenarios.  
 Age Criteria: Candidates must be at least 23 years old to qualify for the unrestricted ATP certificate.  
-Diverse Flying Experience: This includes 500 hours of cross-country flight, 100 hours of night flying, 75 hours of instrument flying, 250 hours as Pilot-in-Command (PIC), and 50 hours in multi-engine planes. These requirements ensure that pilots are well-rounded-2xland experienced in different flying conditions and aircraft operations.
+Diverse Flying Experience: This includes 500 hours of cross-country flight, 100 hours of night flying, 75 hours of instrument flying, 250 hours as Pilot-in-Command (PIC), and 50 hours in multi-engine planes. These requirements ensure that pilots are well-rounded-2xl and experienced in different flying conditions and aircraft operations.
 
 ## Restricted ATP (R-ATP): An Alternative Pathway
 

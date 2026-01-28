@@ -20,12 +20,12 @@ const { question = example } = Astro.props;
   <div class="space-y-3">
     {
       question.options.map((option: any) => (
-        <label class="flex items-center p-4 rounded-2xl border border-slate-200 cursor-pointer hover:bg-slate-50 transition-all has-checked:border-primary">
+        <label class="flex items-center p-4 rounded-2xl  border border-slate-200 cursor-pointer hover:bg-slate-50 transition-all has-checked:border-primary">
           <input
             id={option.id}
             name={question.name}
             type="checkbox"
-            class="h-5 w-5 rounded-2xlborder-slate-300 text-primary focus:ring-primary"
+            class="h-5 w-5 rounded-2xl border-slate-300 text-primary focus:ring-primary"
             value={option.value}
           />
           <span class="ml-3 text-slate-700 font-medium">{option.label}</span>

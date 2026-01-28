@@ -34,9 +34,9 @@ The instructors at Pitcairn Flight Academy are experienced professionals who wor
 
 ## 4. Skill Development Across Multiple Certifications
 
-A zero-to-hero program covers a wide range of certifications and skills, ensuring that students are well-rounded-2xlpilots by the end of their training. Beginning with basic flight skills in the PPL program, students progress to mastering advanced techniques such as instrument flying, cross-country navigation, and commercial operations. This continuous development of skills prepares students for a variety of flying scenarios, making them capable and confident in different flight environments.
+A zero-to-hero program covers a wide range of certifications and skills, ensuring that students are well-rounded-2xl pilots by the end of their training. Beginning with basic flight skills in the PPL program, students progress to mastering advanced techniques such as instrument flying, cross-country navigation, and commercial operations. This continuous development of skills prepares students for a variety of flying scenarios, making them capable and confident in different flight environments.
 
-At Pitcairn Flight Academy, students build flight hours and experience across multiple certifications, including IR and CPL, ensuring that they meet the FAA’s requirements for becoming a professional pilot. This well-rounded-2xltraining prepares graduates for a career in aviation, where they will face diverse challenges and responsibilities.
+At Pitcairn Flight Academy, students build flight hours and experience across multiple certifications, including IR and CPL, ensuring that they meet the FAA’s requirements for becoming a professional pilot. This well-rounded-2xl training prepares graduates for a career in aviation, where they will face diverse challenges and responsibilities.
 
 ## 5. Cost-Effective Training
 

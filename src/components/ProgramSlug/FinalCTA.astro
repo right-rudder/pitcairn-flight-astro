@@ -46,7 +46,7 @@ const { data } = Astro.props;
   >
     {
       data.upperheader && (
-        <span class="inline-block py-1 px-4 bg-sky-500 text-white text-xs font-bold tracking-[0.3em] uppercase rounded-2xl mb-6 shadow-lg shadow-sky-500/20">
+        <span class="inline-block py-1 px-4 bg-sky-500 text-white text-xs font-bold tracking-[0.3em] uppercase rounded-2xl  mb-6 shadow-lg shadow-sky-500/20">
           {data.upperheader}
         </span>
       )
@@ -78,7 +78,7 @@ const { data } = Astro.props;
         data.mainButtonText && (
           <a
             href={data.mainButtonLink || "/enroll"}
-            class="w-full sm:w-auto px-10 py-4 bg-sky-600 hover:bg-sky-500 text-white font-bold rounded-2xl transition-all duration-300 shadow-xl shadow-sky-900/40 hover:-translate-y-1 active:scale-95"
+            class="w-full sm:w-auto px-10 py-4 bg-sky-600 hover:bg-sky-500 text-white font-bold rounded-2xl  transition-all duration-300 shadow-xl shadow-sky-900/40 hover:-translate-y-1 active:scale-95"
           >
             {data.mainButtonText}
           </a>
@@ -89,7 +89,7 @@ const { data } = Astro.props;
         data.secondButtonText && (
           <a
             href={data.secondButtonLink || "/contact"}
-            class="w-full sm:w-auto px-10 py-4 bg-white/10 backdrop-blur-md border border-white/20 hover:bg-white/20 text-white font-bold rounded-2xl transition-all duration-300 active:scale-95"
+            class="w-full sm:w-auto px-10 py-4 bg-white/10 backdrop-blur-md border border-white/20 hover:bg-white/20 text-white font-bold rounded-2xl  transition-all duration-300 active:scale-95"
           >
             {data.secondButtonText}
           </a>

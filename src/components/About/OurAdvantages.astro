@@ -57,7 +57,7 @@ const { content = ourAdvantages } = Astro.props;
     <div class="text-center mb-20">
       {
         content.upperHeading && (
-          <span class="inline-block py-1 px-4 bg-sky-100 text-sky-700 text-xs font-bold tracking-[0.2em] uppercase rounded-2xlmb-4">
+          <span class="inline-block py-1 px-4 bg-sky-100 text-sky-700 text-xs font-bold tracking-[0.2em] uppercase rounded-2xl mb-4">
             {content.upperHeading}
           </span>
         )
@@ -75,7 +75,7 @@ const { content = ourAdvantages } = Astro.props;
     <div class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-10">
       {
         content.items.map((item: any) => (
-          <div class="group flex flex-col sm:flex-row gap-6 p-6 rounded-2xl border border-transparent hover:border-sky-200 hover:bg-white hover:shadow-xl hover:shadow-sky-100/50 transition-all duration-300">
+          <div class="group flex flex-col sm:flex-row gap-6 p-6 rounded-2xl  border border-transparent hover:border-sky-200 hover:bg-white hover:shadow-xl hover:shadow-sky-100/50 transition-all duration-300">
             <div class="shrink-0">
               <div class="w-14 h-14 bg-sky-600 rounded-xl flex items-center justify-center shadow-lg shadow-sky-200 group-hover:scale-110 group-hover:rotate-3 transition-transform duration-300">
                 <svg
