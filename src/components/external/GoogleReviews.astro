@@ -1,5 +1,5 @@
 <section class="py-6 bg-white overflow-hidden min-h-[400px]">
-  <div class="max-w-7xl mx-auto px-5 md:px-8 lg:px-12">
+  <div class="max-w-7xl mx-auto">
     <div class="flex items-center justify-center flex-col">
       <div
         class="reveal-fade flex flex-col py-12 justify-center opacity-0 translate-y-8 transition-all duration-1000 ease-out text-center"
@@ -26,3 +26,23 @@
 </section>
 
 <script src="https://elfsightcdn.com/platform.js" async></script>
+
+<script>
+  const observerOptions = {
+    threshold: 0.1,
+    rootMargin: "0px 0px -50px 0px",
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.remove("opacity-0", "translate-y-8");
+        observer.unobserve(entry.target);
+      }
+    });
+  }, observerOptions);
+
+  document
+    .querySelectorAll(".reveal-fade")
+    .forEach((el) => observer.observe(el));
+</script>

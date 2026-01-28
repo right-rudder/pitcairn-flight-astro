@@ -118,3 +118,63 @@ h5,
 h6 {
   @apply font-title font-black;
 }
+
+/* Animations */
+@keyframes bounce-horizontal {
+  0%,
+  100% {
+    transform: translateX(-25%);
+    animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+  }
+  50% {
+    transform: translateX(0);
+    animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+  }
+}
+
+@keyframes bounce-horizontal-reverse {
+  0%,
+  100% {
+    transform: translateX(25%);
+    animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+  }
+  50% {
+    transform: translateX(0);
+    animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+  }
+}
+
+@keyframes bounce-horizontal-center {
+  0%,
+  100% {
+    transform: translateX(0);
+    animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+  }
+  25% {
+    transform: translateX(-25%);
+  }
+  75% {
+    transform: translateX(25%);
+  }
+}
+
+/* Utility classes */
+.bounce-horizontal {
+  animation: bounce-horizontal 1s infinite;
+}
+
+.bounce-horizontal-reverse {
+  animation: bounce-horizontal-reverse 1s infinite;
+}
+
+.bounce-horizontal-center {
+  animation: bounce-horizontal-center 1s infinite;
+}
+
+.bounce-horizontal-slow {
+  animation: bounce-horizontal 2s infinite;
+}
+
+.bounce-horizontal-fast {
+  animation: bounce-horizontal 0.5s infinite;
+}

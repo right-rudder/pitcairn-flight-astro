@@ -1,0 +1,90 @@
+---
+
+---
+
+<div
+  class="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 space-y-8"
+>
+  <div>
+    <h3 class="text-xl font-bold text-slate-900 mb-4">
+      Additional Information
+    </h3>
+    <label for="expectations" class="block text-sm text-slate-500 mb-3">
+      Is there anything else you'd like us to know about your interests or
+      expectations?
+    </label>
+    <textarea
+      id="expectations"
+      name="anything-else-youd-like-us-to-know-about-your-interests-or-expectations-regarding-flight-training"
+      rows="4"
+      class="block w-full rounded-2xl border-slate-200 bg-slate-50 px-4 py-3 text-slate-900 outline-none focus:border-primary focus:ring-4 focus:ring-primary/10"
+    ></textarea>
+  </div>
+
+  <!-- <div class="pt-8 border-t border-slate-100">
+    <h3 class="text-xl font-bold text-slate-900 mb-4 text-center">
+      Schedule Your Visit
+    </h3>
+    <fieldset class="flex flex-col items-center">
+      <legend class="mb-6 text-slate-600 text-center max-w-sm">
+        Would you like to schedule a visit to NextGen Flight Academy?
+      </legend>
+      <div class="flex gap-4">
+        {
+          ["Yes", "No"].map((choice) => (
+            <label class="flex items-center px-8 py-3 rounded-xl border border-slate-200 cursor-pointer has-checked:bg-primary has-checked:text-white transition-all font-bold">
+              <input
+                type="radio"
+                name="visit-nextgen"
+                value={choice}
+                class="sr-only"
+                required
+              />
+              {choice}
+            </label>
+          ))
+        }
+      </div>
+    </fieldset>
+
+    <div
+      id="location-container"
+      class="hidden mt-8 grid grid-cols-1 md:grid-cols-3 gap-6"
+    >
+      <div class="flex flex-col">
+        <label class="text-[10px] font-black uppercase text-slate-400 mb-2 ml-1"
+          >Location</label
+        >
+        <select
+          name="visit-location"
+          class="h-12 rounded-xl border-slate-200 bg-slate-50 px-4"
+        >
+          <option value="riverside">Riverside</option>
+          <option value="redlands">Redlands</option>
+        </select>
+      </div>
+      <div class="flex flex-col">
+        <label class="text-[10px] font-black uppercase text-slate-400 mb-2 ml-1"
+          >Preferred Date</label
+        >
+        <input
+          type="date"
+          name="visit-date"
+          class="h-12 rounded-xl border-slate-200 bg-slate-50 px-4"
+        />
+      </div>
+      <div class="flex flex-col">
+        <label class="text-[10px] font-black uppercase text-slate-400 mb-2 ml-1"
+          >Timeframe</label
+        >
+        <select
+          name="visit-time"
+          class="h-12 rounded-xl border-slate-200 bg-slate-50 px-4"
+        >
+          <option value="Morning">Morning</option>
+          <option value="Afternoon">Afternoon</option>
+        </select>
+      </div>
+    </div>
+  </div> -->
+</div>

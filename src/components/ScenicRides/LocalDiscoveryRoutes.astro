@@ -1,0 +1,141 @@
+---
+import ImageComp from "../ImageComp.astro";
+
+const placeholder =
+  "/src/assets/placeholder-dark-clouds-pitcairn-flight-academy-instrument-rating.webp";
+
+const regionalTours = [
+  {
+    title: "Pottstown Local",
+    subtitle: "Discovery Flight",
+    price: "$185",
+    desc: "A focused introduction to the fundamentals of flight. Perfect for those looking to see their neighborhood from a new perspective while taking the controls.",
+    features: [
+      "40-min Flight",
+      "Hands-on Control",
+      "Pre-flight Brief",
+      "Loggable Time",
+    ],
+    image: {
+      src: "/src/assets/facebook/pitcairn-flight-academy_pottstown-PA_pilot-training_vision-plane-good-points-of-reference.jpg",
+      alt: "Vision plane with good points of reference at Pitcairn Flight Academy in Pottstown, PA",
+    },
+    reverse: false,
+  },
+  {
+    title: "Philly Skyline",
+    subtitle: "Scenic Lesson",
+    price: "$275",
+    desc: "The ultimate East Coast aerial experience. Transition through busy airspace to see Center City skyscrapers and the stadium district up close.",
+    features: [
+      "75-min Flight",
+      "City Orbit",
+      "ATC Interaction",
+      "Extended Debrief",
+    ],
+    image: {
+      src: "/src/assets/instagram/pitcairn-flight-academy_Philadelphia-PA_flight-training_cards and plane-Philadelphia-city-vision-from-plane-day.jpg",
+      alt: "Cards and plane with Philadelphia city view from plane during day at Pitcairn Flight Academy in Philadelphia, PA",
+    },
+    reverse: true,
+  },
+  {
+    title: "Valley Forge",
+    subtitle: "Historical Route",
+    price: "$185",
+    desc: "Trace the history of the American Revolution from the cockpit. A scenic route over national monuments combined with basic pilotage training.",
+    features: [
+      "40-min Flight",
+      "Historic Views",
+      "Navigation Intro",
+      "HD Photo Ops",
+    ],
+    image: {
+      src: "/src/assets/facebook/pitcairn-flight-academy_pottstown-PA_pilot-training_plane-vision-clouds-sunset.jpg",
+      alt: "Plane vision with clouds at sunset at Pitcairn Flight Academy in Pottstown, PA",
+    },
+    reverse: false,
+  },
+];
+---
+
+<section class="py-24 bg-white overflow-hidden">
+  <div
+    class="max-w-7xl mx-auto space-y-12 grid grid-cols-1 lg:grid-cols-3 gap-12"
+  >
+    {
+      regionalTours.map((tour) => (
+        <div class={`flex group flex-col lg:items-center gap-12 lg:gap-20 }`}>
+          <div class=" flex  relative">
+            <div class="relative h-full rounded-2xl  overflow-hidden shadow-2xl transition-transform duration-700 group-hover:-translate-y-2">
+              <ImageComp
+                src={tour.image.src}
+                alt={tour.image.alt}
+                class=" aspect-4/5 group-hover:scale-105 transition-transform duration-1000"
+              />
+
+              <div class="absolute top-6 left-6 px-5 py-2 bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl ">
+                <span class="text-white text-[10px] font-black uppercase tracking-[0.2em]">
+                  {tour.subtitle}
+                </span>
+              </div>
+
+              <div class="absolute bottom-0 right-0 bg-sky-600 px-8 py-4 rounded-tl-[2rem] translate-y-full group-hover:translate-y-0 transition-transform duration-500">
+                <span class="text-white font-black text-xl">{tour.price}</span>
+              </div>
+            </div>
+          </div>
+          {/* Text */}
+          <div class=" flex flex-col">
+            <div class="inline-flex items-center gap-3 mb-6">
+              <div class="h-[2px] w-8 bg-sky-500" />
+              <span class="text-sky-600 font-bold text-xs uppercase tracking-widest">
+                Adventure {regionalTours.indexOf(tour) + 1}
+              </span>
+            </div>
+
+            <h2 class="text-4xl lg:text-6xl font-black text-slate-900 tracking-tighter uppercase mb-6 leading-[0.9]">
+              {tour.title}
+            </h2>
+
+            <p class="text-slate-500 text-lg leading-relaxed mb-8 max-w-md">
+              {tour.desc}
+            </p>
+
+            <div class="grid grid-cols-2 gap-y-4 gap-x-8 mb-10 pb-10 border-b border-slate-100">
+              {tour.features.map((f) => (
+                <div class="flex items-center gap-3 group/item">
+                  <div class="w-2 h-2 rounded-2xl  bg-sky-200 group-hover/item:bg-sky-500 transition-colors" />
+                  <span class="text-slate-800 font-bold text-[11px] uppercase tracking-wider">
+                    {f}
+                  </span>
+                </div>
+              ))}
+            </div>
+
+            <a href="#book" class="group flex items-center gap-6">
+              <div class="flex items-center justify-center w-14 h-14 rounded-2xl  bg-slate-900 text-white group-hover:bg-sky-600 transition-all duration-500 group-hover:rotate-[360deg]">
+                <svg
+                  class="w-6 h-6"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M14 5l7 7m0 0l-7 7m7-7H3"
+                  />
+                </svg>
+              </div>
+              <span class="text-slate-950 font-black uppercase text-sm tracking-widest border-b-2 border-transparent group-hover:border-sky-500 transition-all">
+                Request This Flight
+              </span>
+            </a>
+          </div>
+        </div>
+      ))
+    }
+  </div>
+</section>

@@ -1,0 +1,147 @@
+---
+import { COMPANY_NAME } from "../../data/consts";
+import ImageComp from "../ImageComp.astro";
+---
+
+<section class="py-24 md:py-32 bg-white overflow-hidden observe-section">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="grid lg:grid-cols-2 gap-16 items-center">
+      <div
+        class="order-last lg:order-first reveal relative h-full min-h-[500px]"
+      >
+        <div
+          class="absolute -inset-4 border-2 border-slate-100 rounded-[2.5rem] -z-10 translate-x-2 translate-y-2"
+        >
+        </div>
+
+        <div
+          class="rounded-[2rem] overflow-hidden shadow-2xl bg-sky-900 h-full relative group"
+        >
+          <ImageComp
+            src="/src/assets/instagram/pitcairn-flight-academy_Philadelphia-PA_flight-training_-Philadelphia-first-solo-double.jpg"
+            alt="Philadelphia first solo double at Pitcairn Flight Academy in Philadelphia, PA flight training"
+            class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-700"
+          />
+
+          <div class="absolute top-6 left-6 flex gap-2">
+            <span
+              class="px-3 py-1 bg-sky-600/90 backdrop-blur-md text-white text-[10px] font-bold uppercase tracking-widest rounded-md"
+            >
+              Live Ops: KPTW
+            </span>
+          </div>
+
+          <div
+            class="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent pointer-events-none"
+          >
+          </div>
+        </div>
+      </div>
+
+      <div class="flex flex-col">
+        <span
+          class="text-sky-600 font-bold text-sm uppercase tracking-[0.2em] mb-4"
+          >Admissions Briefing</span
+        >
+        <h2
+          class="text-4xl md:text-5xl font-black text-slate-900 mb-8 leading-tight"
+        >
+          Is Flying Right <br /><span class="text-sky-600">for You?</span>
+        </h2>
+
+        <div class="space-y-6 text-lg text-slate-600 leading-relaxed mb-10">
+          <p>
+            Aviation isn't just a career choice; it’s a lifestyle for those who
+            refuse to be desk-bound. Whether you’re a <strong
+              class="text-slate-900">recent graduate</strong
+            > looking for a high-speed start, a <strong class="text-slate-900"
+              >professional</strong
+            > seeking an exit from the 9-to-5, or an enthusiast ready to own the sky.
+          </p>
+          <p>
+            We don't do "hobby flights." We take you from zero to <strong
+              class="text-sky-600 font-bold"
+              >professional airline standards in 8 to 10 months</strong
+            >. If you're looking for a shortcut, this isn't it. But if you’re
+            looking for immersion mentored by senior airline captains, you’re in
+            the right place.
+          </p>
+        </div>
+
+        <div
+          class="bg-sky-50 rounded-2xl p-8 border border-slate-100 relative overflow-hidden mb-10 group hover:shadow-xl hover:shadow-sky-100/50 transition-all duration-500"
+        >
+          <div
+            class="absolute top-0 right-0 p-4 opacity-5 group-hover:opacity-10 transition-opacity"
+          >
+            <svg class="w-24 h-24" fill="currentColor" viewBox="0 0 24 24"
+              ><path
+                d="M21 16.5c0 .38-.21.71-.53.88l-7.97 4.13a1 1 0 0 1-.94 0l-7.97-4.13c-.32-.17-.53-.5-.53-.88V7.5c0-.38.21-.71.53-.88l7.97-4.13a1 1 0 0 1 .94 0l7.97 4.13c.32.17.53.5.53.88v9z"
+              ></path></svg
+            >
+          </div>
+
+          <h3
+            class="text-sm font-bold text-slate-400 uppercase tracking-widest mb-6 flex items-center gap-2"
+          >
+            <span class="w-2 h-2 bg-sky-500 rounded-2xl animate-pulse"></span>
+            Common Considerations
+          </h3>
+
+          <ul class="space-y-4">
+            {
+              [
+                "Zero prior flight experience",
+                "Concerns about motion or altitude",
+                "Deciding between hobby vs. career",
+                "Transparent cost analysis",
+              ].map((item) => (
+                <li class="flex items-center gap-3 text-slate-700 font-medium">
+                  <svg
+                    class="w-5 h-5 text-sky-500 shrink-0"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="3"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M5 13l4 4L19 7"
+                    />
+                  </svg>
+                  {item}
+                </li>
+              ))
+            }
+          </ul>
+        </div>
+
+        <div
+          class="flex items-start gap-4 p-6 bg-sky-900 rounded-2xl text-white shadow-lg"
+        >
+          <div class="p-2 bg-sky-500 rounded-lg shrink-0">
+            <svg
+              class="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
+              ></path>
+            </svg>
+          </div>
+          <p class="text-sm font-medium leading-relaxed">
+            At <span class="text-sky-400">{COMPANY_NAME}</span>, there is no
+            pressure to sign up. Our mission is to provide you with the data you
+            need to make an informed decision about your future.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

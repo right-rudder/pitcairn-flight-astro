@@ -1,0 +1,109 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { getCollection } from "astro:content";
+import BlogPostCard from "../../components/Blog/BlogPostCard.astro";
+import Hero75 from "../../components/Hero75.astro";
+import CTASection from "../../components/CTASection.astro";
+import CardBlog from "../../components/Blog/CardBlog.astro";
+import { COMPANY_NAME } from "../../input/consts";
+
+const blogPosts = await getCollection("blog");
+const sortedPosts = blogPosts.sort(
+  (a, b) => b.data.pubDate.getTime() - a.data.pubDate.getTime(),
+);
+
+// Separar o primeiro post (featured) dos demais
+const featuredPost = sortedPosts[0];
+const remainingPosts = sortedPosts.slice(1);
+
+// Format date helper
+const formatDate = (date: Date) => {
+  return new Intl.DateTimeFormat("en-US", {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  }).format(date);
+};
+
+const heroData = {
+  image: {
+    src: "/src/assets/facebook/pitcairn-flight-academy_pottstown-PA_pilot-training_planes-on-front-of-hangar.jpg",
+    alt: "Planes in front of hangar at Pitcairn Flight Academy in Pottstown, PA pilot training",
+  },
+  upperHeader: "Latest Insights",
+  title: "Stay Informed <br> About Aviation",
+  subTitle: `Explore articles, tips, and updates from ${COMPANY_NAME}. Learn from our instructors, discover industry news, and enhance your pilot knowledge.`,
+  cta: [
+    { url: "/bew-to-flying", text: "New to Flying?" },
+    { url: "/about", text: "Meet the Team" },
+  ],
+};
+
+const constBlogData = {
+  upperHeader: `${COMPANY_NAME}'s`,
+  title: "Blog",
+  paragraphs: [
+    "Stay informed with the latest aviation insights, training tips, relevant informations, and industry news.",
+  ],
+  upperHeaderTwo: "They Are Here For You",
+  titleTwo: "Our Fleet Aircrafts",
+};
+
+const ctaData = {
+  title: "Define Your Mission. Let’s Reach the Majors Together.",
+  description:
+    "Your first step at  is defining that goal, as it will shape your standards, timeline, and path to the cockpit. Whether you are aiming for the airlines or mastering a new rating, we are here to provide the roadmap and the mentorship to get you there. Define your mission today, and let’s start your training plan.",
+  image: {
+    src: "/src/assets/placeholder-dark-clouds-pitcairn-flight-academy-instrument-rating.webp",
+    alt: "Training aircraft in flight",
+  },
+  primaryCTA: {
+    text: "Schedule a Tour",
+    href: "/contact",
+  },
+  secondaryCTA: {
+    text: "Enroll Now",
+    href: "/enroll",
+  },
+};
+
+const metaProps = {
+  siteTitle: `${COMPANY_NAME} | Aviation Blog & Pilot Resources`,
+  siteDescription: `Aviation articles, pilot training insights, and flight school updates from ${COMPANY_NAME}.`,
+  siteKeywords: `${COMPANY_NAME}, aviation blog, pilot training articles, flight school resources`,
+};
+---
+
+<BaseLayout {...metaProps}>
+  <Hero75 data={heroData} />
+
+  <section class="py-16 px-4 bg-muted-50">
+    <div class="max-w-7xl mx-auto">
+      <div class="flex flex-col gap-6 lg:gap-12">
+        {
+          featuredPost && (
+            <div class="">
+              <div class="relative">
+                <span class="absolute top-4 left-4 bg-monza-600 text-white px-4 py-1 text-sm font-bold uppercase z-10">
+                  Featured
+                </span>
+
+                <CardBlog blogEntry={featuredPost} />
+              </div>
+            </div>
+          )
+        }
+        <div class="flex flex-wrap gap-y-6 gap-x-2 justify-between">
+          {
+            remainingPosts.map((post, i) => (
+              <div class="w-full md:w-1/2 lg:w-[32%]">
+                <CardBlog blogEntry={post} index={i + 1} />
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </div>
+  </section>
+  <CTASection {...ctaData} />
+</BaseLayout>

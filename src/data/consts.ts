@@ -1,12 +1,46 @@
 // ==============================
+// Business Information
+// ==============================
+
+export const COMPANY_NAME = "Pitcairn Flight Academy";
+export const COMPANY_NAME_CAPS = "PITCAIRN FLIGHT ACADEMY";
+export const COMPANY_NICKNAME = "Pitcairn Flight";
+
+export const PHONE_NUMBER = "(610) 495-7000"; // confirm public phone number
+export const PHONE_NUMBER_HEADER = "(610) 495-7000";
+
+export const ADDRESS_LINE_1 = "3310 W Ridge Pike";
+export const ADDRESS_LINE_2 = "Pottstown, PA 19464";
+
+export const ADDRESS = "3310 W Ridge Pike, Pottstown, PA 19464";
+export const ADDRESS_CITY = "Pottstown";
+export const ADDRESS_STATE = "Pennsylvania";
+export const ADDRESS_ZIP = "19464";
+
+export const AIRPORT = "Heritage Field Airport";
+export const AIRPORT_CODE = "KPTW";
+
+export const GMAPS = "https://maps.app.goo.gl/fLfuY4F4zfd4CePr6"; // add Google Maps share link
+export const EMAIL_ADDRESS = ""; // considering learntofly@pitcairnflight.com
+
+export const FACEBOOK_URL =
+  "https://www.facebook.com/profile.php?id=100090594675356";
+export const INSTAGRAM_URL = "https://www.instagram.com/pitcairnflightacademy"; // verify
+export const LINKEDIN_URL = "";
+export const X_URL = "";
+export const YOUTUBE_URL = "";
+export const YELP_URL = "";
+export const GITHUB_URL = "";
+
+export const LOCAL_TARGET_AREA = "Pottstown, PA";
+export const MAJOR_TARGET_AREA = "Philadelphia, PA";
+// ==============================
 // Site Metadata
 // ==============================
 
-export const SITE_TITLE =
-  "Pitcairn Flight Academy | Flight Training in Pottstown, PA";
+export const SITE_TITLE = `${COMPANY_NAME} | Flight Training in ${LOCAL_TARGET_AREA}, near ${MAJOR_TARGET_AREA}`;
 
-export const SITE_DESCRIPTION =
-  "Pitcairn Flight Academy is a pilot-focused flight school based at Heritage Field Airport (KPTW) in Pottstown, Pennsylvania, offering structured, safety-driven flight training with flexible scheduling.";
+export const SITE_DESCRIPTION = `${COMPANY_NAME} is a pilot-focused flight school based at ${AIRPORT} (${AIRPORT_CODE}) in ${LOCAL_TARGET_AREA}, offering structured, safety-driven flight training with flexible scheduling.`;
 
 // ==============================
 // SEO Keywords
@@ -72,39 +106,6 @@ export const LOGO_ASSETS_2 =
   "/src/assets/brand/Pitcairn-FS-Typography-Logo.png";
 export const LOGO_ASSETS_3 =
   "/src/assets/brand/pitcairn-flight-academy-logo-white.png";
-
-// ==============================
-// Business Information
-// ==============================
-
-export const COMPANY_NAME = "Pitcairn Flight Academy";
-export const COMPANY_NAME_CAPS = "PITCAIRN FLIGHT ACADEMY";
-export const COMPANY_NICKNAME = "Pitcairn Flight";
-
-export const PHONE_NUMBER = "(610) 495-7000"; // confirm public phone number
-export const PHONE_NUMBER_HEADER = "(610) 495-7000";
-
-export const ADDRESS_LINE_1 = "3310 W Ridge Pike";
-export const ADDRESS_LINE_2 = "Pottstown, PA 19464";
-
-export const ADDRESS = "3310 W Ridge Pike, Pottstown, PA 19464";
-export const ADDRESS_CITY = "Pottstown";
-export const ADDRESS_STATE = "Pennsylvania";
-export const ADDRESS_ZIP = "19464";
-
-export const AIRPORT = "Heritage Field Airport";
-export const AIRPORT_CODE = "KPTW";
-
-export const GMAPS = ""; // add Google Maps share link
-export const EMAIL_ADDRESS = ""; // considering learntofly@pitcairnflight.com
-
-export const FACEBOOK_URL = ""; // verify
-export const INSTAGRAM_URL = ""; // verify
-export const LINKEDIN_URL = "";
-export const X_URL = "";
-export const YOUTUBE_URL = "";
-export const YELP_URL = "";
-export const GITHUB_URL = "";
 
 // ==============================
 // Locations

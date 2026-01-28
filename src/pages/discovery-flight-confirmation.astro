@@ -1,0 +1,109 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { COMPANY_NAME } from "../data/consts";
+
+const metaProps = {
+  siteTitle: `${COMPANY_NAME} | Discovery Flight Confirmation`,
+  siteDescription: `Your discovery flight request with ${COMPANY_NAME} has been received. Get ready to take the controls.`,
+  siteKeywords: `${COMPANY_NAME}, discovery flight confirmation, introductory flight`,
+};
+---
+
+<BaseLayout {...metaProps}>
+  class="bg-sky-50 text-sky-900" >
+  <div
+    class="relative min-h-[90vh] flex items-center justify-center px-6 overflow-hidden"
+  >
+    <div class="absolute inset-0 z-0 pointer-events-none opacity-40">
+      <div
+        class="absolute top-0 left-1/2 -transky-x-1/2 w-full h-full bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-sky-100 via-transparent to-transparent"
+      >
+      </div>
+    </div>
+
+    <div class="relative z-10 max-w-2xl mx-auto text-center">
+      <div class="relative mb-10 inline-flex items-center justify-center">
+        <div class="absolute inset-0 bg-sky-500/20 rounded-2xl animate-ping">
+        </div>
+        <div
+          class="relative w-24 h-24 bg-sky-800 text-white rounded-2xl flex items-center justify-center shadow-2xl shadow-sky-900/20"
+        >
+          <svg
+            class="w-12 h-12"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M5 13l4 4L19 7"></path>
+          </svg>
+        </div>
+      </div>
+
+      <h1
+        class="text-4xl md:text-5xl font-black text-sky-900 uppercase tracking-tighter mb-4"
+      >
+        Transmission <span class="text-sky-600">Received</span>
+      </h1>
+
+      <p class="text-xl text-sky-600 mb-12 leading-relaxed">
+        Thank you for reaching out to <strong>{COMPANY_NAME}</strong>. <br
+          class="hidden md:block"
+        />
+        Our flight operations team has logged your inquiry and will contact you shortly
+        to discuss your mission.
+      </p>
+
+      <div class="grid sm:grid-cols-3 gap-4 text-left">
+        <a
+          href="/"
+          class="group p-5 bg-white border border-sky-200 rounded-2xl shadow-sm hover:border-sky-500 hover:shadow-xl hover:shadow-sky-900/5 transition-all"
+        >
+          <p
+            class="text-[10px] font-black uppercase tracking-widest text-sky-400 mb-2 group-hover:text-sky-600"
+          >
+            Go Home
+          </p>
+          <p class="font-bold text-sky-900">Return to Base</p>
+        </a>
+
+        <a
+          href="/fleet"
+          class="group p-5 bg-white border border-sky-200 rounded-2xl shadow-sm hover:border-sky-500 hover:shadow-xl hover:shadow-sky-900/5 transition-all"
+        >
+          <p
+            class="text-[10px] font-black uppercase tracking-widest text-sky-400 mb-2 group-hover:text-sky-600"
+          >
+            Our Fleet
+          </p>
+          <p class="font-bold text-sky-900">Inspect the Fleet</p>
+        </a>
+
+        <a
+          href="/about"
+          class="group p-5 bg-white border border-sky-200 rounded-2xl shadow-sm hover:border-sky-500 hover:shadow-xl hover:shadow-sky-900/5 transition-all"
+        >
+          <p
+            class="text-[10px] font-black uppercase tracking-widest text-sky-400 mb-2 group-hover:text-sky-600"
+          >
+            Our Team
+          </p>
+          <p class="font-bold text-sky-900">Meet the Team</p>
+        </a>
+      </div>
+
+      <div class="mt-16 flex items-center justify-center gap-2">
+        <div class="h-1 w-12 bg-sky-800 rounded-2xl"></div>
+        <div class="h-1 w-4 bg-sky-200 rounded-2xl"></div>
+        <div class="h-1 w-4 bg-sky-200 rounded-2xl"></div>
+        <span
+          class="ml-4 text-[10px] font-black uppercase tracking-[0.2em] text-sky-400"
+          >Fly with us</span
+        >
+      </div>
+    </div>
+  </div>
+</BaseLayout>

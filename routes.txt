@@ -1,0 +1,98 @@
+OTHER
+✔️ Update meta title meta description 
+✔️ Update all images
+
+EXTRA PAGES
+✔️ https://pitcairnflightacademy.com/our-team
+✔️ https://pitcairnflightacademy.com/our-team/slug
+✔️ https://pitcairnflightacademy.com/airplane-rentals/slug
+
+DONE
+
+✔️ https://pitcairnflightacademy.com/
+✔️ https://pitcairnflightacademy.com/pilot-training (TODO add take the quiz section)
+✔️ https://pitcairnflightacademy.com/private-pilot-training
+✔️ https://pitcairnflightacademy.com/instrument-rating
+✔️ https://pitcairnflightacademy.com/become-a-cfi
+✔️ https://pitcairnflightacademy.com/commercial-pilot-training
+✔️ https://pitcairnflightacademy.com/about-us
+✔️ https://pitcairnflightacademy.com/airplane-rentals
+✔️ https://pitcairnflightacademy.com/why-become-a-pilot
+✔️ https://pitcairnflightacademy.com/why-pitcairn-flight-academy
+✔️ https://pitcairnflightacademy.com/scenic-rides
+✔️ https://pitcairnflightacademy.com/terms-of-service-privacy-policy
+✔️ https://pitcairnflightacademy.com/404
+✔️ https://pitcairnflightacademy.com/500
+✔️ https://pitcairnflightacademy.com/contact-us
+✔️ https://pitcairnflightacademy.com/contact-confiramtion
+✔️ https://pitcairnflightacademy.com/enroll-at-pitcairn-flight-academy
+✔️ https://pitcairnflightacademy.com/enroll-at-pitcairn-flight-academy-confirmation
+✔️ https://pitcairnflightacademy.com/quiz
+✔️ https://pitcairnflightacademy.com/quiz-confirmation
+✔️ https://pitcairnflightacademy.com/discovery-flight
+
+DONE BLOG POSTS
+
+✔️ https://pitcairnflightacademy.com/posts/announcing-the-3rd-annual-heritage-field-kptw-fly-in-event
+
+✔️ https://pitcairnflightacademy.com/posts/planning-ahead-for-election-season-what-is-a-tfr
+
+✔️ https://pitcairnflightacademy.com/posts/the-art-of-perfect-landings-techniques-for-greasing-it-every-time
+
+✔️ https://pitcairnflightacademy.com/posts/top-5-apps-every-student-pilot-should-have
+
+✔️ https://pitcairnflightacademy.com/posts/junior-aviators-camp-inspiring-the-next-generation-of-pilots-at-pitcairn-flight-academy
+
+✔️ https://pitcairnflightacademy.com/posts/first-solo-flight-what-to-expect-and-how-to-prepare
+
+✔️ https://pitcairnflightacademy.com/posts/meet-the-pitcairn-fleet-why-we-fly-the-aircraft-we-do
+
+✔️ https://pitcairnflightacademy.com/posts/ace-the-private-pilot-written-exam
+
+✔️ https://pitcairnflightacademy.com/posts/experience-the-pitcairn-advantage-cross-country-flying-in-pennsylvania
+
+✔️ https://pitcairnflightacademy.com/posts/the-art-of-perfect-landings-techniques-for-greasing-it-every-time
+
+✔️ https://pitcairnflightacademy.com/posts/top-5-apps-every-student-pilot-should-have
+
+✔️ https://pitcairnflightacademy.com/posts/junior-aviators-camp-inspiring-the-next-generation-of-pilots-at-pitcairn-flight-academy
+
+✔️ https://pitcairnflightacademy.com/posts/first-solo-flight-what-to-expect-and-how-to-prepare
+
+✔️ https://pitcairnflightacademy.com/posts/meet-the-pitcairn-fleet-why-we-fly-the-aircraft-we-do
+
+✔️ https://pitcairnflightacademy.com/posts/ace-the-private-pilot-written-exam
+
+✔️ https://pitcairnflightacademy.com/posts/experience-the-pitcairn-advantage-cross-country-flying-in-pennsylvania
+
+✔️ https://pitcairnflightacademy.com/posts/the-benefits-of-learning-to-fly-in-uncongested-airspace
+
+✔️ https://pitcairnflightacademy.com/posts/understanding-r-atp-and-atp-certification
+
+✔️ https://pitcairnflightacademy.com/posts/mastering-radio-communication-a-beginner-s-guide-for-student-pilots
+
+✔️ https://pitcairnflightacademy.com/posts/why-choose-pitcairn-flight-academy
+
+✔️ https://pitcairnflightacademy.com/posts/understanding-the-differences-between-part-61-and-part-141-flight-schools
+
+✔️ https://pitcairnflightacademy.com/posts/from-private-to-pro-your-commercial-pilot-journey-at-pitcairn
+
+✔️ https://pitcairnflightacademy.com/blog
+
+DOING
+
+💠 https://pitcairnflightacademy.com/discovery-flight-confirmation
+💠 Add animations and Transitions 
+💠 Design Improvements in each page / align experimental designs
+
+TODO
+
+- Check h1s
+- Check every link from every page to be working [ / ]
+- Add more CTA button/links around components
+- Make Quiz CTA Component
+- Make clouds texture to white bg
+- Update fleet info 
+- Financing Page
+- Partners Page / Services Index Page
+- scenic tours differnt then scenic rides (check if they have the certification and change to tour for now)

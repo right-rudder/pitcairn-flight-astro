@@ -1,0 +1,46 @@
+---
+import { COMPANY_NAME } from "../../data/consts";
+const {
+  content = {
+    title: "Final Note",
+    description:
+      "Once submitted, your answers will be reviewed by our team to discuss your personalized training path.",
+    checkboxText: `By providing my email and phone number, I agree to receive email and text messages from ${COMPANY_NAME} and understand I can opt-out anytime.`,
+  },
+  btnText = "Submit Flight Assessment",
+} = Astro.props;
+---
+
+<!-- Confirmation Check -->
+<div class="text-center space-y-8 pt-10">
+  <div
+    class="max-w-xl mx-auto p-6 bg-slate-100 rounded-2xl border border-slate-200"
+  >
+    <h4 class="font-bold text-slate-900 mb-2" set:html={content.title} />
+    <p
+      class="text-xs text-slate-500 leading-relaxed uppercase tracking-tighter"
+      set:html={content.description}
+    />
+  </div>
+
+  <div class="flex justify-center items-center gap-3">
+    <input
+      type="checkbox"
+      name="agree-data-collection"
+      id="agree-data-collection"
+      class="h-5 w-5 rounded-2xl border-slate-300 text-primary focus:ring-primary cursor-pointer"
+    />
+    <label for="agree-data-collection" class="text-slate-500 text-sm italic">
+      {content.checkboxText}
+    </label>
+  </div>
+
+  <button
+    type="submit"
+    id="submit-button"
+    class="inline-flex items-center justify-center px-12 py-4 bg-primary text-white font-black uppercase tracking-[0.2em] rounded-2xl shadow-xl shadow-primary/20 hover:bg-primary-dark transition-all active:scale-95 disabled:bg-slate-300 disabled:shadow-none disabled:cursor-not-allowed"
+    disabled
+  >
+    {btnText}
+  </button>
+</div>

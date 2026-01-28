@@ -1,0 +1,154 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import ImageComp from "../components/ImageComp.astro";
+import { PHONE_NUMBER } from "../data/consts";
+
+const COMPANY_NAME = "Pitcairn Flight Academy";
+---
+
+<BaseLayout
+  siteTitle={`404 page - Lost in the Clouds | ${COMPANY_NAME}`}
+  siteDescription="The page you are looking for has taken an unexpected heading. Let's get you back to Pitcairn Flight Academy."
+>
+  <section
+    class="relative min-h-screen flex items-center justify-center bg-white overflow-hidden py-20 px-5"
+  >
+    <div
+      class="absolute inset-0 z-0 opacity-20"
+      style="background-image: radial-gradient(#0ea5e9 0.5px, transparent 0.5px), linear-gradient(to right, #0ea5e9 0.5px, transparent 0.5px), linear-gradient(to bottom, #0ea5e9 0.5px, transparent 0.5px); background-size: 100px 100px, 50px 50px, 50px 50px;"
+    >
+    </div>
+
+    <div class="absolute inset-0 z-0">
+      <ImageComp
+        src="/src/assets/placeholder-dark-clouds-pitcairn-flight-academy-instrument-rating.webp"
+        alt="Aviation Background"
+        class="w-full h-full object-cover opacity-30 grayscale"
+      />
+      <div
+        class="absolute inset-0 bg-gradient-to-b from-sky-800 via-sky-800/80 to-sky-800"
+      >
+      </div>
+    </div>
+
+    <div class="relative z-10 max-w-4xl mx-auto text-center">
+      <div class="relative inline-block mb-12">
+        <span
+          class="absolute -inset-4 bg-sky-500/20 blur-3xl rounded-2xl animate-pulse"
+        ></span>
+        <h1
+          class="relative text-[12rem] md:text-[16rem] font-black text-white/5 leading-none tracking-tighter select-none"
+        >
+          404
+        </h1>
+        <div class="absolute inset-0 flex items-center justify-center">
+          <h2
+            class="text-3xl md:text-5xl font-black text-white uppercase tracking-tighter italic"
+          >
+            Off <span class="text-sky-500">Course</span>
+          </h2>
+        </div>
+      </div>
+
+      <div class="space-y-6 mb-16">
+        <h3
+          class="text-xl md:text-2xl font-bold text-sky-400 uppercase tracking-[0.3em]"
+        >
+          Signal Lost: Route Not Found
+        </h3>
+        <p
+          class="text-slate-400 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed"
+        >
+          The coordinates you entered don't exist in our navigation system.
+          You've drifted into uncontrolled airspace. Let’s get you back to the
+          flight line.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-2xl mx-auto">
+        <a
+          href="/"
+          class="group relative flex items-center justify-center gap-4 bg-white text-sky-800 px-8 py-5 rounded-2xl font-black uppercase text-sm tracking-widest transition-all hover:bg-sky-500 hover:text-white hover:scale-[1.02]"
+        >
+          <svg
+            class="w-5 h-5 transition-transform group-hover:-translate-x-1"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2.5"
+              d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
+          </svg>
+          Return to Base
+        </a>
+
+        <a
+          href="/programs"
+          class="group relative flex items-center justify-center gap-4 bg-slate-900 text-white border border-slate-800 px-8 py-5 rounded-2xl font-black uppercase text-sm tracking-widest transition-all hover:bg-slate-800 hover:scale-[1.02]"
+        >
+          View Flight Programs
+          <svg
+            class="w-5 h-5 transition-transform group-hover:translate-x-1"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2.5"
+              d="M13 5l7 7m0 0l-7 7m7-7H3"></path>
+          </svg>
+        </a>
+      </div>
+
+      <div
+        class="mt-20 pt-10 border-t border-white/5 flex flex-col md:flex-row items-center justify-center gap-8"
+      >
+        <div class="flex items-center gap-3">
+          <div class="w-2 h-2 bg-green-500 rounded-2xl animate-ping"></div>
+          <span
+            class="text-[10px] font-black uppercase tracking-widest text-slate-500"
+            >ATC Support Available</span
+          >
+        </div>
+        <a
+          href={`tel:${PHONE_NUMBER}`}
+          class="text-slate-300 hover:text-sky-400 font-bold transition-colors"
+        >
+          Contact Flight Operations: {PHONE_NUMBER}
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  /* Subtle scanline effect for that cockpit monitor feel */
+  section::after {
+    content: " ";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background:
+      linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%),
+      linear-gradient(
+        90deg,
+        rgba(255, 0, 0, 0.06),
+        rgba(0, 255, 0, 0.02),
+        rgba(0, 0, 255, 0.06)
+      );
+    z-index: 2;
+    background-size:
+      100% 2px,
+      3px 100%;
+    pointer-events: none;
+    opacity: 0.3;
+  }
+</style>

@@ -13,7 +13,7 @@ type Program = CollectionEntry<"programs">;
 
 const programs = await getCollection("programs");
 const sortedPrograms = programs.sort(
-  (a: Program, b: Program) => (a.data.order || 999) - (b.data.order || 999)
+  (a: Program, b: Program) => (a.data.order || 999) - (b.data.order || 999),
 );
 
 export type MenuItem = {
@@ -27,26 +27,31 @@ export const menu: MenuItem[] = [
     label: "New to Flying?",
     url: "/new-to-flying",
     children: [
-      { label: "New to Flying", url: "/new-to-flying" },
-      { label: "Discovery Flight", url: "/new-to-flying" },
+      { label: "New to Flying", url: "/why-become-a-pilot" },
+      { label: "Take the Quiz", url: "/quiz" },
+      { label: "Discovery Flight", url: "/discovery-flight" },
     ],
   },
   {
     label: "About Us",
-    url: "/about",
+    url: "/about-us",
     children: [
-      { label: `About ${COMPANY_NAME}`, url: "/about" },
-      { label: "Our Fleet", url: "/aircraft" },
+      { label: `About ${COMPANY_NAME}`, url: "/about-us" },
+      { label: `Why ${COMPANY_NAME}`, url: "/why-pitcairn-flight-academy" },
+      { label: `Our Team`, url: "/our-team" },
+      { label: "Our Fleet", url: "/airplane-rentals" },
       { label: "Our Blog", url: "/blog" },
-      { label: "Financing", url: "/financing" },
-      { label: "FAQs", url: "/faqs" },
+      // { label: "Financing", url: "/financing" }, // TODO: Implement Financing Page
+      // { label: "FAQs", url: "/faqs" }, // TODO: Implement FAQs Page
     ],
   },
   {
     label: "Services",
     url: "/about",
     children: [
-      { label: "Discovery Flight", url: "#" },
+      { label: "Discovery Flight", url: "/discovery-flight" },
+      { label: "Scenic Rides", url: "/scenic-rides" },
+      { label: "Airplane Rentals", url: "/airplane-rentals" },
       { label: "PennAir - Maintenance", url: "#" },
       { label: "PennJet - Jet", url: "#" },
       { label: "Pitcairn Aviation - FBO ", url: "#" },
@@ -60,7 +65,7 @@ export const footerMenu: MenuItem[] = [
     url: "/about",
     children: [
       { label: "New to Flying?", url: "/new-to-flying" },
-      { label: `About ${COMPANY_NAME}`, url: "/about/" },
+      { label: `About ${COMPANY_NAME}`, url: "/about-us" },
       { label: "FAQs", url: "/faq/" },
       { label: "Financing", url: "/financing" },
       { label: "Blog", url: "/blog" },
@@ -78,6 +83,7 @@ const { pathname } = Astro.props;
     <a
       class="hover:cursor-pointer object-contain h-auto max-h-22 mx-auto lg:mx-0 invert"
       id="logo-home-link"
+      href="/"
     >
       <ImageComp
         class="w-44 md:w-44 lg:w-56 mx-auto"
@@ -92,12 +98,15 @@ const { pathname } = Astro.props;
           <li
             class={`menu-item ${sortedPrograms.length >= 1 ? "has-children" : ""}`}
           >
-            <a class="hover:cursor-pointer">{sortedPrograms[0].collection}</a>
+            <a class="hover:cursor-pointer" href="/pilot-training">
+              {sortedPrograms[0].collection}
+            </a>
             {sortedPrograms.length >= 1 ? (
               <ul class="sub-menu">
                 {sortedPrograms.map((program: Program) => (
                   <li>
                     <a
+                      href={`/${program.slug}`}
                       class={
                         (`/programs/${program.slug}` === pathname ||
                           `/programs/${program.slug}/` === pathname) &&
@@ -134,6 +143,7 @@ const { pathname } = Astro.props;
                 {item.children.map((child) => (
                   <li>
                     <a
+                      href={child.url}
                       target={child.url.includes("http") ? "_blank" : ""}
                       class={
                         (child.url === pathname ||

@@ -23,7 +23,10 @@ const { title, description, primaryCTA, secondaryCTA } = Astro.props;
 ---
 
 <section class="relative py-24 md:py-40 text-white overflow-hidden">
-  <div class="absolute inset-0 bg-linear-to-t from-gray-900/0 via-gray-900/50 to-gray-900 -z-10"></div>
+  <div
+    class="absolute inset-0 bg-linear-to-t from-sky-900/0 via-sky-900/50 to-sky-900 -z-10"
+  >
+  </div>
   <ImageComp
     src={Astro.props.image?.src ||
       "/src/assets/avel-chuklanov-ZEiqbaQhmvE-unsplash.jpg"}

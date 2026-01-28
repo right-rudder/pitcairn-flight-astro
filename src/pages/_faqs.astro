@@ -3,6 +3,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import FAQs from "../components/FAQs.astro";
 import { PHONE_NUMBER } from "../data/consts";
 import Hero75 from "../components/Hero75.astro";
+import { COMPANY_NAME } from "../input/consts";
 
 const heroData = {
   image: {
@@ -15,11 +16,9 @@ const heroData = {
 };
 
 const metaProps = {
-  siteTitle: "Frequently Asked Questions | {COMPANY_NAME}",
-  siteDescription:
-    "Find answers to common questions about our Professional Pilot Track, training costs, housing, and the commitment required to succeed at {COMPANY_NAME}.",
-  siteKeywords:
-    "flight school FAQs,  Aviation questions, pilot training requirements, flight school housing, pilot training cost questions, FAA checkride FAQ",
+  siteTitle: `${COMPANY_NAME} | Flight Training FAQs`,
+  siteDescription: `Find answers to common flight training and pilot school questions at ${COMPANY_NAME}.`,
+  siteKeywords: `${COMPANY_NAME}, flight training FAQs, pilot school questions, aviation training info`,
 };
 ---
 

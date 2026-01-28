@@ -1,0 +1,58 @@
+---
+const example = {
+  legend: "Select your favorite fruit",
+  options: [
+    {
+      id: "apple",
+      label: "Apple",
+      name: "Apple",
+      value: "apple",
+      required: true,
+    },
+    {
+      id: "banana",
+      label: "Banana",
+      name: "Banana",
+      value: "banana",
+      required: true,
+    },
+    {
+      id: "cherry",
+      label: "Cherry",
+      name: "Cherry",
+      value: "cherry",
+      required: true,
+    },
+    { id: "date", label: "Date", name: "Date", value: "date", required: true },
+  ],
+};
+const { question = example } = Astro.props;
+---
+
+{/* Checkbox Group Design */}
+{
+  question.type === "radio" && (
+    <fieldset class="w-full">
+      <legend class="text-lg font-bold text-slate-900 mb-4 leading-tight">
+        {question.legend}
+      </legend>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+        {question.options.map((option: any) => (
+          <label class="group relative flex items-center p-4 rounded-2xl  border border-slate-200 cursor-pointer hover:bg-slate-50 transition-all has-checked:border-primary has-checked:bg-primary/5">
+            <input
+              id={option.id}
+              name={question.name}
+              type="radio"
+              class="h-5 w-5 border-slate-300 text-primary focus:ring-primary"
+              value={option.value}
+              required={option.required || question.required}
+            />
+            <span class="ml-3 font-medium text-slate-700 group-has-checked:text-primary">
+              {option.label}
+            </span>
+          </label>
+        ))}
+      </div>
+    </fieldset>
+  )
+}

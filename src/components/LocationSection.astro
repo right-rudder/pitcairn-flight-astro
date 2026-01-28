@@ -1,15 +1,21 @@
 ---
 import { ADDRESS, ADDRESS_CITY, ADDRESS_STATE, AIRPORT } from "../data/consts";
 
+const locationData = {
+  eyebrow: "Ideal Training Location",
+  headline: "Train Where<br/> Students Thrive",
+  bodyCopy:
+    "Based at Heritage Field Airport (KPTW) in Pottstown, Pennsylvania, Pitcairn Flight Academy offers access to uncongested airspace, efficient operations, and real-world flying conditions, perfect for student pilots at every stage.",
+};
 interface Props {
-  data: {
+  data?: {
     eyebrow: string;
     headline: string;
     bodyCopy: string;
   };
 }
 
-const { data } = Astro.props;
+const { data = locationData } = Astro.props;
 ---
 
 <section class="py-16 md:py-24 bg-slate-50 overflow-hidden">

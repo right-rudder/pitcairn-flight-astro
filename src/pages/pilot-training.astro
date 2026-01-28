@@ -1,0 +1,51 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { getCollection } from "astro:content";
+import type { CollectionEntry } from "astro:content";
+import Hero75 from "../components/Hero75.astro";
+import ImageComp from "../components/ImageComp.astro";
+import CTAMeetOurFleet from "../components/ProgramSlug/CTAMeetOurFleet.astro";
+import ProgramsGrid from "../components/Programs/ProgramsGrid.astro";
+import BookDownloadSection from "../components/BookDownloadSection.astro";
+import LocationSection from "../components/LocationSection.astro";
+import DiscoveryFlightCTA from "../components/Programs/DiscoveryFlightCTA.astro";
+import { COMPANY_NAME } from "../input/consts";
+
+type Program = CollectionEntry<"programs">;
+
+const programs = await getCollection("programs");
+const sortedPrograms = programs.sort(
+  (a: Program, b: Program) => (a.data.order || 999) - (b.data.order || 999),
+);
+
+const heroData = {
+  image: {
+    src: "/src/assets/facebook/pitcairn-flight-academy_pottstown-PA_pilot-training_pitcairn-flight-academy-junior-aviators-camp.jpg",
+    alt: "Pitcairn Flight Academy Junior Aviators Camp in Pottstown, PA",
+  },
+  title: "Pilot Training",
+  subTitle:
+    "Pitcairn Flight Academy is the perfect place to kickstart your pilot training journey. We're here to help you get your wings and achieve your dream of becoming a pilot. Join us and start on an exciting adventure in the world of aviation. Explore our comprehensive flight training programs designed to take you from zero to hero, learn about the Pilot Training Process and How to become a pilot.",
+  cta: [
+    {
+      url: "/enroll",
+      text: "Enroll Now",
+    },
+  ],
+};
+
+const metaProps = {
+  siteTitle: `${COMPANY_NAME} | Pilot Training Programs`,
+  siteDescription: `Explore pilot training programs at ${COMPANY_NAME}, from Private Pilot to Commercial and Flight Instructor training.`,
+  siteKeywords: `${COMPANY_NAME}, pilot training programs, flight school PA, private pilot, commercial pilot, CFI training`,
+};
+---
+
+<BaseLayout {...metaProps}>
+  <Hero75 data={heroData} />
+  <ProgramsGrid />
+  <DiscoveryFlightCTA />
+  <!-- <OldProgrammGrid /> -->
+  <BookDownloadSection />
+  <LocationSection />
+</BaseLayout>

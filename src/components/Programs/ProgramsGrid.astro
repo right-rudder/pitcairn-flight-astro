@@ -10,33 +10,20 @@ type Program = CollectionEntry<"programs">;
 const programs = await getCollection("programs");
 const sortedPrograms = programs
   .sort(
-    (a: Program, b: Program) => (a.data.order || 999) - (b.data.order || 999)
+    (a: Program, b: Program) => (a.data.order || 999) - (b.data.order || 999),
   )
   .slice(0, 5);
-
-interface Testimonial {
-  quote: string;
-  author: string;
-  role?: string;
-  rating?: number;
-}
-
-interface Props {
-  testimonials: Testimonial[];
-}
-
-const { testimonials } = Astro.props;
 ---
 
 <section
   class="py-16 md:py-24 bg-sky-800 text-slate-50 overflow-hidden relative"
 >
   <div
-    class="absolute top-0 left-0 w-96 h-96 bg-sky-600 rounded-full blur-[120px] opacity-30 -translate-x-1/2 -translate-y-1/2"
+    class="absolute top-0 left-0 w-96 h-96 bg-sky-600 rounded-2xl blur-[120px] opacity-30 -translate-x-1/2 -translate-y-1/2"
   >
   </div>
   <div
-    class="absolute bottom-0 right-0 w-96 h-96 bg-sky-600 rounded-full blur-[120px] opacity-30 translate-x-1/2 translate-y-1/2"
+    class="absolute bottom-0 right-0 w-96 h-96 bg-sky-600 rounded-2xl blur-[120px] opacity-30 translate-x-1/2 translate-y-1/2"
   >
   </div>
 
