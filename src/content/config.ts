@@ -27,7 +27,6 @@ const crewCollection = defineCollection({
 //     requirements: z.array(z.string()).optional(),
 //   }),
 // });
-
 const programsCollection = defineCollection({
   type: "content",
   schema: z.object({
@@ -52,7 +51,7 @@ const programsCollection = defineCollection({
               highlightName: z.string(),
               highlightValue: z.string(),
               pricingObservation: z.string().optional(),
-            })
+            }),
           )
           .optional(),
         programHighlights: z
@@ -97,7 +96,7 @@ const programsCollection = defineCollection({
             z.object({
               title: z.string(),
               items: z.array(z.string()),
-            })
+            }),
           )
           .optional(),
       })
@@ -149,7 +148,7 @@ const programsCollection = defineCollection({
             z.object({
               phaseTitle: z.string(),
               phaseBulletPoints: z.array(z.string()),
-            })
+            }),
           )
           .optional(),
         outcome: z.string().optional(),
@@ -165,7 +164,7 @@ const programsCollection = defineCollection({
             stepNumber: z.number(),
             title: z.string(),
             description: z.string(),
-          })
+          }),
         ),
       })
       .optional(),
@@ -180,7 +179,7 @@ const programsCollection = defineCollection({
             z.object({
               question: z.string(),
               answer: z.string(),
-            })
+            }),
           )
           .optional(),
       })
@@ -200,6 +199,74 @@ const programsCollection = defineCollection({
         secondButtonLink: z.string().optional(),
       })
       .optional(),
+
+    // ===== NEW SECTIONS ADDED BELOW =====
+
+    // Training Duration & Schedule Section
+    trainingDuration: z
+      .object({
+        title: z.string().default("Training Duration & Schedule"),
+        description: z.string().optional(),
+        schedules: z
+          .array(
+            z.object({
+              title: z.string(),
+              description: z.string(),
+              items: z.array(z.string()).optional(),
+            }),
+          )
+          .optional(),
+        note: z.string().optional(),
+      })
+      .optional(),
+
+    // First Steps Experience Section
+    firstStepsExperience: z
+      .object({
+        title: z.string().default("First Steps Experience"),
+        description: z.string().optional(),
+        experiences: z.array(z.string()).optional(),
+        bullets: z
+          .array(
+            z.object({
+              title: z.string(),
+              description: z.string(),
+            }),
+          )
+          .optional(),
+      })
+      .optional(),
+
+    // Complete Requirements Section
+    completeRequirements: z
+      .object({
+        title: z.string().default("Complete Requirements"),
+        description: z.string().optional(),
+        requirements: z.array(z.string()).optional(),
+        legalReference: z.string().optional(),
+        note: z.string().optional(),
+      })
+      .optional(),
+
+    // Urgent Call to Action Section
+    urgentCTA: z
+      .object({
+        title: z.string().optional(),
+        description: z.string().optional(),
+        subtext: z.string().optional(),
+        buttons: z
+          .array(
+            z.object({
+              text: z.string(),
+              link: z.string(),
+              type: z
+                .enum(["primary", "secondary", "tertiary"])
+                .default("primary"),
+            }),
+          )
+          .optional(),
+      })
+      .optional(),
   }),
 });
 
@@ -211,6 +278,7 @@ const aircraftCollection = defineCollection({
     description: z.string(),
     tailNumber: z.string().optional(),
     image: z.string(),
+    images: z.array(z.string()).optional(),
     specifications: z
       .object({
         engines: z.number().optional(),

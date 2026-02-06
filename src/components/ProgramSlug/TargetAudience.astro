@@ -1,28 +1,45 @@
 ---
 const { data } = Astro.props;
 ---
+
 <section class="py-16 bg-gray-900 text-white">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <h2 class="text-3xl font-bold mb-8">{data.title}</h2>
     <div class="grid md:grid-cols-2 gap-8">
       <div>
         <ul class="space-y-4">
-          {data.items.map((item: string) => (
-            <li class="flex items-center">
-              <span class="bg-red-600 rounded-full p-1 mr-3">
-                <svg class="w-4 h-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
-              </span>
-              <span class="text-lg">{item}</span>
-            </li>
-          ))}
+          {
+            data.items.map((item: string) => (
+              <li class="flex items-center">
+                <span class="bg-red-600 rounded-2xl  p-1 mr-3">
+                  <svg
+                    class="w-4 h-4 text-white"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M5 13l4 4L19 7"
+                    />
+                  </svg>
+                </span>
+                <span class="text-lg">{item}</span>
+              </li>
+            ))
+          }
         </ul>
       </div>
-      {data.notFor && (
-        <div class="bg-gray-800 p-6 rounded-lg border border-gray-700">
-          <p class="font-bold text-red-400 mb-2">Note:</p>
-          <p class="text-gray-300">{data.notFor}</p>
-        </div>
-      )}
+      {
+        data.notFor && (
+          <div class="bg-gray-800 p-6 rounded-lg border border-gray-700">
+            <p class="font-bold text-red-400 mb-2">Note:</p>
+            <p class="text-gray-300">{data.notFor}</p>
+          </div>
+        )
+      }
     </div>
   </div>
 </section>

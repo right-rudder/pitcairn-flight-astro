@@ -3,6 +3,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import Hero75 from "../components/Hero75.astro";
 import ImageComp from "../components/ImageComp.astro";
 import CTASectionWithGradientCover from "../components/CTASectionWithGradientCover.astro";
+import { COMPANY_NAME } from "../input/consts";
 
 const heroData = {
   image: {
@@ -84,12 +85,14 @@ const ctaData = {
 };
 
 const categories = [...new Set(partners.map((partner) => partner.category))];
+const metaProps = {
+  siteTitle: `${COMPANY_NAME} | Training & Industry Partners`,
+  siteDescription: `Discover the trusted aviation partners and organizations that support training at ${COMPANY_NAME}.`,
+  siteKeywords: `${COMPANY_NAME}, aviation partners, flight training partners, pilot career network`,
+};
 ---
 
-<BaseLayout
-  siteTitle="Partners | {COMPANY_NAME}"
-  siteDescription="A list of third party organizations that may be relevant to pilots pursuing professional training and career development."
->
+<BaseLayout {...metaProps}>
   <Hero75 data={heroData} />
 
   <section class="py-8 md:py-24 bg-white">
@@ -115,7 +118,7 @@ const categories = [...new Set(partners.map((partner) => partner.category))];
             <div class="bg-white rounded-xl shadow-lg overflow-hidden border-2 transition-all hover:scale-105 hover:shadow-xl hover:-translate-y-1 border-gray-200">
               <div class="p-6">
                 <div class="flex items-center justify-between mb-4">
-                  <span class="bg-monza-100 text-monza-700 text-xs font-bold px-3 py-1 rounded-full">
+                  <span class="bg-monza-100 text-monza-700 text-xs font-bold px-3 py-1 rounded-2xl ">
                     {partner.category}
                   </span>
                 </div>
@@ -178,7 +181,7 @@ const categories = [...new Set(partners.map((partner) => partner.category))];
       <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
         <div class="text-center">
           <div
-            class="w-16 h-16 bg-monza-100 rounded-full flex items-center justify-center mx-auto mb-4"
+            class="w-16 h-16 bg-monza-100 rounded-2xl flex items-center justify-center mx-auto mb-4"
           >
             <svg
               class="w-8 h-8 text-monza-600"
@@ -202,7 +205,7 @@ const categories = [...new Set(partners.map((partner) => partner.category))];
 
         <div class="text-center">
           <div
-            class="w-16 h-16 bg-monza-100 rounded-full flex items-center justify-center mx-auto mb-4"
+            class="w-16 h-16 bg-monza-100 rounded-2xl flex items-center justify-center mx-auto mb-4"
           >
             <svg
               class="w-8 h-8 text-monza-600"
@@ -226,7 +229,7 @@ const categories = [...new Set(partners.map((partner) => partner.category))];
 
         <div class="text-center">
           <div
-            class="w-16 h-16 bg-monza-100 rounded-full flex items-center justify-center mx-auto mb-4"
+            class="w-16 h-16 bg-monza-100 rounded-2xl flex items-center justify-center mx-auto mb-4"
           >
             <svg
               class="w-8 h-8 text-monza-600"
@@ -250,7 +253,7 @@ const categories = [...new Set(partners.map((partner) => partner.category))];
 
         <div class="text-center">
           <div
-            class="w-16 h-16 bg-monza-100 rounded-full flex items-center justify-center mx-auto mb-4"
+            class="w-16 h-16 bg-monza-100 rounded-2xl flex items-center justify-center mx-auto mb-4"
           >
             <svg
               class="w-8 h-8 text-monza-600"

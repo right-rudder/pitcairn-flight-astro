@@ -1,0 +1,74 @@
+---
+import ImageComp from "./ImageComp.astro";
+import Line from "./patterns and effects/Line.astro";
+
+interface Props {
+  data: {
+    eyebrow: string;
+    headline: string;
+    cards: {
+      title: string;
+      text: string;
+      logo: string;
+      logoClass: string;
+      href: string;
+    }[];
+  };
+}
+
+const { data } = Astro.props;
+---
+
+<section class="py-6 md:pb-24 bg-white overflow-hidden">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 lg:px-12 text-center">
+    <Line lineColor={"bg-sky-600/50"} />
+    <h2 class="text-sky-800 font-bold uppercase tracking-widest text-2xl mb-1">
+      {data.eyebrow}
+    </h2>
+    <p
+      class="title text-2xl uppercase font-main-header tracking-widest py-6 mx-auto max-w-3xl"
+      set:html={data.headline}
+    />
+
+    <div
+      class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 py-12 lg:pb-24"
+      id=""
+    >
+      {
+        data.cards.map((card, index) => {
+          return (
+            <a
+              class=" flex flex-col items-center justify-center group hover:border-sky-600  px-4 "
+              href={card.href}
+              data-aos="fade-down"
+              data-aos-delay={`${index * 150}`}
+            >
+              <div
+                class={
+                  "translate-y-10 flex items-center justify-center group-hover:-translate-y-1 transition-all ease-in-out  duration-700 " +
+                  card.logoClass
+                }
+              >
+                <ImageComp
+                  src={card.logo}
+                  alt={card.title}
+                  class="object-cover w-full"
+                />
+              </div>
+              {/* <div class="flex flex-col items-center justify-center w-full h-full">
+                <h3 class="text-xl font-bold text-sky-800 uppercase mb-3">
+                  {card.title}
+                </h3>
+                <p class="text-slate-600 leading-relaxed text-sm items-end">
+                  {card.text}
+                </p>
+              </div> */}
+            </a>
+          );
+        })
+      }
+    </div>
+
+    <Line lineColor={"bg-sky-600/50"} />
+  </div>
+</section>

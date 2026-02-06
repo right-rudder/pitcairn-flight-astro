@@ -13,17 +13,17 @@ const { program, index } = Astro.props;
 const duration = program.data.programIntroduction?.highlights?.find(
   (h) =>
     h.highlightName.toLowerCase().includes("duration") ||
-    h.highlightName.toLowerCase().includes("timeline")
+    h.highlightName.toLowerCase().includes("timeline"),
 )?.highlightValue;
 const cost = program.data.programIntroduction?.highlights?.find(
   (h) =>
     h.highlightName.toLowerCase().includes("cost") ||
-    h.highlightName.toLowerCase().includes("price")
+    h.highlightName.toLowerCase().includes("price"),
 )?.highlightValue;
 ---
 
 <article
-  class="program-card group rounded-3xl relative flex flex-col bg-slate-50 shadow-md hover:shadow-2xl hover:shadow-slate-950/10 transition-all duration-700 ease-out overflow-hidden border-b-0 border-x border-t-4 border-muted-200 hover:border-t-sky-600 hover:-translate-y-2 opacity-0 translate-y-8"
+  class="program-card group rounded-2xl relative flex flex-col bg-slate-50 shadow-md hover:shadow-2xl hover:shadow-slate-950/10 transition-all duration-700 ease-out overflow-hidden border-b-0 border-x border-t-4 border-muted-200 hover:border-t-sky-600 hover:-translate-y-2 opacity-0 translate-y-8"
   style={`transition-delay: ${index * 150}ms`}
 >
   <div class="relative h-72 overflow-hidden bg-sky-950">

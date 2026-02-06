@@ -1,8 +1,44 @@
 ---
 import ImageComp from "./ImageComp.astro";
 
+const bookDownloadData = {
+  eyebrow: "Still looking for more information on pilot training?",
+  headline: "Get Your FREE Pilot Training Guide Book!",
+  bodyCopy: `We've prepared this free booklet which explains everything you need to know for your pilot certificate.`,
+  image: {
+    src: "/src/assets/old-website/pitcairn-flight-academy_Philadelphia-PA_pilot-trainingpottstown-PA_book-mockup.webp",
+    alt: "Book mockup at Pitcairn Flight Academy in Pottstown, PA",
+  },
+  buttons: [
+    {
+      title: "Download Ebook",
+      href: "#",
+      class: "btn-primary",
+    },
+  ],
+};
+
+// interface Props {
+//   data: {
+//     eyebrow: string;
+//     headline: string;
+//     bodyCopy: string;
+//     image: {
+//       src: string;
+//       alt: string;
+//     };
+//     buttons?: [
+//       {
+//         title: string;
+//         href: string;
+//         class: string;
+//       },
+//     ];
+//   };
+// }
+
 interface Props {
-  data: {
+  data?: {
     eyebrow: string;
     headline: string;
     bodyCopy: string;
@@ -19,8 +55,7 @@ interface Props {
     ];
   };
 }
-
-const { data } = Astro.props;
+const { data = bookDownloadData } = Astro.props;
 ---
 
 <section class="py-16 md:py-24 bg-sky-950 overflow-hidden">
@@ -79,7 +114,7 @@ const { data } = Astro.props;
         entry.target.classList.remove(
           "opacity-0",
           "translate-x-8",
-          "-translate-x-8"
+          "-translate-x-8",
         );
         entry.target.classList.add("opacity-100", "translate-x-0");
         observer.unobserve(entry.target);

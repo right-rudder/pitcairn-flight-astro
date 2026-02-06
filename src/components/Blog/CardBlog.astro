@@ -13,36 +13,51 @@ interface Props {
 
 const { blogEntry, smallCard = false, index = 0 } = Astro.props;
 
-// Dynamic classes based on card type
+// Layout logic
 const containerClasses = smallCard
-  ? "flex flex-col sm:flex-row h-full" // Removed gap-4, handling spacing via padding in content
+  ? "flex flex-col sm:flex-row h-full lg:min-h-[220px] "
   : "flex flex-col h-full";
 
 const imageContainerClasses = smallCard
-  ? "w-full sm:w-2/5 h-48 sm:h-auto relative overflow-hidden shrink-0" // Increased width slightly to 2/5 for better balance
+  ? "w-full sm:w-2/5 h-48 sm:h-auto relative overflow-hidden shrink-0"
   : "w-full h-64 md:h-80 relative overflow-hidden shrink-0";
 
 const contentClasses = smallCard
-  ? "flex-1 p-6 flex flex-col justify-center" // Added p-6 to give text breathing room on all sides
-  : "p-8 flex flex-col flex-1";
+  ? "flex-1 p-6 flex flex-col justify-center"
+  : "p-8 flex flex-col flex-1 ";
 ---
 
 <a
-  class={`hover:cursor-pointer rounded-3xl group block bg-sky-950 overflow-hidden border-t-4  hover:border-sky-600 transition-all duration-500 ease-out hover:-translate-y-1 shadow-lg hover:shadow-2xl hover:shadow-black/50 opacity-0 translate-y-8 blog-card`}
-  style={`transition-delay: ${index * 150}ms;`}
+  href={`/posts/${blogEntry.slug}`}
+  class="group relative block bg-white overflow-hidden border border-sky-500 rounded-2xl transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_50px_rgba(0,0,0,0.5)] opacity-0 translate-y-8 blog-card"
+  style={`transition-delay: ${index * 100}ms;`}
   data-astro-prefetch
 >
+  <div
+    class="absolute inset-0 bg-linear-to-br from-sky-500/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+  >
+  </div>
+
   <article class={containerClasses}>
     {/* Image Section */}
     <div class={imageContainerClasses}>
       <ImageComp
-        class="absolute inset-0 size-full object-cover transition-transform duration-700 group-hover:scale-110 opacity-90 group-hover:opacity-100"
+        class="absolute inset-0 size-full object-cover transition-transform duration-1000 ease-out group-hover:scale-110"
         src={blogEntry.data.image}
         alt={blogEntry.data.title}
       />
       <div
-        class="absolute inset-0 bg-gradient-to-t from-slate-950/60 to-transparent opacity-60 group-hover:opacity-40 transition-opacity duration-500"
+        class="absolute inset-0 bg-linear-to-t from-slate-950 via-slate-950/20 to-transparent opacity-80 group-hover:opacity-60 transition-opacity duration-500"
       >
+      </div>
+
+      {/* Category Tag (Optional - if your schema has it) */}
+      <div class="absolute top-4 left-4">
+        <span
+          class="px-3 py-1 bg-sky-800/90 backdrop-blur-sm text-white flex text-sm font-bold uppercase tracking-wide rounded-md shadow-lg"
+        >
+          {blogEntry.data.tags[0]}
+        </span>
       </div>
     </div>
 
@@ -50,42 +65,55 @@ const contentClasses = smallCard
     <div class={contentClasses}>
       {/* Meta Data */}
       <div
-        class="flex items-center gap-3 text-xs font-bold uppercase tracking-wider text-sky-500 mb-3"
+        class="flex items-center gap-3 text-[10px] font-bold uppercase tracking-[0.2em] text-sky-400 mb-4"
       >
-        <span class="flex items-center gap-1.5">
+        <span
+          class="flex items-center gap-1.5 bg-sky-800/90 text-white px-4 py-2 rounded-2xl text-xs"
+        >
           <FaCalendarAlt />
           {formatDate(blogEntry.data.pubDate)}
         </span>
-        {
-          /* Optional: Add Author if needed, but keeping it clean for small cards often helps */
-        }
-        <span class="w-1 h-1 bg-slate-700 rounded-full"></span>
-        <span class="text-slate-400 truncate max-w-[100px]">
-          {blogEntry.data.author || COMPANY_NAME}
+        <span class="w-1 h-1 bg-slate-700 rounded-2xl"></span>
+        <span class="text-slate-500 text-xs truncate max-w-[120px]">
+          By {blogEntry.data.author || COMPANY_NAME}
         </span>
       </div>
 
       <h3
-        class={`font-title font-bold text-white transition-colors duration-300 group-hover:text-sky-500 mb-3 ${
-          smallCard ? "text-lg md:text-xl line-clamp-2" : "text-2xl md:text-3xl"
+        class={`font-bold text-sky-900 transition-colors duration-300 group-hover:text-sky-600 leading-tight mb-4 ${
+          smallCard
+            ? "text-xl line-clamp-2"
+            : "text-2xl md:text-3xl lg:text-4xl"
         }`}
       >
         {blogEntry.data.title}
       </h3>
 
       <p
-        class={`text-slate-300 text-sm leading-relaxed mb-4 ${smallCard ? "line-clamp-2" : "line-clamp-3"}`}
+        class={`text-sky-900 text-lg leading-relaxed mb-6 font-sans ${smallCard ? "line-clamp-2" : "line-clamp-3"}`}
       >
         {blogEntry.data.description}
       </p>
 
       <div
-        class={`mt-auto flex items-center gap-2 text-sm font-bold uppercase tracking-widest text-white group-hover:text-sky-500 transition-colors`}
+        class="mt-auto flex items-center justify-between border-t border-sky-600/45 pt-4"
       >
-        Read Article
-        <FaArrowRight
-          class="text-sky-700 group-hover:translate-x-1 transition-transform duration-300"
-        />
+        <span
+          class="text-lg font-bold uppercase tracking-[0.2em] text-sky-900 group-hover:text-sky-600 transition-colors flex items-center gap-2"
+        >
+          Read More
+          <div
+            class="text-sky-900 px-4 group-hover:text-sky-600 group-hover:translate-x-2 transition-transform duration-500 group-hover:bounce-horizontal"
+          >
+            <FaArrowRight />
+          </div>
+        </span>
+
+        {/* Decorative corner accent */}
+        <div
+          class="w-1.5 h-1.5 lg:w-2 lg:h-2 rounded-2xl bg-sky-950 group-hover:bg-sky-500 transition-colors"
+        >
+        </div>
       </div>
     </div>
   </article>
@@ -96,12 +124,15 @@ const contentClasses = smallCard
     (entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          entry.target.classList.remove("opacity-0", "translate-y-8");
+          (entry.target as HTMLElement).classList.remove(
+            "opacity-0",
+            "translate-y-8",
+          );
           observer.unobserve(entry.target);
         }
       });
     },
-    { threshold: 0.1 }
+    { threshold: 0.1 },
   );
 
   document.querySelectorAll(".blog-card").forEach((card) => {

@@ -1,0 +1,180 @@
+---
+import { COMPANY_NAME } from "../../data/consts";
+---
+
+<section
+  class="py-24 lg:py-40 bg-slate-50 relative overflow-hidden group/section"
+>
+  <div
+    class="absolute top-0 left-0 w-full h-full opacity-[0.03] pointer-events-none grayscale group-hover/section:grayscale-0 transition-all duration-1000"
+  >
+    <svg class="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
+      <path
+        d="M0,100 C30,80 70,110 100,80 L100,100 L0,100 Z"
+        fill="url(#skyGradient)"></path>
+      <defs>
+        <linearGradient id="skyGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+          <stop offset="0%" style="stop-color:rgb(14, 165, 233);stop-opacity:1"
+          ></stop>
+          <stop offset="100%" style="stop-color:rgb(2, 132, 199);stop-opacity:1"
+          ></stop>
+        </linearGradient>
+      </defs>
+    </svg>
+  </div>
+
+  <div class="max-w-7xl mx-auto px-6 relative z-10">
+    <div class="grid lg:grid-cols-12 gap-16 lg:gap-24 items-center">
+      <div class="lg:col-span-7">
+        <span
+          class="text-sky-600 font-bold text-sm lg:text-base uppercase tracking-[0.3em] mb-6 block animate-pulse"
+          >Recreational Flight</span
+        >
+        <h2
+          class="text-5xl lg:text-7xl xl:text-8xl font-black text-slate-900 leading-[0.9] mb-8 tracking-tighter"
+        >
+          Fly for the <br /><span class="text-sky-600 italic"
+            >Pure Joy of It.</span
+          >
+        </h2>
+
+        <p
+          class="text-xl lg:text-2xl text-slate-600 leading-relaxed mb-12 max-w-2xl font-light"
+        >
+          Experience the Greater Philadelphia area from a vantage point few ever
+          see. From Heritage Field Airport to the city skyline, your journey is
+          our passion.
+        </p>
+
+        <div class="grid sm:grid-cols-2 lg:grid-cols-1 gap-8">
+          {
+            [
+              {
+                title: "Philly Landmarks",
+                desc: "Custom routes over your home or local icons.",
+                icon: "M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z",
+              },
+              {
+                title: "Perfect Gift",
+                desc: "The ultimate surprise for birthdays or anniversaries.",
+                icon: "M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4",
+              },
+              {
+                title: "Safe & Guided",
+                desc: "Flown by elite FAA Certified Instructors.",
+                icon: "M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9",
+              },
+            ].map((item) => (
+              <div class="group flex items-center gap-6 p-4 rounded-2xl  hover:bg-white hover:shadow-xl hover:shadow-sky-500/5 transition-all duration-300">
+                <div class="w-14 h-14 bg-white shadow-sm border border-slate-100 flex items-center justify-center shrink-0 rounded-2xl  group-hover:bg-sky-600 group-hover:text-white transition-colors duration-300">
+                  <svg
+                    class="w-7 h-7"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d={item.icon}
+                    />
+                  </svg>
+                </div>
+                <div>
+                  <h4 class="text-xl font-bold text-slate-900 group-hover:text-sky-600 transition-colors">
+                    {item.title}
+                  </h4>
+                  <p class="text-slate-500">{item.desc}</p>
+                </div>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+
+      <div class="lg:col-span-5">
+        <div class="relative group/card">
+          <div
+            class="absolute -inset-1 bg-gradient-to-r from-sky-400 to-blue-600 rounded-[3rem] blur opacity-20 group-hover/card:opacity-40 transition duration-1000"
+          >
+          </div>
+
+          <div
+            class="relative bg-white p-8 lg:p-12 rounded-[2.5rem] shadow-2xl border border-slate-100 transform transition-all duration-500 group-hover/card:-translate-y-2"
+          >
+            <h3 class="text-3xl font-black text-slate-900 mb-2">
+              Book a Flight
+            </h3>
+            <p class="text-slate-500 mb-10">Limited weekend slots available.</p>
+
+            <form class="space-y-5">
+              <div class="grid grid-cols-2 gap-4">
+                <div class="space-y-1">
+                  <label
+                    class="text-[10px] font-black uppercase tracking-widest text-sky-600"
+                    >First Name</label
+                  >
+                  <input
+                    type="text"
+                    class="w-full px-5 py-4 bg-slate-50 border-none rounded-2xl focus:ring-2 focus:ring-sky-500 transition-all"
+                  />
+                </div>
+                <div class="space-y-1">
+                  <label
+                    class="text-[10px] font-black uppercase tracking-widest text-sky-600"
+                    >Last Name</label
+                  >
+                  <input
+                    type="text"
+                    class="w-full px-5 py-4 bg-slate-50 border-none rounded-2xl focus:ring-2 focus:ring-sky-500 transition-all"
+                  />
+                </div>
+              </div>
+              <div class="space-y-1">
+                <label
+                  class="text-[10px] font-black uppercase tracking-widest text-sky-600"
+                  >Email Address</label
+                >
+                <input
+                  type="email"
+                  class="w-full px-5 py-4 bg-slate-50 border-none rounded-2xl focus:ring-2 focus:ring-sky-500 transition-all"
+                />
+              </div>
+              <div class="space-y-1">
+                <label
+                  class="text-[10px] font-black uppercase tracking-widest text-sky-600"
+                  >Occasion</label
+                >
+                <textarea
+                  rows="3"
+                  class="w-full px-5 py-4 bg-slate-50 border-none rounded-2xl focus:ring-2 focus:ring-sky-500 transition-all resize-none"
+                ></textarea>
+              </div>
+              <button
+                class="group/btn relative w-full overflow-hidden py-5 bg-slate-900 text-white font-black rounded-2xl transition-all hover:bg-sky-600 shadow-xl shadow-slate-900/20 active:scale-[0.98]"
+              >
+                <span
+                  class="relative z-10 flex items-center justify-center gap-2"
+                >
+                  Send Booking Request
+                  <svg
+                    class="w-5 h-5 transition-transform group-hover/btn:translate-x-1"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    ><path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg
+                  >
+                </span>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

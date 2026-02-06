@@ -1,0 +1,157 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import ImageComp from "../components/ImageComp.astro";
+import Hero75 from "../components/Hero75.astro";
+import { COMPANY_NAME, PHONE_NUMBER } from "../data/consts";
+import { getCollection } from "astro:content";
+import type { CollectionEntry } from "astro:content";
+import OurStory from "../components/About/OurStory.astro";
+import OurMission from "../components/About/OurMission.astro";
+import OurAdvantages from "../components/About/OurAdvantages.astro";
+import OurLocation from "../components/About/OurLocation.astro";
+import AboutCTA from "../components/About/AboutCTA.astro";
+import WhyUs from "../components/WhyUs/WhyUs.astro";
+import HeroWhyPilot from "../components/Hero/HeroWhyPilot.astro";
+import GoogleReviews from "../components/external/GoogleReviews.astro";
+import LocationSection from "../components/LocationSection.astro";
+
+type Member = CollectionEntry<"crew">;
+
+const members = await getCollection("crew");
+const sortedMembers = members.sort(
+  (a: Member, b: Member) => (a.data.order || 999) - (b.data.order || 999),
+);
+
+const pageTitle = `About ${COMPANY_NAME}`;
+const pageDescription = `Learn about ${COMPANY_NAME}'s mission, values, and commitment to professional pilot training excellence. Award-winning flight school with 34,000+ successful pilots, veteran airline captain instructors, and proven career pathways.`;
+
+const heroData = {
+  image: {
+    src: "/src/assets/students/pitcairn-flight-academy_Philadelphia-PA_pilot-training_student-getting-started-with-flight-training-at-pitcairn-flight-academy.jpg",
+    alt: "Student getting started with flight training at Pitcairn Flight Academy in Philadelphia, PA",
+    mirror: true,
+  },
+  title: `Why ${COMPANY_NAME}? <br> <span class="text-sky-600 text-3xl">Helping Pilots Achieve Their Goals.</span>`,
+  subTitle: ` We are a Part 61 flight school dedicated to ensuring your success. Our comprehensive flight training program encompasses all the necessary materials, ground school sessions, and flight hours required to thoroughly prepare you for your checkride.`,
+  cta: [
+    {
+      url: "/enroll",
+      text: "Enroll Now",
+    },
+    {
+      url: "/aircraft",
+      text: "Meet Our Fleet",
+    },
+  ],
+};
+
+const metaProps = {
+  siteTitle: `About Us | ${COMPANY_NAME}`,
+  siteDescription: `Meet the senior cadre at ${COMPANY_NAME}. Built by airline pilots and USAF veterans, we provide mentorship and elite training for future professional pilots.`,
+  siteKeywords:
+    "about  Aviation, flight school NC, USAF veteran pilots, airline pilot mentors, aviation academy leadership, flight instructor cadre,  mission",
+};
+
+const whatSetsApart = {
+  upperHeading: "Why Choose Us",
+  title: "What Sets Us Apart",
+  description:
+    "We don't just train pilots—we develop aviation professionals ready for successful careers.",
+  items: [
+    {
+      title: "Veteran Airline Captain Instructors",
+      description:
+        "Train with experienced airline captains (10,000+ hours) who've flown professionally for decades—not 300-hour time-builders. Learn from those who've actually flown the line.",
+      icon: "user",
+    },
+    {
+      title: "Dual DPE & Zero Cancellations",
+      description:
+        "Two Designated Pilot Examiners on staff. 12-year track record of zero checkride cancellations due to examiner unavailability. Immediate scheduling—no 3-month waitlists.",
+      icon: "check",
+    },
+    {
+      title: "Single-Location Seamless Training",
+      description:
+        "All training at Wayne Executive Jetport (KGWW)—ground school, flight training, checkrides, housing under one roof. No fragmented instruction across multiple locations.",
+      icon: "location",
+    },
+    {
+      title: "Real IMC Flying (Not Just Hood Time)",
+      description:
+        "Instrument students fly 30+ hours actual IMC (real clouds, real approaches, real weather)—not just simulated hood time. You'll be a competent IFR pilot, not just checkride-ready.",
+      icon: "cloud",
+    },
+    {
+      title: `"Gray Beard" Peer-Checking Program`,
+      description:
+        "Senior instructors review all student training progress—providing quality assurance, mentorship, and continuation training. No other school offers this level of oversight.",
+      icon: "shield",
+    },
+    {
+      title: "Performance-Based Airline Placement",
+      description:
+        "No predatory fees or commissions. Meet safety and professionalism criteria, and we provide direct introductions to regional airline hiring partners. Your success is our success.",
+      icon: "bolt",
+    },
+  ],
+};
+
+const ourLocation = {
+  upperHeading: "Our Location",
+  title: "Located at Wayne Executive Jetport",
+  descriptions: [
+    `<strong>${COMPANY_NAME}</strong> operates out of <strong>Wayne Executive Jetport (KGWW)</strong> in Goldsboro, North Carolina.`,
+    `This location supports a focused training environment designed for students pursuing professional pilot careers.`,
+  ],
+  features: [
+    "Part 141 training environment supporting structured, full-time professional pilot training",
+    "Towered airport operations providing exposure to professional ATC communications",
+    "Consistent training conditions for primary and advanced instruction",
+    "Program housing available for Professional Airline Pilot Track students",
+    "Central North Carolina location supporting students from across the region",
+  ],
+  image: {
+    src: "/src/assets/placeholder-dark-clouds-pitcairn-flight-academy-instrument-rating.webp",
+    alt: "Wayne Executive Jetport (KGWW)",
+  },
+};
+
+const statsDataExample = [
+  { value: "10,000+", label: "Flight Hours", sub: "Combined Experience" },
+  { value: "95%", label: "Checkride Pass Rate", sub: "First-Attempt Success" },
+  { value: "100+", label: "Active Students", sub: "Currently Training" },
+];
+
+const ctaSection = {
+  title: "Ready to Start Your Aviation Journey?",
+  description: `Join our successful pilots who've trained with ${COMPANY_NAME}. From zero experience to airline careers—we'll guide you every step of the way.`,
+  backgroundImage: {
+    src: "/src/assets/placeholder-dark-clouds-pitcairn-flight-academy-instrument-rating.webp",
+    alt: "Call to action background",
+  },
+  primaryCta: {
+    url: "/programs",
+    text: "View Training Programs",
+  },
+  secondaryCta: {
+    url: `tel:${PHONE_NUMBER}`,
+    text: "Call Us Now",
+  },
+};
+---
+
+<BaseLayout {...metaProps}>
+  <!-- <Hero75 data={heroData} /> -->
+  <HeroWhyPilot data={heroData} statsData={statsDataExample} />
+  <!-- Our Differences  -->
+  <OurAdvantages />
+
+  <WhyUs />
+  <GoogleReviews />
+  <!-- Our Location -->
+  <OurLocation />
+  <LocationSection />
+  <!-- CTA Section -->
+  <AboutCTA />
+</BaseLayout>

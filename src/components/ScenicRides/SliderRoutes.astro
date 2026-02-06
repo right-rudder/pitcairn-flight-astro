@@ -1,0 +1,97 @@
+---
+import ImageComp from "../ImageComp.astro";
+
+const placeholder =
+  "/src/assets/placeholder-dark-clouds-pitcairn-flight-academy-instrument-rating.webp";
+
+const locations = [
+  { name: "Valley Forge", dist: "15 NM", img: placeholder },
+  { name: "Philly Skyline", dist: "22 NM", img: placeholder },
+  { name: "The Schuylkill", dist: "Direct", img: placeholder },
+  { name: "Reading Pagoda", dist: "10 NM", img: placeholder },
+  { name: "Heritage Field", dist: "Local", img: placeholder },
+];
+
+// CRITICAL: Duplicate the array so the loop is seamless
+const displayLocations = [...locations, ...locations];
+---
+
+<section class="py-24 bg-slate-950 overflow-hidden">
+  <div class="max-w-7xl mx-auto px-6 mb-12">
+    <span
+      class="text-sky-400 font-bold text-xs uppercase tracking-[0.3em] mb-4 block"
+      >Continuous Patrol</span
+    >
+    <h2
+      class="text-4xl md:text-6xl font-black text-white tracking-tighter uppercase"
+    >
+      The Regional <span class="text-sky-500 italic">Circuit</span>
+    </h2>
+  </div>
+
+  <div class="relative w-full overflow-hidden select-none">
+    <div
+      class="flex flex-nowrap w-max animate-infinite-scroll hover:[animation-play-state:paused] cursor-pointer"
+    >
+      {
+        displayLocations.map((loc, index) => (
+          <div
+            class="w-[300px] shrink-0 px-3 md:px-4"
+            key={`${loc.name}-${index}`}
+          >
+            <div class="relative rounded-2xl  overflow-hidden border border-white/10 group shadow-2xl">
+              <ImageComp
+                src={loc.img}
+                alt={loc.name}
+                class="w-full h-full object-cover grayscale-[0.2] group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700"
+              />
+
+              <div class="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-transparent to-transparent opacity-80 transition-opacity group-hover:opacity-100" />
+
+              <div class="absolute bottom-0 left-0 w-full p-8 translate-y-2 group-hover:translate-y-0 transition-transform">
+                <p class="text-sky-400 font-mono text-xs mb-1">{loc.dist}</p>
+                <h3 class="text-2xl font-black text-white uppercase tracking-tight mb-2">
+                  {loc.name}
+                </h3>
+                <div class="h-1 w-0 bg-sky-500 group-hover:w-full transition-all duration-500" />
+              </div>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+
+    <div
+      class="pointer-events-none absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-slate-950 to-transparent z-10"
+    >
+    </div>
+    <div
+      class="pointer-events-none absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-slate-950 to-transparent z-10"
+    >
+    </div>
+  </div>
+</section>
+
+<style>
+  @keyframes infinite-scroll {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      /* This works because we have two identical sets of cards */
+      transform: translateX(-50%);
+    }
+  }
+
+  .animate-infinite-scroll {
+    /* 20s-30s is usually a good 'browsing' speed */
+    animation: infinite-scroll 30s linear infinite;
+  }
+
+  /* Faster on mobile so it doesn't feel sluggish */
+  @media (max-width: 768px) {
+    .animate-infinite-scroll {
+      animation-duration: 20s;
+    }
+  }
+</style>

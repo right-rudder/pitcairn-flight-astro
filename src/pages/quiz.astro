@@ -1,0 +1,14 @@
+---
+import FormQuiz from "../components/Forms/FormQuiz.astro";
+import { COMPANY_NAME } from "../input/consts";
+import BaseLayout from "../layouts/BaseLayout.astro";
+const metaProps = {
+  siteTitle: `${COMPANY_NAME} | Pilot Career Quiz`,
+  siteDescription: `Take our pilot career quiz to see if flight training at ${COMPANY_NAME} is right for you.`,
+  siteKeywords: `${COMPANY_NAME}, pilot quiz, aviation career quiz, become a pilot`,
+};
+---
+
+<BaseLayout {...metaProps}>
+  <FormQuiz />
+</BaseLayout>

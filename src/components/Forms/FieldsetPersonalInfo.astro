@@ -1,0 +1,61 @@
+---
+const example = {
+  legend: "Select your favorite fruit",
+  fields: [
+    {
+      label: "First Name",
+      type: "text",
+      name: "firstName",
+      id: "firstName",
+      autocomplete: "given-name",
+      required: true,
+      colSpan: "sm:col-span-3",
+    },
+    {
+      label: "Last Name",
+      type: "text",
+      name: "lastName",
+      id: "lastName",
+      autocomplete: "family-name",
+      required: true,
+      colSpan: "sm:col-span-3",
+    },
+    {
+      label: "Email Address",
+      type: "email",
+      name: "email",
+      id: "email",
+      autocomplete: "email",
+      required: true,
+      colSpan: "sm:col-span-6",
+    },
+    {
+      label: "Phone Number",
+      type: "tel",
+      name: "phone",
+      id: "phone",
+      autocomplete: "tel",
+      required: false,
+      colSpan: "sm:col-span-6",
+    },
+  ],
+};
+const { field = example } = Astro.props;
+---
+
+<div class={field.colSpan || "sm:col-span-3"}>
+  <label
+    for={field.id}
+    class="block text-xs font-black uppercase tracking-widest text-slate-500 mb-2 ml-1"
+  >
+    {field.label}
+  </label>
+  <input
+    type={field.type}
+    name={field.name}
+    id={field.id}
+    autocomplete={field.autocomplete}
+    class="block w-full rounded-xl border-slate-200 bg-slate-50 px-4 py-3 text-slate-900 shadow-sm focus:border-primary focus:ring-4 focus:ring-primary/10 transition-all outline-none"
+    required={field.required}
+  />
+</div>
